@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://files.cdn.thinkific.com/file_uploads/147773/images/ebe/4cd/525/qualiopi.png" alt="Logo Formip" width="220"/>
+</p>
+
 # 🚀 Bienvenue dans le lab guidé : "Carte de visite Linux"
 
 Dans ce lab, vous allez **mettre en pratique toutes les commandes vues dans le Module 1** pour générer un **rapport de session professionnel horodaté**.  
