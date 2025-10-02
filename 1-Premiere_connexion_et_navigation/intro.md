@@ -1,5 +1,7 @@
+<p>
 <p align="center">
   <img src="https://import.cdn.thinkific.com/147773%2Fcustom_site_themes%2Fid%2F2GAO8OwEQXuImF9PF9fA_FORMIP%20%28square%20png%29.png" alt="Logo Formip" width="220"/>
+</p>
 </p>
 
 # 🚀 Bienvenue dans le lab guidé : "Carte de visite Linux"
