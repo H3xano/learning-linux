@@ -1,5 +1,24 @@
-Bienvenue dans le lab guide "Carte de visite Linux".
+# 🚀 Bienvenue dans le lab guidé : "Carte de visite Linux"
 
-Vous allez mettre en pratique les commandes vues dans le module 1 pour produire un rapport de session professionnel. Prenez le temps de lire chaque etape, de lancer les commandes depuis le terminal Killercoda (ou votre terminal local) et de verifier les resultats attendus. En fin de parcours, vous disposerez d'un rapport horodate qui prouve votre maitrise des outils de base.
+Dans ce lab, vous allez **mettre en pratique toutes les commandes vues dans le Module 1** pour générer un **rapport de session professionnel horodaté**.  
 
-Bon entrainement !
+## 🎯 Objectif
+À la fin, vous aurez créé votre **première preuve de compétences Linux** : un rapport automatique qui démontre votre maîtrise des outils de base.
+
+## 🛠️ Ce que vous allez pratiquer
+- Identification de l’utilisateur (`whoami`, `id`, `groups`)  
+- Commandes temporelles (`date`, `cal`, `uptime`)  
+- Historique et efficacité (`history`, raccourcis clavier)  
+- Génération d’un **fichier horodaté**  
+
+## 💡 Conseils pratiques
+- Cliquez directement sur les blocs de commande pour les exécuter dans le terminal.  
+- Vérifiez à chaque étape que le **résultat attendu** correspond bien à l’exemple donné.  
+- Si une commande échoue, **réessayez** : l’erreur fait partie de l’apprentissage !
+
+---
+
+👉 Prenez le temps de suivre chaque étape.  
+À la fin, vous disposerez d’un **rapport horodaté** qui sera votre **carte de visite Linux**.  
+
+🎉 Bonne pratique et amusez-vous !
