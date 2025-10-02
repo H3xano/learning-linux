@@ -1,1 +1,1 @@
-Learn some basic commands to work with files on a Linux system
+Apprenez quelques commandes de base pour travailler avec des fichiers sur un systeme Linux

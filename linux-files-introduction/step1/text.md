@@ -1,22 +1,22 @@
 
-Create a new empty file called `my-new-file` in your home directory
+Creez un nouveau fichier vide appele `my-new-file` dans votre repertoire personnel
 
 <br>
 
 ### Solution
-First we make sure we're in our home directory using
+Nous verifions d'abord que nous sommes dans notre repertoire personnel avec
 
 ```plain
 cd ~
 ```{{exec}}
 
-We can list the current directory using
+Nous pouvons lister le repertoire courant avec
 
 ```plain
 pwd
 ```{{exec}}
 
-Now we create the file
+Creons maintenant le fichier
 
 ```plain
 touch my-new-file

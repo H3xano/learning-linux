@@ -1,6 +1,6 @@
 
 <br>
 
-### Look at you, learning Linux!
+### Regardez-vous, vous debutez en Linux !
 
-You solved this challenge!
+Vous avez resolu ce defi !

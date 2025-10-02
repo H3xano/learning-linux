@@ -1,16 +1,16 @@
 
-Create a new file `/etc/my-second-file` with content `amazing`
+Creez un nouveau fichier `/etc/my-second-file` contenant le texte `amazing`
 
 <br>
 
 ### Solution
-We can use the command `echo`:
+Nous pouvons utiliser la commande `echo` :
 
 ```plain
 echo amazing > /etc/my-second-file
 ```{{exec}}
 
-And to verify we can run
+Pour verifier, executez
 
 ```plain
 cat /etc/my-second-file

@@ -1,16 +1,16 @@
 
-Now we're getting serious! Delete the file `/var/dont-need-this.png`
+Passons aux choses serieuses ! Supprimez le fichier `/var/dont-need-this.png`
 
 <br>
 
 ### Solution
-Check if the file is there using
+Verifiez si le fichier est present avec
 
 ```plain
 ls /var/dont-need-this.png
 ```{{exec}}
 
-Now to delete we run
+Pour le supprimer, executez
 
 ```plain
 rm /var/dont-need-this.png
