@@ -1,4 +1,4 @@
-![Formip](../assets/formip_logo.png)
+![Formip](../assets/formip_logo_padded.png)
 
 # 🚀 Bienvenue dans le lab guidé : "Carte de visite Linux"
 
