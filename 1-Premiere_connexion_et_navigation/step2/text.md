@@ -36,20 +36,18 @@ date +"Il est %Hh%M et nous sommes le %A %d %B %Y"
 
 ---
 
-## 📅 2) `cal` — Le calendrier intégré à Linux
+## 📅 2) `ncal` ou `cal` — Le calendrier intégré à Linux
 
 Tapez :
 
 ```bash
-cal
+ncal
 ```{{exec}}
 
 **Exemple :**
-```
 
 ```
 octobre 2025
-```
 
 di lu ma me je ve sa
 1  2  3  4
@@ -60,14 +58,14 @@ di lu ma me je ve sa
 
 ```
 
-💡 `cal` affiche le **calendrier** du mois courant.  
+💡 `ncal` affiche le **calendrier** du mois courant.  
 Le jour actuel est souvent **surligné** pour vous repérer facilement.
 
 ### 📘 Quelques variantes amusantes :
 ```bash
-cal 2025       # Affiche toute l'année 2025
-cal 12 2024    # Montre décembre 2024
-cal -3         # Affiche le mois précédent, actuel et suivant
+ncal 2025       # Affiche toute l'année 2025
+ncal 12 2024    # Montre décembre 2024
+ncal -3         # Affiche le mois précédent, actuel et suivant
 ```
 
 ### 🎯 Pourquoi c’est utile ?
@@ -76,10 +74,10 @@ cal -3         # Affiche le mois précédent, actuel et suivant
 * Pour vérifier si une année est **bissextile**.
 * Parce qu’il est toujours pratique de connaître la **date exacte d’un jour précis** sans quitter le terminal.
 
-🧩 **Fun fact :** `cal` connaît **toutes les années** depuis l’an 1 ! Essayez :
+🧩 **Fun fact :** `ncal` connaît **toutes les années** depuis l’an 1 ! Essayez :
 
 ```bash
-cal 7 1776
+ncal 7 1776
 ```
 
 👉 Spoiler : vous verrez le calendrier du mois de l’indépendance américaine !
