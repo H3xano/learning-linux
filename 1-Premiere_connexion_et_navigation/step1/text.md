@@ -78,7 +78,7 @@ groups
 
 **Exemple de sortie :**
 
-````
+```
 
 learner sudo
 
