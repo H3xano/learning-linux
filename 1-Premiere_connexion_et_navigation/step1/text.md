@@ -71,9 +71,10 @@ Cela affiche la carte d’identité du compte administrateur.
 
 Tapez :
 
-````bash
+```bash
 groups
 ```{{exec}}
+
 
 **Exemple de sortie :**
 
