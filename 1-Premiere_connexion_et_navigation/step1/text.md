@@ -1,35 +1,56 @@
+# 🚀 Étape 1 — Qui suis-je dans ce système ?
 
-## Etape 1 : Preparation et verification (env. 2 minutes)
+Dans Linux, chaque action dépend de **qui vous êtes**. Découvrons votre identité.
 
-Bienvenue dans votre mission "Carte de visite Linux". Commencez par preparer votre environnement et verifier que tout fonctionne.
+---
 
-1. Ouvrez votre terminal Killercoda (ou votre propre terminal si vous suivez ce lab en local). Si la session est deja ouverte, vous etes pret !
-2. Placez-vous dans votre repertoire personnel pour garder un espace de travail clair :
-
-```plain
-cd ~
-```{{exec}}
-
-3. Verifiez votre identite courante :
+## 1) Votre nom d’utilisateur
 
 ```plain
 whoami
 ```{{exec}}
 
-   Resultat attendu : votre nom d'utilisateur Linux apparait.
+**Attendu :** un mot qui ressemble à `learner`, `ubuntu`, ou votre identifiant.
 
-4. Controlez la date et l'heure systeme :
+---
 
-```plain
-date
+## 2) Votre carte d’identité complète
+
+```bash
+id
 ```{{exec}}
 
-5. Inspectez le temps de fonctionnement et la charge :
+**Exemple de sortie :**
 
-```plain
-uptime
-```{{exec}}
+```
+uid=1000(learner) gid=1000(learner) groups=1000(learner),27(sudo)
+```
 
-Point de controle : les trois commandes reussissent sans erreur ? Parfait, poursuivez.
+* `uid=` : votre numéro d’utilisateur (unique)
+* `gid=` : votre groupe principal
+* `groups=` : tous les groupes auxquels vous appartenez
 
-Astuce productivite : pensez deja a utiliser les fleches `↑` et `↓` pour rejouer une commande sans la retaper.
+---
+
+## 3) Vos “clubs” (groupes)
+
+```bash
+groups
+```
+
+**Exemple :**
+
+```
+learner sudo
+```
+
+---
+
+### 🧠 Pourquoi c’est important ?
+
+Linux est **multi-utilisateurs**. Vos permissions (droit de lire/écrire/exécuter) dépendent de **votre identité** et de **vos groupes**.
+
+### 🆘 Si ça coince
+
+* Rien ne s’affiche ? Vérifiez que vous avez bien **appuyé sur Entrée** après la commande.
+* Message “command not found” ? Assurez-vous d’avoir **exactement** tapé `whoami`, `id`, `groups` (sans majuscules).
