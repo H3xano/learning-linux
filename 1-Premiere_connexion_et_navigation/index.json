@@ -7,7 +7,8 @@
   "details": {
     "intro": {
       "text": "intro.md",
-      "background": "setup.sh"
+      "background": "setup.sh",
+      "foreground": "foreground.sh"
     },
     "steps": [
       {
@@ -33,12 +34,6 @@
     ],
     "finish": {
       "text": "finish.md"
-    },
-    "assets": {
-      "host01": [
-        { "file": "foreground.sh", "target": "/root/foreground.sh", "chmod": "+x" },
-        { "file": "formip-banner.sh", "target": "/root/formip-banner.sh", "chmod": "+x" }
-      ]
     }
   }
 }
