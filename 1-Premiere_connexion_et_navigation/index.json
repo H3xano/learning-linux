@@ -30,9 +30,15 @@
     ],
     "finish": {
       "text": "finish.md"
-    }
+    },
+    "assets": {
+      "host01": [
+        "foreground.sh",
+        "formip-banner.sh"
+      ]
   },
   "backend": {
     "imageid": "ubuntu"
   }
+}
 }
