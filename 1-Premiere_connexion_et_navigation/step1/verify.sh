@@ -44,4 +44,3 @@ fi
 # Si tout est bon
 echo "✅ Excellent ! Vous avez découvert votre identité Linux."
 echo "Vous savez maintenant qui vous êtes, vos numéros d'identité et vos groupes d'appartenance. 🎉"
-exit 0
