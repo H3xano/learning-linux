@@ -102,4 +102,4 @@ touch /root/.bash_history || true
 
 # --- Tools (cal is in util-linux by default, but ensure present) ---
 apt-get update -y >/dev/null 2>&1 || true
-apt-get install -y --no-install-recommends util-linux >/dev/null 2>&1 || true
+apt-get install -y --no-install-recommends ncal >/dev/null 2>&1 || true
