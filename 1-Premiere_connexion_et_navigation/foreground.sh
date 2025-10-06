@@ -7,3 +7,9 @@ if [ -f /tmp/banner.sh ]; then
 else
   echo "Banner non trouvé (/tmp/banner.sh manquant)"
 fi
+
+# Changer d'utilisateur
+su - learner
+
+# Changer de directory
+cd ~
