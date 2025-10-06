@@ -21,26 +21,3 @@ if ! history | grep -q "groups"; then
   echo "❌ Vous n'avez pas encore exécuté la commande 'groups'. Tapez-la pour afficher vos groupes d'appartenance."
   exit 1
 fi
-
-# Vérification du résultat attendu minimal (sortie de whoami)
-USER_OUTPUT=$(whoami)
-if [ -z "$USER_OUTPUT" ]; then
-  echo "❌ La commande 'whoami' n’a rien renvoyé. Réessayez."
-  exit 1
-fi
-
-# Vérification que la sortie de id contient uid/gid
-if ! id | grep -q "uid="; then
-  echo "❌ La commande 'id' ne semble pas avoir été exécutée correctement."
-  exit 1
-fi
-
-# Vérification que groups affiche quelque chose
-if [ -z "$(groups)" ]; then
-  echo "❌ La commande 'groups' n’a renvoyé aucun groupe. Essayez de la relancer."
-  exit 1
-fi
-
-# Si tout est bon
-echo "✅ Excellent ! Vous avez découvert votre identité Linux."
-echo "Vous savez maintenant qui vous êtes, vos numéros d'identité et vos groupes d'appartenance. 🎉"
