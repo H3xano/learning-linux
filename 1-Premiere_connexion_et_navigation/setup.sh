@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# 1. Créer l'utilisateur learner s'il n'existe pas
+# Créer l'utilisateur learner s'il n'existe pas
 if ! id learner &>/dev/null; then
   useradd -m -s /bin/bash learner
   echo "learner ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/learner
