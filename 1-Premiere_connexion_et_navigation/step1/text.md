@@ -12,7 +12,7 @@ Tapez :
 
 ```bash
 whoami
-```{{exec}}
+```
 
 **Attendu :** un mot comme `learner`, `ubuntu`, ou votre identifiant personnel.  
 
@@ -34,7 +34,7 @@ Tapez :
 
 ```bash
 id
-```{{exec}}
+```
 
 **Exemple de sortie :**
 
@@ -73,7 +73,7 @@ Tapez :
 
 ```bash
 groups
-```{{exec}}
+```
 
 
 **Exemple de sortie :**

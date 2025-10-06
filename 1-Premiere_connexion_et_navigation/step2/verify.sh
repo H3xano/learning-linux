@@ -17,6 +17,7 @@ check() {
 # Match strict (évite 'update', etc.)
 check '(^|[[:space:];|&])date([[:space:];|&]|$)'   || exit 1
 check '(^|[[:space:];|&])cal([[:space:];|&]|$)'    || exit 1
+check '(^|[[:space:];|&])ncal([[:space:];|&]|$)'    || exit 1
 check '(^|[[:space:];|&])uptime([[:space:];|&]|$)' || exit 1
 
 echo -n "done"

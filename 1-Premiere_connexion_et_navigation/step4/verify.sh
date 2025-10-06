@@ -14,7 +14,7 @@ found() {
   return 1
 }
 
-# Historique minimal (commandes tapées)
+# 1) Historique minimal : les commandes ont été tapées
 found '(^|[[:space:];|&])echo([[:space:];|&]|$)'   || exit 1
 found '(^|[[:space:];|&])whoami([[:space:];|&]|$)' || exit 1
 found '(^|[[:space:];|&])id([[:space:];|&]|$)'     || exit 1
@@ -23,15 +23,24 @@ found '(^|[[:space:];|&])date([[:space:];|&]|$)'   || exit 1
 found '(^|[[:space:];|&])uptime([[:space:];|&]|$)' || exit 1
 found '(^|[[:space:];|&])cat([[:space:];|&]|$)'    || exit 1
 
-# Fichier rapport : présent et non vide
+# 2) Fichier rapport : présent et non vide
 R="$HOME/rapport.txt"
 [ -f "$R" ] || R="/home/learner/rapport.txt"
 [ -s "$R" ] || exit 1
 
-# Contenu attendu (marqueurs simples)
+# 3) Contenu attendu (tolérant au format que tu as montré)
 U=$(whoami)
-grep -q "$U" "$R"        || exit 1   # whoami dedans
-grep -q "uid=" "$R"      || exit 1   # id dedans
-grep -Eq 'load average| up [0-9]+' "$R" || exit 1  # uptime dedans
+
+# Titre présent
+grep -q '^=== Mon Rapport Linux ===$' "$R" || exit 1
+# Nom d'utilisateur présent au moins une fois (whoami)
+grep -q "$U" "$R" || exit 1
+# Ligne id (au moins le marqueur uid=)
+grep -Eq 'uid=[0-9]+' "$R" || exit 1
+# Ligne uptime (marqueur "load average:")
+grep -q 'load average:' "$R" || exit 1
+
+# (Optionnel) Accepte la ligne finale si l'apprenant l'a ajoutée
+# grep -q '^--- Fin du rapport ---$' "$R" >/dev/null 2>&1 || true
 
 echo -n "done"
