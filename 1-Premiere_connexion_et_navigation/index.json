@@ -1,6 +1,6 @@
 {
   "title": "Carte de visite Linux",
-  "description": "Lab guide pour générer un rapport de session professionnel et valider les commandes de base.",
+  "description": "Lab guidé pour générer un rapport de session professionnel et valider les commandes de base.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -8,33 +8,40 @@
   "details": {
     "intro": {
       "text": "intro.md",
-      "background": "setup.sh",
+      "background": "background.sh",
       "foreground": "foreground.sh"
     },
     "steps": [
       {
-        "title": "Préparation et vérification",
+        "title": "Qui suis-je dans ce système ?",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Collecte d'informations",
+        "title": "Où et quand sommes-nous ?",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Création du rapport",
+        "title": "Créer mon premier fichier",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Validation et preuve",
+        "title": "Construire mon rapport final",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }
     ],
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        { "file": "background.sh", "target": "/opt/background.sh", "chmod": "+x" },
+        { "file": "foreground.sh", "target": "/opt/foreground.sh", "chmod": "+x" },
+        { "file": "formip-banner.sh", "target": "/opt/formip-banner.sh", "chmod": "+x" }
+      ]
     }
   }
 }

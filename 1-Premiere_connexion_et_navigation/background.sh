@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+
+apt update && apt install ncal
+
 # Créer l'utilisateur learner s'il n'existe pas
 if ! id learner &>/dev/null; then
   useradd -m -s /bin/bash learner
