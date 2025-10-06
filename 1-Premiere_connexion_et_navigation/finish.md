@@ -31,10 +31,11 @@ Pour valider ce lab sur la plateforme :
 1. Tapez dans le terminal :
    ```bash
    cat rapport.txt
-   ```{{exec}}
+   ```
+   afin d’afficher votre rapport complet.
 
-afin d’afficher votre rapport complet.
 2. Prenez une capture d’écran claire de votre terminal (avec tout le rapport visible).
+
 3. Uploadez cette capture sur Thinkific dans la section du lab “Carte de visite Linux”.
 
 💡 C’est votre carte de visite Linux officielle — votre premier document de validation !
@@ -50,7 +51,7 @@ afin d’afficher votre rapport complet.
 ---
 
 🧾 **Votre rapport (`rapport.txt`) est votre carte de visite Linux.**  
-Gardez-le précieusement — il marque le début de votre parcours d’administrateur.
+Il marque le début de votre parcours d’administrateur.
 
 🐧 **Formip - La voie Express vers la Certification.**  
 Bravo, vous êtes officiellement entré dans le monde Linux ! 🎓🚀
