@@ -69,4 +69,4 @@ EOF
 # Rendre exécutable
 chmod +x /tmp/banner.sh
 
-# apt update && apt install ncal
+apt update && apt install ncal
