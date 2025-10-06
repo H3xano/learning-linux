@@ -2,7 +2,8 @@
   "title": "Carte de visite Linux",
   "description": "Lab guide pour générer un rapport de session professionnel et valider les commandes de base.",
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "ubuntu",
+    "user": "learner"
   },
   "details": {
     "intro": {
