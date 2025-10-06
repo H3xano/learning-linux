@@ -35,13 +35,6 @@
     ],
     "finish": {
       "text": "finish.md"
-    },
-    "assets": {
-      "host01": [
-        { "file": "background.sh", "target": "/opt/background.sh", "chmod": "+x" },
-        { "file": "foreground.sh", "target": "/opt/foreground.sh", "chmod": "+x" },
-        { "file": "formip-banner.sh", "target": "/opt/formip-banner.sh", "chmod": "+x" }
-      ]
     }
   }
 }

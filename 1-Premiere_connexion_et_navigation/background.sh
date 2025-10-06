@@ -2,7 +2,7 @@
 set -euo pipefail
 
 
-apt update && apt install ncal
+
 
 # Créer l'utilisateur learner s'il n'existe pas
 if ! id learner &>/dev/null; then
@@ -10,7 +10,7 @@ if ! id learner &>/dev/null; then
   echo "learner ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/learner
 fi
 
-su - learner
+# su - learner
 
 # Créer le fichier banner
 cat << 'EOF' > /tmp/banner.sh
@@ -68,3 +68,5 @@ EOF
 
 # Rendre exécutable
 chmod +x /tmp/banner.sh
+
+apt update && apt install ncal
