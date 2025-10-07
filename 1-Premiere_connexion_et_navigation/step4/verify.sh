@@ -1,36 +1,25 @@
 #!/bin/bash
 set -e
 
-FILES=("$HOME/.bash_history" "/home/learner/.bash_history" "/root/.bash_history")
-
-found() {
-  local pat="$1"
-  for f in "${FILES[@]}"; do
-    [ -f "$f" ] || continue
-    if grep -Eq "$pat" "$f"; then
-      return 0
-    fi
-  done
-  return 1
-}
-
-# 1) Historique minimal : les commandes ont été tapées
-found '(^|[[:space:];|&])echo([[:space:];|&]|$)'   || exit 1
-
-# 2) Fichier rapport : présent et non vide
+# Locate the report file
 R="$HOME/rapport.txt"
 [ -f "$R" ] || R="/home/learner/rapport.txt"
-[ -s "$R" ] || exit 1
+[ -s "$R" ] || exit 1   # file exists and is non-empty
 
-# 3) Contenu attendu (tolérant au format que tu as montré)
-U=$(whoami)
+# Must start with the exact title line
+grep -qx '=== Mon Rapport Linux ===' "$R" || exit 1
 
-# Titre présent
-grep -q '^=== Mon Rapport Linux ===$' "$R" || exit 1
-# Nom d'utilisateur présent au moins une fois (whoami)
-grep -q "$U" "$R" || exit 1
+# Must contain a username-only line (the whoami output), e.g. "learner"
+# Accept lowercase username with allowed chars
+grep -Eq '^[a-z_][a-z0-9_-]*$' "$R" || exit 1
 
-# (Optionnel) Accepte la ligne finale si l'apprenant l'a ajoutée
-# grep -q '^--- Fin du rapport ---$' "$R" >/dev/null 2>&1 || true
+# Must contain ID info (uid=…)
+grep -Eq 'uid=[0-9]+' "$R" || exit 1
+
+# Must contain uptime info (load average marker)
+grep -q 'load average' "$R" || exit 1
+
+# Optional: if you want to require the final marker line, uncomment:
+# grep -qx '--- Fin du rapport ---' "$R" || exit 1
 
 echo -n "done"
