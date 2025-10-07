@@ -15,7 +15,7 @@ Tapez :
 
 ```bash
 echo "=== Mon Rapport Linux ===" > rapport.txt
-```{{exec}}
+```
 
 💡 Cette ligne crée un nouveau fichier `rapport.txt` et y écrit le titre du rapport.  
 Le symbole `>` dit à Linux :  
@@ -31,7 +31,7 @@ Maintenant, ajoutez vos informations personnelles (fournies par Linux lui-même)
 whoami >> rapport.txt
 id >> rapport.txt
 groups >> rapport.txt
-```{{exec}}
+```
 
 💡 Ces trois commandes ajoutent :
 - Votre **nom d’utilisateur**
@@ -49,7 +49,7 @@ Tapez :
 ```bash
 date >> rapport.txt
 uptime >> rapport.txt
-```{{exec}}
+```
 
 👉 Vous enregistrez :
 - la **date et l’heure exactes** de votre session,
@@ -65,7 +65,7 @@ Tapez :
 
 ```bash
 cat rapport.txt
-```{{exec}}
+```
 
 🎉 Félicitations ! Vous voyez maintenant votre **rapport final** affiché à l’écran.
 
@@ -110,7 +110,7 @@ Essayez de rendre votre rapport **encore plus lisible** :
 ```bash
 echo "--- Fin du rapport ---" >> rapport.txt
 cat rapport.txt
-```{{exec}}
+```
 
 ou ajoutez des lignes vides pour espacer le contenu :
 

@@ -11,7 +11,7 @@ Tapez :
 
 ```bash
 date
-```{{exec}}
+```
 
 **Exemple :**
 ```
@@ -42,7 +42,7 @@ Tapez :
 
 ```bash
 ncal
-```{{exec}}
+```
 
 **Exemple :**
 
@@ -90,7 +90,7 @@ Tapez :
 
 ```bash
 uptime
-```{{exec}}
+```
 
 **Exemple :**
 ```

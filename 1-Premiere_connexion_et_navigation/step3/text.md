@@ -11,7 +11,7 @@ Tapez :
 
 ```bash
 touch carte.txt
-```{{exec}}
+```
 
 👉 Bravo ! Vous venez de créer un fichier vide nommé **carte.txt**.
 
@@ -25,7 +25,7 @@ touch carte.txt
 Tapez :
 ```bash
 ls
-```{{exec}}
+```
 
 Vous devriez voir votre fichier `carte.txt` apparaître dans la liste.  
 C’est votre **premier fichier personnel** sur Linux ! 🥳
@@ -40,7 +40,7 @@ Tapez :
 
 ```bash
 echo "Bonjour, je m'appelle $(whoami) et je découvre Linux !" >> carte.txt
-```{{exec}}
+```
 
 💡 **Explication :**
 - `echo` = “affiche du texte”.
@@ -62,7 +62,7 @@ Tapez :
 
 ```bash
 cat carte.txt
-```{{exec}}
+```
 
 🐱 (eh oui, “cat” vient de *concatenate*)  
 Linux affiche à l’écran le contenu du fichier, **ligne par ligne**.
@@ -94,7 +94,7 @@ Créez un deuxième fichier :
 touch bienvenue.txt
 echo "Bienvenue dans le monde Linux 🐧" > bienvenue.txt
 cat bienvenue.txt
-```{{exec}}
+```
 
 💡 Note la différence entre `>` et `>>` :
 - `>` **écrase** le contenu précédent (remplace tout)
