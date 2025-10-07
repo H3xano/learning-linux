@@ -34,7 +34,7 @@ Pour valider ce lab sur la plateforme :
    ```
    afin d’afficher votre rapport complet.
 
-2. Prenez une capture d’écran claire de votre terminal (avec tout le rapport visible).
+2. Prenez une capture d’écran claire de votre terminal (avec tout le rapport visible). Assurez vous que le nom du Lab apparait sur la capture.
 
 3. Uploadez cette capture sur Thinkific dans la section du lab “Carte de visite Linux”.
 
