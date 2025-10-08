@@ -1,0 +1,56 @@
+{
+  "title": "Mon diagnostic Shell ultime",
+  "description": "Lab guidé pour analyser, comprendre et diagnostiquer son environnement shell comme un expert Linux.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Identifier son shell et son environnement",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Explorer les variables d’environnement",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Identifier le type de session",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Décoder son profil utilisateur",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Inspecter les fichiers de configuration du shell",
+        "text": "step5/text.md"
+      },
+      {
+        "title": "Créer un mini script de diagnostic",
+        "text": "step6/text.md"
+      },
+      {
+        "title": "Vérifier la santé du PATH",
+        "text": "step7/text.md"
+      },
+      {
+        "title": "Activer le mode rayons X du shell",
+        "text": "step8/text.md"
+      },
+      {
+        "title": "Générer le rapport final",
+        "text": "step9/text.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
