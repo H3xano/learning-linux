@@ -1,0 +1,40 @@
+{
+  "title": "Types d’installation Linux",
+  "description": "Identifier Desktop, Serveur et Machine Virtuelle via des observations simples en terminal. Lab débutant, clair et 100% exécutable sur Killercoda.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Observer la machine",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Repérer une GUI",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Empreinte d’un serveur",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Détecter la virtualisation",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Résumé et choix",
+        "text": "step5/text.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
