@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-
-
-
 # --- Ensure user 'learner' exists ---
 if ! id learner &>/dev/null; then
   useradd -m -s /bin/bash learner
   echo "learner ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/learner
   chmod 440 /etc/sudoers.d/learner
 fi
-
 
 # --- Prepare banner script ---
 cat << 'EOF' > /tmp/banner.sh
@@ -99,7 +95,3 @@ PROMPT_COMMAND='history -a; history -c; history -r; '"$PROMPT_COMMAND"
 RC
 fi
 touch /root/.bash_history || true
-
-# --- Tools (cal is in util-linux by default, but ensure present) ---
-apt-get update -y >/dev/null 2>&1 || true
-apt-get install -y --no-install-recommends ncal >/dev/null 2>&1 || true
