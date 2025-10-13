@@ -10,7 +10,7 @@ lscpu | grep -i hypervisor || echo "Pas d'hyperviseur détecté"
 2. Messages noyau liés à la virtualisation :
 
 ```bash
-dmesg | grep -i virtual | head -n 10 || true
+sudo dmesg | grep -i virtual | head -n 10 || true
 ```
 
 👉 Cherche `Virtual`, `KVM`, `VMware`, `VBOX` : ce sont des **signatures de VM**.
@@ -22,6 +22,7 @@ lsmod | grep -i virt || true
 ```
 
 👉 `kvm`, `virtio*`, `vbox*`… autant de signes d’un environnement **virtualisé**.
+👉 Si rien ne ressort, c’est **pas anormal** : sur des images minimalistes, les modules “virt*” (ex: virtio) ne sont pas forcément listés ou nommés comme on s’y attend. Le fait que `lscpu` et `dmesg` confirment KVM suffit.
 
 🎯 Conclusion : si tu vois hyperviseur/modules/msgs VM → tu es en **Machine Virtuelle**, idéale pour apprendre.
 
