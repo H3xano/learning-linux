@@ -14,23 +14,28 @@
     "steps": [
       {
         "title": "Observer la machine",
-        "text": "step1/text.md"
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       },
       {
         "title": "Repérer une GUI",
-        "text": "step2/text.md"
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
         "title": "Empreinte d’un serveur",
-        "text": "step3/text.md"
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       },
       {
         "title": "Détecter la virtualisation",
-        "text": "step4/text.md"
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
       },
       {
         "title": "Résumé et choix",
-        "text": "step5/text.md"
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
       }
     ],
     "finish": {
