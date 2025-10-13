@@ -1,17 +1,26 @@
 # 🧭 Étape 1 — Observer la machine
 
-Avant de plonger dans le monde Linux, faisons connaissance avec **notre système**.  
-Ces premières commandes te donnent une vision claire de ton environnement.
-
+1) Affiche le noyau et l’architecture :
 ```bash
 uname -a
+```
+
+👉 Tu vois la version du noyau Linux, l’architecture (x86_64/arm64) et des infos système utiles.
+
+2. Affiche la distribution :
+
+```bash
 lsb_release -a
+```
+
+👉 Donne le nom (Ubuntu/Debian…), la version et le codename. Parfait pour savoir “où” tu es.
+
+3. Affiche le contexte hôte :
+
+```bash
 hostnamectl
 ```
 
-👉 `uname -a` affiche le noyau et l’architecture.
-👉 `lsb_release -a` te dit quelle **distribution** (Ubuntu, Debian...) tu utilises.
-👉 `hostnamectl` révèle souvent si tu es dans une **machine virtuelle** et le type d’hôte.
+👉 Regarde les lignes **Operating System** et **Virtualization** : elles révèlent souvent si tu es dans une **VM**.
 
-💬 Note les différences entre ces sorties : elles te permettront plus tard de reconnaître
-un **poste Desktop**, un **serveur**, ou une **VM** sans avoir besoin d’écran graphique. 🧠
+💡 Note tes observations : noyau, distribution, VM ou non. On s’en sert pour distinguer Desktop/Serveur/VM.
