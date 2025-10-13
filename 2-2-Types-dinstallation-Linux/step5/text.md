@@ -1,14 +1,25 @@
 # 🧩 Étape 5 — Résume et choisis
 
-Récapitule ce que tu as observé et choisis le type adapté à ton objectif.
+Tu as maintenant vu comment identifier :
+- un système **Desktop** (GUI active),
+- un **Serveur** (services réseau, pas de GUI),
+- une **Machine virtuelle** (environnement hébergé).
+
+Vérifions une dernière fois quelques infos clés 👇
 
 ```bash
-echo "Résumé :"
-echo "- whoami: $(whoami)"
-echo "- type: $(hostnamectl --pretty 2>/dev/null || echo unknown)"
-uname -a | cut -c1-80
+echo "=== Résumé de mon environnement ==="
+echo "Utilisateur : $(whoami)"
+echo "Système : $(lsb_release -ds 2>/dev/null || echo 'Inconnu')"
+hostnamectl | grep -E 'Virtualization|Operating System' || echo "Infos non détectées"
 ````
 
-👉 Si tu veux **apprendre** et tester sans risque → choisis une **VM**.
-👉 Pour de la **productivité bureautique** → Desktop. Pour de la **production** → Serveur.
-Bravo — tu sais maintenant diagnostiquer le type d’installation Linux via la console ! 🎯
+💬 **Analyse ton résultat :**
+
+* Tu vois une ligne `Virtualization: ...` ? → tu es dans une **VM** ☁️
+* Tu vois `graphical.target` à l’étape 2 ? → c’est un **Desktop** 🖥️
+* Tu n’as que des services réseau ? → c’est un **Serveur** 💻
+
+🎓 **Conclusion :**
+Pour apprendre et pratiquer sereinement → choisis la **Machine Virtuelle (VM)**.
+C’est l’environnement idéal pour ton parcours Linux Formip. 🚀🐧
