@@ -1,0 +1,40 @@
+{
+  "title": "🔐 Root & Sudo — Les Clés du Royaume",
+  "description": "Section 2.3 complète : comprendre root (UID 0), pratiquer sudo, situer su, lire/valider sudoers et auditer les privilèges en 5 étapes courtes.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+        { 
+            "title": "Racines du pouvoir : UID 0", 
+            "text": "step1/text.md" 
+        },
+        { 
+            "title": "Sudo : élévation ponctuelle", 
+            "text": "step2/text.md" 
+        },
+        { 
+            "title": "su : session complète ?", 
+            "text": "step3/text.md" 
+        },
+        { 
+            "title": "sudoers : lire & valider", 
+            "text": "step4/text.md" 
+        },
+        { 
+            "title": "Audit : voir & compter", 
+            "text": "step5/text.md" 
+        }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
