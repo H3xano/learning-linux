@@ -1,0 +1,42 @@
+{
+  "title": "L'Art de Lire les Fichiers",
+  "description": "De 'cat' à 'tail -f', maîtrisez l'affichage et la surveillance de fichiers.",
+  "difficulty": "beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Étape 1 : `cat`",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Étape 2 : `less`",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Étape 3 : `head` et `tail`",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Étape 4 : `tail -f`",
+        "text": "step4/text.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu",
+    "scripts": {
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    }
+  }
+}
