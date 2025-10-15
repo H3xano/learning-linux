@@ -1,3 +1,5 @@
+![Formip](../assets/formip_logo_padded.png)
+
 # 🐧 Lab 3.1 : L'Art de Lire les Fichiers
 
 Bienvenue dans le terminal, explorateur Linux ! 🚀

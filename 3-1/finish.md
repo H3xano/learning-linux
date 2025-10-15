@@ -1,3 +1,5 @@
+![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie : Vous êtes un Maître Lecteur !
 
 Félicitations ! 🎉 Vous venez de terminer un voyage essentiel au cœur de Linux.
