@@ -2,7 +2,7 @@
   "title": "L'Art de Lire les Fichiers",
   "description": "De 'cat' à 'tail -f', maîtrisez l'affichage et la surveillance de fichiers.",
   "backend": {
-    "imageid": "ubuntu-2204",
+    "imageid": "ubuntu",
     "user": "learner"
   },
   "details": {
