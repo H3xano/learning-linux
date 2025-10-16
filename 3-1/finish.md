@@ -5,10 +5,10 @@
 Félicitations ! 🎉 Vous venez de terminer un voyage essentiel au cœur de Linux.
 
 Vous avez appris à :
-✅ **Afficher** le contenu brut avec `cat`.
-✅ **Naviguer** intelligemment dans de longs fichiers avec `less`.
-✅ **Extraire** des portions précises avec `head` et `tail`.
-✅ **Surveiller** des fichiers en temps réel comme un pro avec `tail -f`.
+- **Afficher** le contenu brut avec `cat`.
+- **Naviguer** intelligemment dans de longs fichiers avec `less`.
+- **Extraire** des portions précises avec `head` et `tail`.
+- **Surveiller** des fichiers en temps réel comme un pro avec `tail -f`.
 
 Ces commandes ne sont pas juste des outils, ce sont vos nouveaux super-pouvoirs pour analyser des logs, vérifier des configurations et déboguer des applications.
 
