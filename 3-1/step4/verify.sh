@@ -1,8 +1,20 @@
 #!/bin/bash
 set -e
 
-# On cherche la chaîne exacte 'tail -f' pour valider la compétence de surveillance.
-# C'est plus précis que de chercher juste 'tail'.
-grep -q 'tail -f' ~/.bash_history
+FILES=("$HOME/.bash_history" "/home/learner/.bash_history" "/root/.bash_history")
 
-echo "✅ Mission accomplie ! Vous surveillez les fichiers en temps réel."
+found() {
+  local pat="$1"
+  for f in "${FILES[@]}"; do
+    [ -f "$f" ] || continue
+    if grep -Eq "$pat" "$f"; then return 0; fi
+  done
+  return 1
+}
+
+# Vérifie qu'une ligne contient 'tail' avec l'option '-f'
+if found '(^|[[:space:];|&])tail .*-f'; then
+  echo -n "done"
+else
+  exit 1
+fi
