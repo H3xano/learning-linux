@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# --- User setup (from Formip template) ---
+if ! id learner &>/dev/null; then
+  useradd -m -s /bin/bash learner
+  echo "learner ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/learner
+  chmod 440 /etc/sudoers.d/learner
+fi
+touch /home/learner/.bash_history
+chown learner:learner /home/learner/.bash_history
+chmod 600 /home/learner/.bash_history
+grep -q 'Formip: realtime history' /home/learner/.bashrc || cat <<'RC' >> /home/learner/.bashrc
+shopt -s histappend; HISTSIZE=10000; HISTFILESIZE=20000
+PROMPT_COMMAND='history -a; history -c; history -r; '"$PROMPT_COMMAND"
+RC
+chown learner:learner /home/learner/.bashrc
+# --- End of user setup ---
+
+# --- Banner (from Formip template) ---
+cat << 'EOF' > /tmp/banner.sh
+#!/usr/bin/env bash
+if command -v tput >/dev/null 2>&1; then COLS="$(tput cols||echo 80)";BOLD="$(tput bold)";RESET="$(tput sgr0)";CYAN="$(tput setaf 6)";YELLOW="$(tput setaf 3)";GREEN="$(tput setaf 2)"; else COLS=80;BOLD="";RESET="";CYAN="";YELLOW="";GREEN=""; fi
+pad() { text="$1";len=${#1};w=$COLS;left=$(((w-len)/2));printf "%*s%s\n" "$left" "" "$text"; }
+line() { ch="${1:-═}";printf '%*s\n' "$COLS" ''|tr ' ' "$ch"; }
+clear; TITLE="Formip - La voie Express vers la Certification"; SUB="Bienvenue sur votre environnement Linux d'apprentissage"
+echo; echo -e "${CYAN}$(line)${RESET}"; pad "${BOLD}${TITLE}${RESET}"; pad "${SUB}${RESET}"; echo -e "${CYAN}$(line)${RESET}"; echo
+pad "${GREEN}Vous êtes prêt pour le Lab 3.2 : Grep, le Détective de Texte !${RESET}"; echo
+EOF
+chmod +x /tmp/banner.sh
+
+# --- Lab 3.2 Specific File Setup ---
+
+# File for step 1 & 2
+cat << EOF > /home/learner/agents.txt
+ID: 007, Nom: James Bond, Ville: Londres, Statut: Actif
+ID: 008, Nom: Jason Bourne, Ville: Paris, Statut: Inactif
+ID: 009, Nom: Ethan Hunt, Ville: New York, Statut: Actif
+ID: 010, Nom: Natasha Romanoff, Ville: Paris, Statut: Actif
+ID: 011, Nom: Jack Ryan, Ville: Washington, Statut: Inactif
+EOF
+
+# Files for step 3
+cat << EOF > /home/learner/app.log
+[INFO] Démarrage de l'application.
+[WARN] Configuration par défaut utilisée.
+[ERROR] Impossible de charger le module 'payments'.
+[INFO] Application prête.
+EOF
+
+cat << EOF > /home/learner/system.log
+[INFO] Démarrage du système.
+[INFO] Tentative de connexion à la base de données.
+[ERROR] Connexion refusée.
+[INFO] Vérification des disques.
+EOF
+
+# Directory structure for step 3 & 4
+mkdir -p /home/learner/missions/europe/france
+mkdir -p /home/learner/missions/amerique
+
+cat << EOF > /home/learner/missions/europe/france/rapport_paris.txt
+Mission: Projet "Tour Eiffel"
+Statut: Terminé
+Résumé: Surveillance et extraction de données de cybersécurité.
+EOF
+
+cat << EOF > /home/learner/missions/europe/rapport_berlin.txt
+Mission: Opération "Porte de Brandebourg"
+Statut: En cours
+Résumé: Le rapport de cette mission de cybersécurité est pour l'instant incomplet.
+EOF
+
+cat << EOF > /home/learner/missions/amerique/rapport_ny.txt
+Mission: Projet "Manhattan"
+Statut: Incomplet (minuscules)
+Résumé: Mission de surveillance.
+EOF
+
+# Set ownership for all created files
+chown -R learner:learner /home/learner/agents.txt /home/learner/*.log /home/learner/missions
