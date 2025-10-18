@@ -1,11 +1,12 @@
 #!/bin/bash
 set -e
 FILES=("$HOME/.bash_history" "/home/learner/.bash_history")
-found() { pat="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -Eq "$pat" "$f" && return 0; done; return 1; }
+found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "$f" && return 0; done; return 1; }
 
-# Vérifie la recherche multi-fichiers
-found 'grep .* "\*" T.*\.log' || exit 1
-# Vérifie la recherche récursive
-found 'grep .*-r' || exit 1
+# Vérifie qu'on a cherché dans les fichiers .log avec '*'
+found 'grep .* \*\.log' || exit 1
+
+# Vérifie que l'option -r a été utilisée
+found 'grep -r' || exit 1
 
 echo -n "done"
