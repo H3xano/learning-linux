@@ -1,0 +1,40 @@
+{
+  "title": "Les Éditeurs de Texte",
+  "description": "Apprenez à éditer des fichiers avec la simplicité de nano et la puissance de vim.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Nano - L'éditeur simple et sûr",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Vim (Partie 1) - Le Choc des Modes",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Vim (Partie 2) - L'Art de S'échapper",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Vim (Partie 3) - La Puissance du Mode Normal",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
