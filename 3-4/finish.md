@@ -3,8 +3,8 @@
 Félicitations ! 🎉 Vous venez de débloquer une compétence fondamentale pour tout utilisateur Linux : l'édition de fichiers en ligne de commande.
 
 Vous avez maintenant deux outils puissants dans votre arsenal :
-✅ **Nano**, pour éditer des fichiers de manière simple, rapide et intuitive.
-✅ **Vim**, pour comprendre les bases de l'édition modale et effectuer des modifications à la vitesse de la pensée.
+1. **Nano**, pour éditer des fichiers de manière simple, rapide et intuitive.
+2. **Vim**, pour comprendre les bases de l'édition modale et effectuer des modifications à la vitesse de la pensée.
 
 Que vous choisissiez la simplicité rassurante de `nano` ou que vous décidiez de vous lancer dans la maîtrise de `vim`, l'important est que **vous n'êtes plus jamais bloqué**. Vous pouvez configurer un serveur, écrire un script ou corriger un bug, où que vous soyez.
 

@@ -19,8 +19,7 @@
       },
       {
         "title": "Vim (Partie 1) - Le Choc des Modes",
-        "text": "step2/text.md",
-        "verify": "step2/verify.sh"
+        "text": "step2/text.md"
       },
       {
         "title": "Vim (Partie 2) - L'Art de S'échapper",
