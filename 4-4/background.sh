@@ -18,24 +18,12 @@ EOF
 chmod +x /tmp/banner.sh
 
 # --- Lab 4.4 Specific File Setup ---
-# Créer une structure pour mkdir
-mkdir -p /home/learner/mon_projet/{src,docs,tests}
-touch /home/learner/mon_projet/README.md
-touch /home/learner/mon_projet/src/.gitignore
+# La structure 'mon_projet' a été supprimée d'ici. C'est à l'utilisateur de la créer dans l'étape 1.
 
-# Créer un fichier pour cp et mv
-echo "Contenu original" > /home/learner/fichier.txt
-echo "Contenu pour backup" > /home/learner/ancien.txt
-touch -t 202001010000 /home/learner/ancien.txt # Timestamp ancien
-echo "Contenu nouveau" > /home/learner/nouveau.txt
-
-# Créer fichiers pour rm
-touch /home/learner/fichier.txt
+# Créer uniquement les fichiers nécessaires pour les étapes 2, 3 et 4.
 touch /home/learner/fichier_a_supprimer.txt
 touch /home/learner/temp1.txt /home/learner/temp2.txt /home/learner/temp3.txt
 touch /home/learner/temp4.txt /home/learner/temp5.txt /home/learner/temp6.txt
-mkdir -p /home/learner/mon_projet/docs/src
-chmod 777 /home/learner/mon_projet/docs/src # Rendre modifiable pour le test
 
 # Set ownership for all created files
-chown -R learner:learner /home/learner/mon_projet /home/learner/fichier.txt /home/learner/ancien.txt /home/learner/nouveau.txt /home/learner/temp*.txt
+chown -R learner:learner /home/learner/
