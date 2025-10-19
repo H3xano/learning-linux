@@ -1,31 +1,19 @@
 #!/bin/bash
 set -e
 
-# Boilerplate standard pour trouver l'historique
-FILES=("$HOME/.bash_history" "/home/learner/.bash_history")
-found() {
-    local pattern="$1"
-    for f in "${FILES[@]}"; do
-        if [ -f "$f" ] && grep -q "$pattern" "$f"; then
-            return 0
-        fi
-    done
-    return 1
-}
+# --- VÉRIFICATIONS SIMPLES AVEC L'HISTORIQUE ---
 
-# --- VÉRIFICATIONS SIMPLES ---
+# On va utiliser la commande `history` qui est toujours disponible.
 
-# 1. Vérifie si une commande contenant "find" et "secret_rapport.txt" a été exécutée.
-#    C'est flexible et fonctionnera que l'utilisateur ait tapé ~ ou /home/learner.
-found "find .* secret_rapport.txt" || exit 1
+# 1. Vérifie qu'une ligne de l'historique contient "find" et "secret_rapport.txt".
+history | grep "find" | grep -q "secret_rapport.txt" || exit 1
 
-# 2. Vérifie si une commande "find" a été utilisée pour "rapport_final.pdf".
-found "find .* rapport_final.pdf" || exit 1
+# 2. Vérifie qu'une ligne de l'historique contient "find", "iname", et "rapport_final.pdf".
+history | grep "find" | grep "iname" | grep -q "rapport_final.pdf" || exit 1
 
-# 3. Vérifie si une commande "find" a été utilisée pour les fichiers .log dans le dossier archives.
-#    Le '\*' est important pour chercher le caractère '*' littéral.
-found "find .* archives .* \*\.log" || exit 1
-
+# 3. Vérifie qu'une ligne de l'historique contient "find", "archives", et la chaîne "*.log".
+#    Le pipe | permet de s'assurer que tous les mots sont sur la même ligne.
+history | grep "find" | grep "archives" | grep -q "\*.log" || exit 1
 
 # Si toutes les vérifications passent
 echo -n "done"
