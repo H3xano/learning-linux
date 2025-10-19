@@ -1,0 +1,40 @@
+{
+  "title": "La Carte du Monde Linux (FHS)",
+  "description": "Explorez la structure des fichiers de Linux pour savoir où tout se trouve.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Le Cœur du Système",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Les Territoires des Utilisateurs",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Applications et Données",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Le Secret du $PATH",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
