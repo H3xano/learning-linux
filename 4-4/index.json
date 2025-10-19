@@ -2,7 +2,8 @@
   "title": "Création et Modification de Fichiers",
   "description": "Apprenez à construire et manipuler l'arborescence avec mkdir, touch, cp, mv et rm.",
   "backend": {
-    "imageid": "ubuntu-2204"
+    "imageid": "ubuntu",
+    "user": "learner"
   },
   "details": {
     "intro": {
