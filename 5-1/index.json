@@ -1,0 +1,35 @@
+{
+  "title": "La Bibliothèque Intégrée de Linux",
+  "description": "Apprenez à vous documenter en autonomie avec man, apropos et info.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Le système `man` et ses 9 sections",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Navigation et recherche",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Info, la documentation avancée",
+        "text": "step3/text.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+      "uilayout": "terminal-terminal"
+  }
+}
