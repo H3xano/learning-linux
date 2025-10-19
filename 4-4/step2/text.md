@@ -11,7 +11,7 @@ Copions notre fichier `README.md` en `README_backup.md`.
 Vérifions que la copie a bien été faite :
 `ls -l mon_projet/README*`{{execute}}
 
-Vous voyez deux fichiers, avec des dates de modification différentes.
+Vous voyez deux fichiers.
 
 ---
 
@@ -25,13 +25,15 @@ Maintenant, `mon_projet_copie` est une copie exacte de `mon_projet`.
 
 ---
 
-### Options utiles : Sécurité et détails
+### L'option -i : La sécurité avant tout
 
--   `-r` : **R**écursif (obligatoire pour les répertoires).
--   `-i` : Demande confirmation avant d'écraser un fichier existant. **Toujours une bonne idée !**
--   `-v` : Affiche ce que `cp` est en train de faire (verbeux).
+Par défaut, `cp` écrase les fichiers sans pitié. Pour éviter de perdre des données accidentellement, utilisez toujours l'option `-i` (interactive), qui demande confirmation.
 
-Essayons de copier `mon_projet_copie` vers `mon_projet` avec ces options :
-`cp -riv mon_projet_copie/ mon_projet/`{{execute}}
+Créons un nouveau fichier.
+`echo "Nouveau contenu" > nouveau_readme.txt`{{execute}}
 
-`cp` va vous demander confirmation pour écraser les fichiers dans `mon_projet` s'ils existent déjà. C'est une sécurité précieuse !
+Maintenant, essayons de copier ce fichier pour **écraser** le `README.md` que nous avons créé dans `mon_projet`. Utilisons l'option `-i` pour le faire en toute sécurité.
+
+`cp -i nouveau_readme.txt mon_projet/README.md`{{execute}}
+
+Comme `mon_projet/README.md` existe déjà, `cp` vous demande la permission de l'écraser. Répondez `y` (pour yes) et appuyez sur **Entrée**. C'est une protection cruciale !
