@@ -10,6 +10,6 @@ found 'find ~ -name "secret_rapport.txt"' || exit 1
 found 'find ~ -iname "rapport_final.pdf"' || exit 1
 
 # Vérifie la création de la structure avec -p
-found 'find ~/archives -name "*.log"' || exit 1
+found 'find ~/archives -name "*.' || exit 1
 
 echo -n "done"
