@@ -27,10 +27,11 @@ Maintenant, `mon_projet_copie` est une copie exacte de `mon_projet`.
 
 ### Options utiles : Sécurité et détails
 
+-   `-r` : **R**écursif (obligatoire pour les répertoires).
 -   `-i` : Demande confirmation avant d'écraser un fichier existant. **Toujours une bonne idée !**
 -   `-v` : Affiche ce que `cp` est en train de faire (verbeux).
 
 Essayons de copier `mon_projet_copie` vers `mon_projet` avec ces options :
-`cp -iv mon_projet_copie/ mon_projet/`{{execute}}
+`cp -riv mon_projet_copie/ mon_projet/`{{execute}}
 
 `cp` va vous demander confirmation pour écraser les fichiers dans `mon_projet` s'ils existent déjà. C'est une sécurité précieuse !
