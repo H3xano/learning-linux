@@ -1,19 +1,15 @@
 #!/bin/bash
 set -e
+FILES=("$HOME/.bash_history" "/home/learner/.bash_history")
+found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "$f" && return 0; done; return 1; }
 
-# --- VÉRIFICATIONS SIMPLES AVEC L'HISTORIQUE ---
+# Vérifie la création du premier dossier
+found 'find ~ -name "secret_rapport.txt"' || exit 1
 
-# On va utiliser la commande `history` qui est toujours disponible.
+# Vérifie la création de la structure avec -p
+found 'find ~ -iname "rapport_final.pdf"' || exit 1
 
-# 1. Vérifie qu'une ligne de l'historique contient "find" et "secret_rapport.txt".
-history | grep "find" | grep -q "secret_rapport.txt" || exit 1
+# Vérifie la création de la structure avec -p
+found 'find ~/archives -name "*.log"' || exit 1
 
-# 2. Vérifie qu'une ligne de l'historique contient "find", "iname", et "rapport_final.pdf".
-history | grep "find" | grep "iname" | grep -q "rapport_final.pdf" || exit 1
-
-# 3. Vérifie qu'une ligne de l'historique contient "find", "archives", et la chaîne "*.log".
-#    Le pipe | permet de s'assurer que tous les mots sont sur la même ligne.
-history | grep "find" | grep "archives" | grep -q "\*.log" || exit 1
-
-# Si toutes les vérifications passent
 echo -n "done"
