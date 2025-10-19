@@ -4,8 +4,6 @@ La commande `mv` (move) fait deux choses :
 1.  **Renommer** un fichier ou un répertoire.
 2.  **Déplacer** un fichier ou un répertoire.
 
-C'est la même commande car les deux sont fondamentalement une modification du "chemin" du fichier.
-
 ### Renommer
 
 Pour renommer un fichier, on le déplace simplement vers un nouveau nom dans le même répertoire.
@@ -17,8 +15,6 @@ Renommons `mon_projet/README_backup.md` en `mon_projet/NOTES.txt`.
 Vérifions :
 `ls -l mon_projet/`{{execute}}
 
-Vous voyez `NOTES.txt` et plus `README_backup.md`.
-
 ---
 
 ### Déplacer
@@ -27,18 +23,20 @@ Maintenant, déplaçons le répertoire `mon_projet/src` dans `mon_projet/docs`.
 
 `mv mon_projet/src/ mon_projet/docs/`{{execute}}
 
-Vérifions la structure :
+Vérifions la nouvelle structure :
 `ls -R mon_projet/`{{execute}}
 
-Vous voyez maintenant `src/` à l'intérieur de `docs/`. C'est un déplacement réussi !
+---
 
-### L'option `-i` de `mv`
+### L'option `-i` : Éviter l'écrasement accidentel
 
-Comme pour `cp`, `mv` a une option `-i` pour demander confirmation avant d'écraser un fichier existant. C'est une excellente habitude à prendre !
+L'option `-i` (**i**nteractive) est une sécurité cruciale qui vous demande confirmation avant d'écraser un fichier.
 
-Essayons de déplacer un fichier vers un endroit où un fichier du même nom existe déjà.
-`mv mon_projet/NOTES.txt mon_projet/docs/`{{execute}}
+Pour voir cela en action, créons d'abord un fichier vide dans la destination qui entrera en conflit.
+`touch mon_projet/docs/NOTES.txt`{{execute}}
 
-Le système vous demandera confirmation. Appuyez sur `n` pour annuler.
+Maintenant, essayons de déplacer le `NOTES.txt` de la racine du projet dans `docs/`, où un fichier du même nom existe déjà. **Utilisez bien l'option `-i` !**
 
-Pour écraser sans confirmation (attention !), on utiliserait `mv -f`. Mais il est toujours plus sûr d'utiliser `mv -i`.
+`mv -i mon_projet/NOTES.txt mon_projet/docs/`{{execute}}
+
+Comme un fichier `NOTES.txt` existe déjà à destination, `mv` vous demande confirmation. Répondez `y` (pour yes) et appuyez sur **Entrée** pour l'écraser. C'est la bonne façon de déplacer des fichiers en toute sécurité !
