@@ -18,7 +18,7 @@ Le résultat est instantané !
 
 Créons un nouveau fichier.
 
-`touch /tmp/mon_fichier_tout_neuf.txt`{{execute}}
+`touch ~/mon_fichier_tout_neuf.txt`{{execute}}
 
 Maintenant, essayons de le trouver avec `locate`.
 

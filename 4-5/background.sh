@@ -24,7 +24,7 @@ chmod +x /tmp/banner.sh
 
 # --- Robust Package Installation ---
 # On ajoute '|| true' pour que le script ne s'arrête pas si apt échoue.
-apt-get update >/dev/null 2>&1 && apt-get install -y mlocate >/dev/null 2>&1 || true
+apt-get update >/dev/null 2>&1 && apt-get install -y locate >/dev/null 2>&1 || true
 
 # --- Lab 4.5 Specific File Setup ---
 # Create the directory structure first
