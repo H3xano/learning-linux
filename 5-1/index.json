@@ -14,15 +14,18 @@
     "steps": [
       {
         "title": "Le système `man` et ses 9 sections",
-        "text": "step1/text.md"
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       },
       {
         "title": "Navigation et recherche",
-        "text": "step2/text.md"
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
         "title": "Info, la documentation avancée",
-        "text": "step3/text.md"
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       }
     ],
     "finish": {
