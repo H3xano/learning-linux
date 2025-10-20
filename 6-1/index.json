@@ -12,27 +12,27 @@
     },
     "steps": [
       {
-        "title": "Les Bases Visuelles: `ls -l`",
+        "title": "Étape 1 : Les Bases Visuelles - `ls -l` et les Types de Fichiers",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Le Langage des Permissions (Symbolique/Octal)",
+        "title": "Étape 2 : Le Langage des Permissions - Symbolique (`rwx`) et Octal (`755`)",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "L'Algorithme de Décision et `umask`",
+        "title": "Étape 3 : L'Algorithme de Décision et `umask`",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "La Vue de l'Expert: `stat`",
+        "title": "Étape 4 : La Vue de l'Expert - `stat`",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Les Permissions Spéciales: ACL",
+        "title": "Étape 5 : Détecter les Permissions Spéciales (ACL)",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }

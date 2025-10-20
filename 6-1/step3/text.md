@@ -1,5 +1,3 @@
-# Étape 3 : L'Algorithme de Décision et `umask`
-
 Comment Linux décide-t-il de vos droits ? Il suit un ordre strict :
 1. Êtes-vous le **propriétaire** ? Si oui, seules ces permissions s'appliquent. FIN.
 2. Sinon, appartenez-vous au **groupe** ? Si oui, seules ces permissions s'appliquent. FIN.

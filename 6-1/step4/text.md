@@ -1,5 +1,3 @@
-# Étape 4 : La Vue de l'Expert - `stat`
-
 La commande `ls -l` est un bon résumé, mais `stat` est le rapport complet. Elle affiche toutes les métadonnées d'un fichier, y compris les permissions en double format.
 
 Inspectons notre `rapport.txt`.

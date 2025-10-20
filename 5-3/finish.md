@@ -1,4 +1,6 @@
-# 🏆 Mission Accomplie : Le système n'a plus de secrets !
+![Formip](../assets/formip_logo_padded.png)
+
+ 🏆 Mission Accomplie : Le système n'a plus de secrets !
 
 Félicitations, agent ! 🎉 Vous avez brillamment mené votre mission à bien. Les activités du système sont maintenant un livre ouvert pour vous.
 

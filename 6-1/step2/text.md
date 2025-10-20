@@ -1,5 +1,3 @@
-# Étape 2 : Le Langage des Permissions - Symbolique (`rwx`) et Octal (`755`)
-
 Chaque groupe de permissions utilise les lettres `r` (lire), `w` (écrire), `x` (exécuter).
 
 Pour les traduire en chiffres (notation **octale**), on utilise cette clé :

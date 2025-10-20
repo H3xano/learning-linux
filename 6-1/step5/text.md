@@ -1,5 +1,3 @@
-# Étape 5 : Détecter les Permissions Spéciales (ACL)
-
 Parfois, le système `Owner/Group/Others` n'est pas assez précis. On peut ajouter des permissions pour des utilisateurs spécifiques avec les **ACL** (Access Control Lists).
 
 Quand un fichier a des ACL, `ls -l` l'indique avec un `+` à la fin des permissions. Un fichier `fichier_acl.txt` a été préparé pour vous.
