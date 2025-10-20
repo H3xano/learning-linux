@@ -1,4 +1,4 @@
-# 🐧 Lab 5.3 : L'Espion du Système
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, agent secret de Linux ! 🕵️
 

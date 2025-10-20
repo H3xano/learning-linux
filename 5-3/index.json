@@ -1,5 +1,5 @@
 {
-  "title": "L'Espion du Système",
+  "title": "🐧 Lab 5.3 : L'Espion du Système",
   "description": "Apprenez à surveiller les utilisateurs et les processus sur votre machine Linux.",
   "backend": {
     "imageid": "ubuntu",
