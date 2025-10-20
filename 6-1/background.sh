@@ -19,21 +19,26 @@ chmod +x /tmp/banner.sh
 apt-get update >/dev/null && apt-get install -y acl >/dev/null
 
 # --- Lab 6.1 Specific File Setup ---
-echo "Rapport standard" > /home/learner/rapport.txt && chmod 644 /home/learner/rapport.txt
+touch /home/learner/rapport.txt && chmod 644 /home/learner/rapport.txt
 mkdir /home/learner/projet && chmod 750 /home/learner/projet
 ln -s /home/learner/rapport.txt /home/learner/config_link
 echo '#!/bin/bash' > /home/learner/script_executable.sh && chmod 750 /home/learner/script_executable.sh
 
 # Setup for effective permissions step
-useradd -m testuser 2>/dev/null || true
-usermod -a -G testuser learner
+useradd testuser 2>/dev/null || true
+groupadd equipe 2>/dev/null || true
+usermod -a -G equipe learner
+usermod -a -G equipe testuser
 touch /home/learner/rapport_piege.txt
-chown testuser:testuser /home/learner/rapport_piege.txt
+# Propriétaire = testuser, Groupe = equipe
+chown testuser:equipe /home/learner/rapport_piege.txt
+# Owner: aucun droit, Groupe: tous les droits
 chmod 070 /home/learner/rapport_piege.txt # ---rwx---
 
 # Setup for ACL step
-useradd -m specific_user 2>/dev/null || true
+useradd specific_user 2>/dev/null || true
 touch /home/learner/fichier_acl.txt
 setfacl -m u:specific_user:rw- /home/learner/fichier_acl.txt
 
-chown -R learner:learner /home/learner
+# Final ownership for learner's files, EXCEPT the trap file
+chown learner:learner /home/learner/rapport.txt /home/learner/projet /home/learner/config_link /home/learner/script_executable.sh /home/learner/fichier_acl.txt
