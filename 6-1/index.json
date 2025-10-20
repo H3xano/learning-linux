@@ -45,7 +45,7 @@
       "host01": [
         {
           "file": "banner.sh",
-          "target": "/tmp/banner.sh",
+          "target": "/tmp",
           "chmod": "+x"
         }
       ]
