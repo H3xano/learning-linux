@@ -1,0 +1,45 @@
+{
+  "title": "🐧 Lab 6.2 : Le Maître des Propriétés",
+  "description": "Apprenez à gérer la propriété des fichiers et des groupes avec chown et chgrp.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Étape 1 : Diagnostiquer la Propriété",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Étape 2 : Transférer avec `chown`",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Étape 3 : Partager avec `chgrp`",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Étape 4 : Changements Récursifs (`-R`)",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Étape 5 : Scénario Réel - Réparer un Projet",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
