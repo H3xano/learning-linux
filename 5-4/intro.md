@@ -1,4 +1,4 @@
-# 🐧 Lab 5.4 : Les Portails Magiques de Linux
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, architecte du système de fichiers ! 🏗️
 
