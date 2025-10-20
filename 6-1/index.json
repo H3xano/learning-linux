@@ -45,7 +45,7 @@
       "host01": [
         {
           "file": "../_assets/banner.sh",
-          "target": "/usr/local/bin/formip-banner",
+          "target": "/tmp/banner.sh",
           "chmod": "+x"
         }
       ]
