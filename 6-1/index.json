@@ -42,7 +42,7 @@
     },
     "assets": {
       "host01": [
-        {"file": "../assets/banner.sh", "target": "/usr/local/bin", "chmod": "+x"}
+        {"file": "../assets/banner.sh", "target": "/usr/local/bin"}
       ]
     }
   }
