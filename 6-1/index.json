@@ -2,7 +2,8 @@
   "title": "🐧 Lab 6.1 : Les Clés du Royaume",
   "description": "Apprenez à déchiffrer le système de permissions de Linux.",
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "ubuntu",
+    "user": "root"
   },
   "details": {
     "intro": {
@@ -42,7 +43,11 @@
     },
     "assets": {
       "host01": [
-        {"file": "../assets/banner.sh", "target": "/usr/local/bin"}
+        {
+          "file": "../_assets/banner.sh",
+          "target": "/usr/local/bin/formip-banner",
+          "chmod": "+x"
+        }
       ]
     }
   }
