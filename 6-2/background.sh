@@ -28,10 +28,12 @@ mkdir -p /home/learner/projet_alpha/src
 touch /home/learner/projet_alpha/main.py
 touch /home/learner/projet_alpha/src/utils.py
 
-mkdir /home/learner/projet_casse
-touch /home/learner/projet_casse/fichier1.txt
-touch /home/learner/projet_casse/fichier2.txt
-tar -czf /home/learner/projet_casse.tar.gz -C /home/learner/projet_casse . --owner=1234 --group=5678
-rm -rf /home/learner/projet_casse
+# --- CORRECTION ICI ---
+mkdir -p /home/learner/projet_casse_source
+touch /home/learner/projet_casse_source/fichier1.txt
+touch /home/learner/projet_casse_source/fichier2.txt
+# On archive le dossier 'projet_casse_source' en le renommant 'projet_casse' dans l'archive
+tar -czf /home/learner/projet_casse.tar.gz -C /home/learner projet_casse_source --transform 's|projet_casse_source|projet_casse|' --owner=1234 --group=5678
+rm -rf /home/learner/projet_casse_source
 
 chown -R learner:learner /home/learner

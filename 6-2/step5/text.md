@@ -1,9 +1,14 @@
-Vous venez de recevoir une archive `projet_casse.tar.gz` d'un ancien collègue. Après l'avoir extraite, vous constatez un problème.
+# Étape 5 : Scénario Réel - Réparer un Projet
+
+Vous venez de recevoir une archive `projet_casse.tar.gz`. Après l'avoir extraite, vous constatez un problème.
 
 `tar -xzf projet_casse.tar.gz`{{execute}}
-`ls -l projet_casse`{{execute}}
 
-Regardez les colonnes propriétaire et groupe : ce sont des numéros (`1234`, `5678`) ! Ce sont des **fichiers orphelins**. L'utilisateur et le groupe qui les possédaient n'existent pas sur ce système.
+Maintenant, listons le contenu de votre répertoire `home` pour voir le nouveau dossier.
+
+`ls -l`{{execute}}
+
+Regardez la ligne pour `projet_casse`. Les colonnes propriétaire et groupe sont des numéros (`1234`, `5678`) ! Ce sont des **fichiers orphelins**. L'utilisateur et le groupe qui les possédaient n'existent pas sur ce système.
 
 Votre mission est de vous réapproprier ce projet.
 

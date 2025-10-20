@@ -6,11 +6,9 @@ Créons un nouveau groupe pour notre équipe de développement web.
 
 `sudo groupadd webteam`{{execute}}
 
-Ajoutons l'utilisateur `learner` à cette nouvelle équipe avec `usermod -aG` (`-a` pour **a**jouter, `-G` pour les **g**roupes).
+Ajoutons l'utilisateur `learner` à cette nouvelle équipe avec `usermod -aG`.
 
 `sudo usermod -aG webteam learner`{{execute}}
-
-*Note : sur un vrai système, il faudrait se déconnecter/reconnecter pour que le nouveau groupe soit actif, mais pour ce lab ce n'est pas nécessaire.*
 
 ---
 ### Assigner un fichier au groupe
@@ -19,7 +17,9 @@ La commande `chgrp` (**ch**ange **gr**ou**p**) permet de changer uniquement le g
 
 Assignons notre fichier `site_config.conf` au groupe `webteam`.
 
-`chgrp webteam site_config.conf`{{execute}}
+`sudo chgrp webteam site_config.conf`{{execute}}
+
+**Note :** Nous utilisons `sudo` ici. Pourquoi ? Même si vous êtes propriétaire du fichier, la règle de `chgrp` est que vous devez aussi appartenir au groupe cible. Le changement de groupe avec `usermod` n'est actif que dans une **nouvelle session**. `sudo` permet de forcer le changement immédiatement.
 
 Vérifions avec `ls -l`.
 
