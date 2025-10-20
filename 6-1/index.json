@@ -1,0 +1,54 @@
+{
+  "title": "Les Clés du Royaume - Lire les Permissions",
+  "description": "Apprenez à déchiffrer le système de permissions de Linux.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Les Bases Visuelles: `ls -l`",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Le Langage des Permissions (Symbolique/Octal)",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "L'Algorithme de Décision et `umask`",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "La Vue de l'Expert: `stat`",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Les Permissions Spéciales: ACL",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "../assets/banner.sh",
+          "target": "/usr/local/bin/formip-banner",
+          "chmod": "+x"
+        }
+      ]
+    }
+  }
+}
