@@ -4,4 +4,4 @@ set -euo pipefail
 su - learner 
 cd ~
 LAB_TITLE="6.1 : Lire les Permissions"
-/formip/banner.sh \"${LAB_TITLE}\"
+/usr/local/bin/banner.sh \"${LAB_TITLE}\"
