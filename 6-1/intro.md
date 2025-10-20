@@ -1,3 +1,5 @@
+![Formip](../assets/formip_logo_padded.png)
+
 Bienvenue, gardien du système ! 🔐
 
 Chaque fichier et dossier sur Linux est protégé par un système de permissions invisible mais tout-puissant. Comprendre ce système, c'est comme apprendre à lire les plans d'un château-fort : vous saurez qui a les clés, quelles portes sont ouvertes et quelles zones sont interdites.
