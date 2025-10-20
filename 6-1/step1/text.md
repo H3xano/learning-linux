@@ -1,5 +1,3 @@
-# Étape 1 : Les Bases Visuelles - `ls -l` et les Types de Fichiers
-
 La commande `ls -l` est notre principal outil pour voir les permissions. Des fichiers d'exemple ont été créés pour vous.
 
 `ls -l`{{execute}}

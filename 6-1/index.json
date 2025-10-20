@@ -39,15 +39,7 @@
     ],
     "finish": {
       "text": "finish.md"
-    },
-    "assets": {
-      "host01": [
-        {
-          "file": "../assets/banner.sh",
-          "target": "/usr/local/bin/formip-banner",
-          "chmod": "+x"
-        }
-      ]
     }
+    
   }
 }
