@@ -1,0 +1,45 @@
+{
+  "title": "🐧 Lab 6.3 : Le Couteau Suisse des Permissions",
+  "description": "Apprenez à modifier les permissions, à utiliser les droits spéciaux et à configurer umask.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Le Mode Symbolique",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Le Mode Octal",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "SUID et SGID (Exécution)",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "SGID et Sticky Bit (Dossiers)",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "La Sécurité par Défaut (`umask`)",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
