@@ -40,15 +40,6 @@
     ],
     "finish": {
       "text": "finish.md"
-    },
-    "assets": {
-      "host01": [
-        {
-          "file": "banner.sh",
-          "target": "/tmp",
-          "chmod": "+x"
-        }
-      ]
     }
   }
 }
