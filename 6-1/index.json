@@ -44,8 +44,8 @@
     "assets": {
       "host01": [
         {
-          "file": "../banner.sh",
-          "target": "/tmp/banner.sh",
+          "file": "banner.sh",
+          "target": "/usr/local/bin/banner",
           "chmod": "+x"
         }
       ]
