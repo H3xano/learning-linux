@@ -19,4 +19,6 @@ chmod +x /tmp/banner.sh
 
 # --- Lab 7.2 Specific File Setup ---
 apt-get update >/dev/null && apt-get install -y htop iotop >/dev/null
+# Add learner to the 'adm' group to allow reading system logs without sudo
+usermod -a -G adm learner
 chown -R learner:learner /home/learner

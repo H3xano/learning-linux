@@ -12,10 +12,10 @@ Parfois, le CPU et la RAM sont calmes, mais le système est lent. Le coupable ? 
 
 Pour simuler une forte activité d'écriture, nous allons créer un gros fichier dans un autre terminal.
 
-**Dans le terminal 2 (à droite) :**
-`dd if=/dev/zero of=gros_fichier bs=1M count=200`{{execute T2}}
+**Dans un nouvel terminal (Tab 2) (à droite) :**
+`dd if=/dev/zero of=gros_fichier bs=1M count=5000`{{execute T2}}
 
-**Regardez le terminal 1 !** Vous devriez voir le processus `dd` apparaître en tête de liste avec une vitesse d'écriture élevée.
+**Revenez vers le terminal 1 ! Rapidement !** Vous devriez voir le processus `dd` apparaître en tête de liste avec une vitesse d'écriture élevée.
 
 Une fois la commande `dd` terminée, son activité dans `iotop` disparaît. C'est l'outil parfait pour trouver qui "massacre" votre disque.
 

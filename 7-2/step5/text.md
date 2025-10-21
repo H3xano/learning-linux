@@ -39,7 +39,7 @@ done
 echo ""
 
 echo "--- 📝 5 Dernières Erreurs Système ---"
-journalctl -p err -n 5 --no-pager
+sudo journalctl -p err -n 5 --no-pager
 echo ""
 echo "=========================================="
 ```
