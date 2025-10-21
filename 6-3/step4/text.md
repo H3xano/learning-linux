@@ -4,36 +4,37 @@ Le `SGID` et le `Sticky Bit` sont cruciaux pour la collaboration en équipe.
 
 ### Le SGID (`Set Group ID`) sur un dossier
 
-Quand `SGID` est activé sur un dossier, tous les nouveaux fichiers créés à l'intérieur **héritent automatiquement** du groupe du dossier.
+Quand `SGID` est activé sur un dossier, les nouveaux fichiers créés à l'intérieur **héritent automatiquement** du groupe du dossier.
 
-Regardons le dossier `shared_folder/`. Il appartient au groupe `equipe`.
+**Note importante :** Dans certains environnements sécurisés comme celui-ci, il peut être impossible de définir le bit SGID sur vos propres dossiers. Nous allons donc observer son effet sur un dossier système où il est déjà activé : `/var/mail`.
 
-`ls -ld shared_folder/`{{execute}}
+Regardons les permissions de `/var/mail`.
 
-Activons le `SGID` dessus. Nous allons utiliser le mode **octal**. Les permissions actuelles sont `775` (`rwxrwxr-x`). Le bit SGID a la valeur `2`. Nous allons donc appliquer `2775`.
+`ls -ld /var/mail`{{execute}}
 
-`chmod 2775 shared_folder/`{{execute}}
+Vous devriez voir quelque chose comme `drwxrwsr-x`. Le `s` à la place du `x` du groupe indique que le **SGID est actif**. Le groupe propriétaire est `mail`.
 
-Regardez les permissions. Le `x` du groupe est maintenant devenu un `s`.
+Maintenant, créons (avec `sudo`) un fichier test à l'intérieur.
 
-`ls -ld shared_folder/`{{execute}}
+`sudo touch /var/mail/test_sgid.txt`{{execute}}
 
-Maintenant, créez un fichier à l'intérieur.
+Inspectons le nouveau fichier.
 
-`touch shared_folder/mon_fichier_partage.txt`{{execute}}
-`ls -l shared_folder/mon_fichier_partage.txt`{{execute}}
+`sudo ls -l /var/mail/test_sgid.txt`{{execute}}
 
-Le nouveau fichier appartient bien au groupe **`equipe`** (hérité du dossier), et non à votre groupe primaire `learner` !
+**Révélation !** Bien que `root` ait créé le fichier, le groupe propriétaire est `mail`, hérité du dossier grâce au SGID ! C'est la preuve de l'héritage automatique. Nettoyons notre test.
+
+`sudo rm /var/mail/test_sgid.txt`{{execute}}
 
 ### Le Sticky Bit
 
 Le `Sticky Bit` protège un dossier où tout le monde peut écrire. Il empêche un utilisateur de supprimer les fichiers d'un autre. Le bit Sticky a la valeur octale `1`.
 
-Regardons les permissions de `public_space/`. Il est en `777`.
+Regardons les permissions de `public_space/`.
 
 `ls -ld public_space/`{{execute}}
 
-Activons le **Sticky Bit**. Nous allons appliquer `1777`.
+Activons le **Sticky Bit** en appliquant `1777`.
 
 `chmod 1777 public_space/`{{execute}}
 `ls -ld public_space/`{{execute}}
