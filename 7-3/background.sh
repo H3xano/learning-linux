@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
-# --- User and Banner Setup (proven to be reliable) ---
 if ! id learner &>/dev/null; then useradd -m -s /bin/bash learner; echo "learner ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/learner; chmod 440 /etc/sudoers.d/learner; fi
 touch /home/learner/.bash_history; chown learner:learner /home/learner/.bash_history; chmod 600 /home/learner/.bash_history
 grep -q 'Formip: realtime history' /home/learner/.bashrc || cat <<'RC' >> /home/learner/.bashrc
@@ -20,70 +18,66 @@ EOF
 chmod +x /tmp/banner.sh
 
 # --- CRITICAL LAB FILE SETUP ---
-# Cette partie est essentielle et doit réussir.
-
-# 1. Créer la structure de l'application
 mkdir -p /home/learner/mon_app
 echo "DB_PASSWORD=__DB_PASSWORD__" > /home/learner/mon_app/env.example
-# Le code PHP est rendu plus robuste pour l'étape de dépannage
 cat << 'PHP_EOF' > /home/learner/mon_app/index.php
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// Le @ supprime les avertissements si le fichier n'existe pas, on gère l'erreur nous-mêmes.
+error_reporting(E_ALL); ini_set('display_errors', 1);
 $config_loaded = @include_once __DIR__ . '/config.php';
-
 if ($config_loaded === false) {
     http_response_code(500);
     die("<h1>Erreur 500</h1><p>Impossible de charger config.php. Vérifiez le fichier et ses permissions.</p>");
 }
-
 echo "<h1>Bienvenue sur Mon App !</h1><p>Application principale chargée avec succès.</p>";
 PHP_EOF
-
 cat << 'PHP_CONFIG_EOF' > /home/learner/mon_app/config.php
 <?php
 $env_path = __DIR__ . '/.env';
-
 if (!is_readable($env_path)) {
-    // Ne pas utiliser die() ici pour permettre à Nginx de logger l'erreur PHP
     trigger_error("Le fichier de configuration (.env) est manquant ou illisible. Vérifiez les permissions !", E_USER_ERROR);
-    // On ne devrait jamais arriver ici si les erreurs sont bien configurées
     http_response_code(500);
     exit("Configuration error.");
 }
-
-// Le reste du code ne sera pas exécuté si le .env est illisible.
 PHP_CONFIG_EOF
-
-
-# 2. Créer l'archive correctement
-# -C /home/learner : se place dans ce dossier avant d'archiver
-# mon_app : archive le dossier mon_app qui s'y trouve
 tar -czf /home/learner/mon_app.tar.gz -C /home/learner mon_app
-
-# 3. Nettoyer le dossier source pour que l'étudiant doive l'extraire
 rm -rf /home/learner/mon_app
 
-# --- NON-CRITICAL ENVIRONMENT SETUP ---
-# Cette partie est pour le réalisme. On ajoute '|| true' pour que `set -e`
-# n'arrête pas le script si l'installation de Nginx/PHP échoue.
+# --- ENVIRONMENT SETUP (Best effort) ---
 echo "Préparation de l'environnement web (Nginx/PHP)..."
 (
     apt-get update >/dev/null && apt-get install -y nginx php-fpm >/dev/null
-    rm -f /var/www/html/index.nginx-debian.html /var/www/html/index.html
-    CONFIG_FILE="/etc/nginx/sites-available/default"
-    if [ -f "$CONFIG_FILE" ]; then
-        sed -i 's/index index.html index.htm index.nginx-debian.html;/index index.php index.html;/' "$CONFIG_FILE"
-        sed -i -E '/location ~ \\.php\$/,/}/s/^(\s*)#/\1/' "$CONFIG_FILE"
-    fi
+
+    # --- CORRECTION FINALE ET INFALLIBLE POUR NGINX ---
+    # On écrase la configuration par défaut avec une version connue et valide.
+    cat << 'NGINX_CONF' > /etc/nginx/sites-available/default
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.php index.html index.htm;
+
+    server_name _;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        # Assurez-vous que le socket correspond à votre version de PHP-FPM
+        fastcgi_pass unix:/run/php/php-fpm.sock;
+    }
+}
+NGINX_CONF
+
     systemctl restart nginx
     PHP_FPM_SERVICE=$(systemctl list-units --type=service | grep -o 'php[0-9]\.[0-9]-fpm\.service' | head -n 1)
-    [ -n "$PHP_FPM_SERVICE" ] && systemctl restart "$PHP_FPM_SERVICE"
-) || echo "Avertissement : La configuration de l'environnement web a rencontré des problèmes, mais les fichiers du lab sont prêts."
+    if [ -n "$PHP_FPM_SERVICE" ]; then
+        # Assurer que le socket PHP existe
+        sed -i 's|listen = /run/php/php.*-fpm.sock|listen = /run/php/php-fpm.sock|' /etc/php/*/fpm/pool.d/www.conf
+        systemctl restart "$PHP_FPM_SERVICE"
+    fi
+) || echo "Avertissement : La configuration de l'environnement web a rencontré des problèmes."
 
-
-# --- Final Ownership ---
-# S'assure que tout dans /home/learner appartient à l'utilisateur
 chown -R learner:learner /home/learner

@@ -4,10 +4,10 @@ Votre première mission est de déployer une application web simple. Une archive
 
 ### 1. Extraire et Positionner
 
-D'abord, extrayez l'archive et déplacez son contenu dans le répertoire racine du serveur web, `/var/www/html`.
+D'abord, extrayez l'archive. Cela créera un dossier `mon_app`. Ensuite, déplacez son contenu dans le répertoire racine du serveur web, `/var/www/html`.
 
 `tar -xzf mon_app.tar.gz`{{execute}}
-`sudo mv mon_app/. /var/www/html/`{{execute}}
+`sudo mv mon_app/* /var/www/html/`{{execute}}
 
 ---
 ### 2. Configurer et Sécuriser
@@ -31,3 +31,5 @@ Maintenant, appliquons les permissions standards pour un site web :
 
 Votre application est déployée ! Vérifions qu'elle fonctionne.
 `curl http://localhost`{{execute}}
+
+Qu'en pensez vous ?
