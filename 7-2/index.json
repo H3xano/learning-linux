@@ -1,0 +1,40 @@
+{
+  "title": "Le Cockpit de l'Administrateur Système",
+  "description": "Apprenez à utiliser les outils de surveillance temps réel, d'analyse de logs et de gestion de disque.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Le Tableau de Bord Principal (htop)",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Le Radar à Disque (iotop)",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "La Boîte Noire (Logs)",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Les Jauges d'Espace Disque (df/du)",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Construire son Dashboard",
+        "text": "step5/text.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
