@@ -1,26 +1,31 @@
-# 🧩 Étape 1 – Identifier son shell et son environnement
+# Étape 1 : Identifier son Shell
 
-Avant de plonger dans le diagnostic, découvrons **qui vous êtes** et **où vous êtes** dans le monde Linux.
+Le "terminal" n'est pas ce qui exécute vos commandes. C'est un programme appelé **shell** (coquille) qui joue le rôle d'interprète. Le plus courant est **Bash** (Bourne Again SHell).
 
-```bash
-echo $SHELL
-````
+### Quel est votre shell ?
 
-👉 Vous découvrez le **programme shell** que vous utilisez (souvent `/bin/bash`).
+Il existe plusieurs façons de le savoir. La plus simple est d'utiliser la variable d'environnement `$SHELL`.
 
-```bash
-ps -p $$
-```
+`echo $SHELL`{{execute}}
 
-👉 Cette commande montre le **processus courant** du shell.
-Elle confirme son nom exact et son PID.
+Le résultat, `/bin/bash`, vous confirme que vous utilisez bien Bash.
 
-Pour plus de contexte :
+### Quels autres shells sont disponibles ?
 
-```bash
-echo "Shell courant : $0"
-echo "Utilisateur : $USER"
-echo "Répertoire personnel : $HOME"
-```
+Votre système connaît plusieurs types de shells. Vous pouvez les lister en lisant le fichier `/etc/shells`.
 
-Vous venez d’identifier votre **environnement d’exécution**. C’est la base de tout bon diagnostic Linux. 🔍
+`cat /etc/shells`{{execute}}
+
+Vous voyez `sh` (l'ancêtre), `bash` (le standard), `dash` (un shell minimaliste), et peut-être `zsh` ou `fish` sur d'autres systèmes.
+
+### Changer de shell (temporairement)
+
+Vous pouvez lancer un autre shell à l'intérieur de votre shell actuel. Lançons `sh`, l'ancêtre de Bash.
+
+`sh`{{execute}}
+
+Votre prompt a peut-être changé ! Vous êtes maintenant dans un shell `sh`. Pour revenir à Bash, tapez simplement `exit`.
+
+`exit`{{execute}}
+
+Vous êtes de retour dans votre shell Bash familier.

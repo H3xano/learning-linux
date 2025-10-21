@@ -1,28 +1,26 @@
-# 🧩 Étape 3 – Identifier le type de session
+# Étape 3 : Analyser son Type de Session
 
-Tous les shells ne sont pas égaux. Découvrons votre **type de session**.
+Tous les shells ne sont pas créés égaux ! Linux fait la différence entre plusieurs types.
 
-```bash
-echo $0
-````
+### Session *Login* vs *Non-Login*
 
-👉 Si le nom commence par `-bash`, c’est un **login shell**.
-Sinon, c’est un **non-login shell** (typiquement un terminal graphique).
+-   **Login Shell** : Une session où vous vous authentifiez (ex: connexion SSH, console TTY). Elle charge `~/.bash_profile`.
+-   **Non-Login Shell** : Une session lancée depuis un environnement déjà connecté (ex: un terminal graphique). Elle charge `~/.bashrc`.
 
-```bash
-[[ $- == *i* ]] && echo "Shell interactif" || echo "Shell non-interactif"
-```
+Pour savoir dans quel type de session vous êtes, regardez le nom du processus shell.
 
-👉 Vous apprenez à distinguer un **shell interactif** d’un **script automatisé**.
+`echo $0`{{execute}}
 
-Enfin, testez la connexion :
+-   Si le résultat est `-bash` (avec un tiret), c'est un **login shell**.
+-   Si c'est `bash`, c'est un **non-login shell**.
 
-```bash
-if [ -n "$SSH_CLIENT" ]; then
-    echo "🌐 Session SSH détectée"
-else
-    echo "🏠 Session locale"
-fi
-```
+### Shell *Interactif* vs *Non-Interactif*
 
-Vous savez maintenant si vous êtes **chez vous** ou **connecté à distance** ! 🌍
+-   **Interactif** : Un shell avec un prompt, qui attend vos commandes.
+-   **Non-Interactif** : Un shell qui exécute un script et se termine.
+
+Le test le plus simple est de vérifier la variable spéciale `$-`.
+
+`[[ $- == *i* ]] && echo "Cette session est Interactive" || echo "Cette session est Non-Interactive"`{{execute}}
+
+Comme vous pouvez le voir, votre terminal est un shell **non-login** et **interactif**, la configuration la plus courante pour un poste de travail.

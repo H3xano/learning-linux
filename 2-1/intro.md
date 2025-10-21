@@ -1,37 +1,17 @@
 ![Formip](../assets/formip_logo_padded.png)
 
-Bienvenue dans ce nouveau lab de la série Linux ! 🐧  
-Dans ce module, vous allez apprendre à **analyser votre environnement shell** comme un vrai pro.  
-Plus qu’un simple terminal, le shell est un **écosystème complet** : il vous identifie, vous connecte, et configure votre univers numérique.
+Bienvenue dans la salle des machines du shell ! ⚙️
 
----
+Vous avez déjà tapé des commandes, mais vous êtes-vous déjà demandé qui les interprète ? Ou comment votre terminal sait qui vous êtes, où se trouve votre "maison" numérique, et où trouver les programmes que vous lancez ?
 
-## 🎯 Objectif
+Dans ce lab, nous allons explorer les fondations invisibles de votre environnement de travail. C'est en comprenant ces coulisses que l'on passe d'utilisateur à administrateur.
 
-Devenir capable de :
-- Identifier le shell et le type de session utilisés  
-- Comprendre les variables d’environnement essentielles  
-- Diagnostiquer les fichiers de configuration Bash  
-- Créer un **rapport d’audit complet** de votre environnement  
+Votre mission :
+1.  **Identifier votre Interprète** : Découvrir le **shell** (comme Bash) et son rôle.
+2.  **Lire votre Carte d'Identité** : Explorer les **variables d'environnement** fondamentales (`$USER`, `$HOME`, `$PATH`...).
+3.  **Analyser votre Session** : Comprendre la différence entre une session de connexion (login) et une session interactive.
+4.  **Devenir un Détective** : Utiliser des outils de **diagnostic** pour inspecter votre environnement en profondeur.
 
----
+À la fin de ce lab, les "magies" de Linux deviendront des mécanismes logiques que vous maîtriserez.
 
-## 🧭 Ce que vous allez explorer
-1️⃣ Identification du shell et des processus  
-2️⃣ Exploration des variables d’environnement  
-3️⃣ Détection du type de session (login, SSH, etc.)  
-4️⃣ Profil utilisateur complet  
-5️⃣ Fichiers de configuration Bash  
-6️⃣ Script de diagnostic automatique  
-7️⃣ Vérification de la santé du PATH  
-8️⃣ Activation du mode debug  
-9️⃣ Génération du rapport final  
-
----
-
-🧠 **Pré-requis :** Avoir suivi le lab “Carte de visite Linux”  
-🕓 **Durée estimée :** 30 à 40 minutes  
-💪 **Difficulté :** Intermédiaire  
-
-Préparez-vous à révéler les **secrets de votre environnement Linux**.  
-Votre mission : devenir le **docteur du shell**. 🩺🐧
+Prêt à explorer les secrets de votre propre session ? Allons-y ! 🚀

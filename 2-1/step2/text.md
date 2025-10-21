@@ -1,28 +1,26 @@
+# Étape 2 : Lire sa Carte d'Identité (Variables d'Environnement)
 
-# 🧩 Étape 2 – Explorer vos variables d’environnement
+Chaque session est définie par des **variables d'environnement**. Ce sont des informations que tous les programmes peuvent lire.
 
-Votre shell est rempli de **variables automatiques** : il sait qui vous êtes, où vous êtes, et comment agir.
+### Les variables fondamentales
 
-```bash
-env | head -20
-````
+-   `$USER` : Votre nom d'utilisateur.
+-   `$HOME` : Votre répertoire personnel.
+-   `$PWD` : Votre répertoire de travail actuel.
+-   `$PATH` : La liste des dossiers où le shell cherche les commandes. C'est la plus importante !
 
-👉 Vous voyez les 20 premières variables.
-Elles configurent votre langue, vos chemins, et même votre terminal.
+Affichons ces informations pour votre session.
 
-```bash
-echo "Mon domicile : $HOME"
-echo "Mon nom : $USER"
-echo "Mon PATH : $PATH"
-```
+`echo "Je suis $USER, mon dossier de base est $HOME et je me trouve actuellement dans $PWD"`{{execute}}
 
-👉 Le `$PATH` est le **GPS du shell** : il indique où Linux cherche les commandes.
+Maintenant, affichons le `$PATH` de manière plus lisible, avec un dossier par ligne.
 
-Pour explorer tout votre environnement :
+`echo $PATH | tr ':' '\n'`{{execute}}
 
-```bash
-set | less
-```
+Quand vous tapez `ls`, le shell cherche `ls` dans chacun de ces dossiers, dans l'ordre, jusqu'à ce qu'il le trouve.
 
-👉 `set` affiche toutes les variables, y compris celles invisibles pour `env`.
-Vous observez la **radiographie complète** de votre shell. 🩻
+### Voir toutes les variables
+
+Pour lister **toutes** les variables d'environnement de votre session, utilisez la commande `env`.
+
+`env`{{execute}}

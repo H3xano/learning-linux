@@ -1,35 +1,17 @@
 ![Formip](../assets/formip_logo_padded.png)
 
-# 🎉 Félicitations, mission accomplie !
+# 🏆 Mission Accomplie : Les Coulisses n'ont plus de secrets !
 
-Vous venez d’achever votre **diagnostic Shell ultime**. 🩺🐧  
-Ce lab vous a transformé en véritable **expert de l’environnement Linux**.
+Félicitations, détective du shell ! 🎉 Vous avez exploré les fondations de votre environnement Linux. Ce qui était invisible est maintenant clair.
 
----
+Vous avez acquis une compréhension profonde de :
+1. Le rôle du **shell** comme interprète entre vous et le système.
+2. Les **variables d'environnement** qui forment l'ADN de votre session.
+3. Les subtilités des **types de session** (login, non-login, interactif).
+4. Les **outils de diagnostic** pour inspecter n'importe quel environnement.
 
-## 🧭 Ce que vous avez accompli
-✅ Identifié votre **shell et vos processus**  
-✅ Exploré vos **variables d’environnement**  
-✅ Distingué les **types de sessions (login, non-login, SSH)**  
-✅ Compris la structure des **fichiers de configuration Bash**  
-✅ Créé un **script automatique de diagnostic**  
-✅ Vérifié la **santé du PATH et des variables**  
-✅ Activé le **mode debug** du shell  
-✅ Généré un **rapport complet et professionnel**  
+Cette connaissance est un véritable super-pouvoir. Elle vous permettra de comprendre pourquoi une commande fonctionne (ou pas), de personnaliser votre environnement de travail, et de déboguer des problèmes de configuration qui laissent les autres perplexes.
 
----
+La prochaine étape ? Apprendre à manipuler la syntaxe du shell pour devenir un véritable magicien de la ligne de commande !
 
-## 🧠 Ce que vous avez appris sans même vous en rendre compte
-- Le fonctionnement des **variables héritées** dans le shell  
-- L’impact des **types de sessions** sur les fichiers chargés  
-- L’usage du **mode trace** (`set -x`) pour le debugging  
-- Les **réflexes de diagnostic** d’un administrateur Linux  
-
----
-
-## 🚀 Et maintenant ?
-Vous êtes prêt à affronter les environnements Linux les plus complexes.  
-Votre prochain défi : **Section 2.2 – Syntaxe et possibilités du shell**,  
-où vous découvrirez la puissance des **pipes, redirections et métacaractères**. ⚙️
-
-Continuez à explorer, expérimenter, et surtout… **n'ayez pas peur du terminal !** 💻🔥
+Excellent travail ! 🐧✨

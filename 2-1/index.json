@@ -1,6 +1,6 @@
 {
-  "title": "Mon diagnostic Shell ultime",
-  "description": "Lab guidé pour analyser, comprendre et diagnostiquer son environnement shell comme un expert Linux.",
+  "title": "Lab 2.1 : ⚙️ Dans les Coulisses du Shell",
+  "description": "Explorez le rôle du shell, les variables d'environnement et les types de session.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -13,24 +13,24 @@
     },
     "steps": [
       {
-        "title": "Identifier son shell et son environnement",
-        "text": "step1/text.md"
+        "title": "Identifier son Shell",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       },
       {
-        "title": "Explorer les variables d’environnement",
-        "text": "step2/text.md"
+        "title": "Lire sa Carte d'Identité (Variables)",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
-        "title": "Identifier le type de session",
-        "text": "step3/text.md"
+        "title": "Analyser son Type de Session",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       },
       {
-        "title": "Décoder son profil utilisateur",
-        "text": "step4/text.md"
-      },
-      {
-        "title": "Inspecter les fichiers de configuration du shell",
-        "text": "step5/text.md"
+        "title": "Diagnostic d'Environnement",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
       }
     ],
     "finish": {
