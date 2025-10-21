@@ -16,7 +16,7 @@ echo; echo -e "${CYAN}$(line)${RESET}"; pad "${BOLD}${TITLE}${RESET}"; pad "${SU
 pad "${GREEN}Vous êtes prêt pour le Lab 6.3 : chmod et Permissions Spéciales !${RESET}"; echo
 EOF
 chmod +x /tmp/banner.sh
-apt-get update >/dev/null && apt-get install -y acl >/dev/null
+apt-get update >/dev/null && apt-get install -y acl build-essential >/dev/null
 
 # --- Lab 6.3 Specific File Setup ---
 echo '#!/bin/bash' > /home/learner/mon_script.sh
@@ -25,8 +25,6 @@ touch /home/learner/document.txt
 touch /home/learner/secret.txt
 mkdir /home/learner/shared_folder
 mkdir /home/learner/public_space
-echo '#!/bin/bash' > /home/learner/suid_script.sh
-echo 'whoami' >> /home/learner/suid_script.sh
 
 # Set general ownership first
 chown -R learner:learner /home/learner
@@ -37,15 +35,23 @@ chmod 644 /home/learner/document.txt
 chmod 644 /home/learner/secret.txt
 chmod 775 /home/learner/shared_folder
 chmod 777 /home/learner/public_space
-chmod 755 /home/learner/suid_script.sh
 
 # --- CORRECTIONS APPLIQUÉES ICI ---
-# Apply specific ownership and groups AFTER the general one
+# 1. For SUID, create and compile a C program
+cat << 'C_EOF' > /home/learner/suid_prog.c
+#include <stdio.h>
+#include <unistd.h>
+int main() {
+    printf("EUID: %d\n", geteuid());
+    printf("UID: %d\n", getuid());
+    return 0;
+}
+C_EOF
+gcc /home/learner/suid_prog.c -o /home/learner/suid_prog
+chmod 755 /home/learner/suid_prog
+chown root:root /home/learner/suid_prog
+
+# 2. For SGID, setup group and ownership correctly
 groupadd equipe 2>/dev/null || true
 usermod -aG equipe learner
-
-# 1. SUID script must be owned by root
-chown root:root /home/learner/suid_script.sh
-
-# 2. SGID folder must belong to the 'equipe' group
 chgrp equipe /home/learner/shared_folder
