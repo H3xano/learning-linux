@@ -10,11 +10,11 @@ Regardons le dossier `shared_folder/`. Il appartient au groupe `equipe`.
 
 `ls -ld shared_folder/`{{execute}}
 
-Activons le `SGID` dessus avec `g+s`.
+Activons le `SGID` dessus. Nous allons utiliser le mode **octal**. Les permissions actuelles sont `775` (`rwxrwxr-x`). Le bit SGID a la valeur `2`. Nous allons donc appliquer `2775`.
 
-`chmod g+s shared_folder/`{{execute}}
+`chmod 2775 shared_folder/`{{execute}}
 
-Regardez les permissions. Le `x` du groupe est devenu un `s`.
+Regardez les permissions. Le `x` du groupe est maintenant devenu un `s`.
 
 `ls -ld shared_folder/`{{execute}}
 
@@ -27,15 +27,15 @@ Le nouveau fichier appartient bien au groupe **`equipe`** (hérité du dossier),
 
 ### Le Sticky Bit
 
-Le `Sticky Bit` protège un dossier où tout le monde peut écrire (comme `/tmp`). Il empêche un utilisateur de supprimer les fichiers d'un autre.
+Le `Sticky Bit` protège un dossier où tout le monde peut écrire. Il empêche un utilisateur de supprimer les fichiers d'un autre. Le bit Sticky a la valeur octale `1`.
 
-Regardez les permissions de `public_space/`. Il est en `777`.
+Regardons les permissions de `public_space/`. Il est en `777`.
 
 `ls -ld public_space/`{{execute}}
 
-Activons le **Sticky Bit** avec `+t`.
+Activons le **Sticky Bit**. Nous allons appliquer `1777`.
 
-`chmod +t public_space/`{{execute}}
+`chmod 1777 public_space/`{{execute}}
 `ls -ld public_space/`{{execute}}
 
 Le dernier `x` est devenu un `t`. Maintenant, si un autre utilisateur créait un fichier ici, vous ne pourriez pas le supprimer.
