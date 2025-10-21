@@ -14,23 +14,28 @@
     "steps": [
       {
         "title": "Le Tableau de Bord Principal (htop)",
-        "text": "step1/text.md"
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       },
       {
         "title": "Le Radar à Disque (iotop)",
-        "text": "step2/text.md"
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
         "title": "La Boîte Noire (Logs)",
-        "text": "step3/text.md"
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       },
       {
         "title": "Les Jauges d'Espace Disque (df/du)",
-        "text": "step4/text.md"
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
       },
       {
         "title": "Construire son Dashboard",
-        "text": "step5/text.md"
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
       }
     ],
     "finish": {
