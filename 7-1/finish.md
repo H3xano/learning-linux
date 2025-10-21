@@ -1,3 +1,5 @@
+![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie : Vous êtes un Scripteur Bash !
 
 Félicitations, architecte ! 🎉 Vous avez assemblé toutes les pièces du puzzle. Vous ne vous contentez plus d'exécuter des commandes, vous les orchestrez.

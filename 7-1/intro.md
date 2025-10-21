@@ -1,4 +1,4 @@
-# 🐧 Lab 7.1 : Devenez un Architecte de l'Automatisation
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, architecte de l'automatisation ! 🛠️
 
