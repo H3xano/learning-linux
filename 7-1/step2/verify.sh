@@ -1,8 +1,10 @@
-# step2/verify.sh
 #!/bin/bash
 set -e
-if [ -f script_variables.sh ] && [ -x script_variables.sh ] && grep -q "DATE_JOUR" script_variables.sh; then
-    echo -n "done"
-else
-    exit 1
-fi
+FILES=("$HOME/.bash_history" "/home/learner/.bash_history")
+found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "$f" && return 0; done; return 1; }
+
+found 'nano script_variables.sh' || exit 1
+found 'chmod +x script_variables.sh' || exit 1
+found './script_variables.sh' || exit 1
+
+echo -n "done"

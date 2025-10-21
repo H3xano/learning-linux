@@ -1,8 +1,11 @@
-# step1/verify.sh
 #!/bin/bash
 set -e
-if [ -f premier_script.sh ] && [ -x premier_script.sh ]; then
-    echo -n "done"
-else
-    exit 1
-fi
+FILES=("$HOME/.bash_history" "/home/learner/.bash_history")
+found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "$f" && return 0; done; return 1; }
+
+# Vérifie que les 3 commandes essentielles ont été utilisées
+found 'nano premier_script.sh' || exit 1
+found 'chmod +x premier_script.sh' || exit 1
+found './premier_script.sh' || exit 1
+
+echo -n "done"
