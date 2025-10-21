@@ -1,4 +1,4 @@
-# 🐧 Lab 3.2 : Grep, le Détective de Texte
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, fin limier du terminal ! 🕵️‍♂️
 

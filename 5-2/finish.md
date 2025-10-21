@@ -1,3 +1,4 @@
+![Formip](../assets/formip_logo_padded.png)
 # 🏆 Mission Accomplie : Vous êtes le maître des flux !
 
 Excellent travail, plombier ! 🎉 Les tuyaux de Linux n'ont plus de secrets pour vous. Vous avez acquis l'une des compétences les plus fondamentales et puissantes de la ligne de commande.

@@ -1,4 +1,4 @@
-# 🐧 Lab 5.1 : La Bibliothèque Intégrée de Linux
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, apprenti sorcier ! 🧙‍♂️
 

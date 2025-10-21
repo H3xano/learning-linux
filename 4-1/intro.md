@@ -1,4 +1,4 @@
-# 🐧 Lab 4.1 : La Carte du Monde Linux (FHS)
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, explorateur de système ! 🗺️
 

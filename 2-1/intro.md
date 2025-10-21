@@ -1,7 +1,4 @@
-
 ![Formip](../assets/formip_logo_padded.png)
-
-# 🐚 Mon diagnostic Shell ultime
 
 Bienvenue dans ce nouveau lab de la série Linux ! 🐧  
 Dans ce module, vous allez apprendre à **analyser votre environnement shell** comme un vrai pro.  

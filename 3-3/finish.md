@@ -1,3 +1,4 @@
+![Formip](../assets/formip_logo_padded.png)
 # 🏆 Mission Accomplie : Vous Parlez le Regex !
 
 Félicitations ! 🎉 Vous venez de débloquer l'une des compétences les plus puissantes et les plus recherchées dans le monde de la tech.

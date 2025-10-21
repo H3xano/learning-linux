@@ -1,4 +1,4 @@
-# 🐧 Lab 3.4 : Les Éditeurs de Texte
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, chirurgien du texte ! ✏️
 

@@ -1,3 +1,4 @@
+![Formip](../assets/formip_logo_padded.png)
 # 🏆 Mission Accomplie : Aucun fichier ne vous échappe !
 
 Excellent travail, détective ! 🎉 Vous avez résolu l'affaire. La recherche de fichiers sous Linux n'a plus de secrets pour vous.

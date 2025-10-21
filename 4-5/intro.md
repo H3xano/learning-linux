@@ -1,4 +1,4 @@
-# 🐧 Lab 4.5 : Le Détective de Fichiers
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, détective du système de fichiers ! 🕵️‍♀️
 

@@ -1,3 +1,4 @@
+![Formip](../assets/formip_logo_padded.png)
 # 🏆 Mission Accomplie : Vous êtes un Maître de Grep !
 
 Excellent travail, détective ! Vous venez de résoudre l'énigme de l'analyse de texte. 🎉

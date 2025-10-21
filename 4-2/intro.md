@@ -1,4 +1,4 @@
-# 🐧 Lab 4.2 : L'Inspecteur de Fichiers
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, inspecteur du système de fichiers ! 🕵️
 

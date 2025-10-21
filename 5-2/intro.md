@@ -1,4 +1,4 @@
-# 🐧 Lab 5.2 : Le Plombier de la Ligne de Commande
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, plombier du shell ! 🔧
 

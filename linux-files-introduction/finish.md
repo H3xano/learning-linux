@@ -1,3 +1,4 @@
+![Formip](../assets/formip_logo_padded.png)
 
 <br>
 

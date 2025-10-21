@@ -1,4 +1,4 @@
-# 🐧 Lab 4.3 : Le GPS et le Téléporteur de Linux
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, navigateur de l'arborescence ! 🧭
 

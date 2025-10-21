@@ -1,4 +1,4 @@
-# 🐧 Lab 3.3 : Le Langage Secret des Motifs (Regex)
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, décrypteur de code ! 🔮
 

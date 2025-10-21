@@ -1,4 +1,4 @@
-# 🐧 Lab 4.4 : Le Chantiers du Système de Fichiers
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, architecte et ouvrier du système ! 🏗️
 
