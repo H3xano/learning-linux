@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
+# --- User and Banner Setup (proven to be reliable) ---
 if ! id learner &>/dev/null; then useradd -m -s /bin/bash learner; echo "learner ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/learner; chmod 440 /etc/sudoers.d/learner; fi
 touch /home/learner/.bash_history; chown learner:learner /home/learner/.bash_history; chmod 600 /home/learner/.bash_history
 grep -q 'Formip: realtime history' /home/learner/.bashrc || cat <<'RC' >> /home/learner/.bashrc
@@ -17,52 +19,71 @@ pad "${GREEN}Vous êtes prêt pour le Lab 7.3 : L'Admin Sys en Action !${RESET}"
 EOF
 chmod +x /tmp/banner.sh
 
-# --- Lab 7.3 Specific File Setup ---
-apt-get update >/dev/null && apt-get install -y nginx php-fpm >/dev/null || true
+# --- CRITICAL LAB FILE SETUP ---
+# Cette partie est essentielle et doit réussir.
 
-# --- CORRECTION FINALE ---
-# 1. Supprimer la page par défaut de Nginx pour éviter les conflits
-rm -f /var/www/html/index.nginx-debian.html /var/www/html/index.html
-
-# 2. Configurer Nginx pour PHP
-CONFIG_FILE="/etc/nginx/sites-available/default"
-if [ -f "$CONFIG_FILE" ]; then
-    sed -i 's/index index.html index.htm index.nginx-debian.html;/index index.php index.html;/' "$CONFIG_FILE"
-    # This block enables PHP processing
-    PHP_BLOCK_START=$(grep -n "location ~ \\\.php\$" "$CONFIG_FILE" | cut -d: -f1)
-    if [ -n "$PHP_BLOCK_START" ]; then
-        sed -i "${PHP_BLOCK_START},/}/ s/^#\s*//g" "$CONFIG_FILE"
-    fi
-fi
-systemctl restart nginx
-# Find the correct php-fpm service name and restart it
-PHP_FPM_SERVICE=$(systemctl list-units --type=service | grep -o 'php[0-9]\.[0-9]-fpm\.service' | head -n 1)
-if [ -n "$PHP_FPM_SERVICE" ]; then
-    systemctl restart "$PHP_FPM_SERVICE"
-fi
-
-# 3. Créer une application PHP plus robuste
-mkdir -p /tmp/source_app/mon_app
-echo "DB_PASSWORD=__DB_PASSWORD__" > /tmp/source_app/mon_app/env.example
-# This PHP code will throw a visible error if .env is unreadable
-cat << 'PHP_EOF' > /tmp/source_app/mon_app/index.php
+# 1. Créer la structure de l'application
+mkdir -p /home/learner/mon_app
+echo "DB_PASSWORD=__DB_PASSWORD__" > /home/learner/mon_app/env.example
+# Le code PHP est rendu plus robuste pour l'étape de dépannage
+cat << 'PHP_EOF' > /home/learner/mon_app/index.php
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// Le @ supprime les avertissements si le fichier n'existe pas, on gère l'erreur nous-mêmes.
+$config_loaded = @include_once __DIR__ . '/config.php';
+
+if ($config_loaded === false) {
+    http_response_code(500);
+    die("<h1>Erreur 500</h1><p>Impossible de charger config.php. Vérifiez le fichier et ses permissions.</p>");
+}
+
+echo "<h1>Bienvenue sur Mon App !</h1><p>Application principale chargée avec succès.</p>";
+PHP_EOF
+
+cat << 'PHP_CONFIG_EOF' > /home/learner/mon_app/config.php
+<?php
 $env_path = __DIR__ . '/.env';
 
 if (!is_readable($env_path)) {
+    // Ne pas utiliser die() ici pour permettre à Nginx de logger l'erreur PHP
+    trigger_error("Le fichier de configuration (.env) est manquant ou illisible. Vérifiez les permissions !", E_USER_ERROR);
+    // On ne devrait jamais arriver ici si les erreurs sont bien configurées
     http_response_code(500);
-    die("<h1>Erreur 500</h1><p>Le fichier de configuration (.env) est manquant ou illisible. Vérifiez les permissions !</p>");
+    exit("Configuration error.");
 }
 
-echo "<h1>Bienvenue sur Mon App !</h1><p>Configuration chargée avec succès.</p>";
-PHP_EOF
+// Le reste du code ne sera pas exécuté si le .env est illisible.
+PHP_CONFIG_EOF
 
-# 4. Créer l'archive correctement
-tar -czf /home/learner/mon_app.tar.gz -C /tmp/source_app mon_app
-rm -rf /tmp/source_app
 
-# 5. S'assurer que tous les fichiers appartiennent à l'utilisateur
+# 2. Créer l'archive correctement
+# -C /home/learner : se place dans ce dossier avant d'archiver
+# mon_app : archive le dossier mon_app qui s'y trouve
+tar -czf /home/learner/mon_app.tar.gz -C /home/learner mon_app
+
+# 3. Nettoyer le dossier source pour que l'étudiant doive l'extraire
+rm -rf /home/learner/mon_app
+
+# --- NON-CRITICAL ENVIRONMENT SETUP ---
+# Cette partie est pour le réalisme. On ajoute '|| true' pour que `set -e`
+# n'arrête pas le script si l'installation de Nginx/PHP échoue.
+echo "Préparation de l'environnement web (Nginx/PHP)..."
+(
+    apt-get update >/dev/null && apt-get install -y nginx php-fpm >/dev/null
+    rm -f /var/www/html/index.nginx-debian.html /var/www/html/index.html
+    CONFIG_FILE="/etc/nginx/sites-available/default"
+    if [ -f "$CONFIG_FILE" ]; then
+        sed -i 's/index index.html index.htm index.nginx-debian.html;/index index.php index.html;/' "$CONFIG_FILE"
+        sed -i -E '/location ~ \\.php\$/,/}/s/^(\s*)#/\1/' "$CONFIG_FILE"
+    fi
+    systemctl restart nginx
+    PHP_FPM_SERVICE=$(systemctl list-units --type=service | grep -o 'php[0-9]\.[0-9]-fpm\.service' | head -n 1)
+    [ -n "$PHP_FPM_SERVICE" ] && systemctl restart "$PHP_FPM_SERVICE"
+) || echo "Avertissement : La configuration de l'environnement web a rencontré des problèmes, mais les fichiers du lab sont prêts."
+
+
+# --- Final Ownership ---
+# S'assure que tout dans /home/learner appartient à l'utilisateur
 chown -R learner:learner /home/learner
