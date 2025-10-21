@@ -18,23 +18,23 @@ EOF
 chmod +x /tmp/banner.sh
 
 # --- Lab 7.3 Specific File Setup ---
-apt-get update >/dev/null && apt-get install -y nginx php-fpm >/dev/null
+# Simplification de l'installation pour éviter les erreurs
+apt-get update >/dev/null && apt-get install -y nginx php-fpm >/dev/null || true
 
-# Configure Nginx to work with PHP
-sed -i 's/index index.html index.htm index.nginx-debian.html;/index index.php index.html;/' /etc/nginx/sites-available/default
-sed -i '/location ~ \\.php$ {/s/^#//' /etc/nginx/sites-available/default
-sed -i '/include snippets\/fastcgi-php.conf;/s/^#//' /etc/nginx/sites-available/default
-sed -i '/fastcgi_pass unix:\/run\/php\/php-fpm.sock;/s/^#//' /etc/nginx/sites-available/default
-sed -i '/}/s/^#//' /etc/nginx/sites-available/default
-systemctl restart nginx
-systemctl restart php7.4-fpm || systemctl restart php8.1-fpm || true
+# --- CORRECTION FINALE : Méthode de création de l'archive 100% robuste ---
+# 1. Créer la structure source dans /tmp (zone sûre)
+mkdir -p /tmp/source_app/mon_app
+echo "DB_PASSWORD=__DB_PASSWORD__" > /tmp/source_app/mon_app/env.example
+echo "<?php echo '<h1>Bienvenue sur Mon App !</h1><p>Configuration chargée avec succès.</p>';" > /tmp/source_app/mon_app/index.php
+echo "<?php require_once __DIR__ . '/.env';" > /tmp/source_app/mon_app/config.php
 
-# Create a dummy web app
-mkdir -p /home/learner/mon_app
-echo "DB_PASSWORD=__DB_PASSWORD__" > /home/learner/mon_app/env.example
-echo "<?php echo '<h1>Bienvenue sur Mon App !</h1><p>Configuration chargée avec succès.</p>';" > /home/learner/mon_app/index.php
-echo "<?php require_once __DIR__ . '/.env';" > /home/learner/mon_app/config.php
+# 2. Créer l'archive à partir de cette source et la placer dans le home de l'utilisateur
+# -C /tmp/source_app : se place dans ce dossier avant d'archiver
+# mon_app : archive le dossier mon_app qui s'y trouve
+tar -czf /home/learner/mon_app.tar.gz -C /tmp/source_app mon_app
 
-tar -czf /home/learner/mon_app.tar.gz -C /home/learner mon_app
+# 3. Nettoyer la source temporaire
+rm -rf /tmp/source_app
 
+# 4. S'assurer que tous les fichiers dans /home/learner appartiennent bien à l'utilisateur
 chown -R learner:learner /home/learner
