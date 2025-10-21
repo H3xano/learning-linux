@@ -10,7 +10,7 @@ Essayons de le lancer normalement.
 
 `./suid_script.sh`{{execute}}
 
-Il affiche `learner`. Maintenant, l'administrateur va activer le bit **SUID**. En symbolique, c'est `u+s`. En octal, on ajoute `4` devant.
+Il affiche `learner`. Maintenant, l'administrateur va activer le bit **SUID**. En symbolique, c'est `u+s`.
 
 `sudo chmod u+s suid_script.sh`{{execute}}
 
@@ -22,4 +22,4 @@ Ré-exécutez le script.
 
 `./suid_script.sh`{{execute}}
 
-**Magique !** Il affiche `root`. Le script a été exécuté avec les droits de son propriétaire (`root`), pas avec les vôtres. C'est une élévation de privilèges temporaire et contrôlée.
+**Magique !** Il affiche maintenant `root`. Le script a été exécuté avec les droits de son propriétaire (`root`), pas avec les vôtres. C'est une élévation de privilèges temporaire et contrôlée.

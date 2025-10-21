@@ -21,28 +21,31 @@ apt-get update >/dev/null && apt-get install -y acl >/dev/null
 # --- Lab 6.3 Specific File Setup ---
 echo '#!/bin/bash' > /home/learner/mon_script.sh
 echo 'echo "Script exécuté !"' >> /home/learner/mon_script.sh
-chmod 644 /home/learner/mon_script.sh
-
 touch /home/learner/document.txt
-chmod 644 /home/learner/document.txt
-
 touch /home/learner/secret.txt
-chmod 644 /home/learner/secret.txt
-
-# For SUID/SGID step
+mkdir /home/learner/shared_folder
+mkdir /home/learner/public_space
 echo '#!/bin/bash' > /home/learner/suid_script.sh
 echo 'whoami' >> /home/learner/suid_script.sh
-chown root:root /home/learner/suid_script.sh
+
+# Set general ownership first
+chown -R learner:learner /home/learner
+
+# Set default permissions after ownership is set
+chmod 644 /home/learner/mon_script.sh
+chmod 644 /home/learner/document.txt
+chmod 644 /home/learner/secret.txt
+chmod 775 /home/learner/shared_folder
+chmod 777 /home/learner/public_space
 chmod 755 /home/learner/suid_script.sh
 
-# For SGID/Sticky Bit step
+# --- CORRECTIONS APPLIQUÉES ICI ---
+# Apply specific ownership and groups AFTER the general one
 groupadd equipe 2>/dev/null || true
 usermod -aG equipe learner
-mkdir /home/learner/shared_folder
-chown learner:equipe /home/learner/shared_folder
-chmod 775 /home/learner/shared_folder
 
-mkdir /home/learner/public_space
-chmod 777 /home/learner/public_space
+# 1. SUID script must be owned by root
+chown root:root /home/learner/suid_script.sh
 
-chown -R learner:learner /home/learner
+# 2. SGID folder must belong to the 'equipe' group
+chgrp equipe /home/learner/shared_folder
