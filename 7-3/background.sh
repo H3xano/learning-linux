@@ -34,6 +34,7 @@ mkdir -p /home/learner/mon_app
 echo "DB_PASSWORD=__DB_PASSWORD__" > /home/learner/mon_app/env.example
 echo "<?php echo '<h1>Bienvenue sur Mon App !</h1><p>Configuration chargée avec succès.</p>';" > /home/learner/mon_app/index.php
 echo "<?php require_once __DIR__ . '/.env';" > /home/learner/mon_app/config.php
-tar -czf /home/learner/mon_app.tar.gz -C /home/learner/mon_app .
+
+tar -czf /home/learner/mon_app.tar.gz -C /home/learner mon_app
 
 chown -R learner:learner /home/learner
