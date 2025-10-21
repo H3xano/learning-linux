@@ -14,7 +14,7 @@ Impossible de voir le début, n'est-ce pas ?
 
 ### `less` à la rescousse !
 
-Maintenant, utilisons `less`. **Attention : `less` est interactif !** Vous devrez utiliser les touches du clavier pour naviguer.
+Maintenant, utilisons `less`. **Attention : `less` est interactif !** Vous devrez utiliser les touches du clavier pour naviguer. less va prendre le contrôle de votre terminal (votre prompt va disparaître). N'oubliez pas que vous pouvez toujours en sortir en appuyant sur q pour retrouver votre prompt !
 
 Tapez la commande suivante dans votre terminal :
 `less long_log.txt`
