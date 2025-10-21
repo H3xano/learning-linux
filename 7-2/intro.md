@@ -1,4 +1,4 @@
-# 🐧 Lab 7.2 : Le Cockpit de l'Administrateur Système
+![Formip](../assets/formip_logo_padded.png)
 
 Bienvenue, pilote de serveur ! ✈️
 

@@ -1,3 +1,5 @@
+![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie : Vous êtes aux commandes !
 
 Félicitations, pilote ! 🎉 Vous avez réussi votre vol d'essai. Les instruments de surveillance de Linux n'ont plus de secrets pour vous.

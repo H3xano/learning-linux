@@ -1,5 +1,5 @@
 {
-  "title": "Le Cockpit de l'Administrateur Système",
+  "title": "🐧 Lab 7.2 : Le Cockpit de l'Administrateur Système",
   "description": "Apprenez à utiliser les outils de surveillance temps réel, d'analyse de logs et de gestion de disque.",
   "backend": {
     "imageid": "ubuntu",
