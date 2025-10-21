@@ -12,7 +12,7 @@ Maintenant, essayez d'accéder au site.
 
 `curl http://localhost`{{execute}}
 
-**Erreur 500 !** Le site est en panne. Pas de panique, suivons la méthodologie de diagnostic.
+**Erreur 500 !** Le site est en panne et affiche un message clair. Pas de panique, suivons la méthodologie de diagnostic.
 
 ---
 ### 2. Le Diagnostic
@@ -25,10 +25,10 @@ Nginx est `active (running)`. Le problème ne vient donc pas du service lui-mêm
 `sudo tail -n 20 /var/log/nginx/error.log`{{execute}}
 
 Vous devriez voir une ligne critique, du genre :
-`PHP message: PHP Fatal error: ... failed to open stream: Permission denied in /var/www/html/config.php`
+`PHP Warning: is_readable(): open_basedir restriction in effect. File(/.env) is not within the allowed path(s): (/var/www/html)` ou une erreur PHP indiquant un problème de lecture.
 
 **c) Identifier la cause :**
-"Permission denied" sur un fichier de configuration. Vérifions les permissions.
+L'erreur pointe vers un problème de lecture du fichier `.env`. Vérifions ses permissions.
 `sudo ls -l /var/www/html/.env`{{execute}}
 
 Bingo ! Les permissions sont `---------` (000). Personne ne peut lire le fichier, pas même le serveur web !

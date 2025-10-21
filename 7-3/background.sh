@@ -18,23 +18,51 @@ EOF
 chmod +x /tmp/banner.sh
 
 # --- Lab 7.3 Specific File Setup ---
-# Simplification de l'installation pour éviter les erreurs
 apt-get update >/dev/null && apt-get install -y nginx php-fpm >/dev/null || true
 
-# --- CORRECTION FINALE : Méthode de création de l'archive 100% robuste ---
-# 1. Créer la structure source dans /tmp (zone sûre)
+# --- CORRECTION FINALE ---
+# 1. Supprimer la page par défaut de Nginx pour éviter les conflits
+rm -f /var/www/html/index.nginx-debian.html /var/www/html/index.html
+
+# 2. Configurer Nginx pour PHP
+CONFIG_FILE="/etc/nginx/sites-available/default"
+if [ -f "$CONFIG_FILE" ]; then
+    sed -i 's/index index.html index.htm index.nginx-debian.html;/index index.php index.html;/' "$CONFIG_FILE"
+    # This block enables PHP processing
+    PHP_BLOCK_START=$(grep -n "location ~ \\\.php\$" "$CONFIG_FILE" | cut -d: -f1)
+    if [ -n "$PHP_BLOCK_START" ]; then
+        sed -i "${PHP_BLOCK_START},/}/ s/^#\s*//g" "$CONFIG_FILE"
+    fi
+fi
+systemctl restart nginx
+# Find the correct php-fpm service name and restart it
+PHP_FPM_SERVICE=$(systemctl list-units --type=service | grep -o 'php[0-9]\.[0-9]-fpm\.service' | head -n 1)
+if [ -n "$PHP_FPM_SERVICE" ]; then
+    systemctl restart "$PHP_FPM_SERVICE"
+fi
+
+# 3. Créer une application PHP plus robuste
 mkdir -p /tmp/source_app/mon_app
 echo "DB_PASSWORD=__DB_PASSWORD__" > /tmp/source_app/mon_app/env.example
-echo "<?php echo '<h1>Bienvenue sur Mon App !</h1><p>Configuration chargée avec succès.</p>';" > /tmp/source_app/mon_app/index.php
-echo "<?php require_once __DIR__ . '/.env';" > /tmp/source_app/mon_app/config.php
+# This PHP code will throw a visible error if .env is unreadable
+cat << 'PHP_EOF' > /tmp/source_app/mon_app/index.php
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-# 2. Créer l'archive à partir de cette source et la placer dans le home de l'utilisateur
-# -C /tmp/source_app : se place dans ce dossier avant d'archiver
-# mon_app : archive le dossier mon_app qui s'y trouve
+$env_path = __DIR__ . '/.env';
+
+if (!is_readable($env_path)) {
+    http_response_code(500);
+    die("<h1>Erreur 500</h1><p>Le fichier de configuration (.env) est manquant ou illisible. Vérifiez les permissions !</p>");
+}
+
+echo "<h1>Bienvenue sur Mon App !</h1><p>Configuration chargée avec succès.</p>";
+PHP_EOF
+
+# 4. Créer l'archive correctement
 tar -czf /home/learner/mon_app.tar.gz -C /tmp/source_app mon_app
-
-# 3. Nettoyer la source temporaire
 rm -rf /tmp/source_app
 
-# 4. S'assurer que tous les fichiers dans /home/learner appartiennent bien à l'utilisateur
+# 5. S'assurer que tous les fichiers appartiennent à l'utilisateur
 chown -R learner:learner /home/learner
