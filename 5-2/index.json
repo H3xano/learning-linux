@@ -1,5 +1,5 @@
 {
-  "title": "Le Plombier de la Ligne de Commande",
+  "title": "Lab 5.2: 🪠 Le Plombier des Données (Flux & Pipes)",
   "description": "Maîtrisez les flux, les redirections et les pipes pour contrôler les données.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,27 +13,27 @@
     },
     "steps": [
       {
-        "title": "Les 3 flux en action",
+        "title": "Identifier les Canalisations : Entrée, Sortie et Fuites",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Contrôler la sortie normale (stdout)",
+        "title": "Remplir le Seau (>) et Compléter le Niveau (>>)",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Contrôler les erreurs (stderr)",
+        "title": "Gérer les Fuites (2>) et le Tout-à-l'Égout (2>&1)",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "La magie des pipes",
+        "title": "Les Raccords Magiques : Connecter les Outils avec le Pipe |",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Outils avancés: tee et /dev/null",
+        "title": "La Vanne en T (`tee`) et le Trou Noir (`/dev/null`)",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }

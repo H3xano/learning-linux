@@ -1,5 +1,5 @@
 {
-  "title": "Création et Modification de Fichiers",
+  "title": "Lab 4.4: 🏗️ L'Architecte de Fichiers",
   "description": "Apprenez à construire et manipuler l'arborescence avec mkdir, touch, cp, mv et rm.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,22 +13,22 @@
     },
     "steps": [
       {
-        "title": "Construction avec `mkdir` et `touch`",
+        "title": "Poser les Fondations : mkdir et touch",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Duplication avec `cp`",
+        "title": "La Photocopieuse Intelligente : Maîtriser cp",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Réorganisation avec `mv`",
+        "title": "Déménager et Renommer : la Double Vie de mv",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Suppression avec `rm` (sécurité)",
+        "title": "Le Bulldozer `rm` : Démolir en Toute Sécurité",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

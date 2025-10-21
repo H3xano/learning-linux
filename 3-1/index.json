@@ -1,5 +1,5 @@
 {
-  "title": "L'Art de Lire les Fichiers",
+  "title": "Lab 3.1: 📖 L'Art de Lire les Fichiers",
   "description": "De 'cat' à 'tail -f', maîtrisez l'affichage et la surveillance de fichiers.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,22 +13,22 @@
     },
     "steps": [
       {
-        "title": "Affichage brut avec `cat`",
+        "title": "La Lecture Intégrale (cat)",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Navigation avec `less`",
+        "title": "La Lecture Intelligente (less)",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Extraction avec `head` et `tail`",
+        "title": "Le Début et la Fin (head, tail)",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Surveillance en direct avec `tail -f`",
+        "title": "L'Œil en Temps Réel (tail -f)",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

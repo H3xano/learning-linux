@@ -1,5 +1,5 @@
 {
-  "title": "🐧 Lab 5.4 : Les Portails Magiques de Linux",
+  "title": "Lab 5.4: 🔗 Les Portails Magiques de Linux",
   "description": "Maîtrisez les inodes, les liens durs et les liens symboliques.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,22 +13,22 @@
     },
     "steps": [
       {
-        "title": "Le Fondement: Inodes et Liens Durs",
+        "title": "Le Secret des Inodes et les Liens Jumeaux",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Le Portail: Liens Symboliques",
+        "title": "Le Raccourci Flexible : Créer un Portail Symbolique",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Le Piège des Chemins Relatifs",
+        "title": "Le Portail Brisable : Le Piège du Chemin Relatif",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Gestion et Dépannage des Liens",
+        "title": "L'Inspecteur des Portails : Diagnostiquer et Réparer",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

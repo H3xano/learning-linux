@@ -1,5 +1,5 @@
 {
-  "title": "🐧 Lab 6.1 : Les Clés du Royaume",
+  "title": "Lab 6.1: 🛡️ Le Code des Droits (Lire les Permissions)",
   "description": "Apprenez à déchiffrer le système de permissions de Linux.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,27 +13,27 @@
     },
     "steps": [
       {
-        "title": "Étape 1 : Les Bases Visuelles - `ls -l` et les Types de Fichiers",
+        "title": "Le Plan d'Architecte : Lire la Ligne de Permissions",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Étape 2 : Le Langage des Permissions - Symbolique (`rwx`) et Octal (`755`)",
+        "title": "Les Deux Faces de la Clé : Symbolique et Octal",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Étape 3 : L'Algorithme de Décision et `umask`",
+        "title": "La Loi du Royaume : L'Ordre des Permissions",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Étape 4 : La Vue de l'Expert - `stat`",
+        "title": "La Loupe du Maître-Gardien : L'Analyse avec `stat`",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Étape 5 : Détecter les Permissions Spéciales (ACL)",
+        "title": "Le Passage Secret : Détecter le `+` des ACL",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }

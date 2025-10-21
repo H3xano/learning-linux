@@ -1,5 +1,5 @@
 {
-  "title": "🐧 Lab 6.3 : Le Couteau Suisse des Permissions",
+  "title": "Lab 6.3: 🔒 Le Gardien des Accès (chmod & umask)",
   "description": "Apprenez à modifier les permissions, à utiliser les droits spéciaux et à configurer umask.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,27 +13,27 @@
     },
     "steps": [
       {
-        "title": "Le Mode Symbolique",
+        "title": "Sculpter les Droits : Le Langage Symbolique (+, -, =)",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Le Mode Octal",
+        "title": "Le Code Maître : La Puissance de l'Octal (755, 600)",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "SUID et SGID (Exécution)",
+        "title": "L'Emprunt d'Identité : Le Super-Pouvoir du SUID",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "SGID et Sticky Bit (Dossiers)",
+        "title": "La Salle du Conseil (SGID) et le Coffre-Fort Public (Sticky Bit)",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "La Sécurité par Défaut (`umask`)",
+        "title": "La Règle du Gardien : Maîtriser `umask`",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }

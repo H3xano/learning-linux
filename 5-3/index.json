@@ -1,5 +1,5 @@
 {
-  "title": "🐧 Lab 5.3 : L'Espion du Système",
+  "title": "Lab 5.3: 🕵️ L'Espion du Système",
   "description": "Apprenez à surveiller les utilisateurs et les processus sur votre machine Linux.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,22 +13,22 @@
     },
     "steps": [
       {
-        "title": "Votre Identité et Environnement",
+        "title": "Établir sa Couverture : L'ADN de la Session",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Qui est Connecté ?",
+        "title": "Filature en Direct et Archives : `who`, `w`, `last`",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Voir Tous les Processus",
+        "title": "Le Radar à 360° : La Vue Complète avec `ps aux`",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Filtrer les Processus",
+        "title": "Isoler la Cible dans la Foule : `ps` | `grep`",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

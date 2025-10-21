@@ -1,5 +1,5 @@
 {
-  "title": "🐧 Lab 7.1 : L'architecte de l'Automatisation",
+  "title": "Lab 7.1: 🤖 Mon Premier Automate (Scripts Bash)",
   "description": "Apprenez les bases du scripting Bash pour automatiser vos tâches.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,27 +13,27 @@
     },
     "steps": [
       {
-        "title": "Votre Premier Script",
+        "title": "La Première Pierre : Du Plan (`nano`) à l'Exécution (`./`)",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "La Mémoire du Script (Variables)",
+        "title": "Donner une Mémoire au Script : Les Variables",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Les Scripts Polyvalents (Paramètres)",
+        "title": "Le Panneau de Contrôle : Rendre les Scripts Flexibles",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "L'Intelligence du Script (Conditions)",
+        "title": "Le Cerveau du Robot : Prendre des Décisions avec `if`",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "La Puissance de la Répétition (Boucles)",
+        "title": "La Chaîne de Montage : Répéter les Tâches avec les Boucles `for`",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }

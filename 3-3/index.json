@@ -1,5 +1,5 @@
 {
-  "title": "Regex : Le Langage des Motifs",
+  "title": "Lab 3.3: 🧩 Parlez le Langage des Motifs (Regex)",
   "description": "Devenez un expert de la recherche de motifs avec les expressions régulières.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,17 +13,17 @@
     },
     "steps": [
       {
-        "title": "Les métacaractères de base",
+        "title": "Le Joker et les Quantificateurs : ?, *, +",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Classes et ancrage",
+        "title": "La Précision du Scalpel : Classes et Ancres",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Quantificateurs et groupes",
+        "title": "L'Arsenal de l'Expert : Groupes et Échappement",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       }

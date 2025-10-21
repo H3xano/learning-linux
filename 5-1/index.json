@@ -1,5 +1,5 @@
 {
-  "title": "La Bibliothèque Intégrée de Linux",
+  "title": "Lab 5.1: 📚 Le Grimoire Intégré (man & info)",
   "description": "Apprenez à vous documenter en autonomie avec man, apropos et info.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,17 +13,17 @@
     },
     "steps": [
       {
-        "title": "Le système `man` et ses 9 sections",
+        "title": "Ouvrir le Grimoire : `man` et ses 9 Chapitres",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Navigation et recherche",
+        "title": "Le Sortilège 'apropos' et l'Art de la Recherche",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Info, la documentation avancée",
+        "title": "Les Parchemins Enchantés de `info`",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       }
@@ -33,6 +33,6 @@
     }
   },
   "environment": {
-      "uilayout": "terminal-terminal"
+    "uilayout": "terminal-terminal"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "title": "Grep, le Détective de Texte",
+  "title": "Lab 3.2: 🕵️ Grep, le Détective Textuel",
   "description": "Apprenez à filtrer et extraire des informations avec la puissance de grep.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,22 +13,22 @@
     },
     "steps": [
       {
-        "title": "Votre première enquête",
+        "title": "La Première Piste : Filtrer le Bruit",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Les options magiques",
+        "title": "Les Gadgets de l'Inspecteur : -i, -v, -n, -c",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Chercher à grande échelle",
+        "title": "Le Grand Ratissage : Chercher Partout à la Fois",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Le grep visuel",
+        "title": "Mettre en Lumière : Couleur et Contexte",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

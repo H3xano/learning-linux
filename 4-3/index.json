@@ -1,5 +1,5 @@
 {
-  "title": "Le GPS et le Téléporteur de Linux",
+  "title": "Lab 4.3: 🧭 Le GPS et le Téléporteur",
   "description": "Maîtrisez la navigation dans l'arborescence avec pwd, cd et le PATH.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,22 +13,22 @@
     },
     "steps": [
       {
-        "title": "Se repérer et se déplacer",
+        "title": "Où Suis-je ? (`pwd`) et Comment y Aller ? (`cd`)",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Les raccourcis de navigation",
+        "title": "La Boîte à Outils du Voyageur : `..`, `~`, et `-`",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Chemins Absolus vs Relatifs",
+        "title": "L'Adresse GPS (Absolu) vs. les Indications Locales (Relatif)",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Le secret du $PATH",
+        "title": "L'Annuaire Secret des Commandes ($PATH) et le Piège du './'",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

@@ -1,5 +1,5 @@
 {
-  "title": "Les Éditeurs de Texte",
+  "title": "Lab 3.4: ✍️ Au Cœur des Fichiers (Nano & Vim)",
   "description": "Apprenez à éditer des fichiers avec la simplicité de nano et la puissance de vim.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,21 +13,21 @@
     },
     "steps": [
       {
-        "title": "Nano - L'éditeur simple et sûr",
+        "title": "Nano : Le Couteau Suisse de l'Édition",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Vim (Partie 1) - Le Choc des Modes",
+        "title": "Vim, Premier Contact : Le Choc des Modes",
         "text": "step2/text.md"
       },
       {
-        "title": "Vim (Partie 2) - L'Art de S'échapper",
+        "title": "Vim, La Sortie de Secours : L'Art de Quitter",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Vim (Partie 3) - La Puissance du Mode Normal",
+        "title": "Vim, La Valse des Lignes : dd, yy, p",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

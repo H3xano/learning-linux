@@ -1,5 +1,5 @@
 {
-  "title": "🐧 Lab 6.2 : Le Maître des Propriétés",
+  "title": "Lab 6.2: 🔄 Changement de Propriétaire (chown & chgrp)",
   "description": "Apprenez à gérer la propriété des fichiers et des groupes avec chown et chgrp.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,27 +13,27 @@
     },
     "steps": [
       {
-        "title": "Étape 1 : Diagnostiquer la Propriété",
+        "title": "Lire le Titre de Propriété : `ls -l` et `id`",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Étape 2 : Transférer avec `chown`",
+        "title": "Le Sceau de `chown` : Transférer la Propriété",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Étape 3 : Partager avec `chgrp`",
+        "title": "La Copropriété : Partager avec une Équipe via `chgrp`",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Étape 4 : Changements Récursifs (`-R`)",
+        "title": "L'Effet Domino : L'Option `-R` pour Tout Changer",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Étape 5 : Scénario Réel - Réparer un Projet",
+        "title": "Sauvetage Foncier : Réclamer un Projet Orphelin",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }

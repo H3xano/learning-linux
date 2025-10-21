@@ -1,5 +1,5 @@
 {
-  "title": "Le Détective de Fichiers",
+  "title": "Lab 4.5: 🐕 Le Limier du Système (find & locate)",
   "description": "Apprenez à maîtriser les outils de recherche de Linux : find, locate, which et whereis.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,22 +13,22 @@
     },
     "steps": [
       {
-        "title": "Find - La recherche par nom",
+        "title": "La Piste du Nom : Traquer par l'Identité",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Find - La recherche par attributs",
+        "title": "L'Analyse Forensique : Taille, Date et Preuves",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Locate - La recherche instantanée",
+        "title": "L'Informateur Express : La Vitesse de `locate`",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Which et Whereis - Retrouver ses commandes",
+        "title": "Retrouver son Équipement : `which` et `whereis`",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

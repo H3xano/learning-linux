@@ -1,5 +1,5 @@
 {
-  "title": "🐧 Lab 7.3 : L'Administrateur Système en Action",
+  "title": "Lab 7.3: 🇨🇭🛠️ Le Couteau Suisse de l'Admin Sys",
   "description": "Un cas pratique complet : déployer, gérer, sauvegarder et dépanner une application web.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,27 +13,27 @@
     },
     "steps": [
       {
-        "title": "Déploiement et Configuration",
+        "title": "La Mise en Production : Déployer et Sécuriser l'Application",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Gestion du Service Web",
+        "title": "Piloter le Moteur : Maîtriser Nginx avec `systemctl`",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Analyse des Logs",
+        "title": "Écouter le Pouls du Serveur : L'Art de l'Analyse des Logs",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Sauvegarde Automatisée",
+        "title": "Le Filet de Sécurité : Créer un Script de Sauvegarde Robuste",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Le Baptême du Feu (Dépannage)",
+        "title": "Le Baptême du Feu : Diagnostiquer et Réparer la Panne",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }

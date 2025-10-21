@@ -1,5 +1,5 @@
 {
-  "title": "L'Inspecteur de Fichiers",
+  "title": "Lab 4.2: 🕵️ L'Inspecteur de Fichiers",
   "description": "Analysez, identifiez et gérez vos fichiers et votre espace disque comme un pro.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,22 +13,22 @@
     },
     "steps": [
       {
-        "title": "La puissance de `ls`",
+        "title": "Le Scanner à Rayons X : `ls` en Mode Expert",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Révéler l'identité avec `file` et `stat`",
+        "title": "L'Analyse ADN du Fichier : `file` et `stat`",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Traquer l'espace disque avec `df` et `du`",
+        "title": "Les Experts-Comptables du Disque : `df` et `du`",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Comprendre les liens avec `ln`",
+        "title": "Les Jumeaux et les Raccourcis : Liens Durs vs Symboliques",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

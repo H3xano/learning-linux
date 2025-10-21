@@ -1,5 +1,5 @@
 {
-  "title": "La Carte du Monde Linux (FHS)",
+  "title": "Lab 4.1: 🗺️ La Carte du Monde Linux (FHS)",
   "description": "Explorez la structure des fichiers de Linux pour savoir où tout se trouve.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,22 +13,22 @@
     },
     "steps": [
       {
-        "title": "Le Cœur du Système",
+        "title": "Le Quartier Gouvernemental : Commandes et Configurations",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Les Territoires des Utilisateurs",
+        "title": "Les Zones Résidentielles : Du Foyer au Penthouse de Root",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Applications et Données",
+        "title": "La Zone d'Activité : Applications et Entrepôts de Données",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Le Secret du $PATH",
+        "title": "Le GPS du Shell : Le Secret de la Variable $PATH",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }
