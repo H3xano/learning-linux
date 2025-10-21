@@ -25,7 +25,7 @@ Nginx est `active (running)`. Le problème ne vient donc pas du service lui-mêm
 `sudo tail -n 20 /var/log/nginx/error.log`{{execute}}
 
 Vous devriez voir une ligne critique, du genre :
-`PHP Warning: is_readable(): open_basedir restriction in effect. File(/.env) is not within the allowed path(s): (/var/www/html)` ou une erreur PHP indiquant un problème de lecture.
+`PHP message: PHP Fatal error ...`  ou une erreur PHP indiquant un problème de lecture.
 
 **c) Identifier la cause :**
 L'erreur pointe vers un problème de lecture du fichier `.env`. Vérifions ses permissions.
