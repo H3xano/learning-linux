@@ -1,0 +1,45 @@
+{
+  "title": "🐧 Lab 7.3 : L'Administrateur Système en Action",
+  "description": "Un cas pratique complet : déployer, gérer, sauvegarder et dépanner une application web.",
+  "backend": {
+    "imageid": "ubuntu",
+    "user": "learner"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Déploiement et Configuration",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Gestion du Service Web",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Analyse des Logs",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Sauvegarde Automatisée",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Le Baptême du Feu (Dépannage)",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
