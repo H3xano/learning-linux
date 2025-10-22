@@ -1,5 +1,5 @@
 {
-  "title": "Lab 2.4 : Personnalisez Votre Cockpit Bash",
+  "title": "Lab 2.4: 🎨 Façonnez Votre Environnement",
   "description": "Apprenez à configurer votre shell avec des alias, un prompt personnalisé et des options intelligentes.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,21 +13,22 @@
     },
     "steps": [
       {
-        "title": "Les Fichiers de Configuration",
-        "text": "step1/text.md"
+        "title": "La Salle des Machines : Le Cœur du Réacteur (`.bashrc`)",
+        "text": "step1/text.md",
+        "verify": "step2/verify.sh"
       },
       {
-        "title": "Alias et Variables Personnalisées",
+        "title": "Le Pilote Automatique : Créer des Alias et des Raccourcis",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Le Prompt du Pro (PS1)",
+        "title": "L'Affichage Tête Haute : Personnaliser son Prompt (PS1)",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Le Shell Intelligent",
+        "title": "L'Assistance au Pilotage : Un Shell qui Corrige vos Erreurs",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }
