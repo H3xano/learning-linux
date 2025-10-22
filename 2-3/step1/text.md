@@ -1,35 +1,43 @@
-# 👑 Étape 1 — Racines du pouvoir : root & UID 0
+# Étape 1 : Le Pouvoir Absolu de `root` avec `su`
 
-Dans l’univers Linux, le véritable sésame n’est pas le nom de l’utilisateur, mais son **UID** (User ID). Celui qui porte l’UID **0** détient tous les privilèges : c’est `root`.
+L'utilisateur `root` (UID 0) a tous les droits sur le système. La commande traditionnelle pour devenir `root` est `su` (**s**ubstitute **u**ser).
 
-Commence par vérifier sous quelle identité tu travailles :
-```bash
-whoami
-```
-Tu dois voir s’afficher ton nom d’utilisateur courant. Cela confirme depuis quel compte tu découvres les commandes suivantes.
+### Le Piège du `su` simple
 
-Demande ensuite plus de détails sur ton profil :
-```bash
-id
-```
-Observe la partie `uid=…`. Si la valeur est différente de `0`, tu n’es pas root, ce qui est normal sur un poste de travail sécurisé.
+Essayons `su` sans argument. Le mot de passe pour cet environnement est `killercoda`.
 
-À présent, regarde comment le système décrit l’utilisateur root :
-```bash
-id root
-```
-Tu devrais obtenir une ligne indiquant `uid=0(root)`. C’est le signe que `root` possède bien l’UID 0 et, par extension, tous les pouvoirs.
+`su`{{execute}}
+*Mot de passe :* `killercoda`
 
-Termine cette observation en consultant l’entrée complète de root dans la base des comptes :
-```bash
-getent passwd root
-```
-La sortie rappelle le dossier personnel, le shell par défaut et d’autres attributs utiles.
+Vous êtes maintenant `root` ! Vérifions.
+`whoami`{{execute}}
 
-Pour goûter brièvement aux privilèges du super-utilisateur, lance une commande avec `sudo` :
-```bash
-sudo id
-```
-Entre ton mot de passe si nécessaire, puis vérifie que la sortie indique `uid=0`. Tu viens d’« emprunter » l’identité de root le temps d’une commande, sans changer complètement d’utilisateur.
+Mais où sommes-nous ?
+`pwd`{{execute}}
+`echo $HOME`{{execute}}
 
-💡 Moralité : retiens que `uid=0` est l’indice ultime de l’autorité, peu importe le nom affiché.
+Étrange, non ? Vous êtes `root`, mais vous êtes toujours dans le répertoire de `learner`. C'est un environnement hybride et dangereux. Tapez `exit` pour revenir à votre utilisateur.
+
+`exit`{{execute}}
+
+---
+### La Bonne Méthode : `su -`
+
+Le tiret `-` est crucial. Il signifie "charge complètement l'environnement de `root`".
+
+`su -`{{execute}}
+*Mot de passe :* `killercoda`
+
+Vérifions à nouveau :
+`whoami`{{execute}}
+`pwd`{{execute}}
+`echo $HOME`{{execute}}
+
+Maintenant, tout est cohérent : vous êtes `root` et vous êtes dans son répertoire `/root`. C'est la seule façon correcte d'utiliser `su` pour devenir `root`.
+
+En tant que `root`, vous pouvez tout faire, comme lire un fichier protégé.
+`cat /etc/shadow`{{execute}}
+
+Tapez `exit` pour redevenir un utilisateur normal et quitter le mode "Dieu".
+
+`exit`{{execute}}

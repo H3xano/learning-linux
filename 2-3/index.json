@@ -1,6 +1,6 @@
 {
-  "title": "Lab 2.3: 🔐 Les Clés du Royaume",
-  "description": "Comprendre root (UID 0), pratiquer sudo, situer su, lire/valider sudoers et auditer les privilèges en 5 étapes courtes.",
+  "title": "Les Clés du Royaume (`sudo` et `su`)",
+  "description": "Apprenez à utiliser `sudo` et `su` pour l'élévation de privilèges de manière sûre et tracée.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -12,26 +12,21 @@
       "foreground": "foreground.sh"
     },
     "steps": [
-        { 
-            "title": "Racines du pouvoir : UID 0", 
-            "text": "step1/text.md" 
-        },
-        { 
-            "title": "Sudo : élévation ponctuelle", 
-            "text": "step2/text.md" 
-        },
-        { 
-            "title": "su : session complète ?", 
-            "text": "step3/text.md" 
-        },
-        { 
-            "title": "sudoers : lire & valider", 
-            "text": "step4/text.md" 
-        },
-        { 
-            "title": "Audit : voir & compter", 
-            "text": "step5/text.md" 
-        }
+      {
+        "title": "Le Pouvoir Absolu de `root` avec `su`",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "L'Élévation Intelligente avec `sudo`",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "L'Audit des Privilèges",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      }
     ],
     "finish": {
       "text": "finish.md"

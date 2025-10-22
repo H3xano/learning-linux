@@ -1,35 +1,32 @@
-# 🛡️ Étape 2 — Sudo : élévation propre et traçable
+# Étape 2 : L'Élévation Intelligente avec `sudo`
 
-`sudo` te prête les privilèges de root pour **une seule commande**, tout en conservant une trace claire dans les journaux système.
+Utiliser `su -` est dangereux car on reste `root` pour toute la session. La méthode moderne est `sudo`, qui accorde des privilèges pour **une seule commande**.
 
-Commence par rafraîchir ta session sudo :
-```bash
-sudo -v
-```
-Cette commande demande ton mot de passe si nécessaire et enregistre le fait que tu es autorisé à utiliser `sudo` pendant quelques minutes.
+### La première utilisation de `sudo`
 
-Vérifie ensuite quelle identité exécuterait une commande élevée :
-```bash
-sudo whoami
-```
-La sortie doit afficher `root`, preuve que `sudo` s’exécute avec les droits du super-utilisateur.
+Le fichier `/etc/shadow` est illisible pour un utilisateur normal.
 
-Teste l’exécution sous un autre compte sans mot de passe dédié :
-```bash
-sudo -u nobody id
-```
-Ici, `sudo` bascule temporairement vers l’utilisateur `nobody`. Observe l’UID dans la sortie pour confirmer le changement.
+`cat /etc/shadow`{{execute}}
 
-Découvre enfin ce que ton compte est autorisé à faire :
-```bash
-sudo -l
-```
-La liste obtenue détaille les commandes que tu peux lancer avec `sudo`, ainsi que d’éventuelles restrictions.
+Maintenant, utilisons `sudo` pour lire ce fichier. `sudo` vous demandera **votre propre mot de passe** (`learner`), pas celui de `root`. Pour ce lab, il n'y a pas de mot de passe pour `learner`.
 
-Quand tu as fini, verrouille le cache de sécurité :
-```bash
-sudo -k
-```
-Cela oblige `sudo` à redemander ton mot de passe la prochaine fois, évitant qu’une autre personne profite de ta session ouverte.
+`sudo cat /etc/shadow`{{execute}}
 
-💡 Retiens que `sudo` protège autant le système que toi : il est ponctuel, ciblé et entièrement journalisé.
+Succès ! Vous avez exécuté `cat` en tant que `root` pour cette seule commande, puis vous êtes immédiatement redevenu `learner`. C'est beaucoup plus sûr.
+
+---
+### Les options utiles de `sudo`
+
+La commande `sudo` possède des options très pratiques.
+
+-   `-l` : **l**iste les droits que vous avez avec `sudo`.
+`sudo -l`{{execute}}
+
+-   `-k` : **k**ill, invalide le "ticket" `sudo`. Après cette commande, `sudo` vous redemandera votre mot de passe.
+`sudo -k`{{execute}}
+
+-   `-i` : ouvre un shell **i**nteractif en tant que `root`, de manière propre (équivalent à `sudo su -`).
+`sudo -i`{{execute}}
+
+Vous êtes maintenant `root` dans une session propre. Tapez `exit` pour revenir.
+`exit`{{execute}}

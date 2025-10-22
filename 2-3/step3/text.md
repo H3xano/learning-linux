@@ -1,35 +1,36 @@
-# 🎭 Étape 3 — su : quand (ne pas) changer de costume
+# Étape 3 : L'Audit des Privilèges
 
-`su` (substitute user) ouvre une **nouvelle session** sous l’identité d’un autre compte, généralement `root`. Cela ressemble à changer complètement de costume.
+L'un des plus grands avantages de `sudo` est la **traçabilité**. Chaque commande exécutée avec `sudo` est enregistrée dans un journal.
 
-Commence par vérifier que la commande existe bien sur ta machine :
-```bash
-which su
-```
-La sortie indique le chemin vers l’exécutable, preuve qu’il est disponible.
+Le fichier de log principal pour cela est `/var/log/auth.log`.
 
-Jette ensuite un œil à son manuel pour repérer les principales options :
-```bash
-man su | head -n 5
-```
-Les premières lignes rappellent l’objectif de `su` et les options les plus courantes.
+Utilisons `sudo` pour lister le contenu de `/root`.
 
-Sur beaucoup de distributions modernes, le compte root n’a pas de mot de passe distinct :
-```bash
-su
-```
-Si tu obtiens un message d’échec, c’est attendu ; la stratégie consiste à passer par `sudo` plutôt que d’ouvrir une session root directe.
+`sudo ls -l /root`{{execute}}
 
-Pour comparer, ouvre un shell root complet avec l’environnement de root :
-```bash
-sudo -i
-```
-Tu remarqueras que le prompt change. Quitte ce shell avec `exit`.
+Maintenant, jouons les détectives et cherchons la trace de cette commande dans les logs. Nous allons utiliser `grep` pour filtrer les lignes contenant "sudo".
 
-Teste aussi un shell root qui conserve ton environnement utilisateur :
-```bash
-sudo -s
-```
-Ici, seules les permissions changent ; les variables de ton utilisateur restent en place. Quitte à nouveau avec `exit`.
+`sudo grep "sudo" /var/log/auth.log | tail -n 5`{{execute}}
 
-💡 Best practice : privilégie `sudo` pour les actions ponctuelles. Réserve `su -` aux cas de maintenance où une session root complète est indispensable.
+Vous devriez voir une ligne qui ressemble à ceci :
+`Oct 21 12:00:00 ubuntu sudo:  learner : TTY=pts/0 ; PWD=/home/learner ; USER=root ; COMMAND=/usr/bin/ls -l /root`
+
+Cette ligne est une preuve infalsifiable qui dit :
+-   **Qui :** `learner`
+-   **Quand :** `Oct 21 12:00:00`
+-   **Où :** `TTY=pts/0` et `PWD=/home/learner`
+-   **Quoi :** `COMMAND=/usr/bin/ls -l /root`
+
+---
+### Le fichier de configuration `sudoers`
+
+La configuration de `sudo` se trouve dans `/etc/sudoers`. **NE L'ÉDITEZ JAMAIS DIRECTEMENT !** Utilisez toujours la commande `visudo`, qui vérifie la syntaxe avant d'enregistrer.
+
+Inspectons le fichier de configuration de manière sûre (en lecture seule).
+
+`sudo cat /etc/sudoers`{{execute}}
+
+Repérez cette ligne :
+`%sudo   ALL=(ALL:ALL) ALL`
+
+Elle signifie : "Tout membre (`%`) du groupe `sudo` peut exécuter (`ALL`) n'importe quelle commande (`ALL`) sur n'importe quelle machine (`ALL`) en tant que n'importe quel utilisateur (`(ALL:ALL)`)".

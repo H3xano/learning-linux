@@ -1,17 +1,17 @@
 ![Formip](../assets/formip_logo_padded.png)
 
-# 🎉 Bravo !
+# 🏆 Mission Accomplie : Vous maniez le pouvoir avec sagesse !
 
-Tu viens de traverser les coulisses du pouvoir Linux sans te brûler les ailes. Voilà ce que tu as accompli :
-- ✅ Identifié qui porte l’UID 0 et pourquoi cela change tout
-- ✅ Employé `sudo` pas à pas, en contrôlant le cache et les traces laissées
-- ✅ Comparé `sudo` et `su`, puis choisi la bonne approche selon le contexte
-- ✅ Lu et validé une configuration `sudoers` en toute sécurité
-- ✅ Réalisé un mini-audit pour repérer l’activité et les tentatives suspectes
+Félicitations, gardien ! 🎉 Vous avez exploré le monde des privilèges élevés et maîtrisez maintenant les outils pour administrer un système en toute sécurité.
 
-## 🧠 Ce qu’un pro retient
-- Le principe du **moindre privilège** guide chaque action ; `sudo` est ton outil privilégié
-- On ne modifie `sudoers` qu’après l’avoir lu, testé, validé
-- Observer les journaux régulièrement permet de détecter les dérives avant qu’elles ne fassent mal
+Vous avez acquis des compétences fondamentales :
+1. **Comprendre** le pouvoir et les dangers du super-utilisateur `root`.
+2. **Utiliser `sudo`** comme un professionnel pour des élévations de privilèges ponctuelles et sécurisées.
+3. **Distinguer** `su` et `sudo` et savoir quand utiliser l'un ou l'autre.
+4. **Auditer** les actions des administrateurs en lisant les logs de `sudo`.
 
-Tu possèdes désormais les clés du royaume… et surtout la méthode pour les garder en sécurité. Prêt à personnaliser ton shell et à pousser plus loin ta maîtrise ? 🚀
+Vous comprenez maintenant le principe du moindre privilège : n'utiliser la puissance de `root` que lorsque c'est absolument nécessaire. C'est ce qui différencie un administrateur prudent d'un administrateur imprudent.
+
+La prochaine étape ? Personnaliser votre propre environnement de shell pour le rendre encore plus puissant et agréable à utiliser !
+
+Excellent travail ! 🐧✨
