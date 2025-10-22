@@ -21,13 +21,13 @@ Testez votre nouvel alias !
 Magique ! `ll` est maintenant équivalent à `ls -lah`.
 
 ---
-### Créer une variable de projet
+### Créer une variable pour un chemin important
 
-Imaginons que vous travaillez souvent dans le dossier `/var/log/nginx`. Créons une variable `$NGINX_LOGS` pour y accéder rapidement.
+Imaginons que vous travaillez souvent dans le dossier des logs système, `/var/log`. Créons une variable `$LOG_DIR` pour y accéder rapidement.
 
-`echo 'export NGINX_LOGS="/var/log/nginx"' >> ~/.bashrc`{{execute}}
+`echo 'export LOG_DIR="/var/log"' >> ~/.bashrc`{{execute}}
 `source ~/.bashrc`{{execute}}
 
 Maintenant, vous pouvez lister le contenu de ce dossier depuis n'importe où.
 
-`ls $NGINX_LOGS`{{execute}}
+`ls $LOG_DIR`{{execute}}
