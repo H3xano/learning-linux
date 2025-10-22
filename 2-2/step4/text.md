@@ -1,31 +1,26 @@
-# ☁️ Étape 4 — Détecter la virtualisation (VM)
+# Étape 4 : Le Contrôle d'Exécution (`&&` et `||`)
 
-1. Indices CPU d’un hyperviseur :
-```bash
-lscpu | grep -i hypervisor || echo "Pas d'hyperviseur détecté"
-```
+Le shell peut prendre des décisions basées sur le succès ou l'échec d'une commande.
 
-👉 S’il existe, tu es probablement dans une **VM** (KVM, Hyper-V…).
+### `&&` : L'opérateur "ET" logique
 
-2. Messages noyau liés à la virtualisation :
+`commande1 && commande2` : `commande2` ne s'exécute **que si** `commande1` réussit.
 
-```bash
-sudo dmesg | grep -i virtual | head -n 10 || true
-```
+Créons un dossier `backup` et, **seulement si la création réussit**, copions nos fichiers dedans.
 
-👉 Cherche `Virtual`, `KVM`, `VMware`, `VBOX` : ce sont des **signatures de VM**.
+`mkdir backup && cp *.txt backup/`{{execute}}
 
-3. Modules liés à la virtualisation :
+Comme `mkdir backup` a réussi, la copie a eu lieu. Vérifions.
 
-```bash
-lsmod | grep -i virt || true
-```
+`ls backup/`{{execute}}
 
-👉 `kvm`, `virtio*`, `vbox*`… autant de signes d’un environnement **virtualisé**.
-👉 Si rien ne ressort, c’est **pas anormal** : sur des images minimalistes, les modules “virt*” (ex: virtio) ne sont pas forcément listés ou nommés comme on s’y attend. Le fait que `lscpu` et `dmesg` confirment KVM suffit.
+---
+### `||` : L'opérateur "OU" logique
 
-🎯 Conclusion : si tu vois hyperviseur/modules/msgs VM → tu es en **Machine Virtuelle**, idéale pour apprendre.
+`commande1 || commande2` : `commande2` ne s'exécute **que si** `commande1` échoue. C'est le "plan B".
 
-💬 Avantage : tu peux **expérimenter sans casser ton PC**.
-C’est pour cela que les labs Formip et Killercoda utilisent des VMs :
-elles permettent d’apprendre, tester, réinitialiser… sans risque ! 🧱🔁
+Essayons de créer un dossier qui existe déjà. Cela va échouer, ce qui déclenchera la commande suivante.
+
+`mkdir backup || echo "Le dossier 'backup' existe déjà !"`{{execute}}
+
+La première commande a échoué, donc le message d'erreur personnalisé s'est affiché. C'est une excellente façon de gérer les erreurs proprement.

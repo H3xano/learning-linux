@@ -1,33 +1,31 @@
-# 🖥️ Étape 2 — Repérer une interface graphique (GUI)
+# Étape 2 : Les Métacaractères - Cibler en Masse
 
-Même sans écran, tu peux savoir si une interface graphique (GUI) est installée ou prévue au démarrage.
+Les métacaractères (ou "wildcards") sont des jokers qui permettent de sélectionner plusieurs fichiers à la fois.
 
-```bash
-systemctl get-default
-ps aux | grep -E 'Xorg|wayland|gdm|sddm' --color=auto
-cat /etc/X11/default-display-manager 2>/dev/null || echo "Aucun gestionnaire graphique détecté"
-````
+Des fichiers d'exemple (`rapport_01.txt`, `rapport_02.txt`, `photoA.jpg`, `photoB.jpg`) ont été créés pour vous.
 
-👉 Si tu vois `graphical.target`, cela veut dire que le système démarre **en mode graphique**.
-👉 Si des noms comme `Xorg`, `gdm` ou `wayland` apparaissent, une GUI existe (même si elle ne s’affiche pas ici).
+### L'astérisque `*` : Le Joker Universel
 
-🧠 **Interprétation :**
+`*` signifie "n'importe quelle suite de caractères".
 
-* `graphical.target` → système Desktop
-* `multi-user.target` → système Serveur (pas de GUI)
+Listons tous les fichiers qui se terminent par `.txt`.
 
-Pour **voir réellement** un environnement graphique Ubuntu, ouvre ce lien :
+`ls *.txt`{{execute}}
 
-<div style="text-align:center; margin: 30px 0;">
-  <a href="https://www.onworks.net/runos/create-os.html?os=ubuntu-22.04.3-desktop-amd64&home=init"
-     target="_blank"
-     style="background-color:#2a7ae2; color:white; padding:12px 28px;
-            border-radius:8px; text-decoration:none; font-weight:bold;">
-    🚀 Lancer Ubuntu Desktop
-  </a>
-  <p style="font-size:14px; color:#666; margin-top:10px;">
-    (ouvre Ubuntu Desktop en ligne dans une nouvelle fenêtre)
-  </p>
-</div>
+Listons tous les fichiers qui commencent par `photo`.
 
-💬 Compare ce que tu vois sur OnWorks avec ce que tu observes ici dans le terminal.
+`ls photo*`{{execute}}
+
+---
+### Le `?` et les crochets `[]` : La Sélection Précise
+
+-   `?` remplace **un seul** caractère.
+-   `[]` remplace un caractère parmi une **liste** ou un **intervalle**.
+
+Listons les rapports avec un seul chiffre.
+
+`ls rapport_0?.txt`{{execute}}
+
+Listons les photos A ou B.
+
+`ls photo[AB].jpg`{{execute}}

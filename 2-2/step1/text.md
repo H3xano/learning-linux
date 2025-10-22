@@ -1,26 +1,29 @@
-# 🧭 Étape 1 — Observer la machine
+# Étape 1 : Anatomie d'une Commande et la Magie de `Tab`
 
-1) Affiche le noyau et l’architecture :
-```bash
-uname -a
-```
+Une commande Linux est une phrase structurée : `commande [options] [arguments]`.
+-   **Commande** : Le verbe (l'action). Ex: `ls`.
+-   **Options** : Les adverbes (comment faire). Ex: `-l` (en format long).
+-   **Arguments** : Le complément (sur quoi agir). Ex: `/etc`.
 
-👉 Tu vois la version du noyau Linux, l’architecture (x86_64/arm64) et des infos système utiles.
+Exécutons une commande complète.
 
-2. Affiche la distribution :
+`ls -l /etc`{{execute}}
 
-```bash
-lsb_release -a
-```
+---
+### La Complétion Automatique (`Tab`)
 
-👉 Donne le nom (Ubuntu/Debian…), la version et le codename. Parfait pour savoir “où” tu es.
+Votre meilleur ami dans le terminal est la touche `Tab`. Elle complète automatiquement les noms de commandes, de fichiers et de dossiers.
 
-3. Affiche le contexte hôte :
+Tapez `ls /et` puis appuyez sur `Tab`. Le shell complète en `ls /etc/`. Magique !
 
-```bash
-hostnamectl
-```
+Maintenant, tapez `syst` et appuyez deux fois sur `Tab`.
 
-👉 Regarde les lignes **Operating System** et **Virtualization** : elles révèlent souvent si tu es dans une **VM**.
+`syst`{{execute T1}}
 
-💡 Note tes observations : noyau, distribution, VM ou non. On s’en sert pour distinguer Desktop/Serveur/VM.
+Le shell vous montre toutes les commandes qui commencent par `syst`. C'est un outil d'exploration indispensable.
+
+Enfin, découvrons l'aide intégrée avec `--help`.
+
+`ls --help`{{execute T2}}
+
+Vous avez un résumé de toutes les options possibles. N'oubliez jamais `--help` !

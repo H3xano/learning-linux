@@ -1,25 +1,31 @@
-# 🧩 Étape 5 — Résume et choisis
+# Étape 5 : La Substitution de Commande `$()`
 
-Tu as maintenant vu comment identifier :
-- un système **Desktop** (GUI active),
-- un **Serveur** (services réseau, pas de GUI),
-- une **Machine virtuelle** (environnement hébergé).
+La substitution de commande permet d'utiliser le **résultat** d'une commande à l'intérieur d'une autre. C'est la clé pour créer des commandes dynamiques.
 
-Vérifions une dernière fois quelques infos clés 👇
+La syntaxe est `$(commande)`.
 
-```bash
-echo "=== Résumé de mon environnement ==="
-echo "Utilisateur : $(whoami)"
-echo "Système : $(lsb_release -ds 2>/dev/null || echo 'Inconnu')"
-hostnamectl | grep -E 'Virtualization|Operating System' || echo "Infos non détectées"
-````
+### Créer un fichier avec la date
 
-💬 **Analyse ton résultat :**
+Créons une archive de nos fichiers `.txt` et incluons la date et l'heure actuelles dans le nom du fichier.
 
-* Tu vois une ligne `Virtualization: ...` ? → tu es dans une **VM** ☁️
-* Tu vois `graphical.target` à l’étape 2 ? → c’est un **Desktop** 🖥️
-* Tu n’as que des services réseau ? → c’est un **Serveur** 💻
+`tar -czf backup-$(date +%Y-%m-%d_%H%M%S).tar.gz *.txt`{{execute}}
 
-🎓 **Conclusion :**
-Pour apprendre et pratiquer sereinement → choisis la **Machine Virtuelle (VM)**.
-C’est l’environnement idéal pour ton parcours Linux Formip. 🚀🐧
+Le shell a d'abord exécuté `date`, puis a utilisé son résultat pour construire le nom du fichier. Vérifions le fichier créé.
+
+`ls -l backup-*.tar.gz`{{execute}}
+
+---
+### Utiliser des résultats dans des `echo`
+
+Annonçons combien de fichiers `.txt` nous avons.
+
+`echo "Il y a $(ls *.txt | wc -l) fichiers .txt dans ce dossier."`{{execute}}
+
+### Manipuler des variables (`${}`)
+
+La substitution de paramètres `${...}` est très puissante pour manipuler des chaînes. Par exemple, pour changer une extension.
+
+`FICHIER="image.jpeg"`{{execute}}
+`echo "Nouveau nom : ${FICHIER%.jpeg}.jpg"`{{execute}}
+
+Le `${FICHIER%.jpeg}` a retiré l'ancienne extension, nous permettant d'en ajouter une nouvelle.

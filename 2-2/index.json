@@ -1,6 +1,6 @@
 {
-  "title": "Types d’installation Linux",
-  "description": "Identifier Desktop, Serveur et Machine Virtuelle via des observations simples en terminal. Lab débutant, clair et 100% exécutable sur Killercoda.",
+  "title": "La Boîte à Outils du Magicien Bash",
+  "description": "Maîtrisez la syntaxe avancée du shell : métacaractères, pipes, redirections et substitutions.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -13,27 +13,27 @@
     },
     "steps": [
       {
-        "title": "Observer la machine",
+        "title": "Anatomie d'une Commande et `Tab`",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Repérer une GUI",
+        "title": "Métacaractères (Wildcards)",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Empreinte d’un serveur",
+        "title": "Redirections et Pipes",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Détecter la virtualisation",
+        "title": "Contrôle d'Exécution",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Résumé et choix",
+        "title": "Substitution de Commande",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }

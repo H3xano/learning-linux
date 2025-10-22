@@ -1,34 +1,35 @@
-# 💻 Étape 3 — Vérifier l’empreinte d’un serveur
+# Étape 3 : Redirections (`>`) et Pipes (`|`)
 
-1. Observe l’activité générale :
-```bash
-uptime
-```
+Les commandes communiquent via 3 "tuyaux" : **stdin** (entrée), **stdout** (sortie normale), **stderr** (sortie d'erreur).
 
-👉 Temps depuis le dernier boot + charge système. Les serveurs restent souvent allumés **très longtemps**.
+### La Redirection de Sortie `>`
 
-2. Qui est connecté ?
+Par défaut, `stdout` va à l'écran. `>` permet de le rediriger vers un fichier.
 
-```bash
-who -a
-```
+Sauvegardons la date actuelle dans un fichier.
 
-👉 Utile pour savoir si des admins sont en session (locale/SSH).
+`date > date.txt`{{execute}}
 
-3. Vois les services actifs :
+Rien ne s'affiche ! C'est normal. Vérifions le contenu du fichier.
 
-```bash
-systemctl list-units --type=service --state=running | head -n 10
-```
+`cat date.txt`{{execute}}
 
-👉 Cherche `ssh`, `cron`, `networkd`… typiques d’un serveur sans GUI.
+**Attention :** `>` **écrase** le fichier. Pour **ajouter** à la fin, utilisez `>>`.
 
-4. Ports réseau en écoute :
+`echo "--- Fin du fichier ---" >> date.txt`{{execute}}
+`cat date.txt`{{execute}}
 
-```bash
-ss -tuln | head -n 10
-```
+---
+### Le Pipe `|` : Le Connecteur Magique
 
-👉 Affiche les ports ouverts (ex: `:22` pour SSH). Les serveurs exposent des **services réseau**.
+Le pipe `|` connecte la sortie (`stdout`) d'une commande à l'entrée (`stdin`) d'une autre. C'est la base du chaînage.
 
-💡 Peu/aucune trace de GUI + services réseau actifs = profil **Serveur**.
+Listons tous les processus et utilisons `grep` pour filtrer uniquement ceux liés au shell `bash`.
+
+`ps aux | grep "bash"`{{execute}}
+
+Listons les fichiers de `/etc` et comptons-les avec `wc -l`.
+
+`ls /etc | wc -l`{{execute}}
+
+Vous avez créé une "chaîne de production" en une seule ligne, sans créer de fichier temporaire !
