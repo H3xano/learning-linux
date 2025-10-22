@@ -1,5 +1,5 @@
 {
-  "title": "La Boîte à Outils du Magicien Bash",
+  "title": "Lab 2.2: 🧙 La Boîte à Outils du Magicien Bash",
   "description": "Maîtrisez la syntaxe avancée du shell : métacaractères, pipes, redirections et substitutions.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,27 +13,27 @@
     },
     "steps": [
       {
-        "title": "Anatomie d'une Commande et `Tab`",
+        "title": "La Grammaire des Incantations et la Magie de `Tab`",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Métacaractères (Wildcards)",
+        "title": "Les Runes de Sélection : Maîtriser les Jokers `*`, `?`, `[]`",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Redirections et Pipes",
+        "title": "L'Alchimie des Flux : Redirections (>) et Pipes (|)",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Contrôle d'Exécution",
+        "title": "Les Sceaux de Condition : Le Succès (`&&`) et le Plan B (`||`)",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Substitution de Commande",
+        "title": "L'Invocation Dynamique : Forger des Commandes avec `$()`",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }
