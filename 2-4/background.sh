@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+echo "su - learner" >> ~/.bashrc
 if ! id learner &>/dev/null; then useradd -m -s /bin/bash learner; echo "learner ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/learner; chmod 440 /etc/sudoers.d/learner; fi
 # --- CORRECTION: Set a password for root for 'su' command ---
 echo "root:killercoda" | chpasswd
