@@ -16,4 +16,3 @@ echo; echo -e "${CYAN}$(line)${RESET}"; pad "${BOLD}${TITLE}${RESET}"; pad "${SU
 pad "${GREEN}Vous êtes prêt pour le Lab 1.1 : Prise en Main de l'Environnement !${RESET}"; echo
 EOF
 chmod +x /tmp/banner.sh
-echo 'su - learner' >> ~/.bashrc
