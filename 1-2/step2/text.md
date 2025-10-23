@@ -14,7 +14,6 @@ Virtualization: kvm
 Operating System: Ubuntu 22.04.X LTS
 Kernel: Linux 6.X.X
 Architecture: x86-64
-code Code
 ```
     
 -   **`Virtualization: kvm`** : Ceci prouve que vous êtes bien dans une Machine Virtuelle.
