@@ -5,10 +5,10 @@
 Félicitations ! Vous avez terminé votre initiation à l'environnement Killercoda.
 
 Vous savez maintenant :
-✅ Comment lire les instructions et utiliser le terminal.
-✅ Exécuter des commandes interactives.
-✅ Valider votre travail avec le bouton "Vérifier".
-✅ Que chaque lab est un environnement frais et indépendant.
+1. Comment lire les instructions et utiliser le terminal.
+2. Exécuter des commandes interactives.
+3. Valider votre travail avec le bouton "Vérifier".
+4. Que chaque lab est un environnement frais et indépendant.
 
 Vous avez toutes les clés en main pour vous concentrer sur l'essentiel : apprendre Linux.
 

@@ -1,6 +1,6 @@
 ![Formip](../assets/formip_logo_padded.png)
 
-# 🐧 Bienvenue dans votre Laboratoire Personnel !
+## 🐧 Bienvenue dans votre Laboratoire Personnel !
 
 Bonjour et bienvenue dans votre environnement d'apprentissage interactif !
 
