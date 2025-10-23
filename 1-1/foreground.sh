@@ -1,6 +1,6 @@
-#!/bin/bash
+# foreground.sh
+#!/usr/bin/env bash
 set -euo pipefail
-# Script d'accueil (bannière, etc.)
-su - learner 
+su - learner
 cd ~
 bash /tmp/banner.sh

@@ -1,6 +1,6 @@
 {
-  "title": "Titre du Lab",
-  "description": "Description du lab.",
+  "title": "Lab 0 : Prise en Main de Votre Laboratoire Linux",
+  "description": "Se familiariser avec l'interface Killercoda pour suivre les labs pratiques dans les meilleures conditions.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
