@@ -1,5 +1,5 @@
 {
-  "title": "Lab 6.2: 🔄 Changement de Propriétaire (chown & chgrp)",
+  "title": "Lab 6.2: 🔄 Le Maître des Propriétés (chown & chgrp)",
   "description": "Apprenez à gérer la propriété des fichiers et des groupes avec chown et chgrp.",
   "backend": {
     "imageid": "ubuntu",

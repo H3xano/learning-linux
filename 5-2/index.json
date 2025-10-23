@@ -1,5 +1,5 @@
 {
-  "title": "Lab 5.2: 🪠 Le Plombier des Données (Flux & Pipes)",
+  "title": "Lab 5.2: 🪠 Le Plombier de la Ligne de Commande (Flux & Pipes)",
   "description": "Maîtrisez les flux, les redirections et les pipes pour contrôler les données.",
   "backend": {
     "imageid": "ubuntu",

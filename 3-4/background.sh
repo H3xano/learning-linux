@@ -17,7 +17,7 @@ pad() { text="$1";len=${#1};w=$COLS;left=$(((w-len)/2));printf "%*s%s\n" "$left"
 line() { ch="${1:-═}";printf '%*s\n' "$COLS" ''|tr ' ' "$ch"; }
 clear; TITLE="Formip - La voie Express vers la Certification"; SUB="Bienvenue sur votre environnement Linux d'apprentissage"
 echo; echo -e "${CYAN}$(line)${RESET}"; pad "${BOLD}${TITLE}${RESET}"; pad "${SUB}${RESET}"; echo -e "${CYAN}$(line)${RESET}"; echo
-pad "${GREEN}Vous êtes prêt pour le Lab 3.4 : Les Éditeurs de Texte !${RESET}"; echo
+pad "${GREEN}Vous êtes prêt pour le Lab 3.4 : Au Cœur des Fichiers !${RESET}"; echo
 EOF
 chmod +x /tmp/banner.sh
 
