@@ -1,5 +1,5 @@
 {
-  "title": "Lab 1.4 : Première Connexion et Exploration",
+  "title": "Lab 1.3: 🚀 Le Baptême du Shell",
   "description": "Exécutez vos premières commandes Linux pour découvrir votre identité, votre environnement et maîtriser l'historique.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,17 +13,17 @@
     },
     "steps": [
       {
-        "title": "Qui suis-je ? (Identification)",
+        "title": "Le Contrôle d'Identité : Qui Suis-je ?",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Où et Quand suis-je ? (Contexte)",
+        "title": "Le Pouls du Système : L'Heure, la Date et la Santé",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Voyager dans le Temps (Historique)",
+        "title": "Le Voyage Temporel : L'Art de l'Historique",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       }
