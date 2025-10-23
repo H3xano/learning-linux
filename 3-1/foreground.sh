@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
+echo 'su - learner' >> ~/.bashrc
 # --- Lancement du simulateur de log en arrière-plan ---
 # Ce script simule un fichier de log qui se remplit en temps réel.
 (
@@ -15,11 +15,6 @@ set -euo pipefail
     fi
   done
 ) &
-
-
-# --- Passage à l'utilisateur 'learner' et affichage de la bannière ---
-# Le 'su - learner' est essentiel pour charger l'environnement de l'apprenant
-# et exécuter le .bashrc
 su - learner
-cd ~ 
+cd ~
 bash /tmp/banner.sh

@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
-# Script d'accueil (bannière, etc.)
-su - learner 
+echo 'su - learner' >> ~/.bashrc
+su - learner
 cd ~
 bash /tmp/banner.sh

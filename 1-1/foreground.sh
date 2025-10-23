@@ -1,4 +1,3 @@
-# foreground.sh
 #!/usr/bin/env bash
 set -euo pipefail
 echo 'su - learner' >> ~/.bashrc
