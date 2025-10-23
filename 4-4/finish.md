@@ -1,4 +1,5 @@
 ![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie : Vous êtes un maître constructeur et nettoyeur !
 
 Félicitations, ouvrier du système ! 🎉 Vous avez terminé votre apprentissage des opérations de base sur les fichiers et répertoires.

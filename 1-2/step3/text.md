@@ -1,5 +1,3 @@
-# Étape 3 : L'Interface en Ligne de Commande (Lien avec le cours 1.2.3)
-
 Comme vous le voyez depuis le début, il n'y a ni icônes, ni fenêtres, ni souris pour naviguer. C'est une **Interface en Ligne de Commande (CLI)**, typique des serveurs.
 
 Pourquoi ? Parce qu'elle est :

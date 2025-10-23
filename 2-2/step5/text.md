@@ -1,5 +1,3 @@
-# Étape 5 : La Substitution de Commande `$()`
-
 La substitution de commande permet d'utiliser le **résultat** d'une commande à l'intérieur d'une autre. C'est la clé pour créer des commandes dynamiques.
 
 La syntaxe est `$(commande)`.

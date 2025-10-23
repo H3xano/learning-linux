@@ -1,5 +1,3 @@
-# Étape 4 : Gérer et Réparer les Liens
-
 Comment savoir où pointe un lien, ou trouver les liens brisés sur son système ?
 
 ### `readlink` : Lire la destination d'un lien

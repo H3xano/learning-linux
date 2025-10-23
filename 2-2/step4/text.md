@@ -1,5 +1,3 @@
-# Étape 4 : Le Contrôle d'Exécution (`&&` et `||`)
-
 Le shell peut prendre des décisions basées sur le succès ou l'échec d'une commande.
 
 ### `&&` : L'opérateur "ET" logique

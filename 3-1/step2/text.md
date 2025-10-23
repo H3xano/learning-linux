@@ -1,5 +1,3 @@
-# Étape 2 : `less` - Naviguer dans les grands fichiers 📖
-
 `cat` est super pour les petits fichiers, mais pour un fichier de 10 000 lignes, c'est un cauchemar ! Tout défile trop vite.
 
 Pour cela, nous avons `less`. C'est un "paginator" : il affiche le contenu page par page. Nous avons un fichier `long_log.txt` de 200 lignes pour tester.

@@ -1,5 +1,3 @@
-# Étape 3 : Vim (Partie 2) - L'Art de S'échapper
-
 Vous avez modifié le fichier et êtes revenu en **Mode Normal** en appuyant sur `Esc`. Comment sauvegarder et quitter maintenant ?
 
 Pour cela, on utilise le **Mode Commande**, qui s'active en tapant `:` depuis le Mode Normal.

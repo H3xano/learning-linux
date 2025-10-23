@@ -1,5 +1,3 @@
-# Étape 4 : `tail -f` - La surveillance en temps réel ! 📡
-
 C'est LA commande préférée des administrateurs système. L'option `-f` (pour *follow*) transforme `tail` en une tour de contrôle. Elle affiche les dernières lignes, puis **attend et affiche chaque nouvelle ligne qui est ajoutée au fichier, en direct !**
 
 Pour simuler cela, un script en arrière-plan écrit dans le fichier `live_stream.log` toutes les quelques secondes.

@@ -1,5 +1,3 @@
-# Étape 4 : Le secret du $PATH et l'exécution de scripts
-
 Pourquoi pouvez-vous taper `ls` et pas `/bin/ls` ? Comment le shell trouve-t-il les commandes ? Grâce à la variable d'environnement `$PATH`.
 
 C'est une liste de dossiers où le shell cherche les exécutables. Affichons-la.

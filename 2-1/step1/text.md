@@ -1,5 +1,3 @@
-# Étape 1 : Identifier son Shell
-
 Le "terminal" n'est pas ce qui exécute vos commandes. C'est un programme appelé **shell** (coquille) qui joue le rôle d'interprète. Le plus courant est **Bash** (Bourne Again SHell).
 
 ### Quel est votre shell ?

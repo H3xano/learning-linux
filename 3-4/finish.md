@@ -1,4 +1,5 @@
 ![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie ! Vous êtes un chirurgien du texte !
 
 Félicitations ! 🎉 Vous venez de débloquer une compétence fondamentale pour tout utilisateur Linux : l'édition de fichiers en ligne de commande.

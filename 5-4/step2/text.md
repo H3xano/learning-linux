@@ -1,5 +1,3 @@
-# Étape 2 : Le Portail - Créer des Liens Symboliques
-
 Les liens durs sont limités (pas de dossiers, même partition). Les **liens symboliques** (`ln -s`) sont beaucoup plus flexibles. C'est un "raccourci" ou un "portail" qui pointe vers un autre fichier ou dossier.
 
 ### Créer un lien symbolique

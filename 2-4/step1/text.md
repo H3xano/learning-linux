@@ -1,5 +1,3 @@
-# Étape 1 : Les Fichiers de Configuration
-
 Le comportement de votre shell est défini dans des fichiers cachés dans votre répertoire `home`. Le plus important pour les sessions interactives (comme ce terminal) est `.bashrc`.
 
 Listons tous les fichiers de votre `home`, y compris les fichiers cachés, pour le repérer.

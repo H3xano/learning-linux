@@ -1,5 +1,3 @@
-# Étape 3 : `locate` - La recherche instantanée
-
 Parfois, `find` peut être lent, surtout si vous cherchez sur tout le système (`/`). Pour les recherches rapides par nom, il y a une solution magique : `locate`.
 
 `locate` utilise une base de données pré-indexée de tous les fichiers. C'est **extrêmement rapide**.

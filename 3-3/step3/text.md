@@ -1,5 +1,3 @@
-# Étape 3 : Regex Avancées - L'arsenal de l'expert
-
 Vous maîtrisez les bases, passons au niveau supérieur !
 
 ### Les quantificateurs précis `{}`

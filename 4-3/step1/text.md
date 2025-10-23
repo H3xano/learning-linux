@@ -1,5 +1,3 @@
-# Étape 1 : Se repérer avec `pwd` et se déplacer avec `cd`
-
 La première règle de la navigation est de savoir où l'on est. La commande `pwd` (**p**rint **w**orking **d**irectory) est votre GPS.
 
 Tapez-la pour connaître votre position actuelle.

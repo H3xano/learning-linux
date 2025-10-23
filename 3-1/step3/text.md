@@ -1,5 +1,3 @@
-# Étape 3 : `head` & `tail` - L'extraction chirurgicale 🔬
-
 Souvent, on ne veut que le début ou la fin d'un fichier. `head` (la tête) et `tail` (la queue) sont parfaits pour ça !
 
 Par défaut, ils affichent les 10 premières ou 10 dernières lignes.

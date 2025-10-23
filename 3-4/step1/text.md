@@ -1,5 +1,3 @@
-# Étape 1 : Nano - L'éditeur simple et efficace
-
 `nano` est l'éditeur parfait pour commencer. Il est simple et tous les raccourcis importants sont affichés en bas de l'écran.
 
 Commençons par créer un nouveau fichier de notes.

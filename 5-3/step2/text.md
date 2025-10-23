@@ -1,5 +1,3 @@
-# Étape 2 : Qui est Connecté (Maintenant et Avant) ?
-
 Sur un serveur, vous n'êtes souvent pas seul. Il est crucial de savoir qui d'autre est connecté.
 
 ### `who` et `w` : Qui est là maintenant ?

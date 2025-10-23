@@ -1,5 +1,3 @@
-# Étape 2 : L'Élévation Intelligente avec `sudo`
-
 Utiliser `su -` est dangereux car on reste `root` pour toute la session. La méthode moderne est `sudo`, qui accorde des privilèges pour **une seule commande**.
 
 ### La première utilisation de `sudo`

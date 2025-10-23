@@ -1,5 +1,3 @@
-# Étape 2 : Où et Quand suis-je ? (Commandes de Contexte)
-
 Maintenant que vous savez qui vous êtes, demandons au système des informations sur son environnement.
 
 ### `date` : L'heure et la date

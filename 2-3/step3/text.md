@@ -1,5 +1,3 @@
-# Étape 3 : L'Audit des Privilèges
-
 L'un des plus grands avantages de `sudo` est la **traçabilité**. Chaque commande exécutée avec `sudo` est enregistrée dans un journal.
 
 Le fichier de log principal pour cela est `/var/log/auth.log`.

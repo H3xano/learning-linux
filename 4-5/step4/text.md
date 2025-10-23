@@ -1,5 +1,3 @@
-# Étape 4 : `which` et `whereis` - Retrouver ses commandes
-
 Comment savoir où est installée une commande comme `ls` ou `python3` ?
 
 ### `which` : Quelle commande est exécutée ?

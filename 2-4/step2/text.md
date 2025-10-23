@@ -1,5 +1,3 @@
-# Étape 2 : Créer des Variables et des Alias
-
 Les **alias** sont des raccourcis pour des commandes longues. Les **variables personnalisées** sont des raccourcis pour des chemins ou des valeurs.
 
 ### Créer son premier alias

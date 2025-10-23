@@ -1,5 +1,3 @@
-# Étape 4 : Le Diagnostic d'Environnement
-
 Maintenant, devenons des détectives. Comment inspecter en profondeur un environnement ?
 
 ### `set` vs `env`

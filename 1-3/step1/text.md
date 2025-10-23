@@ -1,5 +1,3 @@
-# Étape 1 : Qui suis-je ? (Commandes d'Identification)
-
 Avant de faire quoi que ce soit, il faut savoir qui vous êtes aux yeux du système.
 
 ### `whoami` : La question la plus simple

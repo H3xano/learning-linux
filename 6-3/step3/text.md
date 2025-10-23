@@ -1,5 +1,3 @@
-# Étape 3 : SUID - L'Élévation de Privilèges Contrôlée
-
 `SUID` (**S**et **U**ser **ID**) est une permission spéciale qui permet à un programme de s'exécuter avec les droits de son **propriétaire**, et non de celui qui le lance.
 
 **Important :** Pour des raisons de sécurité, le SUID est **ignoré sur les scripts** (`#!/bin/bash`). Il ne fonctionne que sur les **programmes binaires compilés**.

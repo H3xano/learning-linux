@@ -1,4 +1,5 @@
 ![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie : Vous savez lire les permissions !
 
 Félicitations, gardien ! 🎉 Le langage secret des permissions Linux vous est désormais familier. Vous avez acquis une compétence fondamentale pour la sécurité et l'administration de n'importe quel système.

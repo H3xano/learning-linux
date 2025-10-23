@@ -1,5 +1,3 @@
-# Étape 1 : L'Interface - Instructions et Terminal
-
 L'écran est divisé en deux parties principales :
 
 -   **À gauche :** Ce sont les **instructions** (le texte que vous lisez en ce moment). C'est votre guide.

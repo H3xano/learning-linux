@@ -1,5 +1,3 @@
-# Étape 2 : Maîtriser les Variables
-
 Une variable est une "boîte" nommée pour stocker une information.
 -   Déclaration : `NOM="valeur"` (sans espaces autour du `=`).
 -   Lecture : `$NOM`.

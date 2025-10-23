@@ -1,7 +1,5 @@
 ![Formip](../assets/formip_logo_padded.png)
 
-# 🐧 Lab 3.1 : L'Art de Lire les Fichiers
-
 Bienvenue dans le terminal, explorateur Linux ! 🚀
 
 Jusqu'ici, le contenu des fichiers est resté un mystère. Mais tout est sur le point de changer ! Dans ce lab, vous allez devenir un véritable maître de la lecture de fichiers.

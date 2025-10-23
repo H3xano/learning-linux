@@ -1,5 +1,3 @@
-# Étape 1 : La puissance cachée de `ls`
-
 La commande `ls` est bien plus qu'un simple outil de listage. Avec quelques options, elle devient un puissant scanner.
 
 ### Les options fondamentales

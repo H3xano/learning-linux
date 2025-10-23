@@ -1,4 +1,5 @@
 ![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie : Vous avez la carte en main !
 
 Félicitations, explorateur ! 🎉 Vous avez terminé votre visite guidée de la "ville" Linux. Le FHS n'est plus un mystère, mais une carte mentale que vous possédez.

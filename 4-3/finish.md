@@ -1,4 +1,5 @@
 ![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie : Vous êtes un maître de la navigation !
 
 Félicitations, navigateur ! 🎉 Le système de fichiers n'est plus un labyrinthe, mais un terrain de jeu que vous maîtrisez.

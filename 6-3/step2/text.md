@@ -1,5 +1,3 @@
-# Étape 2 : Le Mode Octal - Le Code des Chiffres
-
 Le mode octal est plus rapide pour définir **toutes** les permissions d'un coup. La clé est de mémoriser les valeurs :
 -   `r` (read) = **4**
 -   `w` (write) = **2**

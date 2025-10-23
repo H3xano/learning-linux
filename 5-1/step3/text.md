@@ -1,5 +1,3 @@
-# Étape 3 : `info` - La documentation avancée
-
 Certains outils, notamment ceux du projet GNU comme `tar`, ont une documentation encore plus riche dans le système `info`. C'est comme un mini-site web dans votre terminal, avec des "liens" entre les pages (appelées "nœuds").
 
 Explorons la documentation `info` de la commande `tar`.

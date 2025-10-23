@@ -1,5 +1,3 @@
-# Étape 3 : Le Piège des Chemins Relatifs
-
 Un lien symbolique peut être "brisé" (broken) si sa cible disparaît. Un des pièges les plus courants est de créer un lien avec un chemin relatif, puis de le déplacer.
 
 Un dossier `data` contenant `source.txt` a été créé pour vous.

@@ -1,5 +1,3 @@
-# Étape 2 : `find` - La recherche par attributs
-
 `find` peut chercher selon bien plus que le nom ! La taille et la date sont des critères très utiles.
 
 ### Recherche par taille avec `-size`

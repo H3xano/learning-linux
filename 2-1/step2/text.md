@@ -1,5 +1,3 @@
-# Étape 2 : Lire sa Carte d'Identité (Variables d'Environnement)
-
 Chaque session est définie par des **variables d'environnement**. Ce sont des informations que tous les programmes peuvent lire.
 
 ### Les variables fondamentales

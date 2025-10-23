@@ -1,5 +1,3 @@
-# Étape 3 : Réorganiser avec `mv`
-
 La commande `mv` (move) fait deux choses :
 1.  **Renommer** un fichier ou un répertoire.
 2.  **Déplacer** un fichier ou un répertoire.

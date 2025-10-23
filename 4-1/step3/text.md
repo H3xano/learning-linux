@@ -1,5 +1,3 @@
-# Étape 3 : Applications et Données - /usr, /var, /opt
-
 Où sont installés les logiciels et où sont stockées les données qui changent tout le temps (comme les logs) ?
 
 ### `/usr` : Le "centre commercial" des applications

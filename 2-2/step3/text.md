@@ -1,5 +1,3 @@
-# Étape 3 : Redirections (`>`) et Pipes (`|`)
-
 Les commandes communiquent via 3 "tuyaux" : **stdin** (entrée), **stdout** (sortie normale), **stderr** (sortie d'erreur).
 
 ### La Redirection de Sortie `>`

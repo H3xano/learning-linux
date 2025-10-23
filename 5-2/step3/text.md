@@ -1,5 +1,3 @@
-# Étape 3 : Contrôler les erreurs (stderr)
-
 Pour rediriger les erreurs, on précise le numéro du flux : `2>`.
 
 Reprenons notre commande qui génère une erreur. Cette fois, nous allons laisser le résultat normal s'afficher à l'écran, mais nous allons capturer l'erreur dans un fichier.

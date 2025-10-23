@@ -1,4 +1,5 @@
 ![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie : Vous êtes autonome !
 
 Félicitations ! 🎉 Vous avez maintenant les clés de la connaissance infinie de Linux. La documentation intégrée n'a plus de secrets pour vous.

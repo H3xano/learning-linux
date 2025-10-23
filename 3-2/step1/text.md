@@ -1,5 +1,3 @@
-# Étape 1 : `grep` - Votre première enquête 🕵️
-
 `grep` est un filtre. Donnez-lui un "motif" (du texte à chercher) et un fichier, et il vous montrera **uniquement les lignes qui contiennent ce motif**.
 
 Pour nos exercices, un fichier `agents.txt` a été préparé. Commençons par l'afficher pour voir son contenu.

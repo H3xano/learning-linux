@@ -1,5 +1,3 @@
-# Étape 4 : Automatiser la Sauvegarde
-
 Un admin prévoyant automatise ses sauvegardes. Créons un script qui archive notre site web.
 
 `nano backup_site.sh`{{execute}}

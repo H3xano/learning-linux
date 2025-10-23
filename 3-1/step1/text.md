@@ -1,5 +1,3 @@
-# Étape 1 : `cat` - L'affichage brut et puissant 🐈
-
 Commençons par la commande la plus fondamentale pour lire un fichier : `cat` (abréviation de *concatenate*).
 
 Un script a déjà préparé quelques fichiers pour nous. Affichons le contenu d'un fichier texte simple.

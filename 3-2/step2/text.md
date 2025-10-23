@@ -1,5 +1,3 @@
-# Étape 2 : Les options magiques de `grep` 🪄
-
 Une recherche simple, c'est bien, mais `grep` devient un super-outil avec ses options. En voici quatre qui sont absolument essentielles.
 
 ### `-i` : Ignorer la casse

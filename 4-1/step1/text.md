@@ -1,5 +1,3 @@
-# Étape 1 : Le cœur du système - /bin, /sbin et /etc
-
 Commençons par les "organes vitaux" de Linux. Ces dossiers contiennent tout ce qui est essentiel pour que le système démarre et fonctionne.
 
 ### `/bin` : La boîte à outils de base

@@ -1,5 +1,3 @@
-# Étape 4 : La puissance (et le danger) de `rm`
-
 La commande `rm` (**r**e**m**ove) est le bouton "supprimer" de Linux. **ATTENTION : C'est une suppression DÉFINITIVE !** Il n'y a pas de corbeille.
 
 ### Supprimer un fichier

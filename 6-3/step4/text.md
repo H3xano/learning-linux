@@ -1,5 +1,3 @@
-# Étape 4 : SGID et Sticky Bit - Protéger les Dossiers Partagés
-
 Le `SGID` et le `Sticky Bit` sont cruciaux pour la collaboration en équipe.
 
 ### Le SGID (`Set Group ID`) sur un dossier

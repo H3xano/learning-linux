@@ -1,5 +1,3 @@
-# Étape 2 : Les territoires des utilisateurs - /home, /root, /tmp
-
 Maintenant, voyons où les "habitants" de notre système vivent et travaillent.
 
 ### `/home` : Les appartements personnels

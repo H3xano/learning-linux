@@ -1,5 +1,3 @@
-# Étape 2 : Gestion du Service Web Nginx
-
 Votre application est en place, mais le serveur web (Nginx) ne la sert pas encore. Vous devez piloter le service avec `systemctl`.
 
 ### `status` : Vérifier l'état du service

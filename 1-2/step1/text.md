@@ -1,5 +1,3 @@
-# Étape 1 : Le Deuxième Terminal - Le Travail en Parallèle
-
 Parfois, une commande peut prendre beaucoup de temps à s'exécuter. Devez-vous attendre sans rien faire ? Non ! Killercoda vous permet d'ouvrir plusieurs terminaux.
 
 Au-dessus de la fenêtre du terminal à droite, vous voyez un onglet "Terminal 1". Cliquez sur le bouton `+` juste à côté pour ouvrir un deuxième terminal.

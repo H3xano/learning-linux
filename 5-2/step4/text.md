@@ -1,5 +1,3 @@
-# Étape 4 : La magie des pipes `|`
-
 Le pipe `|` est un des concepts les plus puissants de Linux. Il **connecte la sortie (stdout) d'une commande à l'entrée (stdin) de la commande suivante**.
 
 Cela permet de créer des chaînes de traitement sans jamais créer de fichier temporaire.

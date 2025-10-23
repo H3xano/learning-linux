@@ -1,5 +1,3 @@
-# Étape 1 : Les 3 flux en action (stdin, stdout, stderr)
-
 Chaque commande Linux possède 3 "tuyaux" :
 -   **stdin (0)** : L'entrée (par défaut, votre clavier).
 -   **stdout (1)** : La sortie normale (par défaut, votre écran).

@@ -1,5 +1,3 @@
-# Étape 1 : `top` et `htop` - Le Tableau de Bord en Temps Réel
-
 Le serveur semble lent ? Votre premier réflexe doit être `top` ou, mieux encore, `htop`. C'est le gestionnaire des tâches de Linux.
 
 `htop` est une version améliorée et plus intuitive de `top`. Lançons-le.

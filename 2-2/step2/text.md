@@ -1,5 +1,3 @@
-# Étape 2 : Les Métacaractères - Cibler en Masse
-
 Les métacaractères (ou "wildcards") sont des jokers qui permettent de sélectionner plusieurs fichiers à la fois.
 
 Des fichiers d'exemple (`rapport_01.txt`, `rapport_02.txt`, `photoA.jpg`, `photoB.jpg`) ont été créés pour vous.

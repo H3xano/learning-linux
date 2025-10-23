@@ -1,5 +1,3 @@
-# Étape 1 : Anatomie d'une Commande et la Magie de `Tab`
-
 Une commande Linux est une phrase structurée : `commande [options] [arguments]`.
 -   **Commande** : Le verbe (l'action). Ex: `ls`.
 -   **Options** : Les adverbes (comment faire). Ex: `-l` (en format long).

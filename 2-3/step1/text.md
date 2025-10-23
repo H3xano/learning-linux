@@ -1,5 +1,3 @@
-# Étape 1 : Le Pouvoir Absolu de `root` avec `su`
-
 L'utilisateur `root` (UID 0) a tous les droits sur le système. La commande traditionnelle pour devenir `root` est `su` (**s**ubstitute **u**ser).
 
 ### Le Piège du `su` simple

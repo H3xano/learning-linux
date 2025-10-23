@@ -1,5 +1,3 @@
-# Étape 5 : Outils avancés - `tee` et `/dev/null`
-
 Deux outils complètent votre panoplie de plombier.
 
 ### `tee` : Voir ET sauvegarder

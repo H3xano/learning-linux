@@ -1,5 +1,3 @@
-# Étape 1 : `man` - L'encyclopédie et ses 9 sections
-
 La commande `man` (pour **man**ual) est votre porte d'entrée vers la documentation de n'importe quelle commande.
 
 Commençons par consulter le manuel de la commande `ls`.

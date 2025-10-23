@@ -1,5 +1,3 @@
-# Étape 5 : `umask` - La Sécurité par Défaut
-
 D'où viennent les permissions par défaut d'un nouveau fichier ? De `umask`. `umask` est un "masque" qui **retire** des permissions aux valeurs maximales.
 
 -   Valeur max pour un fichier : `666` (`rw-rw-rw-`)

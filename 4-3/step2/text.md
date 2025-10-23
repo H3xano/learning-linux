@@ -1,5 +1,3 @@
-# Étape 2 : Les raccourcis magiques de `cd`
-
 Taper des chemins complets est long. Heureusement, `cd` possède des raccourcis ultra-efficaces !
 
 ### `cd ..` : Remonter d'un niveau

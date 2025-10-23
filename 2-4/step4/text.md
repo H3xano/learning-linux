@@ -1,5 +1,3 @@
-# Étape 4 : Le Shell Intelligent (Historique et Options)
-
 Configurons le shell pour qu'il soit plus intelligent : un historique plus grand, sans doublons, et une correction automatique des fautes de frappe !
 
 Ajoutons un bloc de configuration complet à notre `.bashrc`.

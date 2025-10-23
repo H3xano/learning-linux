@@ -1,5 +1,3 @@
-# Étape 3 : Gérer les Paramètres
-
 Un script devient vraiment utile quand il peut accepter des **paramètres** à l'exécution.
 -   `$1` : contient le premier paramètre.
 -   `$2` : contient le deuxième paramètre.

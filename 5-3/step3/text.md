@@ -1,5 +1,3 @@
-# Étape 3 : Que se passe-t-il ? (Les Processus)
-
 Un **processus** est un programme en cours d'exécution. La commande `ps` (**p**rocess **s**tatus) est votre scanner pour les voir.
 
 Si vous tapez `ps` tout seul, vous ne verrez que les processus de votre terminal actuel. C'est très limité.

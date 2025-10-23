@@ -1,5 +1,3 @@
-# Étape 3 : Voyager dans le Temps (L'Historique et les Raccourcis)
-
 Le shell se souvient de tout ce que vous tapez. C'est l'historique, votre meilleur ami pour gagner du temps !
 
 ### `history` : Voir le passé

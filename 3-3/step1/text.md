@@ -1,5 +1,3 @@
-# Étape 1 : Les bases du langage des motifs
-
 Oubliez la recherche de texte exact. Avec les regex, on cherche des **motifs**. Pour cela, il est crucial d'utiliser `grep` avec l'option `-E` (Extended Regex), ou son alias `egrep`.
 
 Un fichier `data.txt` a été préparé. Commençons par une recherche simple. Le `.` (point) signifie "n'importe quel caractère". Cherchons les mots de 3 lettres "b", suivi de n'importe quoi, suivi de "t".

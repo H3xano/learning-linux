@@ -1,5 +1,3 @@
-# Étape 5 : Le Baptême du Feu - Résoudre une Panne
-
 **"Le site est down !"** C'est le moment de prouver vos compétences. Nous allons simuler une panne courante.
 
 ### 1. La Panne

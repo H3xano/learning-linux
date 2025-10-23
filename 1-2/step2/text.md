@@ -1,6 +1,3 @@
-    
-# Étape 2 : Identifier sa Machine (Lien avec le cours 1.2.1)
-
 Dans le cours, nous avons vu qu'un serveur peut être une machine physique, une Machine Virtuelle (VM), ou un conteneur. Killercoda vous fournit une **Machine Virtuelle (VM) de type serveur**.
 
 Vérifions-le nous-mêmes ! La commande `hostnamectl` nous donne des informations détaillées sur le système. Lancez-la dans l'un de vos terminaux.

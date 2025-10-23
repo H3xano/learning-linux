@@ -1,5 +1,3 @@
-# Étape 3 : `df` et `du` - Les comptables de l'espace disque
-
 "Disque plein !" est une alerte que tout admin redoute. `df` et `du` sont les deux outils pour diagnostiquer et résoudre ce problème.
 
 ### `df` : Le bilan global

@@ -1,5 +1,3 @@
-# Étape 3 : Personnaliser son Prompt (`PS1`)
-
 Votre prompt (`learner@ubuntu:~$`) est défini par la variable `PS1`. Nous allons le personnaliser pour qu'il soit plus joli et plus informatif.
 
 ### Ajouter des couleurs

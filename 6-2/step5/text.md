@@ -1,5 +1,3 @@
-# Étape 5 : Scénario Réel - Réparer un Projet
-
 Vous venez de recevoir une archive `projet_casse.tar.gz`. Après l'avoir extraite, vous constatez un problème.
 
 `tar -xzf projet_casse.tar.gz`{{execute}}

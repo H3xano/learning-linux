@@ -1,5 +1,3 @@
-# Étape 2 : Contrôler la sortie normale (stdout) avec `>` et `>>`
-
 Le symbole `>` permet de **rediriger** `stdout` vers un fichier au lieu de l'écran.
 
 Sauvegardons la liste des fichiers de `/etc` dans un fichier nommé `liste_etc.txt`.

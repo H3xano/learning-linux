@@ -1,5 +1,3 @@
-# Étape 3 : Chercher à grande échelle 🔭
-
 Un détective ne se contente pas d'une seule pièce, il fouille tout le bâtiment ! `grep` peut faire de même avec les fichiers et les dossiers.
 
 Plusieurs fichiers de logs (`system.log`, `app.log`) ont été créés pour cet exercice.

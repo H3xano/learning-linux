@@ -1,5 +1,3 @@
-# Étape 2 : La précision absolue
-
 Le `.` est trop vague. Pour être précis, on utilise les **classes de caractères** avec `[ ]`.
 
 ### Les classes `[ ]`

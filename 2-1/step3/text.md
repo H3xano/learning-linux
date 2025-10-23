@@ -1,5 +1,3 @@
-# Étape 3 : Analyser son Type de Session
-
 Tous les shells ne sont pas créés égaux ! Linux fait la différence entre plusieurs types.
 
 ### Session *Login* vs *Non-Login*

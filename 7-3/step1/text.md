@@ -1,5 +1,3 @@
-# Étape 1 : Déploiement et Configuration Initiale
-
 Votre première mission est de déployer une application web simple. Une archive `mon_app.tar.gz` a été placée dans votre répertoire `home`.
 
 ### 1. Extraire et Positionner

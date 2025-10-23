@@ -1,5 +1,3 @@
-# Étape 3 : Analyse des Logs du Serveur Web
-
 Les logs sont les yeux et les oreilles de votre serveur. Ils se trouvent dans `/var/log/nginx/`.
 
 ### `access.log` : Qui a visité quoi ?

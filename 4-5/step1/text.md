@@ -1,5 +1,3 @@
-# Étape 1 : `find` - La recherche par nom
-
 `find` est l'outil de recherche le plus puissant de Linux. Sa syntaxe de base est : `find [où_chercher] [critère] [ce_que_vous_cherchez]`.
 
 Pour nos exercices, une arborescence de dossiers a été créée.

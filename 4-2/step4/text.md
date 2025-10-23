@@ -1,5 +1,3 @@
-# Étape 4 : `ln` - L'art des liens
-
 Comment avoir un fichier à deux endroits sans le copier ? Grâce aux liens !
 
 ### Le lien symbolique (ou "symlink")

@@ -1,5 +1,3 @@
-# Étape 2 : Dupliquer avec `cp`
-
 La commande `cp` (copy) est votre outil pour faire des copies de fichiers et de répertoires.
 
 ### Copier un fichier

@@ -1,5 +1,3 @@
-# Étape 4 : Filtrer les Processus pour y voir clair
-
 La sortie de `ps aux` est souvent trop dense. Le plus souvent, on la combine avec `grep` pour trouver exactement ce qu'on cherche.
 
 ### Trouver les processus d'un utilisateur

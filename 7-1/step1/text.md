@@ -1,5 +1,3 @@
-# Étape 1 : Créer son Premier Script Bash
-
 Un script Bash est un fichier texte contenant des commandes qui s'exécutent les unes après les autres.
 
 ### Le Shebang et la Création

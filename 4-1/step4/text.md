@@ -1,5 +1,3 @@
-# Étape 4 : Le secret du $PATH - Comment Linux trouve-t-il les commandes ?
-
 Vous avez vu qu'il y a des exécutables dans `/bin`, `/usr/bin`, etc. Comment le shell sait-il où chercher quand vous tapez une commande comme `ls` ?
 
 La réponse est la variable d'environnement `$PATH`. C'est une liste de dossiers, séparés par `:`, où le système cherche les commandes.

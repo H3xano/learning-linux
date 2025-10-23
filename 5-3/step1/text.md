@@ -1,5 +1,3 @@
-# Étape 1 : Votre Identité et Votre Environnement
-
 Chaque session Linux est définie par des **variables d'environnement**. C'est l'ADN de votre connexion. La commande `echo` avec un `$` vous permet de les lire.
 
 Découvrons votre identité sur ce système.

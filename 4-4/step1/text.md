@@ -1,5 +1,3 @@
-# Étape 1 : Construire avec `mkdir` et `touch`
-
 Commençons par créer la structure de notre projet. `mkdir` crée des répertoires, `touch` crée des fichiers vides ou met à jour leurs timestamps.
 
 ### Créer des répertoires

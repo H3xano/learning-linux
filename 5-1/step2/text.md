@@ -1,5 +1,3 @@
-# Étape 2 : Naviguer et chercher comme un pro
-
 Savoir ouvrir une page `man`, c'est bien. Savoir y trouver une information précise en 5 secondes, c'est mieux !
 
 Ouvrons à nouveau le manuel de `ls`.

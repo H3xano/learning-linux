@@ -1,5 +1,3 @@
-# Étape 2 : `file` et `stat` - La véritable identité des fichiers
-
 Le nom d'un fichier peut être trompeur. Pour connaître sa vraie nature, on utilise `file` et `stat`.
 
 Un fichier nommé `image_suspecte.jpg` a été créé pour vous.

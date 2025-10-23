@@ -1,5 +1,3 @@
-# Étape 1 : Le Mode Symbolique - Parler aux Permissions
-
 Le mode symbolique de `chmod` est le plus intuitif. Il utilise des lettres pour dire qui est concerné, quelle action faire, et quelle permission changer.
 
 -   **Qui ?** `u` (user), `g` (group), `o` (others), `a` (all).

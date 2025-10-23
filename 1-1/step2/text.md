@@ -1,5 +1,3 @@
-# Étape 2 : Exécuter et Vérifier
-
 À la fin de la plupart des étapes, vous devrez valider que vous avez bien effectué l'action demandée. Pour cela, il y a un bouton **"Vérifier"** (ou "Check") en bas à gauche.
 
 Quand vous cliquez dessus, un petit script en arrière-plan s'exécute pour contrôler votre travail.

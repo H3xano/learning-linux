@@ -1,5 +1,5 @@
 {
-  "title": "Lab 1.1 : Prise en Main de Votre Laboratoire",
+  "title": "Lab 1.1: 🚀 Le Simulateur de Vol (Prise en Main)",
   "description": "Apprenez à utiliser l'environnement d'apprentissage interactif Killercoda.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,17 +13,17 @@
     },
     "steps": [
       {
-        "title": "Découvrir l'Interface",
+        "title": "Le Cockpit : Votre Tableau de Bord",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Exécuter et Vérifier",
+        "title": "Le Test de Vol : Exécuter et Valider",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Astuces et Informations Clés",
+        "title": "Le Manuel de Vol : Règles d'Or et Astuces",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       }

@@ -1,5 +1,3 @@
-# Étape 4 : Vim (Partie 3) - La Puissance du Mode Normal
-
 Maintenant que vous savez entrer, écrire, sauvegarder et quitter, voyons *pourquoi* le Mode Normal est si puissant.
 
 Rouvrons notre fichier.

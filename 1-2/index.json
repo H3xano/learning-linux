@@ -1,5 +1,5 @@
 {
-  "title": "Lab 1.2 : Les Instruments de Bord Avancés",
+  "title": "Lab 1.2: 🛰️ Les Instruments de Bord (Analyse de la VM)",
   "description": "Découvrez le multi-terminal et analysez votre machine virtuelle Killercoda.",
   "backend": {
     "imageid": "ubuntu",
@@ -13,17 +13,17 @@
     },
     "steps": [
       {
-        "title": "Le Deuxième Terminal",
+        "title": "La Console du Co-pilote : Gérer Deux Tâches à la Fois",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Identifier sa Machine",
+        "title": "La Carte d'Identité du Vaisseau : VM ou Vaisseau Amiral ?",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "L'Interface en Ligne de Commande",
+        "title": "Le Pilotage aux Instruments : Sans Souris, que des Commandes",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       }

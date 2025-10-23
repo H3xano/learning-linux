@@ -1,5 +1,3 @@
-# Étape 5 : Les Boucles - Répéter des Actions
-
 Les boucles permettent d'exécuter la même action sur une liste d'éléments. La boucle `for` est la plus commune.
 
 ### Boucle `for` sur une liste

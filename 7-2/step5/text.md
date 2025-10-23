@@ -1,5 +1,3 @@
-# Étape 5 : Créer son Propre Dashboard
-
 Maintenant, assemblons toutes ces commandes dans un script pour créer notre propre tableau de bord.
 
 `nano mon_dashboard.sh`{{execute}}

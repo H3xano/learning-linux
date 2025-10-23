@@ -1,5 +1,3 @@
-# Étape 1 : Le Fondement - Inodes et Liens Durs
-
 Chaque fichier sur Linux a un numéro d'identité secret appelé **inode**. Le nom du fichier n'est qu'une étiquette qui pointe vers cet inode.
 
 Utilisons `ls -i` pour voir le numéro d'inode d'un fichier.

@@ -1,5 +1,3 @@
-# Étape 3 : Les Logs - La Boîte Noire du Système
-
 Que s'est-il passé sur le serveur cette nuit ? `journalctl` est la "boîte noire" des systèmes Linux modernes. Il enregistre tout. Pour lire tous les logs système, il est de bonne pratique d'utiliser `sudo`.
 
 ### Consulter les logs d'un service

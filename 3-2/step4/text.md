@@ -1,5 +1,3 @@
-# Étape 4 : Le `grep` visuel - Couleur et Contexte 🎨
-
 Trouver une ligne, c'est bien. La **comprendre en un clin d'œil**, c'est le niveau expert.
 
 ### `--color` : Mettre en lumière les résultats

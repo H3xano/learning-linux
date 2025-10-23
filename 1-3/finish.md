@@ -1,3 +1,5 @@
+![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Mission Accomplie : Vous avez fait vos premiers pas !
 
 Félicitations ! 🎉 Vous avez exécuté vos premières commandes Linux avec succès. Vous n'êtes plus un simple spectateur, vous êtes un acteur dans le monde de la ligne de commande.

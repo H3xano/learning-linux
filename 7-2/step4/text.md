@@ -1,5 +1,3 @@
-# Étape 4 : `df` et `du` - Les Jauges d'Espace Disque
-
 Un disque plein peut paralyser un serveur. Deux commandes sont vitales pour gérer l'espace.
 
 ### `df` : Le bilan global

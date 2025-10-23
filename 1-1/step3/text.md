@@ -1,5 +1,3 @@
-# Étape 3 : Astuces et Informations Clés
-
 Voici quelques points importants à retenir pour tous les labs à venir :
 
 -   **Copier/Coller :** Vous pouvez sélectionner du texte dans le terminal et utiliser `Ctrl+C` (ou `Cmd+C` sur Mac) pour copier, et `Ctrl+V` (ou `Cmd+V`) pour coller.

@@ -1,5 +1,3 @@
-# Étape 2 : Vim (Partie 1) - Le Choc des Modes
-
 Bienvenue dans `vim`. La première chose à comprendre est son concept de **MODES**. C'est ce qui le rend si différent.
 
 Ouvrons un fichier de configuration.

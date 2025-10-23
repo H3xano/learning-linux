@@ -1,5 +1,3 @@
-# Étape 4 : Les Conditions - Prendre des Décisions
-
 Un script intelligent doit pouvoir prendre des décisions. La structure `if [ condition ]; then ... fi` est faite pour ça.
 
 Créons un script qui vérifie si un fichier existe.

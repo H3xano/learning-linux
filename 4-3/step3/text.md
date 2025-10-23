@@ -1,5 +1,3 @@
-# Étape 3 : Chemins Absolus vs Relatifs
-
 La différence entre ces deux types de chemins est la source de nombreuses erreurs pour les débutants.
 
 -   **Chemin Absolu** : Commence par `/`. C'est une adresse GPS, elle fonctionne de n'importe où. Ex: `/home/learner/Documents`.
