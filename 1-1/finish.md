@@ -12,4 +12,4 @@ Vous savez maintenant :
 
 Vous avez toutes les clés en main pour vous concentrer sur l'essentiel : apprendre Linux.
 
-Le prochain lab sera le premier "vrai" lab pratique. Vous êtes prêt !
+Le prochain lab sera votre première véritable incursion dans la ligne de commande Linux. Vous êtes prêt !

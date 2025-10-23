@@ -1,9 +1,20 @@
 #!/bin/bash
 set -e
-FILES=("$HOME/.bash_history" "/home/learner/.bash_history")
-found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "$f" && return 0; done; return 1; }
 
-# Vérification pour l'étape 2
-# found 'une_commande' || exit 1
+# On vérifie que la commande exacte a été tapée par l'utilisateur.
+FILES=("/home/learner/.bash_history")
+found() {
+  local pat="$1"
+  for f in "${FILES[@]}"; do
+    if [ -f "$f" ] && grep -qF "$pat" "$f"; then
+      return 0
+    fi
+  done
+  return 1
+}
 
-echo -n "done"
+if found 'echo "Je sais utiliser le terminal"'; then
+  echo -n "done"
+else
+  exit 1
+fi

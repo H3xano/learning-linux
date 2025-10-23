@@ -1,8 +1,8 @@
-# Étape 2 : Le Bouton "Vérifier" - Votre Juge de Paix
+# Étape 2 : Exécuter et Vérifier
 
-À la fin de chaque étape, vous devrez souvent valider que vous avez bien effectué l'action demandée. Pour cela, il y a un bouton **"Vérifier"** (ou "Check").
+À la fin de la plupart des étapes, vous devrez valider que vous avez bien effectué l'action demandée. Pour cela, il y a un bouton **"Vérifier"** (ou "Check") en bas à gauche.
 
-Quand vous cliquez dessus, un petit script en arrière-plan (`verify.sh`) s'exécute pour contrôler votre travail.
+Quand vous cliquez dessus, un petit script en arrière-plan s'exécute pour contrôler votre travail.
 
 **Votre mission :**
 Pour réussir cette étape, tapez la commande exacte ci-dessous dans le terminal, puis cliquez sur le bouton "Vérifier".

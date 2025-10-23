@@ -8,4 +8,4 @@ Avant de plonger dans les mystères de Linux, prenons 5 minutes pour nous famili
 
 Pensez à ce lab comme à la visite guidée du cockpit d'un avion avant votre premier vol. Une fois que vous saurez où sont les commandes, piloter deviendra beaucoup plus simple !
 
-Prêt ? Allons-y !
+Prêt ? Allons-y ! 🚀

@@ -1,6 +1,6 @@
 {
-  "title": "Lab 0 : Prise en Main de Votre Laboratoire Linux",
-  "description": "Se familiariser avec l'interface Killercoda pour suivre les labs pratiques dans les meilleures conditions.",
+  "title": "Lab 1.1 : Prise en Main de Votre Laboratoire",
+  "description": "Apprenez à utiliser l'environnement d'apprentissage interactif Killercoda.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -13,16 +13,19 @@
     },
     "steps": [
       {
-        "title": "Qui suis-je dans ce système ?",
-        "text": "step1/text.md"
+        "title": "Découvrir l'Interface",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       },
       {
-        "title": "Où et quand sommes-nous ?",
-        "text": "step2/text.md"
+        "title": "Exécuter et Vérifier",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
-        "title": "Créer mon premier fichier",
-        "text": "step3/text.md"
+        "title": "Astuces et Informations Clés",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       }
     ],
     "finish": {
