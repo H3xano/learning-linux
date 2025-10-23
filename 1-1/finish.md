@@ -1,3 +1,5 @@
+![Formip](../assets/formip_logo_padded.png)
+
 # 🏆 Parfait ! Vous êtes prêt pour l'aventure Linux !
 
 Félicitations ! Vous avez terminé votre initiation à l'environnement Killercoda.
