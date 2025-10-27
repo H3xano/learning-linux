@@ -8,20 +8,31 @@ Exécutons une commande complète.
 `ls -l /etc`{{execute}}
 
 ---
-### La Complétion Automatique (`Tab`)
+### Options Courtes, Longues et Combinées
 
-Votre meilleur ami dans le terminal est la touche `Tab`. Elle complète automatiquement les noms de commandes, de fichiers et de dossiers.
+Les options courtes (`-l`, `-a`) peuvent être combinées pour plus d'efficacité. Pour un affichage long (`l`), incluant les fichiers cachés (`a`) et avec des tailles lisibles (`h`), essayez :
 
-Tapez `ls /et` puis appuyez sur `Tab`. Le shell complète en `ls /etc/`. Magique !
+`ls -lah ~`{{execute}}
 
-Maintenant, tapez `syst` et appuyez deux fois sur `Tab`.
+Les options longues (`--all`, `--human-readable`) sont plus claires, surtout dans les scripts. Elles ne se combinent pas.
+
+`ls --all --human-readable ~`{{execute}}
+
+---
+### La Complétion (`Tab`) et l'Aide (`--help`, `man`)
+
+Votre meilleur ami est la touche `Tab`. Elle complète automatiquement les commandes et les fichiers.
+
+Tapez `ls /et` puis appuyez sur `Tab`. Magique ! Maintenant, tapez `syst` et appuyez deux fois sur `Tab`.
 
 `syst`{{execute T1}}
 
-Le shell vous montre toutes les commandes qui commencent par `syst`. C'est un outil d'exploration indispensable.
+Pour une aide rapide, utilisez `--help`.
 
-Enfin, découvrons l'aide intégrée avec `--help`.
+`ls --help | head -n 20`{{execute T2}}
 
-`ls --help`{{execute T2}}
+Pour le manuel complet et détaillé, utilisez `man`. C'est la source de vérité !
 
-Vous avez un résumé de toutes les options possibles. N'oubliez jamais `--help` !
+`man ls`{{execute T2}}
+
+*(Appuyez sur la touche `q` pour quitter la page du manuel.)*

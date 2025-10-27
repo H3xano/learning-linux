@@ -18,17 +18,17 @@
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Les Runes de Sélection : Maîtriser les Jokers `*`, `?`, `[]`",
+        "title": "Les Runes de Sélection : Maîtriser les Jokers `*`, `?`, `[]` et `{}`",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "L'Alchimie des Flux : Redirections (>) et Pipes (|)",
+        "title": "L'Alchimie des Flux : Redirections (>, 2>) et Pipes (|)",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Les Sceaux de Condition : Le Succès (`&&`) et le Plan B (`||`)",
+        "title": "Les Sceaux de Condition : Le Succès (`&&`), le Plan B (`||`) et la Séquence (`;`)",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
@@ -36,6 +36,11 @@
         "title": "L'Invocation Dynamique : Forger des Commandes avec `$()`",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Le Grimoire des Formules : Calculs et Transformations",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
       }
     ],
     "finish": {

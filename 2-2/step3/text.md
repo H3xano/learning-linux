@@ -1,28 +1,28 @@
 Les commandes communiquent via 3 "tuyaux" : **stdin** (entrée), **stdout** (sortie normale), **stderr** (sortie d'erreur).
 
 ### La Redirection de Sortie `>`
-
-Par défaut, `stdout` va à l'écran. `>` permet de le rediriger vers un fichier.
-
-Sauvegardons la date actuelle dans un fichier.
+`>` redirige la sortie normale (`stdout`) vers un fichier, en l'écrasant.
 
 `date > date.txt`{{execute}}
-
-Rien ne s'affiche ! C'est normal. Vérifions le contenu du fichier.
-
 `cat date.txt`{{execute}}
 
-**Attention :** `>` **écrase** le fichier. Pour **ajouter** à la fin, utilisez `>>`.
+Pour **ajouter** à la fin, utilisez `>>`.
 
 `echo "--- Fin du fichier ---" >> date.txt`{{execute}}
 `cat date.txt`{{execute}}
 
+### La Redirection des Erreurs `2>`
+Les erreurs (`stderr`) s'affichent aussi à l'écran. Pour les cacher ou les enregistrer, on les redirige avec `2>`. La destination `/dev/null` est une "poubelle" virtuelle.
+
+Cherchons un fichier. La commande va générer des erreurs "Permission non accordée". Masquons-les pour ne voir que les résultats :
+
+`find / -name "hosts" 2> /dev/null`{{execute}}
+
 ---
 ### Le Pipe `|` : Le Connecteur Magique
+Le pipe `|` connecte la sortie (`stdout`) d'une commande à l'entrée (`stdin`) d'une autre.
 
-Le pipe `|` connecte la sortie (`stdout`) d'une commande à l'entrée (`stdin`) d'une autre. C'est la base du chaînage.
-
-Listons tous les processus et utilisons `grep` pour filtrer uniquement ceux liés au shell `bash`.
+Listons les processus et filtrons avec `grep` pour ne voir que `bash`.
 
 `ps aux | grep "bash"`{{execute}}
 
@@ -30,4 +30,4 @@ Listons les fichiers de `/etc` et comptons-les avec `wc -l`.
 
 `ls /etc | wc -l`{{execute}}
 
-Vous avez créé une "chaîne de production" en une seule ligne, sans créer de fichier temporaire !
+Vous avez créé une "chaîne de production" sans fichier temporaire !
