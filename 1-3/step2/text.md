@@ -6,11 +6,19 @@ La commande `date` vous donne la date et l'heure actuelles du serveur, y compris
 
 `date`{{execute}}
 
+La vraie puissance de `date` est dans le formatage. Imaginez que vous vouliez créer un fichier de sauvegarde. Obtenez une date parfaite pour un nom de fichier avec :
+
+`date +'%Y-%m-%d'`{{execute}}
+
 ### `cal` : Le calendrier
 
 Besoin d'un calendrier ? La commande `cal` est là pour ça.
 
 `cal`{{execute}}
+
+Planifions un peu ! Affichez le calendrier du mois précédent, du mois en cours et du mois suivant avec la commande `cal -3` :
+
+`cal -3`{{execute}}
 
 ### `uptime` : La santé du serveur
 

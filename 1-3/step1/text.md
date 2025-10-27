@@ -18,4 +18,15 @@ Pour voir uniquement la liste des groupes auxquels vous appartenez, utilisez la 
 
 `groups`{{execute}}
 
-Vous savez maintenant comment vérifier votre identité sur n'importe quel système Linux !
+---
+### Aller plus loin : Explorer avec `id`
+
+La commande `id` peut être encore plus précise.
+
+- Pour ne voir **que** votre nom d'utilisateur, utilisez l'option `-un` :
+`id -un`{{execute}}
+
+- Vous pouvez aussi l'utiliser pour investiguer d'autres utilisateurs. Voyons par exemple l'identité du super-utilisateur, `root` :
+`id root`{{execute}}
+
+Vous savez maintenant comment vérifier précisément votre identité sur n'importe quel système Linux !
