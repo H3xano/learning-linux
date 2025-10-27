@@ -22,3 +22,22 @@ Quand vous tapez `ls`, le shell cherche `ls` dans chacun de ces dossiers, dans l
 Pour lister **toutes** les variables d'environnement de votre session, utilisez la commande `env`.
 
 `env`{{execute}}
+
+---
+### Créer et supprimer une variable
+
+Vous pouvez aussi créer vos propres variables. Pour qu'elle soit visible par d'autres programmes, il faut l'**exporter**.
+
+`export MON_MESSAGE="Linux est fascinant !"`{{execute}}
+
+Vérifions qu'elle a bien été créée :
+
+`echo $MON_MESSAGE`{{execute}}
+
+Pour la supprimer, utilisez la commande `unset`.
+
+`unset MON_MESSAGE`{{execute}}
+
+Maintenant, si vous essayez de l'afficher, elle n'existe plus !
+
+`echo $MON_MESSAGE`{{execute}}

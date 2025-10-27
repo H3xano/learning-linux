@@ -31,6 +31,11 @@
         "title": "Diagnostic d'Environnement",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Explorer son Profil",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
       }
     ],
     "finish": {

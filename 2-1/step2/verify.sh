@@ -4,4 +4,7 @@ set -e; FILES=("$HOME/.bash_history" "/home/learner/.bash_history"); found() { l
 found 'echo "Je suis $USER' || exit 1
 found "echo \$PATH | tr ':'" || found "echo \$PATH \| tr ':'" || exit 1
 found '^env$' || exit 1
+found 'export MON_MESSAGE' || exit 1
+found 'echo \$MON_MESSAGE' || exit 1
+found 'unset MON_MESSAGE' || exit 1
 echo -n "done"
