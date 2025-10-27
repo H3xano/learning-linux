@@ -1,34 +1,42 @@
-L'un des plus grands avantages de `sudo` est la **traçabilité**. Chaque commande exécutée avec `sudo` est enregistrée dans un journal.
+Vous avez le pouvoir d'exécuter certaines commandes, mais comment l'étendre ? En modifiant le fichier de configuration de `sudo`.
 
-Le fichier de log principal pour cela est `/var/log/auth.log`.
+### La Règle d'Or : `visudo`
+On ne modifie **JAMAIS** le fichier `/etc/sudoers` directement. Une erreur de syntaxe pourrait vous bloquer hors de votre système ! On utilise **TOUJOURS** la commande `visudo`, qui vérifie la syntaxe avant de sauvegarder.
 
-Utilisons `sudo` pour lister le contenu de `/root`.
+### L'Approche Moderne : `/etc/sudoers.d`
+Pour garder la configuration propre, nous allons ajouter nos règles dans un fichier séparé dans le répertoire `/etc/sudoers.d`.
 
-`sudo ls -l /root`{{execute}}
+Ouvrons un nouveau fichier de configuration avec `visudo` :
 
-Maintenant, jouons les détectives et cherchons la trace de cette commande dans les logs. Nous allons utiliser `grep` pour filtrer les lignes contenant "sudo".
+`sudo visudo -f /etc/sudoers.d/learner-privileges`{{execute}}
 
-`sudo grep "sudo" /var/log/auth.log | tail -n 5`{{execute}}
+L'éditeur `nano` va s'ouvrir.
 
-Vous devriez voir une ligne qui ressemble à ceci :
-`Oct 21 12:00:00 ubuntu sudo:  learner : TTY=pts/0 ; PWD=/home/learner ; USER=root ; COMMAND=/usr/bin/ls -l /root`
+### Accorder un Nouveau Pouvoir
+Ajoutez la ligne suivante à la fin du fichier. Cette règle vous permettra de mettre à jour la liste des paquets système (`apt update`) sans avoir à taper votre mot de passe.
 
-Cette ligne est une preuve infalsifiable qui dit :
--   **Qui :** `learner`
--   **Quand :** `Oct 21 12:00:00`
--   **Où :** `TTY=pts/0` et `PWD=/home/learner`
--   **Quoi :** `COMMAND=/usr/bin/ls -l /root`
+```bash
+learner ALL=(ALL) NOPASSWD: /usr/bin/apt update
+```
 
----
-### Le fichier de configuration `sudoers`
+- `learner` : L'utilisateur concerné.
+- `ALL=` : Sur n'importe quelle machine.
+- `(ALL)` : En tant que n'importe quel utilisateur.
+- `NOPASSWD:` : Ne pas demander de mot de passe.
+- `/usr/bin/apt update` : Pour cette commande exacte.
 
-La configuration de `sudo` se trouve dans `/etc/sudoers`. **NE L'ÉDITEZ JAMAIS DIRECTEMENT !** Utilisez toujours la commande `visudo`, qui vérifie la syntaxe avant d'enregistrer.
+Pour sauvegarder dans `nano` :
+1.  Appuyez sur `Ctrl+X`.
+2.  Appuyez sur `Y` (pour Yes).
+3.  Appuyez sur `Enter` pour confirmer le nom du fichier.
 
-Inspectons le fichier de configuration de manière sûre (en lecture seule).
+### Tester le Nouveau Privilège
+Maintenant, testons notre nouvelle règle.
 
-`sudo cat /etc/sudoers`{{execute}}
+`sudo apt update`{{execute}}
 
-Repérez cette ligne :
-`%sudo   ALL=(ALL:ALL) ALL`
+Ça fonctionne, et sans demander de mot de passe ! Mais essayons une autre commande `apt` non couverte par notre règle.
 
-Elle signifie : "Tout membre (`%`) du groupe `sudo` peut exécuter (`ALL`) n'importe quelle commande (`ALL`) sur n'importe quelle machine (`ALL`) en tant que n'importe quel utilisateur (`(ALL:ALL)`)".
+`sudo apt install -y vim`{{execute}}
+
+Cette fois, `sudo` vous demande votre mot de passe, car seule la commande `apt update` a été autorisée sans mot de passe. Vous êtes devenu un véritable architecte des privilèges !

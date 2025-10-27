@@ -1,41 +1,30 @@
-L'utilisateur `root` (UID 0) a tous les droits sur le système. La commande traditionnelle pour devenir `root` est `su` (**s**ubstitute **u**ser).
+### La Limite de l'Utilisateur Normal
+En tant qu'utilisateur `learner`, vos pouvoirs sont limités pour protéger le système. Essayez de créer un fichier dans le répertoire de configuration `/etc`.
 
-### Le Piège du `su` simple
+`touch /etc/test_power`{{execute}}
 
-Essayons `su` sans argument. Le mot de passe pour cet environnement est `killercoda`.
+Échec ! Le message "Permission non accordée" est votre garde-fou.
 
-`su`{{execute}}
-*Mot de passe :* `killercoda`
+### Le Pouvoir de l'UID 0
+D'où vient le pouvoir absolu ? D'un simple numéro : l'UID 0. Vérifions l'identité de l'utilisateur `root`.
 
-Vous êtes maintenant `root` ! Vérifions.
-`whoami`{{execute}}
+`id root`{{execute}}
 
-Mais où sommes-nous ?
-`pwd`{{execute}}
-`echo $HOME`{{execute}}
+La clé est `uid=0(root)`. Le noyau Linux ne vérifie pas le nom, seulement si l'UID est 0.
 
-Étrange, non ? Vous êtes `root`, mais vous êtes toujours dans le répertoire de `learner`. C'est un environnement hybride et dangereux. Tapez `exit` pour revenir à votre utilisateur.
-
-`exit`{{execute}}
-
----
-### La Bonne Méthode : `su -`
-
-Le tiret `-` est crucial. Il signifie "charge complètement l'environnement de `root`".
+### Prendre le Trône avec `su -`
+La commande traditionnelle pour devenir `root` est `su` (**s**ubstitute **u**ser). Le tiret `-` est crucial car il charge complètement l'environnement de `root`. Le mot de passe de `root` est `killercoda`.
 
 `su -`{{execute}}
 *Mot de passe :* `killercoda`
 
-Vérifions à nouveau :
+Vérifions votre nouvelle identité et votre environnement :
 `whoami`{{execute}}
 `pwd`{{execute}}
-`echo $HOME`{{execute}}
 
-Maintenant, tout est cohérent : vous êtes `root` et vous êtes dans son répertoire `/root`. C'est la seule façon correcte d'utiliser `su` pour devenir `root`.
-
-En tant que `root`, vous pouvez tout faire, comme lire un fichier protégé.
+Vous êtes `root`, dans `/root`. Vous avez maintenant le pouvoir absolu. Vous pouvez lire des fichiers que `learner` ne pouvait pas voir.
 `cat /etc/shadow`{{execute}}
 
-Tapez `exit` pour redevenir un utilisateur normal et quitter le mode "Dieu".
+C'est un grand pouvoir, mais il est dangereux de rester `root` en permanence. Tapez `exit` pour redevenir un simple mortel.
 
 `exit`{{execute}}

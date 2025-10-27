@@ -1,10 +1,25 @@
 #!/usr/bin/env bash
 set -euo pipefail
-if ! id learner &>/dev/null; then useradd -m -s /bin/bash learner; echo "learner ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/learner; chmod 440 /etc/sudoers.d/learner; fi
-# --- CORRECTION: Set a password for root for 'su' command ---
+
+# --- ENHANCEMENT: Create a 'learner' user with a password and limited initial sudo rights ---
+# This makes the visudo exercise meaningful.
+if ! id learner &>/dev/null; then
+    useradd -m -s /bin/bash learner
+    echo "learner:killercoda" | chpasswd
+
+    # Grant learner ONLY the permissions needed to complete the lab, not full admin rights yet.
+    # They can use cat, grep, and visudo. That's it.
+    echo "learner ALL=(ALL) /bin/cat, /bin/grep, /usr/sbin/visudo, /usr/bin/tail, /usr/bin/ls, /usr/bin/date" > /etc/sudoers.d/learner-initial-setup
+    chmod 440 /etc/sudoers.d/learner-initial-setup
+fi
+
+# --- Set a password for root for the 'su' command exercise ---
 echo "root:killercoda" | chpasswd
 
-touch /home/learner/.bash_history; chown learner:learner /home/learner/.bash_history; chmod 600 /home/learner/.bash_history
+# --- Standard history and banner setup ---
+touch /home/learner/.bash_history
+chown learner:learner /home/learner/.bash_history
+chmod 600 /home/learner/.bash_history
 grep -q 'Formip: realtime history' /home/learner/.bashrc || cat <<'RC' >> /home/learner/.bashrc
 shopt -s histappend; HISTSIZE=10000; HISTFILESIZE=20000; PROMPT_COMMAND='history -a; history -c; history -r; '"$PROMPT_COMMAND"
 RC
@@ -16,6 +31,6 @@ pad() { text="$1";len=${#1};w=$COLS;left=$(((w-len)/2));printf "%*s%s\n" "$left"
 line() { ch="${1:-═}";printf '%*s\n' "$COLS" ''|tr ' ' "$ch"; }
 clear; TITLE="Formip - La voie Express vers la Certification"; SUB="Bienvenue sur votre environnement Linux d'apprentissage"
 echo; echo -e "${CYAN}$(line)${RESET}"; pad "${BOLD}${TITLE}${RESET}"; pad "${SUB}${RESET}"; echo -e "${CYAN}$(line)${RESET}"; echo
-pad "${GREEN}Vous êtes prêt pour le Lab 2.3 : Les Clés du Royaume (sudo & su) !${RESET}"; echo
+pad "${GREEN}Vous êtes prêt pour le Lab 2.3 : Les Clés du Royaume (sudo, su & sudoers) !${RESET}"; echo
 EOF
 chmod +x /tmp/banner.sh

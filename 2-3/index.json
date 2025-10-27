@@ -1,6 +1,6 @@
 {
-  "title": "Lab 2.3: 🔑 Les Clés du Royaume (sudo & su)",
-  "description": "Apprenez à utiliser `sudo` et `su` pour l'élévation de privilèges de manière sûre et tracée.",
+  "title": "Lab 2.3: 🔑 Les Clés du Royaume (sudo, su & sudoers)",
+  "description": "Maîtrisez l'élévation de privilèges, configurez les permissions avec `visudo` et auditez les actions des administrateurs.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -13,19 +13,29 @@
     },
     "steps": [
       {
-        "title": "Prendre le Trône : La Voie Royale de `su -`",
+        "title": "Le Pouvoir et la Limite (root & su)",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Le Décret Royal : Emprunter le Pouvoir avec `sudo`",
+        "title": "L'Élévation Intelligente (sudo au Quotidien)",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Le Grand Registre : Auditer le Royaume avec les Logs",
+        "title": "L'Architecte des Privilèges (visudo)",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Le Grand Registre (Auditer les Succès)",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Le Détective du Royaume (Détecter les Anomalies)",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
       }
     ],
     "finish": {

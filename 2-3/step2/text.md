@@ -1,30 +1,30 @@
 Utiliser `su -` est dangereux car on reste `root` pour toute la session. La méthode moderne est `sudo`, qui accorde des privilèges pour **une seule commande**.
 
-### La première utilisation de `sudo`
-
-Le fichier `/etc/shadow` est illisible pour un utilisateur normal.
-
-`cat /etc/shadow`{{execute}}
-
-Maintenant, utilisons `sudo` pour lire ce fichier. `sudo` vous demandera **votre propre mot de passe** (`learner`), pas celui de `root`. Pour ce lab, il n'y a pas de mot de passe pour `learner`.
+### L'Élévation Ponctuelle
+Le fichier `/etc/shadow` est illisible pour vous. Tentons de le lire avec `sudo`. `sudo` vous demande **votre propre mot de passe** (`killercoda`).
 
 `sudo cat /etc/shadow`{{execute}}
+*Mot de passe :* `killercoda`
 
 Succès ! Vous avez exécuté `cat` en tant que `root` pour cette seule commande, puis vous êtes immédiatement redevenu `learner`. C'est beaucoup plus sûr.
 
----
-### Les options utiles de `sudo`
+### Le Piège de la Redirection
+Attention, `sudo` ne s'applique qu'à la commande, pas aux opérateurs de shell comme `>`. Cette commande échouera :
 
-La commande `sudo` possède des options très pratiques.
+`sudo echo "127.0.0.1 test" > /etc/hosts`{{execute}}
 
--   `-l` : **l**iste les droits que vous avez avec `sudo`.
+La redirection `>` est exécutée par *votre* shell (qui n'a pas les droits). La bonne méthode est d'utiliser un "tuyau" (`|`) et la commande `tee`.
+
+`echo "127.0.0.1 test-tee" | sudo tee -a /etc/hosts`{{execute}}
+
+### Options Utiles de `sudo`
+- `-l` : **l**iste vos droits.
 `sudo -l`{{execute}}
 
--   `-k` : **k**ill, invalide le "ticket" `sudo`. Après cette commande, `sudo` vous redemandera votre mot de passe.
-`sudo -k`{{execute}}
-
--   `-i` : ouvre un shell **i**nteractif en tant que `root`, de manière propre (équivalent à `sudo su -`).
+- `-i` : ouvre un shell **i**nteractif en tant que `root` (équivalent propre à `su -`).
 `sudo -i`{{execute}}
-
-Vous êtes maintenant `root` dans une session propre. Tapez `exit` pour revenir.
+`whoami`{{execute}}
 `exit`{{execute}}
+
+- `-u` : exécute une commande en tant qu'un **u**tilisateur autre que `root`.
+`sudo -u root whoami`{{execute}}
