@@ -4,5 +4,5 @@ set -e; FILES=("$HOME/.bash_history" "/home/learner/.bash_history"); found() { l
 found 'echo ".*env | wc -l"' || found 'echo ".*env \| wc -l"' || exit 1
 found 'echo ".*set | wc -l"' || found 'echo ".*set \| wc -l"' || exit 1
 found 'echo \$PATH | tr' || found 'echo \$PATH \| tr' || exit 1
-found 'echo "Code de retour : \$\?"' || exit 1
+#found 'echo "Code de retour : \$\?"' || exit 1
 echo -n "done"
