@@ -1,21 +1,40 @@
-Le comportement de votre shell est défini dans des fichiers cachés dans votre répertoire `home`. Le plus important pour les sessions interactives (comme ce terminal) est `.bashrc`.
+### Le Cœur du Réacteur : `.bashrc`
 
-Listons tous les fichiers de votre `home`, y compris les fichiers cachés, pour le repérer.
+Le comportement de votre shell interactif (comme ce terminal) est défini dans le fichier `.bashrc` de votre répertoire `home`.
+
+Listons tous les fichiers, y compris les cachés, pour le repérer.
 
 `ls -la ~`{{execute}}
 
-Vous voyez le fichier `.bashrc`. C'est ici que nous allons mettre toutes nos personnalisations.
+Vous le voyez ? C'est ici que nous mettons nos personnalisations pour chaque nouveau terminal. Pour appliquer des changements, on utilise la commande `source` qui recharge le fichier.
 
-Ouvrons-le avec `nano` pour l'explorer.
+`source ~/.bashrc`{{execute}}
 
-`nano ~/.bashrc`{{execute T1}}
+---
+### La Porte d'Entrée : `.bash_profile`
 
-Faites défiler le fichier (avec les flèches ou `Page Down`). Vous verrez qu'il contient déjà des configurations par défaut. **Ne modifiez rien pour l'instant**.
+Il existe un autre fichier crucial : `.bash_profile`. Il n'est lu **qu'une seule fois**, lors d'un "login shell" (par ex: une connexion SSH).
 
-L'une des commandes les plus importantes pour appliquer des changements est `source`. Elle recharge un fichier de configuration dans la session actuelle sans avoir à se déconnecter.
+Illustrons cette différence fondamentale. Ajoutons un message de bienvenue dans `.bash_profile`.
 
-Pour recharger notre configuration (même si nous n'avons rien changé), tapez :
+`echo 'echo "--- Bienvenue ! .bash_profile a été lu. ---"' >> ~/.bash_profile`{{execute}}
 
-`source ~/.bashrc`{{execute T2}}
+Maintenant, simulons une connexion avec `bash --login`.
 
-Vous savez maintenant où se trouve le "cerveau" de votre shell et comment le "rafraîchir".
+`bash --login`{{execute}}
+
+Le message apparaît ! Vous êtes dans un nouveau shell. Quittez-le avec `exit`.
+
+`exit`{{execute}}
+
+Vous êtes de retour dans votre shell initial. Ouvrez un autre shell "normal" (non-login).
+
+`bash`{{execute}}
+
+Le message n'apparaît pas ! C'est la différence clé :
+-   `.bash_profile` : Pour les configurations à faire une seule fois (comme le `PATH`).
+-   `.bashrc` : Pour les configurations de chaque terminal (alias, prompt).
+
+Quittez ce sous-shell pour continuer.
+
+`exit`{{execute}}

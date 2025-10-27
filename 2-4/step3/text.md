@@ -1,36 +1,40 @@
-Votre prompt (`learner@ubuntu:~$`) est défini par la variable `PS1`. Nous allons le personnaliser pour qu'il soit plus joli et plus informatif.
+### Créer une variable pour un chemin
 
-### Ajouter des couleurs
+Imaginons que vous travaillez souvent dans le dossier des logs système, `/var/log`. Créons une variable `$LOG_DIR` pour y accéder rapidement.
 
-Les couleurs sont définies par des codes spéciaux. Nous allons créer des variables pour les rendre plus lisibles.
-
-Ajoutez ce bloc de configuration à votre `.bashrc`.
-
-```bash
-echo '
-# --- Configuration du Prompt ---
-# Couleurs
-GREEN="\[\e[32m\]"
-BLUE="\[\e[34m\]"
-YELLOW="\[\e[33m\]"
-RESET="\[\e[0m\]"
-
-# Structure du Prompt
-PS1="${GREEN}\u@\h${RESET}:${BLUE}\w${RESET}${YELLOW}\$ ${RESET}"
-' >> ~/.bashrc
-```{{execute}}
-
-**Décryptage :**
--   `\u` : votre nom d'utilisateur
--   `\h` : le nom de la machine
--   `\w` : le chemin complet du répertoire
--   `\$` : `$` pour un utilisateur normal, `#` pour `root`
-
-Rechargez votre configuration pour voir la magie opérer !
-
+`echo 'export LOG_DIR="/var/log"' >> ~/.bashrc`{{execute}}
 `source ~/.bashrc`{{execute}}
 
-Votre prompt est maintenant coloré ! Naviguez dans un autre dossier pour voir le chemin changer de couleur.
+Maintenant, vous pouvez lister le contenu de ce dossier depuis n'importe où.
 
-`cd /etc`{{execute}}
-`cd ~`{{execute}}
+`ls $LOG_DIR`{{execute}}
+
+---
+### Modifier la variable `PATH` (crucial !)
+
+La variable `$PATH` dit au shell où chercher les commandes. Nous allons y ajouter un dossier personnel `~/bin` pour y mettre nos propres scripts.
+
+D'abord, créons ce dossier.
+
+`mkdir -p ~/bin`{{execute}}
+
+Ajoutons-le au **début** de la variable `PATH` dans notre `.bashrc`.
+
+`echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc`{{execute}}
+`source ~/.bashrc`{{execute}}
+
+Pour tester, créons un mini-script "hello" dans ce dossier.
+
+`echo '#!/bin/bash' > ~/bin/hello`{{execute}}
+`echo 'echo "Bonjour depuis mon script !"' >> ~/bin/hello`{{execute}}
+
+Rendons-le exécutable.
+
+`chmod +x ~/bin/hello`{{execute}}
+
+Maintenant, déplacez-vous ailleurs et lancez votre script comme une vraie commande !
+
+`cd /tmp`{{execute}}
+`hello`{{execute}}
+
+Votre shell trouve et exécute maintenant vos scripts personnels, où que vous soyez. C'est une compétence fondamentale.

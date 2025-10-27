@@ -1,47 +1,32 @@
-Configurons le shell pour qu'il soit plus intelligent : un historique plus grand, sans doublons, et une correction automatique des fautes de frappe !
+Votre prompt (`learner@...`) est défini par la variable `PS1`. Rendons-le non seulement joli, mais aussi "intelligent" : il nous dira si la dernière commande a réussi ou échoué.
 
-Ajoutons un bloc de configuration complet à notre `.bashrc`.
+Ajoutez ce bloc de configuration complet à votre `.bashrc`. La syntaxe `cat <<'EOF' >> ...` est idéale pour ajouter plusieurs lignes sans problème de guillemets.
 
 ```bash
-echo '
-# --- Configuration Historique & Options ---
-# Historique plus grand
-export HISTSIZE=10000
-export HISTFILESIZE=20000
+cat <<'EOF' >> ~/.bashrc
 
-# Ne pas sauvegarder les doublons et les commandes qui commencent par un espace
-export HISTCONTROL=ignoreboth
+# --- Configuration du Prompt Intelligent ---
+# Couleurs
+RED="\[\e[31m\]"
+GREEN="\[\e[32m\]"
+BLUE="\[\e[34m\]"
+YELLOW="\[\e[33m\]"
+RESET="\[\e[0m\]"
 
-# Synchroniser l_historique entre plusieurs terminaux
-export PROMPT_COMMAND="history -a; history -n"
-
-# Activer la correction des fautes de frappe pour la commande cd
-shopt -s cdspell
-' >> ~/.bashrc
+# Structure du Prompt avec indicateur de succès/échec
+PS1="\$(if [ \$? = 0 ]; then echo \"${GREEN}✓\"; else echo \"${RED}✗\"; fi)${RESET} ${GREEN}\u@\h${RESET}:${BLUE}\w${RESET}${YELLOW}\$ ${RESET}"
+EOF
 ```{{execute}}
 
-Rechargez la configuration.
+**Décryptage de la partie intelligente :**
+`\$(if [ \$? = 0 ]; then ...)` vérifie le code de sortie (`$?`) de la dernière commande. Si c'est `0` (succès), il affiche un `✓` vert. Sinon, il affiche un `✗` rouge.
+
+Rechargez votre configuration pour voir la magie opérer !
 
 `source ~/.bashrc`{{execute}}
 
----
-### Tester les nouvelles fonctionnalités
+Vous voyez le `✓` ? Maintenant, testons l'échec en tapant une commande qui n'existe pas.
 
-**1. Correction automatique (`cdspell`) :**
-Essayez de taper `cd /hoem` (avec une faute de frappe) et appuyez sur Entrée.
+`lss`{{execute}}
 
-`cd /hoem`{{execute}}
-
-Le shell a corrigé automatiquement en `/home` et vous y a emmené !
-
-**2. Historique sans doublons (`ignoreboth`) :**
-Tapez deux fois la même commande.
-
-`ls`{{execute}}
-`ls`{{execute}}
-
-Maintenant, affichez l'historique.
-
-`history | tail -n 5`{{execute}}
-
-La commande `ls` n'apparaît qu'une seule fois. Votre historique est maintenant plus propre et plus utile. Vous avez configuré un shell de niveau professionnel !
+Le prompt affiche maintenant un `✗` rouge ! Cet indicateur visuel est extrêmement utile pour repérer les erreurs immédiatement.

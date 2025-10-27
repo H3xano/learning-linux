@@ -1,14 +1,10 @@
-Les **alias** sont des raccourcis pour des commandes longues. Les **variables personnalisées** sont des raccourcis pour des chemins ou des valeurs.
+### Les Alias : Des Raccourcis Simples
 
-### Créer son premier alias
+Fatigué de taper `ls -lah` ? Créons un alias `ll`. La commande `echo "..." >> ~/.bashrc` est parfaite pour ajouter une ligne à la fin d'un fichier.
 
-Fatigué de taper `ls -lah` ? Créons un alias `ll` pour faire la même chose.
+`echo "alias ll='ls -lah --color=auto'" >> ~/.bashrc`{{execute}}
 
-Ajoutons cette ligne à la fin de notre `.bashrc`. La commande `echo "..." >> ~/.bashrc` est parfaite pour ça.
-
-`echo "alias ll='ls -lah'" >> ~/.bashrc`{{execute}}
-
-Maintenant, rechargez la configuration pour que l'alias soit actif.
+Rechargez la configuration pour que l'alias soit actif.
 
 `source ~/.bashrc`{{execute}}
 
@@ -16,16 +12,22 @@ Testez votre nouvel alias !
 
 `ll`{{execute}}
 
-Magique ! `ll` est maintenant équivalent à `ls -lah`.
+Magique ! `ll` est maintenant votre raccourci personnel.
 
 ---
-### Créer une variable pour un chemin important
+### Les Fonctions : Des Raccourcis Intelligents
 
-Imaginons que vous travaillez souvent dans le dossier des logs système, `/var/log`. Créons une variable `$LOG_DIR` pour y accéder rapidement.
+Les alias sont super, mais ils ne peuvent pas gérer d'arguments. Pour cela, on utilise des **fonctions**. Créons une fonction `mkcd` qui crée un répertoire et s'y déplace en une seule commande.
 
-`echo 'export LOG_DIR="/var/log"' >> ~/.bashrc`{{execute}}
+`echo 'mkcd() { mkdir -p "$1" && cd "$1"; }' >> ~/.bashrc`{{execute}}
+
+Rechargez et testez cette nouvelle commande surpuissante.
+
 `source ~/.bashrc`{{execute}}
+`mkcd mon-super-projet`{{execute}}
 
-Maintenant, vous pouvez lister le contenu de ce dossier depuis n'importe où.
+Vérifiez que vous êtes bien dans le nouveau dossier.
 
-`ls $LOG_DIR`{{execute}}
+`pwd`{{execute}}
+
+Vous venez de créer votre propre commande shell !

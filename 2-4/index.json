@@ -13,24 +13,29 @@
     },
     "steps": [
       {
-        "title": "La Salle des Machines : Le Cœur du Réacteur (`.bashrc`)",
+        "title": "Les Plans d'Architecte : `.bashrc` et `.bash_profile`",
         "text": "step1/text.md",
-        "verify": "step2/verify.sh"
+        "verify": "step1/verify.sh"
       },
       {
-        "title": "Le Pilote Automatique : Créer des Alias et des Raccourcis",
+        "title": "Automatisation : Alias Simples et Fonctions Puissantes",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "L'Affichage Tête Haute : Personnaliser son Prompt (PS1)",
+        "title": "Raccourcis Stratégiques : Variables Personnalisées et `PATH`",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "L'Assistance au Pilotage : Un Shell qui Corrige vos Erreurs",
+        "title": "Le Tableau de Bord Intelligent : Personnaliser son Prompt (PS1)",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
+      },
+      {
+        "title": "L'Assistance au Pilotage : Historique et Options de Sécurité",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
       }
     ],
     "finish": {

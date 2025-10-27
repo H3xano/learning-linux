@@ -5,12 +5,14 @@
 Félicitations, architecte ! 🎉 Vous avez transformé un shell standard en un cockpit personnalisé, optimisé pour votre efficacité.
 
 Vous avez acquis des compétences de "power user" :
-1. **Maîtriser** les fichiers de configuration comme `.bashrc`.
-2. **Créer** des **alias** qui vous font gagner un temps précieux chaque jour.
-3. **Concevoir** un **prompt** informatif et agréable à regarder.
-4. **Configurer** l'**historique** et les **options du shell** pour un workflow intelligent.
+1.  **Distinguer** `.bashrc` et `.bash_profile` pour savoir où placer vos configurations.
+2.  **Créer** des **alias** simples et des **fonctions** puissantes.
+3.  **Maîtriser** la variable `PATH` pour exécuter vos propres scripts.
+4.  **Concevoir** un **prompt intelligent** qui vous alerte en cas d'erreur.
+5.  **Configurer** l'**historique** et des **options de sécurité** comme `noclobber`.
+6.  **Utiliser** `Ctrl+R` pour naviguer dans votre historique comme un pro.
 
-Votre terminal n'est plus un simple écran noir, mais un assistant personnel qui mémorise vos commandes, corrige vos erreurs, et vous donne les informations dont vous avez besoin, quand vous en avez besoin. C'est une étape cruciale vers la maîtrise de la ligne de commande.
+Votre terminal n'est plus un simple écran noir, mais un assistant personnel qui mémorise, corrige, protège et vous informe. C'est une étape cruciale vers la maîtrise totale de la ligne de commande.
 
 La prochaine étape ? Plonger au cœur du système de fichiers pour en maîtriser chaque recoin !
 
