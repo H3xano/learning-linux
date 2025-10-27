@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 echo 'su - learner' >> ~/.bashrc
-su - learner
+echo "killercoda" |su - learner
 cd ~
 bash /tmp/banner.sh
