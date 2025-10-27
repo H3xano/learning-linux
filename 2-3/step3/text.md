@@ -39,4 +39,4 @@ Maintenant, testons notre nouvelle règle.
 
 `sudo apt install -y vim`{{execute}}
 
-Cette fois, `sudo` vous demande votre mot de passe, car seule la commande `apt update` a été autorisée sans mot de passe. Vous êtes devenu un véritable architecte des privilèges !
+Cette fois, la commande échoue avec le message `Sorry, user learner is not allowed to execute...`. C'est la preuve que votre règle est bien spécifique ! Vous avez accordé un privilège précis sans donner tous les pouvoirs. Vous êtes devenu un véritable architecte des privilèges !

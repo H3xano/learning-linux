@@ -8,8 +8,8 @@ if ! id learner &>/dev/null; then
     echo "learner:killercoda" | chpasswd
 
     # Grant learner ONLY the permissions needed to complete the lab, not full admin rights yet.
-    # They can use cat, grep, and visudo. That's it.
-    echo "learner ALL=(ALL) /bin/cat, /bin/grep, /usr/sbin/visudo, /usr/bin/tail, /usr/bin/ls, /usr/bin/date" > /etc/sudoers.d/learner-initial-setup
+    # ADDED: tee, bash, whoami to allow Step 2 to work correctly.
+    echo "learner ALL=(ALL) /bin/cat, /bin/grep, /usr/sbin/visudo, /usr/bin/tail, /usr/bin/ls, /usr/bin/date, /usr/bin/tee, /bin/bash, /usr/bin/whoami" > /etc/sudoers.d/learner-initial-setup
     chmod 440 /etc/sudoers.d/learner-initial-setup
 fi
 
