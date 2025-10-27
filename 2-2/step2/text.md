@@ -21,6 +21,7 @@ L'expansion d'accolades n'est pas un joker, mais un générateur ! Il crée des 
 
 Créez d'un coup toute la structure d'un projet :
 
+`mkdir -v projet`{{execute}}
 `mkdir -v projet/{src,doc,assets,tests}`{{execute}}
 
 Le `-v` (verbose) vous montre la magie en action !
