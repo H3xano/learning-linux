@@ -12,7 +12,7 @@ Voyez comme le mot "ERROR" saute aux yeux ! La plupart des systèmes modernes on
 
 ---
 
-### `-C` : Afficher le contexte
+### `-C` : Afficher le contexte global
 
 Souvent, la ligne qui contient l'erreur ne suffit pas. On a besoin de savoir ce qui s'est passé **avant** et **après**. L'option `-C` (Context) est là pour ça.
 
@@ -20,7 +20,15 @@ Cherchons l'erreur "Connexion refusée" dans `system.log` et affichons **1 ligne
 
 `grep -C 1 "Connexion refusée" system.log`{{execute}}
 
-**Révélation !** Grâce au contexte, vous voyez maintenant que l'erreur est survenue juste après une "Tentative de connexion à la base de données". Sans contexte, cette information cruciale aurait été perdue.
+**Révélation !** Grâce au contexte, vous voyez maintenant que l'erreur est survenue juste après une "Tentative de connexion à la base de données".
+
+### `-B` : Afficher le contexte AVANT (Before)
+
+Parfois, seule la cause d'une erreur nous intéresse. Pour afficher uniquement les lignes **avant** le résultat, utilisez `-B` (Before).
+
+Cherchons la même erreur, mais cette fois en affichant seulement les **2 lignes qui la précèdent**.
+
+`grep -B 2 "Connexion refusée" system.log`{{execute}}
 
 ---
 

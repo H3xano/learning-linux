@@ -14,13 +14,23 @@ Remarquez quelque chose d'important : `grep` affiche maintenant **le nom du fich
 
 ### `-r` : La recherche récursive
 
-Le vrai pouvoir arrive avec l'option `-r` (recursive). Elle dit à `grep` de fouiller le dossier actuel **ET TOUS SES SOUS-DOSSIERS**.
+Le vrai pouvoir arrive avec l'option `-r` (recursive). Elle dit à `grep` de fouiller le dossier actuel **ET TOUS SES SOUS-DOSSIERS**. Un répertoire `missions/` a été créé pour illustrer cela.
 
-Un répertoire `missions/` a été créé avec des sous-dossiers et des fichiers. Cherchons le mot "cybersécurité" partout dans l'arborescence `missions/`.
+Cherchons le mot "cybersécurité" partout dans l'arborescence `missions/`.
 
 `grep -r "cybersécurité" missions/`{{execute}}
 
-En une seule commande, vous avez scanné toute l'arborescence. C'est l'outil indispensable pour retrouver une variable ou une fonction dans un grand projet de code.
+En une seule commande, vous avez scanné toute l'arborescence.
+
+### Affiner la recherche récursive avec `--include`
+
+La commande précédente a peut-être cherché dans des fichiers non pertinents (comme des PDF ou des images). Pour être plus précis, on peut dire à `grep` de n'inclure **que certains types de fichiers**.
+
+Cherchons à nouveau, mais cette fois **uniquement dans les fichiers `.txt`**.
+
+`grep -r --include="*.txt" "cybersécurité" missions/`{{execute}}
+
+C'est l'outil indispensable pour retrouver une variable ou une fonction dans un grand projet de code sans scanner les fichiers inutiles.
 
 ---
 

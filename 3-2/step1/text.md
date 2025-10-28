@@ -20,4 +20,10 @@ La commande `ps aux` liste tous les processus en cours sur le système, ce qui p
 
 `ps aux | grep "bash"`{{execute}}
 
-Vous voyez deux lignes : le processus `bash` lui-même, et... le processus `grep "bash"` que vous venez de lancer ! C'est un effet de bord classique. Nous apprendrons plus tard à l'éliminer. Pour l'instant, retenez que vous pouvez filtrer la sortie de n'importe quelle commande.
+Vous voyez deux lignes : le processus `bash` lui-même, et... le processus `grep "bash"` que vous venez de lancer ! C'est un effet de bord classique.
+
+**Astuce de pro :** pour éliminer cette ligne parasite, on peut utiliser `grep` contre lui-même avec l'option `-v` (que nous verrons en détail à l'étape 2) pour exclure la ligne contenant `grep`. Essayez !
+
+`ps aux | grep "bash" | grep -v "grep"`{{execute}}
+
+Et voilà, une sortie parfaitement propre ! C'est une technique que vous verrez très souvent.
