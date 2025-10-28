@@ -25,6 +25,14 @@ Maintenant, cherchons le mot "fichier" au singulier et au pluriel.
 
 ---
 
+### Le quantificateur "+" : Au moins une fois
+
+Le `+` est très utile pour s'assurer qu'un caractère (ou une classe de caractères) apparaît au moins une fois. Cherchons les lignes contenant `user_` suivi d'**au moins une** lettre.
+
+`egrep "user_[a-z]+" data.txt`{{execute}}
+
+---
+
 ### La combinaison magique : `.*`
 
 La combinaison `.` et `*` est la plus utilisée. `.*` signifie "n'importe quelle séquence de n'importe quels caractères". C'est le joker ultime.

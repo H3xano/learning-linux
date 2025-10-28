@@ -2,35 +2,37 @@ Vous maîtrisez les bases, passons au niveau supérieur !
 
 ### Les quantificateurs précis `{}`
 
-Plutôt que `*` ou `+`, on peut spécifier un nombre exact de répétitions.
+Au Step 2, nous avons écrit une regex très longue pour trouver `XYZ-98765`. Les quantificateurs précis sont la solution élégante.
 - `{n}` : Exactement *n* fois.
 - `{n,m}` : Entre *n* et *m* fois.
 - `{n,}` : Au moins *n* fois.
 
-Cherchons un code de 5 chiffres dans notre fichier.
+Réécrivons notre recherche précédente : "3 majuscules, un tiret, 5 chiffres".
 
-`egrep "[0-9]{5}" data.txt`{{execute}}
+`egrep "[A-Z]{3}-[0-9]{5}" data.txt`{{execute}}
 
----
+Maintenant, cherchons les lignes où la chaîne `test-` apparaît **au moins deux fois**.
 
-### Les groupes `()`
+`egrep "(test-){2,}" data.txt`{{execute}}
 
-Les parenthèses `()` permettent de grouper des motifs pour leur appliquer un quantificateur.
+### Les groupes `()` et l'alternative `|`
 
-Cherchons une répétition du mot "test-" trois fois. La regex `(test-){3}` signifie "le groupe 'test-' répété exactement 3 fois".
+Les parenthèses `()` permettent de grouper des motifs. C'est essentiel pour appliquer un quantificateur à une séquence (comme `(test-){2,}`) ou pour utiliser une alternative `|` (OU).
 
-`egrep "(test-){3}" data.txt`{{execute}}
+Cherchons toutes les lignes qui contiennent soit le mot `ERROR`, soit le mot `WARNING`.
+
+`egrep "(ERROR|WARNING)" data.txt`{{execute}}
 
 ---
 
 ### L'échappement `\`
 
-Que faire si vous voulez chercher un caractère spécial comme `.` ou `*` ? Il faut "l'échapper" avec un backslash `\`.
+Que faire si vous voulez chercher un caractère spécial comme `.` ou `*` ? Il faut "l'échapper" avec un backslash `\`, pour qu'il perde son pouvoir.
 
 `\.` cherche un point littéral.
 `\*` cherche un astérisque littéral.
 
-Cherchons l'adresse IP `192.168.1.1` dans notre fichier. Sans échapper les points, la recherche serait fausse !
+Cherchons l'adresse IP `192.168.1.1` dans notre fichier. Sans échapper les points, la recherche serait fausse car `.` matcherait n'importe quel caractère !
 
 `egrep "192\.168\.1\.1" data.txt`{{execute}}
 
