@@ -12,9 +12,14 @@ found() {
   return 1
 }
 
-# Vérifie qu'une ligne contient 'head', un pipe '|', et 'tail'
-if found 'head.*\|.*tail'; then
-  echo -n "done"
-else
+# Vérifie que la combinaison avec pipe a été utilisée
+if ! found 'head.*\|.*tail'; then
   exit 1
 fi
+
+# Vérifie que l'option + a été utilisée avec tail
+if ! found '(^|[[:space:];|&])tail .*\+'; then
+  exit 1
+fi
+
+echo -n "done"

@@ -12,18 +12,23 @@ Impossible de voir le début, n'est-ce pas ?
 
 ### `less` à la rescousse !
 
-Maintenant, utilisons `less`. **Attention : `less` est interactif !** Vous devrez utiliser les touches du clavier pour naviguer. less va prendre le contrôle de votre terminal (votre prompt va disparaître). N'oubliez pas que vous pouvez toujours en sortir en appuyant sur q pour retrouver votre prompt !
+Maintenant, utilisons `less`. **Attention : `less` est interactif !** Vous devrez utiliser les touches du clavier pour naviguer. N'oubliez pas que vous pouvez toujours en sortir en appuyant sur `q`.
 
 Tapez la commande suivante dans votre terminal :
 `less long_log.txt`
 
-Votre terminal est maintenant en mode `less`. Voici les touches essentielles :
+Votre terminal est maintenant en mode `less`.
+
+**Votre mission :**
+1.  Allez directement à la **fin** du fichier (touche `G`).
+2.  Cherchez la "Ligne 50" mais en **remontant** depuis la fin (tapez `?Ligne 50` puis `Entrée`).
+3.  Affichez les numéros de ligne (tapez `-N` puis `Entrée`).
+4.  Une fois que vous avez exploré, quittez en appuyant sur `q`.
+
+Touches essentielles à retenir :
 -   **Espace** : Page suivante
 -   **b** : Page précédente (back)
--   **↓** / **↑** : Ligne suivante / précédente
--   **g** : Aller au tout début du fichier
--   **G** : Aller à la toute fin du fichier
--   **/** + `texte` + **Entrée** : Chercher du texte (ex: `/Ligne 150`)
--   **q** : Quitter et revenir au terminal
-
-**Votre mission :** Ouvrez le fichier, allez à la fin avec `G`, remontez au début avec `g`, puis cherchez "Ligne 50". Quand vous avez fini, appuyez sur `q`.
+-   **g** / **G** : Aller au début / à la fin
+-   **/**`texte` : Chercher vers l'avant
+-   **?**`texte` : Chercher vers l'arrière
+-   **q** : Quitter

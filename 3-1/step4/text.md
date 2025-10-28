@@ -10,6 +10,9 @@ Regardez votre terminal... 😮 De nouvelles lignes apparaissent automatiquement
 
 Pour arrêter la surveillance, cliquez sur le bouton **`clear`** ou faites **`Ctrl+C`**.
 
+> **Astuce de pro : `tail -F`**
+> Dans un vrai serveur, les fichiers de logs sont souvent archivés et recréés (un processus appelé "rotation"). Si cela arrive, `tail -f` peut s'arrêter de fonctionner. Pour éviter cela, les pros utilisent `tail -F` (avec un F majuscule). Cette version est plus robuste car elle surveille le nom du fichier et pas seulement le fichier lui-même. Pensez-y pour le futur !
+
 ---
 
 ### Filtrer le flux en direct

@@ -18,12 +18,45 @@ Magique ! Chaque ligne est maintenant précédée de son numéro. C'est parfait 
 
 ---
 
+### Inspecter avant d'afficher : `file`
+
+Sous Linux, il y a des fichiers texte (lisibles) et des fichiers binaires (des programmes, des images...). Avant d'utiliser `cat` sur un fichier dont on n'est pas sûr, la bonne pratique est d'utiliser la commande `file` pour l'inspecter.
+
+Voyons ce que Linux pense du programme `/bin/ls` :
+
+`file /bin/ls`{{execute}}
+
+Le résultat est clair : `executable`, `dynamically linked`, etc. Ce n'est **pas** du "ASCII text". C'est donc un binaire !
+
+---
+
 ### ⚠️ Attention aux fichiers binaires !
 
-Sous Linux, il y a des fichiers texte (lisibles) et des fichiers binaires (des programmes, des images...). Que se passe-t-il si on utilise `cat` sur un binaire, comme le programme `/bin/ls` ? Essayons...
+Maintenant que nous savons que c'est un binaire, voyons ce qui se passe si on ignore l'avertissement et qu'on utilise `cat` dessus.
 
 `cat /bin/ls`{{execute}}
 
 Du charabia, n'est-ce pas ? 😱 Pire, cela peut parfois "casser" l'affichage de votre terminal.
 
-**Leçon de sécurité n°1 :** N'utilisez `cat` que sur des fichiers que vous savez être du texte. Si votre terminal devient bizarre après une mauvaise manipulation, tapez `reset` (même si vous ne voyez pas ce que vous tapez) et appuyez sur `Entrée`.
+**Leçon de sécurité n°1 :** Toujours vérifier avec `file` avant d'utiliser `cat` sur un inconnu. Si votre terminal devient bizarre, tapez `reset` (même si vous ne voyez pas ce que vous tapez) et appuyez sur `Entrée`.
+
+---
+
+### Le super-pouvoir caché de `cat` : La création
+
+`cat` n'est pas seulement un lecteur, c'est aussi un créateur ! On peut l'utiliser pour créer un fichier rapidement.
+
+Essayez la commande suivante :
+`cat > todo.txt`
+
+Le terminal attend votre saisie. Tapez les deux lignes suivantes :
+```
+- Apprendre Linux
+- Devenir un pro de la ligne de commande
+```
+Maintenant, pour sauvegarder et quitter, maintenez la touche **`Ctrl`** et appuyez sur **`D`**.
+
+Vérifiez que votre fichier a bien été créé :
+`cat todo.txt`{{execute}}
+
+Vous venez de créer un fichier sans utiliser un éditeur de texte. C'est une technique très pratique !

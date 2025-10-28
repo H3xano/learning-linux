@@ -17,9 +17,13 @@ found() {
 }
 
 # Vérifie que la commande 'cat' a été tapée
-# Le regex s'assure que c'est bien la commande 'cat' et non une partie d'un autre mot
-if found '(^|[[:space:];|&])cat([[:space:];|&]|$)'; then
-  echo -n "done"
-else
+if ! found '(^|[[:space:];|&])cat([[:space:];|&]|$)'; then
   exit 1
 fi
+
+# Vérifie que la commande 'file' a aussi été utilisée
+if ! found '(^|[[:space:];|&])file([[:space:];|&]|$)'; then
+  exit 1
+fi
+
+echo -n "done"
