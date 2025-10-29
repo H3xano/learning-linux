@@ -4,7 +4,9 @@ Commençons par consulter le manuel de la commande `ls`.
 
 `man ls`{{execute T1}}
 
-Vous êtes maintenant dans une page `man`. C'est un lecteur de texte interactif. Pour l'instant, **appuyez simplement sur la touche `q` pour quitter**.
+Vous êtes maintenant dans une page `man`. Prenez un instant pour remarquer la structure : en haut, vous voyez **NAME** (le nom et une courte description), puis **SYNOPSIS** (comment utiliser la commande). Faites défiler vers le bas pour trouver la section **OPTIONS**, la plus importante ! C'est là que toutes les options (`-l`, `-a`, etc.) sont listées.
+
+Maintenant, **appuyez simplement sur la touche `q` pour quitter**.
 
 ---
 

@@ -6,5 +6,6 @@ found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "
 found 'apropos copy' || exit 1
 found 'whatis cp' || exit 1
 found 'whatis ls' || exit 1
+found 'apropos "disk space"' || exit 1
 
 echo -n "done"

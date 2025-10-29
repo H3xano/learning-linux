@@ -33,6 +33,8 @@ Cherchons une commande pour "copier" des fichiers.
 
 `apropos` vous liste toutes les commandes liées à la copie ! `cp` semble être la bonne.
 
+> **Note de pro :** Si `apropos` ne trouve rien, c'est parfois que sa base de données de recherche est obsolète. Un administrateur utiliserait la commande `sudo mandb` pour la reconstruire. Nous l'avons déjà fait pour vous dans ce lab !
+
 Pour avoir une définition rapide d'une commande, utilisez `whatis`.
 
 `whatis cp`{{execute T2}}
@@ -40,3 +42,11 @@ Pour avoir une définition rapide d'une commande, utilisez `whatis`.
 `whatis ls`{{execute T2}}
 
 C'est parfait pour un rappel rapide !
+
+### Défi : Mettez vos compétences à l'épreuve
+
+Trouvez la commande qui permet d'afficher l'espace disque disponible.
+
+`apropos "disk space"`{{execute T2}}
+
+`df` semble être la bonne réponse !
