@@ -21,7 +21,7 @@ Maintenant, allons plus loin. Rouvrons notre fichier.
 
 **Mission 2 : Remplacer et Copier-Coller**
 1.  Remplaçons un mot. Appuyez sur `Ctrl+\` (Replace).
-2.  `nano` vous demande `Search (to replace):`. Tapez `facile` et validez.
+2.  `nano` vous demande `Search (to replace):`. Tapez "facile" et validez.
 3.  Puis `Replace with:`. Tapez `simple` et validez.
 4.  `nano` vous propose de remplacer. Appuyez sur `A` pour remplacer **Toutes** les occurrences.
 5.  Maintenant, copions la ligne. Placez le curseur dessus, appuyez sur `Ctrl+K` (Cut) pour la couper, puis immédiatement sur `Ctrl+U` (Uncut) pour la remettre en place. La ligne est maintenant copiée dans le presse-papiers !
