@@ -12,24 +12,27 @@ Vérifiez que `mon_projet_backup` existe et contient les mêmes fichiers.
 
 ---
 
-### La Copie Parfaite : l'option `-a` (Archive)
+### La Copie Parfaite : `cp -a` vs `cp`
 
-Une simple copie avec `-r` ne préserve pas tout (comme les permissions d'exécution). Pour une copie **parfaite**, on utilise `-a`. C'est **essentiel pour les sauvegardes** !
+Une copie simple ne préserve pas les métadonnées comme la date de modification originale. Pour une copie **parfaite**, on utilise `-a` (archive). C'est **essentiel pour les sauvegardes** ! Démontrons-le avec les timestamps.
 
-1.  Créons un petit script et rendons-le exécutable :
-    `echo "#!/bin/bash" > mon_projet/run.sh`{{execute}}
-    `chmod +x mon_projet/run.sh`{{execute}}
+1.  D'abord, créons un script. **Attention**, le `!` est un caractère spécial en Bash. Utilisez bien les guillemets simples (`' '`) pour éviter une erreur "event not found".
+    `echo '#!/bin/bash' > mon_projet/run.sh`{{execute}}
 
-2.  Regardez ses permissions (il y a des `x` pour "e**x**ecutable") :
-    `ls -l mon_projet/run.sh`{{execute}}
+2.  Vérifions la date de création de notre script :
+    `ls -l --full-time mon_projet/run.sh`{{execute}}
 
-3.  Copions ce script de deux manières différentes dans notre backup :
+3.  Maintenant, attendons quelques secondes pour que l'horloge avance... puis copions le fichier de deux manières :
+    `sleep 5`{{execute}}
     `cp mon_projet/run.sh mon_projet_backup/run_simple_copie.sh`{{execute}}
     `cp -a mon_projet/run.sh mon_projet_backup/run_copie_parfaite.sh`{{execute}}
 
-4.  **Observez la différence !**
-    `ls -l mon_projet_backup/run*.sh`{{execute}}
-    La copie simple a perdu ses droits d'exécution, alors que la copie `-a` les a parfaitement conservés. **Retenez : pour une sauvegarde, utilisez toujours `cp -a` !**
+4.  **Observez la différence sur les dates !**
+    `ls -l --full-time mon_projet_backup/run*.sh`{{execute}}
+    Vous verrez que :
+    - La `run_simple_copie.sh` a la date et l'heure actuelles (la date de la copie).
+    - La `run_copie_parfaite.sh` a conservé la date et l'heure **originales** du fichier source.
+    **Retenez : pour une sauvegarde fidèle, `cp -a` est indispensable car il préserve timestamps, permissions, et plus encore !**
 
 ---
 
@@ -40,4 +43,4 @@ Pour éviter d'écraser un fichier par erreur, utilisez l'option `-i` (interacti
 Essayons d'écraser le fichier `NOTES.md` avec le contenu de `README.md` :
 `cp -i mon_projet/README.md mon_projet/NOTES.md`{{execute}}
 
-Comme le fichier de destination existe, `cp` vous demande la permission de l'écraser. Répondez `y` (pour yes) et appuyez sur **Entrée**.
+Comme le fichier de destination existe, `cp` vous demande la permission. Répondez `y` (pour yes) et appuyez sur **Entrée**.
