@@ -40,3 +40,9 @@ La combinaison `.` et `*` est la plus utilisée. `.*` signifie "n'importe quelle
 Cherchons les lignes qui contiennent "start", suivi de n'importe quoi, suivi de "end".
 
 `egrep "start.*end" data.txt`{{execute}}
+
+Hmm, cela n'a rien retourné ! Pourquoi ? Parce que `grep` est sensible à la casse par défaut. Dans notre fichier, la ligne commence par `START`. Pour ignorer la casse, utilisez l'option `-i`.
+
+`egrep -i "start.*end" data.txt`{{execute}}
+
+Et voilà ! L'option `-i` est votre meilleure amie lorsque vous n'êtes pas sûr de la casse.
