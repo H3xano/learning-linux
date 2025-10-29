@@ -14,7 +14,8 @@ La commande `which` vous montre le chemin exact de la commande qui sera exécut�
 
 Un script `mon_script.sh` a été créé pour vous. Il est même exécutable.
 
-`ls -l mon_script.sh`{{execute}}
+`cd ~`
+`ls -l mon_script.sh`
 
 Essayons de l'exécuter comme une commande normale.
 
