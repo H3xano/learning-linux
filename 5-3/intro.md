@@ -6,11 +6,12 @@ Votre mission, si vous l'acceptez, est de lever le voile sur les secrets de votr
 
 Dans ce lab, vous allez apprendre à utiliser les outils "d'espionnage" légaux de Linux pour surveiller l'activité du système.
 
-Votre mission se déroulera en 4 phases :
-1.  **Votre Identité** : Découvrir l'ADN de votre session avec les variables d'environnement.
-2.  **Surveillance des Connexions** : Utiliser `who`, `w` et `last` pour savoir qui est là et qui était là.
-3.  **Analyse des Processus** : Plonger dans `ps` pour voir tout ce qui tourne sur la machine.
-4.  **Filtrage Ciblé** : Isoler les informations cruciales dans le flot de processus.
+Votre mission se déroulera en 5 phases :
+1.  **Votre Identité** : Découvrir et modifier l'ADN de votre session.
+2.  **Surveillance des Connexions** : Utiliser `who`, `users`, `w` et `last` pour savoir qui est là et qui était là.
+3.  **Le Radar Global** : Obtenir une vue complète de tous les processus avec `ps aux`.
+4.  **Identifier les Coupables** : Trier les processus pour trouver les plus gourmands.
+5.  **Filtrage Ciblé** : Isoler les informations cruciales et comprendre la hiérarchie.
 
 À la fin de cette mission, plus aucune activité sur le système n'aura de secret pour vous.
 

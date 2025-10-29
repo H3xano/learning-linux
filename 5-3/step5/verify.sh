@@ -1,10 +1,11 @@
-# step4/verify.sh
+# step5/verify.sh
 #!/bin/bash
 set -e
 FILES=("$HOME/.bash_history" "/home/learner/.bash_history")
 found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "$f" && return 0; done; return 1; }
 
-found 'ps aux --sort=-%mem' || exit 1
-found 'ps aux --sort=-%cpu' || exit 1
+found 'ps aux | grep' || found 'ps aux \| grep' || exit 1
+found 'ps -u root' || exit 1
+found 'ps -ef' || exit 1
 
 echo -n "done"

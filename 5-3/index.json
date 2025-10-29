@@ -1,6 +1,6 @@
 {
   "title": "Lab 5.3: 🕵️ L'Espion du Système",
-  "description": "Apprenez à surveiller les utilisateurs et les processus sur votre machine Linux.",
+  "description": "Apprenez à surveiller les utilisateurs, les processus et l'état de votre machine Linux.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -13,24 +13,29 @@
     },
     "steps": [
       {
-        "title": "Établir sa Couverture : L'ADN de la Session",
+        "title": "Établir sa Couverture - L'ADN de la Session",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Filature en Direct et Archives : `who`, `w`, `last`",
+        "title": "Filature en Direct et Archives - `who`, `w`, `last`",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Le Radar à 360° : La Vue Complète avec `ps aux`",
+        "title": "Le Radar à 360° - La Vue Complète avec `ps aux`",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Isoler la Cible dans la Foule : `ps` | `grep`",
+        "title": "Identifier les Coupables - Trier les Processus",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Investigations Ciblées et Hiérarchie",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
       }
     ],
     "finish": {

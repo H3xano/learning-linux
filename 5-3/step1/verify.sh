@@ -6,5 +6,7 @@ found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "
 
 found 'echo "Je suis $USER' || exit 1
 found 'env' || exit 1
+found 'export MISSION=' || exit 1
+found 'echo "Ma mission actuelle : $MISSION"' || exit 1
 
 echo -n "done"

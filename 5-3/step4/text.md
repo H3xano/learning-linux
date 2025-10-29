@@ -1,25 +1,22 @@
-La sortie de `ps aux` est souvent trop dense. Le plus souvent, on la combine avec `grep` pour trouver exactement ce qu'on cherche.
+La sortie de `ps aux` est un flot d'informations. Son utilité principale est de trouver les processus qui posent problème, notamment ceux qui consomment trop de ressources. Pour cela, on doit trier la sortie.
 
-### Trouver les processus d'un utilisateur
+### Trouver les processus gourmands en Mémoire
 
-Cherchons tous les processus qui appartiennent à l'utilisateur `root`.
+Pour trouver les processus qui utilisent le plus de mémoire (`%MEM`), nous pouvons utiliser l'option `--sort`.
 
-`ps aux | grep "^root"`{{execute}}
+`ps aux --sort=-%mem | head -n 5`{{execute}}
 
-Le `^` au début de `^root` assure que nous ne cherchons que les lignes qui **commencent** par "root", ce qui correspond bien à la colonne `USER`.
+**Analyse de la commande :**
+-   `ps aux` : Affiche tous les processus.
+-   `--sort=-%mem` : Trie la sortie par la colonne `%MEM`. Le `-` indique un ordre décroissant (du plus grand au plus petit).
+-   `| head -n 5` : Affiche seulement les 5 premières lignes du résultat trié.
 
-### Trouver un programme spécifique
+---
 
-Imaginons que nous voulons voir si un processus `sleep` est en cours d'exécution.
+### Trouver les processus gourmands en CPU
 
-`ps aux | grep "sleep"`{{execute}}
+De la même manière, pour identifier les processus qui monopolisent le processeur (`%CPU`), il suffit de changer le critère de tri.
 
-Vous devriez voir deux lignes :
-1.  Le processus `sleep infinity` que nous cherchons.
-2.  Le processus `grep "sleep"` lui-même ! C'est un effet de bord classique.
+`ps aux --sort=-%cpu | head -n 5`{{execute}}
 
-Pour obtenir une liste vraiment propre, on peut s'exclure soi-même avec `grep -v "grep"`.
-
-`ps aux | grep "sleep" | grep -v "grep"`{{execute}}
-
-Maintenant, le résultat est parfaitement propre ! Vous venez d'utiliser une chaîne de trois commandes pour une investigation ciblée.
+Sur un système peu chargé comme ce lab, les chiffres seront bas, mais la technique reste la même. C'est LA compétence clé pour diagnostiquer un serveur qui ralentit.

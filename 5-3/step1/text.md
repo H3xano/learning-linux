@@ -15,8 +15,22 @@ Pour voir la liste complète des variables qui définissent votre environnement,
 
 `env`{{execute}}
 
-Faites défiler la liste. Vous y retrouverez `$USER`, `$HOME`, `$SHELL`, mais aussi `$PATH` (où chercher les commandes), `$PWD` (où vous êtes) et bien d'autres. C'est la "carte d'identité" complète de votre session.
-
-Vous pouvez aussi filtrer cette liste avec `grep` pour trouver une variable spécifique.
+Vous pouvez filtrer cette liste avec `grep` pour trouver une variable spécifique.
 
 `env | grep "LANG"`{{execute}}
+
+---
+
+### Créer une variable temporaire
+
+Parfois, vous devez créer ou modifier une variable. La commande `export` rend une variable disponible à tous les programmes que vous lancerez.
+
+Créons une variable pour notre mission.
+
+`export MISSION="espionnage"`{{execute}}
+
+Vérifions qu'elle existe bien en l'affichant :
+
+`echo "Ma mission actuelle : $MISSION"`{{execute}}
+
+Cette variable n'existe que pour votre session actuelle. Si vous vous déconnectiez, elle disparaîtrait !

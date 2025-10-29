@@ -4,6 +4,8 @@ Si vous tapez `ps` tout seul, vous ne verrez que les processus de votre terminal
 
 `ps`{{execute}}
 
+Vous voyez probablement votre shell (`bash`) et la commande `ps` elle-même.
+
 ---
 
 ### `ps aux` : La vue complète
@@ -19,4 +21,4 @@ La sortie est longue ! C'est le tableau de bord complet de votre système. Les c
 -   `%MEM` : Le pourcentage de mémoire utilisé.
 -   `COMMAND` : La commande qui a lancé le processus.
 
-Cette commande est l'outil n°1 pour diagnostiquer un serveur lent.
+Cette commande est la base pour diagnostiquer un serveur. Dans l'étape suivante, nous allons apprendre à l'exploiter.
