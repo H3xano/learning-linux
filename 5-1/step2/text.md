@@ -47,6 +47,6 @@ C'est parfait pour un rappel rapide !
 
 Trouvez la commande qui permet d'afficher l'espace disque disponible.
 
-`apropos "disk space"`{{execute T2}}
+`apropos "space usage"`{{execute}}
 
 `df` semble être la bonne réponse !
