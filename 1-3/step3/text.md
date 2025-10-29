@@ -4,7 +4,7 @@ Le shell se souvient de tout ce que vous tapez. C'est l'historique, votre meille
 
 La commande `history` affiche la liste de toutes les commandes que vous avez tapées.
 
-`history`{{execute}}
+`history`
 
 ### Les flèches `↑` et `↓` : Le voyage le plus simple
 
@@ -17,7 +17,7 @@ Utilisez les flèches `Haut` (↑) et `Bas` (↓) pour naviguer dans l'historiqu
 
 Pour répéter la TOUTE dernière commande que vous avez tapée, utilisez simplement `!!`. Essayez :
 
-`!!`{{execute}}
+`!!`
 
 ### `Ctrl+R` : La recherche inversée
 
@@ -38,7 +38,7 @@ Pratiquons l'édition comme un pro.
 
 3.  Votre ligne devrait maintenant être `echo "Linux est puissant !"`. Appuyez sur **Entrée**.
 
-`echo "Linux est puissant !"`{{execute}}
+`echo "Linux est puissant !"`
 
 ### `Ctrl+L` : Le raccourci propreté
 
