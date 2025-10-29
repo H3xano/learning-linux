@@ -2,7 +2,7 @@
 
 Commençons par créer un nouveau fichier de notes.
 
-`nano mes_notes.txt`{{execute}}
+`nano mes_notes.txt`
 
 Vous êtes dans l'interface de `nano`. Rappel : **le symbole `^` signifie la touche `Ctrl`**.
 
@@ -17,7 +17,7 @@ Vous êtes dans l'interface de `nano`. Rappel : **le symbole `^` signifie la tou
 
 Maintenant, allons plus loin. Rouvrons notre fichier.
 
-`nano mes_notes.txt`{{execute}}
+`nano mes_notes.txt`
 
 **Mission 2 : Remplacer et Copier-Coller**
 1.  Remplaçons un mot. Appuyez sur `Ctrl+\` (Replace).
