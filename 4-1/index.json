@@ -13,7 +13,7 @@
     },
     "steps": [
       {
-        "title": "Le Quartier Gouvernemental : Commandes et Configurations",
+        "title": "Les Organes Vitaux : Commandes, Configs et Démarrage",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
@@ -28,7 +28,7 @@
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Le GPS du Shell : Le Secret de la Variable $PATH",
+        "title": "La Hiérarchie des Exécutables et le $PATH",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       }

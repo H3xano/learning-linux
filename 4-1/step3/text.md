@@ -20,8 +20,16 @@ Listons le contenu du dossier des logs :
 
 On y trouve des logs pour le système (`syslog`), pour l'authentification (`auth.log`), etc. C'est le premier endroit où un admin regarde quand quelque chose ne va pas.
 
-### `/opt` : Les boutiques indépendantes
+Mais `/var` ne contient pas que des logs ! Il gère aussi le **cache** des applications. Par exemple, le cache de l'outil `apt` :
 
-Le dossier `/opt` (optional) est utilisé pour les logiciels installés manuellement, souvent par des éditeurs tiers (comme Google Chrome, Zoom, etc.). Sur cet environnement de base, il est probablement vide.
+`ls /var/cache/apt/`{{execute}}
+
+### `/opt` et `/srv` : Les zones spécialisées
+
+Le dossier `/opt` (optional) est utilisé pour les logiciels installés manuellement (comme Google Chrome, Zoom...). Sur cet environnement, il est probablement vide.
 
 `ls /opt`{{execute}}
+
+Enfin, le dossier `/srv` (service) est destiné à contenir les données servies par le système, comme les fichiers d'un site web. Il est souvent vide par défaut.
+
+`ls /srv`{{execute}}

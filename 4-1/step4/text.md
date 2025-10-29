@@ -6,18 +6,30 @@ Affichons notre `$PATH` :
 
 `echo $PATH`{{execute}}
 
-Le shell va chercher dans le premier dossier de la liste, puis le deuxième, et ainsi de suite, jusqu'à ce qu'il trouve la commande.
+### Démontrer la hiérarchie
+
+Le `$PATH` a un ordre de priorité. Les dossiers listés au début sont vérifiés en premier. Le dossier `/usr/local/bin` est l'endroit parfait pour un admin qui veut ajouter une commande accessible à tous les utilisateurs sur la machine.
+
+Créons notre propre commande "bonjour" et plaçons-la dans ce dossier.
+
+`echo '#!/bin/bash' | sudo tee /usr/local/bin/bonjour`{{execute}}
+`echo 'echo "Salut depuis /usr/local/bin !"' | sudo tee -a /usr/local/bin/bonjour`{{execute}}
+`sudo chmod +x /usr/local/bin/bonjour`{{execute}}
+
+Maintenant, la magie opère. Exécutez votre nouvelle commande depuis n'importe où :
+
+`bonjour`{{execute}}
+
+Ça fonctionne ! Le shell a parcouru le `$PATH`, a trouvé votre script dans `/usr/local/bin` et l'a exécuté.
 
 ### `which` : L'outil du détective
 
-La commande `which` vous dit exactement quel exécutable sera lancé en se basant sur le `$PATH`.
+La commande `which` vous dit exactement quel exécutable sera lancé en se basant sur le `$PATH`. Vérifions pour notre commande :
 
-Où se trouve la commande `ls` ?
+`which bonjour`{{execute}}
+
+Et pour la commande `ls` ?
 
 `which ls`{{execute}}
 
-Où se trouve la commande `nano` ?
-
-`which nano`{{execute}}
-
-Grâce au `$PATH`, vous n'avez pas besoin de taper `/bin/ls` à chaque fois. Vous tapez `ls`, et le système le trouve pour vous. C'est cette hiérarchie bien pensée qui rend Linux si puissant et organisé !
+Grâce au `$PATH`, vous n'avez pas besoin de taper `/usr/local/bin/bonjour` ou `/bin/ls` à chaque fois. Vous tapez juste le nom, et le système le trouve pour vous. C'est cette hiérarchie bien pensée qui rend Linux si puissant et organisé !
