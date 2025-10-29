@@ -1,13 +1,19 @@
-Parfois, le système `Owner/Group/Others` n'est pas assez précis. On peut ajouter des permissions pour des utilisateurs spécifiques avec les **ACL** (Access Control Lists).
+La commande `ls -l` est un bon résumé, mais `stat` est le rapport complet. Elle affiche toutes les métadonnées d'un fichier, y compris les permissions en double format.
 
-Quand un fichier a des ACL, `ls -l` l'indique avec un `+` à la fin des permissions. Un fichier `fichier_acl.txt` a été préparé pour vous.
+Inspectons notre `rapport.txt`.
 
-`ls -l fichier_acl.txt`{{execute}}
+`stat rapport.txt`{{execute}}
 
-Voyez le **`+`** à la fin de `-rw-rw----+`. C'est un signal : "Attention, il y a des permissions cachées !".
+Regardez la ligne `Access`. Vous y voyez **`(0644/-rw-r--r--)`**. `stat` vous donne les deux notations en même temps, plus besoin de convertir !
 
-Pour voir ces permissions spéciales, on utilise `getfacl`.
+Il vous montre aussi les 3 timestamps cruciaux pour l'audit :
+-   **Access (`atime`)** : Dernière lecture.
+-   **Modify (`mtime`)** : Dernière modification du *contenu*.
+-   **Change (`ctime`)** : Dernière modification des *métadonnées*.
 
-`getfacl fichier_acl.txt`{{execute}}
+Changeons les permissions du fichier et observons.
 
-Vous voyez maintenant les permissions de base (`user::`, `group::`, `other::`) ET une ligne supplémentaire `user:specific_user:rw-` qui est une ACL.
+`chmod 777 rapport.txt`{{execute}}
+`stat rapport.txt`{{execute}}
+
+La date **`Change` (ctime) a été mise à jour**, mais la date `Modify` (mtime) n'a pas bougé car le contenu du fichier est resté le même !

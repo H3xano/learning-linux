@@ -1,19 +1,45 @@
-La commande `ls -l` est un bon résumé, mais `stat` est le rapport complet. Elle affiche toutes les métadonnées d'un fichier, y compris les permissions en double format.
+Comment Linux décide-t-il de vos droits ? Il suit un ordre strict :
+1.  Êtes-vous le **propriétaire** ? Si oui, seules ces permissions s'appliquent. **FIN.**
+2.  Sinon, appartenez-vous au **groupe** ? Si oui, seules ces permissions s'appliquent. **FIN.**
+3.  Sinon, vous êtes dans les **autres**.
 
-Inspectons notre `rapport.txt`.
+### Le Piège des Permissions Effectives
 
-`stat rapport.txt`{{execute}}
+Un fichier spécial `rapport_piege.txt` a été créé. Vous, `learner`, n'êtes **pas** le propriétaire, mais vous **appartenez** à son groupe. Regardons ses droits :
 
-Regardez la ligne `Access`. Vous y voyez **`(0644/-rw-r--r--)`**. `stat` vous donne les deux notations en même temps, plus besoin de convertir !
+`ls -l rapport_piege.txt`{{execute}}
 
-Il vous montre aussi les 3 timestamps cruciaux pour l'audit :
--   **Access (`atime`)** : Dernière lecture.
--   **Modify (`mtime`)** : Dernière modification du *contenu*.
--   **Change (`ctime`)** : Dernière modification des *métadonnées*.
+Vous voyez `---rwx---`. Le groupe a tous les droits. Puisque vous êtes dans le groupe `equipe`, essayons d'écrire dedans.
 
-Changeons les permissions du fichier et observons.
+`echo "test" >> rapport_piege.txt`{{execute}}
 
-`chmod 777 rapport.txt`{{execute}}
-`stat rapport.txt`{{execute}}
+**Succès !** Linux a vu que vous n'étiez pas le propriétaire, a ensuite vérifié votre appartenance au groupe et vous a appliqué les permissions `rwx`.
 
-La date **`Change` (ctime) a été mise à jour**, mais la date `Modify` (mtime) n'a pas bougé car le contenu du fichier est resté le même !
+### Le Contre-Piège : La Priorité du Propriétaire
+
+Maintenant, regardons `rapport_piege2.txt`. Cette fois, vous **êtes** le propriétaire.
+
+`ls -l rapport_piege2.txt`{{execute}}
+
+Les permissions sont `---rwx---`. Le groupe a tous les droits, mais le propriétaire n'en a aucun. Que va-t-il se passer ?
+
+`echo "test" >> rapport_piege2.txt`{{execute}}
+
+**Permission denied !** Pourquoi ? Parce que Linux suit son algorithme :
+1. Êtes-vous le **propriétaire** ? -> **OUI**.
+2. L'algorithme **s'arrête** et applique les permissions du propriétaire : `---`. Vous n'avez aucun droit, même si votre groupe en a !
+
+---
+
+### `umask` : Les permissions par défaut
+
+Quand vous créez un fichier, d'où viennent ses permissions ? De `umask`. `umask` est un "masque" qui retire des permissions. Voyons votre `umask` actuel.
+
+`umask`{{execute}}
+
+Une valeur comme `0002` signifie que `w` (2) est retiré aux "autres". Créons un fichier pour vérifier.
+
+`touch nouveau_fichier_test.txt`{{execute}}
+`ls -l nouveau_fichier_test.txt`{{execute}}
+
+Le fichier a bien les permissions `rw-rw-r--` ! (Base 666 - umask 002 = 664)

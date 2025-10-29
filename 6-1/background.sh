@@ -24,21 +24,27 @@ mkdir /home/learner/projet && chmod 750 /home/learner/projet
 ln -s /home/learner/rapport.txt /home/learner/config_link
 echo '#!/bin/bash' > /home/learner/script_executable.sh && chmod 750 /home/learner/script_executable.sh
 
+# NEW: Setup for directory permissions step
+mkdir /home/learner/dossier_interdit && chmod 644 /home/learner/dossier_interdit
+
 # Setup for effective permissions step
 useradd testuser 2>/dev/null || true
 groupadd equipe 2>/dev/null || true
 usermod -a -G equipe learner
 usermod -a -G equipe testuser
+# First trap: learner is in the group, which has more rights
 touch /home/learner/rapport_piege.txt
-# Propriétaire = testuser, Groupe = equipe
 chown testuser:equipe /home/learner/rapport_piege.txt
-# Owner: aucun droit, Groupe: tous les droits
 chmod 070 /home/learner/rapport_piege.txt # ---rwx---
+# NEW Second trap: learner is the owner, but has no rights
+touch /home/learner/rapport_piege2.txt
+chown learner:equipe /home/learner/rapport_piege2.txt
+chmod 070 /home/learner/rapport_piege2.txt # ---rwx---
 
 # Setup for ACL step
 useradd specific_user 2>/dev/null || true
 touch /home/learner/fichier_acl.txt
 setfacl -m u:specific_user:rw- /home/learner/fichier_acl.txt
 
-# Final ownership for learner's files, EXCEPT the trap file
+# Final ownership for learner's files, EXCEPT the trap files and the forbidden directory
 chown learner:learner /home/learner/rapport.txt /home/learner/projet /home/learner/config_link /home/learner/script_executable.sh /home/learner/fichier_acl.txt

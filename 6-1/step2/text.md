@@ -1,22 +1,19 @@
-Chaque groupe de permissions utilise les lettres `r` (lire), `w` (écrire), `x` (exécuter).
+Pour les fichiers, les permissions `rwx` sont simples. Mais pour les **dossiers**, leur signification change et c'est un point crucial à comprendre !
 
-Pour les traduire en chiffres (notation **octale**), on utilise cette clé :
--   `r` = **4**
--   `w` = **2**
--   `x` = **1**
+-   `r` (read) : Droit de **lister** le contenu du dossier (`ls`).
+-   `w` (write) : Droit de **créer ou supprimer** des fichiers dans le dossier.
+-   `x` (e**x**ecute) : Droit d'**entrer** ou de **traverser** le dossier (`cd`).
 
-On **additionne** les valeurs. Par exemple, `rwx` = 4 + 2 + 1 = **7**.
+### Le Piège du `x`
 
-### Traduisons les permissions de nos fichiers :
+Un dossier spécial, `dossier_interdit`, a été créé sans la permission `x`. Regardons ses droits.
 
-Pour `rapport.txt`, nous avons `-rw-r--r--`.
--   Propriétaire (`rw-`) : 4 + 2 = **6**
--   Groupe (`r--`) : 4 = **4**
--   Autres (`r--`) : 4 = **4**
-Le code octal est donc **644**, un standard pour les fichiers textes.
+`ls -ld dossier_interdit`{{execute}}
 
-Pour le script `script_executable.sh`, nous avons `-rwxr-x---`.
--   Propriétaire (`rwx`) : 4 + 2 + 1 = **7**
--   Groupe (`r-x`) : 4 + 1 = **5**
--   Autres (`---`) : 0 = **0**
-Le code octal est **750**.
+Vous voyez `drw-r--r--`. Il a les droits de lecture (`r`) et d'écriture (`w`) pour le propriétaire, mais pas d'exécution (`x`).
+
+Essayons d'y entrer.
+
+`cd dossier_interdit`{{execute}}
+
+**Permission denied !** C'est la preuve : même avec le droit de lecture (`r`), sans le `x`, un dossier est une forteresse impénétrable. C'est une des règles d'or des permissions Linux.

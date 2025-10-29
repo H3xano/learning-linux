@@ -13,29 +13,34 @@
     },
     "steps": [
       {
-        "title": "Le Plan d'Architecte : Lire la Ligne de Permissions",
+        "title": "Le Plan d'Architecte - Lire la Ligne de Permissions",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Les Deux Faces de la Clé : Symbolique et Octal",
+        "title": "Le Piège du 'x' - Permissions des Dossiers",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "La Loi du Royaume : L'Ordre des Permissions",
+        "title": "Les Deux Faces de la Clé - Symbolique et Octal",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "La Loupe du Maître-Gardien : L'Analyse avec `stat`",
+        "title": "La Loi du Royaume - L'Ordre des Permissions",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Le Passage Secret : Détecter le `+` des ACL",
+        "title": "La Loupe du Maître-Gardien - L'Analyse avec `stat`",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Le Passage Secret - Détecter le `+` des ACL",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
       }
     ],
     "finish": {

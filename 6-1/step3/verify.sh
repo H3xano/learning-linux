@@ -1,10 +1,6 @@
 #!/bin/bash
-set -e; FILES=("$HOME/.bash_history" "/home/learner/.bash_history"); found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "$f" && return 0; done; return 1; }
-
-# Vérifie que l'utilisateur a bien écrit dans le fichier
-found 'echo "test" >> rapport_piege.txt' || exit 1
-# Vérifie qu'il a bien manipulé umask
-found 'umask' || exit 1
-found 'touch nouveau_fichier_test.txt' || exit 1
-
+set -e; # Conceptual step, no specific command to verify beyond interaction.
+FILES=("$HOME/.bash_history" "/home/learner/.bash_history"); found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "$f" && return 0; done; return 1; }
+# Just check if the user is still interacting, e.g. with ls
+found 'ls' || exit 1
 echo -n "done"
