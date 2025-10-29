@@ -13,23 +13,34 @@
     },
     "steps": [
       {
-        "title": "Nano : Le Couteau Suisse de l'Édition",
+        "title": "Étape 1 : Nano - L'Édition Simple et Efficace",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Vim, Premier Contact : Le Choc des Modes",
-        "text": "step2/text.md"
+        "title": "Étape 2 : Vim, Premier Contact - Modes et Navigation Ninja",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
-        "title": "Vim, La Sortie de Secours : L'Art de Quitter",
+        "title": "Étape 3 : Vim - Annuler et Quitter Sereinement",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Vim, La Valse des Lignes : dd, yy, p",
+        "title": "Étape 4 : Vim - La Valse des Lignes (dd, yy, p)",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Étape 5 : Vim - Chercher et Remplacer comme un Pro",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Étape 6 : Vim - Le Mode Visuel pour une Sélection Chirurgicale",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
       }
     ],
     "finish": {

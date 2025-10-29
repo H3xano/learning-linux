@@ -22,13 +22,39 @@ EOF
 chmod +x /tmp/banner.sh
 
 # --- Lab 3.4 Specific File Setup ---
-# Create a template file for the vim exercise
-cat << EOF > /home/learner/config_template.txt
-# Fichier de configuration du service
-# Modifiez les valeurs ci-dessous
+# Create a richer template file for the vim exercises
+cat << 'EOF' > /home/learner/nginx.conf.sample
+# Fichier de configuration du service Nginx
+# Apprenez à naviguer et éditer ce fichier.
 
-port = 8080
-user = admin
+user www-data;
+worker_processes 4; # Mettre le nombre de coeurs CPU
+pid /run/nginx.pid;
+
+events {
+    worker_connections 768;
+}
+
+http {
+    sendfile on;
+    tcp_nopush on;
+    keepalive_timeout 65;
+
+    ##
+    # Logging Settings
+    ##
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    ##
+    # Gzip Settings
+    ##
+
+    gzip on;
+    gzip_disable "msie6";
+    # Fin de la configuration.
+}
 EOF
 
-chown learner:learner /home/learner/config_template.txt
+chown learner:learner /home/learner/nginx.conf.sample

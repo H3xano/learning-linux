@@ -1,20 +1,25 @@
-Vous avez modifié le fichier et êtes revenu en **Mode Normal** en appuyant sur `Esc`. Comment sauvegarder et quitter maintenant ?
+Vous avez modifié le fichier. Mais que se passe-t-il si vous faites une erreur ? Et comment sauvegarder ?
 
-Pour cela, on utilise le **Mode Commande**, qui s'active en tapant `:` depuis le Mode Normal.
+### La commande la plus importante : Annuler
 
-Une ligne de commande apparaît en bas de l'écran.
+La commande `u` (undo) en Mode Normal est votre meilleure amie.
+
+**Mission 1 : Annuler une erreur**
+1.  Assurez-vous d'être en Mode Normal (`Esc`).
+2.  Placez votre curseur sur la ligne `user www-data;` et supprimez-la en tapant `dd`. La ligne disparaît !
+3.  Pas de panique ! Appuyez simplement sur `u` pour annuler. La ligne réapparaît.
 
 ### Les commandes vitales pour quitter
 
-Voici les commandes que vous taperez après le `:` :
--   `:w` : (**w**rite) Sauvegarder le fichier.
--   `:q` : (**q**uit) Quitter Vim (ne fonctionne que si le fichier n'a pas été modifié).
--   `:wq` : (**w**rite & **q**uit) La combinaison la plus utile : sauvegarder ET quitter.
--   `:q!` : Quitter **sans** sauvegarder. C'est votre porte de sortie d'urgence si vous avez fait une bêtise.
+Pour sauvegarder ou quitter, on passe en **Mode Commande** en tapant `:` depuis le Mode Normal.
 
-**Votre mission :**
-1.  Assurez-vous d'être en Mode Normal (appuyez sur `Esc` par sécurité).
-2.  Tapez `:wq`
-3.  Appuyez sur **Entrée**.
+-   `:w` : (**w**rite) Sauvegarder.
+-   `:q` : (**q**uit) Quitter.
+-   `:wq` : (**w**rite & **q**uit) Sauvegarder ET quitter.
+-   `:q!` : Quitter **sans** sauvegarder (la sortie de secours).
 
-Et voilà ! Vous avez édité, sauvegardé et quitté `vim` avec succès. C'est le fameux "secret" que tous les débutants cherchent.
+**Mission 2 : Sauvegarder et Quitter**
+1.  Tapez `:wq`
+2.  Appuyez sur **Entrée**.
+
+Vous avez appris à corriger vos erreurs et à quitter `vim` sereinement. C'est la base de la confiance.

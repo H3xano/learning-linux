@@ -1,22 +1,18 @@
-Bienvenue dans `vim`. La première chose à comprendre est son concept de **MODES**. C'est ce qui le rend si différent.
+Bienvenue dans `vim`. Pour le maîtriser, nous utiliserons un fichier de configuration plus réaliste.
 
-Ouvrons un fichier de configuration.
+Ouvrons-le :
 
-`vim config_template.txt`{{execute}}
+`vim nginx.conf.sample`{{execute}}
 
-Essayez de taper du texte. Rien ne s'écrit ! C'est normal. Vous êtes en **Mode Normal**, où chaque touche est une commande.
+Vous êtes en **Mode Normal**. Chaque touche est une commande. Pour devenir un "ninja", vous devez naviguer sans quitter le clavier.
 
-### Passer en Mode Insertion
+**Mission : Naviguer avec précision**
+1.  Allez **instantanément** à la dernière ligne du fichier en tapant `G`.
+2.  Revenez **instantanément** à la première ligne en tapant `gg`.
+3.  Utilisez la touche `j` pour descendre ligne par ligne jusqu'à `worker_processes 4;`.
+4.  Utilisez la touche `w` (word) pour sauter de mot en mot jusqu'au chiffre `4`.
+5.  Passez en **Mode Insertion** en appuyant sur `i`.
+6.  Remplacez le `4` par un `8`.
+7.  Appuyez sur **`Esc`** pour revenir en **Mode Normal**.
 
-Pour écrire du texte, vous devez passer en **Mode Insertion**.
-1.  Appuyez sur la touche `i` (pour **i**nsert).
-2.  Regardez en bas à gauche de l'écran. Vous devriez voir `-- INSERT --`.
-
-Vous y êtes ! Maintenant, vous pouvez taper normalement.
-
-**Votre mission :**
-1.  Passez en Mode Insertion en appuyant sur `i`.
-2.  Allez à la fin du fichier et ajoutez une nouvelle ligne : `enabled = true`
-3.  **TRÈS IMPORTANT :** Appuyez sur la touche **`Esc`** (Échap) pour revenir en **Mode Normal**.
-
-Vous avez réussi le plus difficile : comprendre comment basculer entre le mode commande (Normal) et le mode écriture (Insertion). Ne quittez pas `vim`, nous allons apprendre à sauvegarder à la prochaine étape !
+Ne quittez pas `vim` ! À la prochaine étape, nous verrons comment annuler une erreur et quitter en toute sécurité.
