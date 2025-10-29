@@ -24,20 +24,17 @@ Pour supprimer des fichiers ou des répertoires non vides, on utilise `rm`.
     `rm fichier_temporaire.txt`{{execute}}
 
 2.  Pour supprimer un répertoire et tout son contenu, il faut l'option `-r` (récursive). **C'est une option dangereuse !**
-    Supprimons le répertoire `mon_projet/docs/src` que nous avions déplacé.
+    Supprimons le répertoire `mon_projet/src/tests` que nous avions déplacé.
     `rm -r mon_projet/src/tests`{{execute}}
 
-### La sécurité AVANT TOUT : `-i` et `-I`
+### La sécurité AVANT TOUT : `-rI`
 
-Pour éviter les catastrophes, utilisez TOUJOURS `-i` ou `-I` avec `rm`.
+Pour éviter les catastrophes lors de la suppression de répertoires, combinez TOUJOURS `-r` (récursif) et `-I` (confirmation groupée).
 
--   `-i` : Demande confirmation pour CHAQUE fichier/répertoire.
--   `-I` : Demande confirmation UNE SEULE FOIS si plus de 3 fichiers sont concernés. **C'est souvent le meilleur compromis.**
+Essayons de supprimer tous les fichiers **et répertoires** du répertoire `mon_projet_backup` avec cette combinaison sécurisée.
+`rm -rI mon_projet_backup/*`{{execute}}
 
-Essayons de supprimer tous les fichiers du répertoire `mon_projet_backup` avec l'option de sécurité `-I`.
-`rm -I mon_projet_backup/*`{{execute}}
-
-Comme il y a plusieurs fichiers, `rm` vous demande une confirmation unique avant de tout supprimer. Répondez `y` et **Entrée**.
+Comme il y a plusieurs éléments, y compris des répertoires, `rm` vous demande une confirmation unique avant de tout supprimer. Répondez `y` et **Entrée**.
 
 ---
 
