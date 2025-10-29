@@ -1,4 +1,20 @@
-Le symbole `>` permet de **rediriger** `stdout` vers un fichier au lieu de l'écran.
+### Contrôler l'entrée avec `<`
+
+Avant de rediriger la sortie, voyons rapidement comment rediriger l'entrée. Le symbole `<` envoie le contenu d'un fichier dans l'entrée standard (`stdin`) d'une commande. C'est comme si vous tapiez le contenu du fichier vous-même.
+
+Créons un fichier, puis donnons-le à `cat` en utilisant la redirection d'entrée.
+
+`echo "Ce texte vient d'un fichier." > mon_input.txt`{{execute}}
+
+Maintenant, `cat` va lire son entrée depuis le fichier `mon_input.txt` au lieu de votre clavier.
+
+`cat < mon_input.txt`{{execute}}
+
+---
+
+### Sauvegarder la sortie avec `>`
+
+Le symbole `>` permet de **rediriger** `stdout` (la sortie normale) vers un fichier au lieu de l'écran.
 
 Sauvegardons la liste des fichiers de `/etc` dans un fichier nommé `liste_etc.txt`.
 
@@ -7,8 +23,6 @@ Sauvegardons la liste des fichiers de `/etc` dans un fichier nommé `liste_etc.t
 Rien ne s'est affiché à l'écran ! C'est normal, la sortie a été détournée. Vérifions le contenu du fichier.
 
 `cat liste_etc.txt`{{execute}}
-
----
 
 ### Attention : `>` écrase !
 
