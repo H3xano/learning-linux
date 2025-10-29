@@ -4,11 +4,11 @@ Sur un serveur, vous n'êtes souvent pas seul. Il est crucial de savoir qui d'au
 
 La commande `who` vous donne une liste simple des utilisateurs connectés, avec des détails sur leur connexion.
 
-`who`{{execute}}
+`sudo who`{{execute}}
 
 Pour une vue encore plus rapide, la commande `users` affiche uniquement les noms des utilisateurs connectés.
 
-`users`{{execute}}
+`sudo users`{{execute}}
 
 Remarquez la différence : `who` donne des détails, `users` est juste une liste de noms.
 
