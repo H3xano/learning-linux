@@ -2,11 +2,11 @@ Pourquoi pouvez-vous taper `ls` et pas `/bin/ls` ? Comment le shell trouve-t-il 
 
 C'est une liste de dossiers où le shell cherche les exécutables. Affichons-la.
 
-`echo $PATH`{{execute}}
+`echo $PATH`
 
 La commande `which` vous montre le chemin exact de la commande qui sera exécutée en se basant sur le `$PATH`.
 
-`which ls`{{execute}}
+`which ls`
 
 ---
 
@@ -15,16 +15,17 @@ La commande `which` vous montre le chemin exact de la commande qui sera exécut�
 Un script `mon_script.sh` a été créé pour vous. Il est même exécutable.
 
 `cd ~`
+
 `ls -l mon_script.sh`
 
 Essayons de l'exécuter comme une commande normale.
 
-`mon_script.sh`{{execute}}
+`mon_script.sh`
 
 **"Command not found" !** Pourquoi ? Parce que le répertoire actuel (`.`) n'est **pas** dans le `$PATH` par défaut (pour des raisons de sécurité).
 
 Pour exécuter un script dans le répertoire courant, vous devez le préciser avec un chemin relatif : `./`.
 
-`./mon_script.sh`{{execute}}
+`./mon_script.sh`
 
 Succès ! Le `./` dit explicitement au shell : "Exécute le fichier qui se trouve juste ici, dans ce dossier." C'est une des leçons les plus importantes de la ligne de commande.
