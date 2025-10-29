@@ -1,40 +1,37 @@
-La commande `mv` (move) fait deux choses :
-1.  **Renommer** un fichier ou un répertoire.
-2.  **Déplacer** un fichier ou un répertoire.
+La commande `mv` (move) fait deux choses : **renommer** et **déplacer**.
 
 ### Renommer
 
-Pour renommer un fichier, on le déplace simplement vers un nouveau nom dans le même répertoire.
+Pour renommer un fichier, on le "déplace" vers un nouveau nom dans le même répertoire.
 
-Renommons `mon_projet/README_backup.md` en `mon_projet/NOTES.txt`.
-
-`mv mon_projet/README_backup.md mon_projet/NOTES.txt`{{execute}}
+Renommons `mon_projet_backup/NOTES.md` en `mon_projet_backup/OLD_NOTES.md`.
+`mv mon_projet_backup/NOTES.md mon_projet_backup/OLD_NOTES.md`{{execute}}
 
 Vérifions :
-`ls -l mon_projet/`{{execute}}
+`ls -l mon_projet_backup/`{{execute}}
 
 ---
 
 ### Déplacer
 
-Maintenant, déplaçons le répertoire `mon_projet/src` dans `mon_projet/docs`.
+Maintenant, déplaçons le répertoire `mon_projet/tests` à l'intérieur de `mon_projet/src`. Pour voir exactement ce qui se passe, utilisons l'option `-v` (verbeux).
 
-`mv mon_projet/src/ mon_projet/docs/`{{execute}}
+`mv -v mon_projet/tests/ mon_projet/src/`{{execute}}
 
-Vérifions la nouvelle structure :
+La sortie vous confirme l'opération de renommage/déplacement. Vérifions la nouvelle structure :
 `ls -R mon_projet/`{{execute}}
 
 ---
 
-### L'option `-i` : Éviter l'écrasement accidentel
+### Sécurité : Éviter l'écrasement avec `-i`
 
-L'option `-i` (**i**nteractive) est une sécurité cruciale qui vous demande confirmation avant d'écraser un fichier.
+Comme pour `cp`, l'option `-i` (interactive) est une sécurité cruciale.
 
-Pour voir cela en action, créons d'abord un fichier vide dans la destination qui entrera en conflit.
-`touch mon_projet/docs/NOTES.txt`{{execute}}
+Créons un fichier `README.md` dans `mon_projet/docs` pour créer un conflit.
+`touch mon_projet/docs/README.md`{{execute}}
 
-Maintenant, essayons de déplacer le `NOTES.txt` de la racine du projet dans `docs/`, où un fichier du même nom existe déjà. **Utilisez bien l'option `-i` !**
+Maintenant, tentons de déplacer le `README.md` de la racine du projet vers `docs/`, où un fichier du même nom existe. **Utilisez bien l'option `-i` !**
 
-`mv -i mon_projet/NOTES.txt mon_projet/docs/`{{execute}}
+`mv -i mon_projet/README.md mon_projet/docs/`{{execute}}
 
-Comme un fichier `NOTES.txt` existe déjà à destination, `mv` vous demande confirmation. Répondez `y` (pour yes) et appuyez sur **Entrée** pour l'écraser. C'est la bonne façon de déplacer des fichiers en toute sécurité !
+`mv` vous demande confirmation avant d'écraser. Répondez `y` (pour yes) et appuyez sur **Entrée**. C'est la bonne façon de déplacer des fichiers en toute sécurité !

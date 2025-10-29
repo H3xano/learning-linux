@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
+# --- Standard User and History Setup ---
 if ! id learner &>/dev/null; then useradd -m -s /bin/bash learner; echo "learner ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/learner; chmod 440 /etc/sudoers.d/learner; fi
 touch /home/learner/.bash_history; chown learner:learner /home/learner/.bash_history; chmod 600 /home/learner/.bash_history
 grep -q 'Formip: realtime history' /home/learner/.bashrc || cat <<'RC' >> /home/learner/.bashrc
@@ -18,12 +20,7 @@ EOF
 chmod +x /tmp/banner.sh
 
 # --- Lab 4.4 Specific File Setup ---
-# La structure 'mon_projet' a été supprimée d'ici. C'est à l'utilisateur de la créer dans l'étape 1.
+# Pas de fichiers pré-créés. L'apprenant va tout construire lui-même.
+# Ceci renforce l'idée de partir d'une feuille blanche.
 
-# Créer uniquement les fichiers nécessaires pour les étapes 2, 3 et 4.
-touch /home/learner/fichier_a_supprimer.txt
-touch /home/learner/temp1.txt /home/learner/temp2.txt /home/learner/temp3.txt
-touch /home/learner/temp4.txt /home/learner/temp5.txt /home/learner/temp6.txt
-
-# Set ownership for all created files
 chown -R learner:learner /home/learner/

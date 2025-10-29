@@ -1,37 +1,43 @@
-La commande `cp` (copy) est votre outil pour faire des copies de fichiers et de répertoires.
+La commande `cp` (copy) est votre outil pour dupliquer fichiers et répertoires.
 
-### Copier un fichier
+### Copie simple et récursive
 
-Copions notre fichier `README.md` en `README_backup.md`.
+1.  Copions notre fichier `README.md` en `NOTES.md`.
+    `cp mon_projet/README.md mon_projet/NOTES.md`{{execute}}
 
-`cp mon_projet/README.md mon_projet/README_backup.md`{{execute}}
+2.  Pour copier un répertoire, il faut l'option `-r` (récursive).
+    `cp -r mon_projet/ mon_projet_backup/`{{execute}}
 
-Vérifions que la copie a bien été faite :
-`ls -l mon_projet/README*`{{execute}}
-
-Vous voyez deux fichiers.
-
----
-
-### Copier un répertoire
-
-Pour copier un répertoire et tout son contenu (récursivement), on utilise l'option `-r`.
-
-`cp -r mon_projet/ mon_projet_copie/`{{execute}}
-
-Maintenant, `mon_projet_copie` est une copie exacte de `mon_projet`.
+Vérifiez que `mon_projet_backup` existe et contient les mêmes fichiers.
 
 ---
 
-### L'option -i : La sécurité avant tout
+### La Copie Parfaite : l'option `-a` (Archive)
 
-Par défaut, `cp` écrase les fichiers sans pitié. Pour éviter de perdre des données accidentellement, utilisez toujours l'option `-i` (interactive), qui demande confirmation.
+Une simple copie avec `-r` ne préserve pas tout (comme les permissions d'exécution). Pour une copie **parfaite**, on utilise `-a`. C'est **essentiel pour les sauvegardes** !
 
-Créons un nouveau fichier.
-`echo "Nouveau contenu" > nouveau_readme.txt`{{execute}}
+1.  Créons un petit script et rendons-le exécutable :
+    `echo "#!/bin/bash" > mon_projet/run.sh`{{execute}}
+    `chmod +x mon_projet/run.sh`{{execute}}
 
-Maintenant, essayons de copier ce fichier pour **écraser** le `README.md` que nous avons créé dans `mon_projet`. Utilisons l'option `-i` pour le faire en toute sécurité.
+2.  Regardez ses permissions (il y a des `x` pour "e**x**ecutable") :
+    `ls -l mon_projet/run.sh`{{execute}}
 
-`cp -i nouveau_readme.txt mon_projet/README.md`{{execute}}
+3.  Copions ce script de deux manières différentes dans notre backup :
+    `cp mon_projet/run.sh mon_projet_backup/run_simple_copie.sh`{{execute}}
+    `cp -a mon_projet/run.sh mon_projet_backup/run_copie_parfaite.sh`{{execute}}
 
-Comme `mon_projet/README.md` existe déjà, `cp` vous demande la permission de l'écraser. Répondez `y` (pour yes) et appuyez sur **Entrée**. C'est une protection cruciale !
+4.  **Observez la différence !**
+    `ls -l mon_projet_backup/run*.sh`{{execute}}
+    La copie simple a perdu ses droits d'exécution, alors que la copie `-a` les a parfaitement conservés. **Retenez : pour une sauvegarde, utilisez toujours `cp -a` !**
+
+---
+
+### La sécurité avant tout : l'option `-i`
+
+Pour éviter d'écraser un fichier par erreur, utilisez l'option `-i` (interactive).
+
+Essayons d'écraser le fichier `NOTES.md` avec le contenu de `README.md` :
+`cp -i mon_projet/README.md mon_projet/NOTES.md`{{execute}}
+
+Comme le fichier de destination existe, `cp` vous demande la permission de l'écraser. Répondez `y` (pour yes) et appuyez sur **Entrée**.

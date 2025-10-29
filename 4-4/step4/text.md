@@ -1,53 +1,46 @@
 La commande `rm` (**r**e**m**ove) est le bouton "supprimer" de Linux. **ATTENTION : C'est une suppression DÉFINITIVE !** Il n'y a pas de corbeille.
 
-### Supprimer un fichier
+### `rmdir` : La suppression sécurisée de répertoires VIDES
 
-Supprimons un fichier que nous n'avons plus besoin.
+`rmdir` ne supprime un répertoire que s'il est vide. C'est une excellente protection.
 
-`touch fichier_a_supprimer.txt`{{execute}}
-`rm fichier_a_supprimer.txt`{{execute}}
+1.  Créez un répertoire vide et supprimez-le :
+    `mkdir dossier_vide`{{execute}}
+    `rmdir dossier_vide`{{execute}}
+    Ça a fonctionné !
 
-Le fichier a disparu !
+2.  Essayez maintenant de supprimer un répertoire qui n'est pas vide :
+    `rmdir mon_projet/`{{execute}}
+    La commande échoue avec un message d'erreur. `rmdir` vous a protégé !
 
-### Supprimer un répertoire
+---
 
-Pour supprimer un répertoire, il faut l'option `-r` (**r**ecursive). **C'est le paramètre le plus dangereux !**
+### `rm` : Le bulldozer
 
-Supprimons le répertoire `mon_projet/docs/src` (qui contient `main.py`).
+Pour supprimer des fichiers ou des répertoires non vides, on utilise `rm`.
 
-`rm -r mon_projet/docs/src/`{{execute}}
+1.  Supprimons un fichier :
+    `touch fichier_temporaire.txt`{{execute}}
+    `rm fichier_temporaire.txt`{{execute}}
 
-Vérifions :
-`ls mon_projet/docs/`{{execute}}
-
-Le répertoire `src` a disparu.
+2.  Pour supprimer un répertoire et tout son contenu, il faut l'option `-r` (récursive). **C'est une option dangereuse !**
+    Supprimons le répertoire `mon_projet/docs/src` que nous avions déplacé.
+    `rm -r mon_projet/src/tests`{{execute}}
 
 ### La sécurité AVANT TOUT : `-i` et `-I`
 
-Pour éviter les catastrophes, utilisez TOUJOURS `-i` ou `-I`.
+Pour éviter les catastrophes, utilisez TOUJOURS `-i` ou `-I` avec `rm`.
 
--   `-i` : Demande confirmation pour CHAQUE fichier.
+-   `-i` : Demande confirmation pour CHAQUE fichier/répertoire.
 -   `-I` : Demande confirmation UNE SEULE FOIS si plus de 3 fichiers sont concernés. **C'est souvent le meilleur compromis.**
 
-Essayons de supprimer plusieurs fichiers avec `-i` :
-`touch temp1.txt temp2.txt temp3.txt`{{execute}}
-`rm -i *.txt`{{execute}}
+Essayons de supprimer tous les fichiers du répertoire `mon_projet_backup` avec l'option de sécurité `-I`.
+`rm -I mon_projet_backup/*`{{execute}}
 
-Vous devrez confirmer chaque suppression.
-
-Maintenant, avec `-I` :
-`touch temp4.txt temp5.txt temp6.txt`{{execute}}
-`rm -I *.txt`{{execute}}
-
-Une seule confirmation pour tout le groupe.
+Comme il y a plusieurs fichiers, `rm` vous demande une confirmation unique avant de tout supprimer. Répondez `y` et **Entrée**.
 
 ---
 
 ### Le danger ultime : `rm -rf`
 
-**NE JAMAIS exécuter `rm -rf` sans être ABSOLUMENT CERTAIN de ce que vous faites.**
-
--   `-r` : Récursif (supprime dossiers et tout leur contenu)
--   `-f` : Force (ignore les erreurs, ne demande JAMAIS de confirmation)
-
-**La combinaison `rm -rf` est une arme de destruction massive.** La commande `rm -rf /` détruirait TOUT votre système de fichiers. Ne la tapez JAMAIS, sauf si vous savez EXACTEMENT ce que vous faites et pourquoi !
+**NE JAMAIS exécuter `rm -rf` sans être ABSOLUMENT CERTAIN de ce que vous faites.** La combinaison `-r` (récursif) et `-f` (force, sans confirmation) est une arme de destruction massive. La commande `rm -rf /` détruirait TOUT votre système de fichiers.
