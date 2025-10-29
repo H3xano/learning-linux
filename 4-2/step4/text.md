@@ -31,9 +31,14 @@ Regardons leurs **inodes** (leur numéro d'identité unique) avec `ls -i`.
 
 `ls -i data.txt data_alias.txt`{{execute}}
 
-Ils ont le **même numéro d'inode** ! C'est la preuve qu'ils pointent vers les mêmes données sur le disque.
+Ils ont le **même numéro d'inode** ! C'est la preuve qu'ils pointent vers les mêmes données sur le disque. Comparons avec le lien symbolique que nous avons créé plus tôt (même s'il est cassé, il a toujours son inode) et son original (que nous recréons pour l'exemple).
 
-Maintenant, si on supprime un des noms, les données restent accessibles via l'autre.
+`echo "Ceci est mon fichier original." > original.txt`{{execute}}
+`ls -i original.txt raccourci.txt`{{execute}}
+
+Ici, les numéros d'inodes sont **différents**, car un lien symbolique est un fichier distinct.
+
+Maintenant, si on supprime un des noms du lien dur, les données restent accessibles via l'autre.
 
 `rm data.txt`{{execute}}
 `cat data_alias.txt`{{execute}}

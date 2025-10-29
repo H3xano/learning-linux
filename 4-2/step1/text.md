@@ -26,3 +26,15 @@ Listons les fichiers du répertoire `/etc` en les triant par **date de modificat
 `ls -ltr /etc`{{execute}}
 
 Faites défiler jusqu'en bas pour voir les fichiers qui ont été modifiés le plus récemment sur ce système !
+
+---
+
+### Trouver les poids lourds et identifier les types
+
+Trouvons maintenant les fichiers les plus volumineux dans `/etc`. Pour cela, combinez le format lisible (`-h`) avec le tri par taille (`-S`).
+
+`ls -lhS /etc`{{execute}}
+
+Enfin, pour distinguer rapidement les fichiers des dossiers, utilisez l'option `-F` qui ajoute un `/` aux répertoires.
+
+`ls -F`{{execute}}

@@ -8,9 +8,17 @@
 
 Cette commande vous dit instantanément quelle partition est presque pleine (regardez la colonne `Use%`).
 
+### Le problème caché : les inodes
+
+Parfois, l'espace disque semble disponible, mais vous ne pouvez plus créer de fichiers. La cause ? L'épuisement des **inodes**, les "cartes d'identité" des fichiers. Vérifions leur utilisation avec l'option `-i`.
+
+`df -i`{{execute}}
+
+Si la colonne `IUse%` atteint 100%, même avec de l'espace libre, le système de fichiers est "plein".
+
 ### `du` : L'audit détaillé
 
-Une fois que vous savez *quelle* partition est pleine (par exemple, la racine `/`), `du` (**d**isk **u**sage) vous aide à trouver *quel* dossier est le coupable.
+Une fois que vous savez *quelle* partition est pleine, `du` (**d**isk **u**sage) vous aide à trouver *quel* dossier est le coupable.
 
 Utilisons `du` pour trouver les dossiers les plus volumineux dans `/var`.
 -   `-h` : Taille humainement lisible.

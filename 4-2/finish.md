@@ -7,7 +7,7 @@ Excellent travail, inspecteur ! 🎉 Vous avez brillamment mené l'enquête et m
 Vous repartez avec des compétences essentielles :
 1. **Scanner** les répertoires avec précision grâce aux options avancées de `ls`.
 2. **Identifier** la véritable nature d'un fichier avec `file` et son histoire complète avec `stat`.
-3. **Diagnostiquer** n'importe quel problème d'espace disque avec le duo `df` et `du`.
+3. **Diagnostiquer** n'importe quel problème d'espace disque ou d'inodes avec le duo `df` et `du`.
 4. **Organiser** intelligemment vos fichiers sans duplication grâce aux liens durs et symboliques.
 
 Vous êtes passé de simple utilisateur à un véritable analyste du système de fichiers. Ces commandes sont celles que les administrateurs système utilisent chaque jour pour maintenir, dépanner et sécuriser les serveurs.
