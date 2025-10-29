@@ -32,14 +32,18 @@ useradd testuser 2>/dev/null || true
 groupadd equipe 2>/dev/null || true
 usermod -a -G equipe learner
 usermod -a -G equipe testuser
+
 # First trap: learner is in the group, which has more rights
 touch /home/learner/rapport_piege.txt
 chown testuser:equipe /home/learner/rapport_piege.txt
-chmod 070 /home/learner/rapport_piege.txt # ---rwx---
-# NEW Second trap: learner is the owner, but has no rights
+# CORRECTION: Should be 0070 (---rwx---). Owner=0, Group=7, Others=0
+chmod 0070 /home/learner/rapport_piege.txt
+
+# Second trap: learner is the owner, but has no rights
 touch /home/learner/rapport_piege2.txt
 chown learner:equipe /home/learner/rapport_piege2.txt
-chmod 070 /home/learner/rapport_piege2.txt # ---rwx---
+# CORRECTION: Should be 0070 (---rwx---). Owner=0, Group=7, Others=0
+chmod 0070 /home/learner/rapport_piege2.txt
 
 # Setup for ACL step
 useradd specific_user 2>/dev/null || true
@@ -48,3 +52,7 @@ setfacl -m u:specific_user:rw- /home/learner/fichier_acl.txt
 
 # Final ownership for learner's files, EXCEPT the trap files and the forbidden directory
 chown learner:learner /home/learner/rapport.txt /home/learner/projet /home/learner/config_link /home/learner/script_executable.sh /home/learner/fichier_acl.txt
+
+# CORRECTION: Add execute permission for others on the home directory
+# This allows specific_user to traverse into /home/learner to read fichier_acl.txt
+chmod o+x /home/learner
