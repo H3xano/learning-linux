@@ -1,6 +1,6 @@
 {
-  "title": "Lab 4.5: 🐕 Le Limier du Système (find & locate)",
-  "description": "Apprenez à maîtriser les outils de recherche de Linux : find, locate, which et whereis.",
+  "title": "Lab 4.5: 🐕 Le Limier du Système (find, locate & actions)",
+  "description": "Maîtrisez la recherche ET l'automatisation avec find, locate, which et whereis.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -18,19 +18,24 @@
         "verify": "step1/verify.sh"
       },
       {
-        "title": "L'Analyse Forensique : Taille, Date et Preuves",
+        "title": "L'Analyse Forensique : Taille, Date et Permissions",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "L'Informateur Express : La Vitesse de `locate`",
+        "title": "De la Recherche à l'Action : Automatiser les Tâches",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Retrouver son Équipement : `which` et `whereis`",
+        "title": "L'Informateur Express : La Vitesse de `locate`",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Retrouver son Équipement : `which` et `whereis`",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
       }
     ],
     "finish": {

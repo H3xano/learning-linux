@@ -1,4 +1,4 @@
-`find` peut chercher selon bien plus que le nom ! La taille et la date sont des critères très utiles.
+`find` peut chercher selon bien plus que le nom ! La taille, la date et les permissions sont des critères très utiles.
 
 ### Recherche par taille avec `-size`
 
@@ -18,10 +18,16 @@ Cherchons les fichiers qui ont été modifiés dans les dernières 24 heures.
 
 `find ~ -mtime -1`{{execute}}
 
+### Recherche par permissions avec `-perm`
+
+`find` peut aussi traquer des fichiers en fonction de leurs permissions. C'est crucial pour la sécurité ! Cherchons un fichier ayant exactement les permissions `666` (lecture/écriture pour tout le monde), ce qui est souvent une mauvaise configuration.
+
+`find ~ -type f -perm 666`{{execute}}
+
+Nous avons ajouté `-type f` pour ne chercher que les fichiers, et non les dossiers.
+
 ### Combiner les critères
 
 La vraie puissance de `find` est de pouvoir combiner les critères. Cherchons les fichiers de **plus de 1k** ET qui ont été **modifiés récemment**.
 
 `find ~ -size +1k -mtime -1`{{execute}}
-
-Vous venez de réaliser une recherche complexe que `ls` ne pourrait jamais faire !

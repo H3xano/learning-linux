@@ -18,10 +18,16 @@ Maintenant, cherchons un rapport dont on ne connaît pas la casse exacte.
 
 Le `i` dans `-iname` signifie "ignore case" et a permis de trouver `RAPPORT_FINAL.PDF`.
 
-### Recherche avec wildcards `*`
+### Recherche avec le wildcard `*`
 
-Le `*` est un joker qui signifie "n'importe quelle suite de caractères". C'est parfait pour les recherches partielles.
-
-Trouvons tous les fichiers qui se terminent par `.log` dans le dossier `archives/`.
+Le `*` est un joker qui signifie "n'importe quelle suite de caractères". C'est parfait pour les recherches partielles. Trouvons tous les fichiers qui se terminent par `.log` dans le dossier `archives/`.
 
 `find ~/archives -name "*.log"`{{execute}}
+
+### Recherche précise avec le wildcard `?`
+
+Le `?` est un joker qui remplace **un seul caractère**. Trouvons les rapports qui ont un seul caractère après `rapport_`.
+
+`find ~/documents -name "rapport_?.pdf"`{{execute}}
+
+Cette commande trouve `rapport_1.pdf` et `rapport_A.pdf` mais ignorerait `rapport_final.pdf`.

@@ -1,33 +1,33 @@
-Parfois, `find` peut être lent, surtout si vous cherchez sur tout le système (`/`). Pour les recherches rapides par nom, il y a une solution magique : `locate`.
+Trouver des fichiers, c'est bien. Agir dessus automatiquement, c'est encore mieux ! C'est le super-pouvoir de `find`.
 
-`locate` utilise une base de données pré-indexée de tous les fichiers. C'est **extrêmement rapide**.
+### Suppression sécurisée avec `-delete`
 
-Essayons de trouver le fichier de configuration du service SSH, `sshd_config`.
+Imaginons que vous vouliez nettoyer tous les fichiers temporaires (`.tmp`). L'option `-delete` est plus sûre et plus efficace que d'utiliser `rm`.
 
-`locate sshd_config`{{execute}}
+Trouvez et supprimez tous les fichiers se terminant par `.tmp` dans le dossier `~/temporaire`.
 
-Le résultat est instantané !
+`find ~/temporaire -name "*.tmp" -delete`{{execute}}
 
----
+Vérifions que le dossier est maintenant vide :
 
-### Le piège de `locate`
+`ls ~/temporaire`{{execute}}
 
-`locate` a une faiblesse : sa base de données n'est pas mise à jour en temps réel.
+Les fichiers ont disparu !
 
-Créons un nouveau fichier.
+### Exécuter une commande avec `-exec`
 
-`touch ~/mon_fichier_tout_neuf.txt`{{execute}}
+L'option `-exec` permet de lancer n'importe quelle commande sur chaque fichier trouvé. C'est la clé de l'automatisation.
 
-Maintenant, essayons de le trouver avec `locate`.
+La syntaxe `{} \;` est spéciale :
+-   `{}` est remplacé par le nom de chaque fichier trouvé.
+-   `\;` marque la fin de la commande à exécuter.
 
-`locate mon_fichier_tout_neuf.txt`{{execute}}
+Nous avons un vieux fichier log. Trouvons-le et compressons-le avec `gzip`.
 
-Rien ! Le fichier est trop récent, il n'est pas encore dans la base de données. Pour forcer la mise à jour, un administrateur peut utiliser `sudo updatedb`. Faisons-le.
+`find ~/archives -name "vieux_log.log" -exec gzip {} \;`{{execute}}
 
-`sudo updatedb`{{execute}}
+Vérifions le résultat. Le fichier a été renommé en `.log.gz`.
 
-Maintenant que la base de données est à jour, réessayons.
+`ls ~/archives`{{execute}}
 
-`locate mon_fichier_tout_neuf.txt`{{execute}}
-
-Succès ! Vous comprenez maintenant la différence : `find` est lent mais toujours à jour ; `locate` est rapide mais peut avoir un temps de retard.
+Vous venez de transformer `find` d'un simple outil de recherche en un puissant robot d'automatisation !

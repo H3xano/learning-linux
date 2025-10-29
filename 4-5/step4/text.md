@@ -1,21 +1,33 @@
-Comment savoir où est installée une commande comme `ls` ou `python3` ?
+Parfois, `find` peut être lent, surtout si vous cherchez sur tout le système (`/`). Pour les recherches rapides par nom, il y a une solution magique : `locate`.
 
-### `which` : Quelle commande est exécutée ?
+`locate` utilise une base de données pré-indexée de tous les fichiers. C'est **extrêmement rapide**.
 
-`which` vous donne le chemin exact de la commande qui sera exécutée en se basant sur votre `$PATH`. C'est l'outil parfait pour savoir "quelle version de l'outil j'utilise ?".
+Essayons de trouver le fichier de configuration du service SSH, `sshd_config`.
 
-`which ls`{{execute}}
+`locate sshd_config`{{execute}}
 
-`which python3`{{execute}}
+Le résultat est instantané !
 
-### `whereis` : La vue d'ensemble
+---
 
-`whereis` est plus complet. Il ne vous donne pas seulement le chemin de la commande, mais aussi l'emplacement de sa page de manuel (`man`) et de son code source s'ils sont disponibles.
+### Le piège de `locate`
 
-`whereis ls`{{execute}}
+`locate` a une faiblesse : sa base de données n'est pas mise à jour en temps réel.
 
-Vous voyez le binaire (`/bin/ls`) et sa page de manuel.
+Créons un nouveau fichier.
 
-`whereis python3`{{execute}}
+`touch ~/mon_fichier_tout_neuf.txt`{{execute}}
 
-`whereis` vous donne une carte complète de tous les fichiers importants liés à une commande. C'est très utile pour comprendre comment un programme est installé sur le système.
+Maintenant, essayons de le trouver avec `locate`.
+
+`locate mon_fichier_tout_neuf.txt`{{execute}}
+
+Rien ! Le fichier est trop récent, il n'est pas encore dans la base de données. Pour forcer la mise à jour, un administrateur peut utiliser `sudo updatedb`. Faisons-le.
+
+`sudo updatedb`{{execute}}
+
+Maintenant que la base de données est à jour, réessayons.
+
+`locate mon_fichier_tout_neuf.txt`{{execute}}
+
+Succès ! Vous comprenez maintenant la différence : `find` est lent mais toujours à jour ; `locate` est rapide mais peut avoir un temps de retard.

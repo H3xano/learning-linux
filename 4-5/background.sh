@@ -23,7 +23,6 @@ EOF
 chmod +x /tmp/banner.sh
 
 # --- Robust Package Installation ---
-# On ajoute '|| true' pour que le script ne s'arrête pas si apt échoue.
 apt-get update >/dev/null 2>&1 && apt-get install -y locate >/dev/null 2>&1 || true
 
 # --- Lab 4.5 Specific File Setup ---
@@ -31,21 +30,30 @@ apt-get update >/dev/null 2>&1 && apt-get install -y locate >/dev/null 2>&1 || t
 mkdir -p /home/learner/projets/secret
 mkdir -p /home/learner/documents
 mkdir -p /home/learner/archives
+mkdir -p /home/learner/temporaire
 
-# Files for step 1
+# Files for Step 1 (name and wildcards)
 echo "confidentiel" > /home/learner/projets/secret/secret_rapport.txt
 echo "Rapport final" > /home/learner/documents/RAPPORT_FINAL.PDF
 echo "log d'application" > /home/learner/archives/app_2023.log
 echo "log système" > /home/learner/archives/system_2024.log
+touch /home/learner/documents/rapport_1.pdf
+touch /home/learner/documents/rapport_A.pdf
 
-# Files for step 2 (size and time)
-# Create a file larger than 40k
+# Files for Step 2 (size, time, permissions)
 dd if=/dev/zero of=/home/learner/gros_fichier.data bs=1k count=50 >/dev/null 2>&1
-# Create a file that will be recent
 touch /home/learner/fichier_recent.txt
+touch /home/learner/documents/fichier_trop_permissif.txt
+chmod 666 /home/learner/documents/fichier_trop_permissif.txt
+
+# Files for Step 3 (actions)
+touch /home/learner/temporaire/a_supprimer.tmp
+touch /home/learner/temporaire/cache_file.tmp
+echo "vieux log" > /home/learner/archives/vieux_log.log
+touch -d "2 years ago" /home/learner/archives/vieux_log.log
 
 # Set ownership for all created files
 chown -R learner:learner /home/learner
 
-# Pre-generate the locate database, making it robust as well
+# Pre-generate the locate database
 updatedb || true
