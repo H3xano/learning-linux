@@ -6,5 +6,7 @@ found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "
 
 found 'ls -i' || exit 1
 found 'ln mon_fichier.txt' || exit 1
+found 'stat mon_fichier.txt' || exit 1
+found 'ln data' || exit 1
 
 echo -n "done"

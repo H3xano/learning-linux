@@ -24,12 +24,11 @@ Pour trouver tous les liens brisés dans une arborescence, on utilise `find` ave
 
 ### Réparer un lien
 
-La meilleure façon de réparer notre lien est de le supprimer et de le recréer avec un chemin absolu.
+La méthode la plus professionnelle pour réparer un lien est de le recréer en forçant son remplacement avec les options `-s` (symbolique) et `-f` (force), en utilisant un chemin absolu.
 
-`rm /tmp/lien_relatif`{{execute}}
-`ln -s /home/learner/data/source.txt /tmp/lien_relatif`{{execute}}
+`ln -sf /home/learner/data/source.txt /tmp/lien_relatif`{{execute}}
 
-Vérifions qu'il fonctionne maintenant.
+Cette commande unique a remplacé l'ancien lien brisé par le nouveau, qui est correct. Vérifions qu'il fonctionne maintenant.
 
 `cat /tmp/lien_relatif`{{execute}}
 

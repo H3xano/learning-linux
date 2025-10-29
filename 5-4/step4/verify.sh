@@ -6,6 +6,6 @@ found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "
 
 found 'readlink' || exit 1
 found 'find ~ -xtype l' || exit 1
-found 'ln -s /home/learner/data/source.txt /tmp/lien_relatif' || exit 1
+found 'ln -sf /home/learner/data/source.txt /tmp/lien_relatif' || exit 1
 
 echo -n "done"
