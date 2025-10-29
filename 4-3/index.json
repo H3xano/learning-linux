@@ -28,9 +28,14 @@
         "verify": "step3/verify.sh"
       },
       {
-        "title": "L'Annuaire Secret des Commandes ($PATH) et le Piège du './'",
+        "title": "L'Annuaire des Commandes ($PATH) et le Piège du './'",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Rendre Votre Script Accessible de Partout",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
       }
     ],
     "finish": {
