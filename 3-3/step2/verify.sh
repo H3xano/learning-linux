@@ -1,17 +1,30 @@
 #!/bin/bash
 set -e
 FILES=("$HOME/.bash_history" "/home/learner/.bash_history")
-found() { local p="$1"; for f in "${FILES[@]}"; do [ -f "$f" ] && grep -q "$p" "$f" && return 0; done; return 1; }
 
-# Vérifie l'utilisation des classes de caractères []
-found '\[A-Z\]\[A-Z\]\[A-Z\]' || exit 1
+foundF() {
+    local pattern="$1"
+    for f in "${FILES[@]}"; do
+        if [ -f "$f" ] && grep -Fq "$pattern" "$f"; then
+            return 0
+        fi
+    done
+    return 1
+}
 
-# Vérifie l'utilisation de la négation [^...]
-found '\[\^#\]' || exit 1
+# 1. Vérifie la recherche avec la répétition manuelle des classes
+foundF 'egrep "[A-Z][A-Z][A-Z]-[0-9][0-9][0-9][0-9][0-9]" data.txt' || exit 1
 
-# Vérifie l'utilisation de l'ancrage ^ et $
-found '\^START' || exit 1
-found 'transaction\\\.\$' || exit 1
-found '\^OK\$' || exit 1
+# 2. Vérifie l'utilisation de la négation pour ignorer les commentaires
+foundF 'egrep "^[^#]" data.txt' || exit 1
+
+# 3. Vérifie l'ancrage de début de ligne
+foundF 'egrep "^START" data.txt' || exit 1
+
+# 4. Vérifie l'ancrage de fin de ligne avec échappement
+foundF 'egrep "transaction\.$" data.txt' || exit 1
+
+# 5. Vérifie la correspondance exacte de ligne
+foundF 'egrep "^OK$" data.txt' || exit 1
 
 echo -n "done"
