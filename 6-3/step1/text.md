@@ -12,16 +12,34 @@ Il est en `-rw-r--r--`. Il n'est pas exécutable. Essayons de le lancer.
 
 `./mon_script.sh`{{execute}}
 
-**Permission denied !** C'est normal. Utilisons `chmod` pour **ajouter** (`+`) la permission d'**exécution** (`x`) pour le **propriétaire** (`u`).
+**Permission denied !** Utilisons `chmod` pour **ajouter** (`+`) la permission d'**exécution** (`x`) pour le **propriétaire** (`u`).
 
 `chmod u+x mon_script.sh`{{execute}}
 
-Vérifions à nouveau. Le `x` est apparu !
+Vérifions à nouveau. Le `x` est apparu et le script fonctionne !
 
 `ls -l mon_script.sh`{{execute}}
 `./mon_script.sh`{{execute}}
 
-Maintenant, **retirons** (`-`) la permission de **lecture** (`r`) pour les **autres** (`o`) sur le fichier `secret.txt`.
+### Le Mode Symbolique Avancé : Combinaisons
 
-`chmod o-r secret.txt`{{execute}}
-`ls -l secret.txt`{{execute}}
+La vraie puissance du mode symbolique réside dans les combinaisons.
+
+1.  **Ciblage multiple** : Pour que vous (**u**) ET votre groupe (**g**) puissiez modifier `document.txt`, utilisez `ug`.
+
+    `chmod ug+w document.txt`{{execute}}
+    `ls -l document.txt`{{execute}}
+
+    Les permissions sont maintenant `rw-rw-r--`.
+
+2.  **Définition exacte et multiple** : L'opérateur `=` efface les droits existants pour définir exactement ce que vous voulez. Avec la virgule (`,`), vous pouvez enchaîner plusieurs règles.
+
+    Sécurisons `secret.txt` en une seule commande :
+    -   propriétaire (`u`) doit avoir lecture/écriture (`rw`)
+    -   groupe (`g`) doit avoir lecture seule (`r`)
+    -   autres (`o`) ne doivent avoir **aucun droit** (`=`)
+
+    `chmod u=rw,g=r,o= secret.txt`{{execute}}
+    `ls -l secret.txt`{{execute}}
+
+    Résultat : `rw-r-----`. C'est une configuration de sécurité précise et claire, réalisée en une seule ligne.

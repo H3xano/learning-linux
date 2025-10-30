@@ -7,7 +7,7 @@ Vous savez lire les permissions, mais comment les **modifier** ? Comment rendre 
 La réponse est `chmod` (**ch**ange **mod**e), la commande la plus importante pour la sécurité de vos fichiers.
 
 Dans ce lab, vous allez devenir un expert de `chmod` et des permissions spéciales :
-1.  **Le Langage des Lettres** : Maîtriser le mode **symbolique** (`u+x`, `g-w`...).
+1.  **Le Langage des Lettres** : Maîtriser le mode **symbolique** (`u+x`, `g-w`...) et combiner plusieurs changements.
 2.  **Le Code des Chiffres** : Maîtriser le mode **octal** (`755`, `600`...).
 3.  **Les Super-Pouvoirs** : Comprendre les permissions spéciales `SUID` et `SGID`.
 4.  **Protéger les Dossiers Partagés** : Utiliser le `Sticky Bit` pour une collaboration sûre.

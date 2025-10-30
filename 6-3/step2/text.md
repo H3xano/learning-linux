@@ -9,7 +9,6 @@ On additionne ces valeurs pour chaque catégorie (Propriétaire, Groupe, Autres)
 -   `rw-` = 4+2 = **6**
 -   `r-x` = 4+1 = **5**
 -   `r--` = 4 = **4**
--   `---` = 0
 
 ### Appliquer les standards
 
@@ -27,3 +26,11 @@ Pour un **fichier sensible**, la norme est **600** (`rw-------`). Personne d'aut
 
 `chmod 600 secret.txt`{{execute}}
 `ls -l secret.txt`{{execute}}
+
+### Défi Bonus : La Récursivité
+
+Pour appliquer des permissions à un dossier **et à tout son contenu**, on utilise l'option `-R` (récursif). Appliquons les permissions standards (`755`) au dossier `public_space/` et à tout ce qu'il contient.
+
+`chmod -R 755 public_space/`{{execute}}
+`ls -ld public_space/`{{execute}}
+`ls -l public_space/`{{execute}}
