@@ -1,6 +1,6 @@
 {
   "title": "Lab 6.2: 🔄 Le Maître des Propriétés (chown & chgrp)",
-  "description": "Apprenez à gérer la propriété des fichiers et des groupes avec chown et chgrp.",
+  "description": "Gérez la propriété des fichiers, les groupes, la collaboration et résolvez des scénarios réels.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -23,7 +23,7 @@
         "verify": "step2/verify.sh"
       },
       {
-        "title": "La Copropriété : Partager avec une Équipe via `chgrp`",
+        "title": "Gestion des Équipes : `groupadd`, `groupdel`, `usermod`",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
@@ -36,6 +36,11 @@
         "title": "Sauvetage Foncier : Réclamer un Projet Orphelin",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Scénario Pro : Collaboration d'Équipe avec le SGID",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
       }
     ],
     "finish": {
