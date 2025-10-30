@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-echo 'su - learner' >> ~/.bashrc
-su - learner
+echo 'runuser -l learner' >> ~/.bashrc
+runuser -l learner
 cd ~
 bash /tmp/banner.sh
