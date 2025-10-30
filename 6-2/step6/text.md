@@ -1,31 +1,24 @@
-Nous allons maintenant simuler le cas le plus courant : configurer un dossier pour qu'une équipe puisse collaborer efficacement.
+Vous venez de recevoir une archive `projet_casse.tar.gz`. Après l'avoir extraite, vous constatez un problème.
 
-Le but : tout nouveau fichier créé dans le dossier `projet_bravo` doit automatiquement appartenir au groupe `webteam`.
+`tar -xzf projet_casse.tar.gz`{{execute}}
 
-### Étape A : Assigner le groupe
+Maintenant, listons le contenu de votre répertoire `home` pour voir le nouveau dossier.
 
-D'abord, changeons le groupe du dossier `projet_bravo` et de son contenu pour `webteam`.
+`ls -l`{{execute}}
 
-`sudo chgrp -R webteam projet_bravo`{{execute}}
+Regardez la ligne pour `projet_casse`. Les colonnes propriétaire et groupe sont des numéros (`1234`, `5678`) ! Ce sont des **fichiers orphelins**. L'utilisateur et le groupe qui les possédaient n'existent pas sur ce système.
 
-### Étape B : La magie du SGID
+Votre mission est de vous réapproprier ce projet.
 
-Maintenant, nous allons activer le bit **SGID** (`Set Group ID`) sur le dossier. Ce bit force tous les nouveaux fichiers et dossiers créés à l'intérieur à **hériter du groupe du dossier parent**, au lieu du groupe primaire de l'utilisateur.
+---
+### Réparer la propriété
 
-`sudo chmod g+s projet_bravo`{{execute}}
+Utilisez `chown -R` pour vous assigner (vous êtes `learner`) l'entièreté du dossier `projet_casse` ainsi que le groupe `webteam` que nous avons créé.
 
-Vérifions le dossier. Voyez le `s` à la place du `x` pour le groupe. C'est le SGID !
+`sudo chown -R learner:webteam projet_casse`{{execute}}
 
-`ls -ld projet_bravo`{{execute}}
+Vérifions une dernière fois.
 
-### Étape C : Le test final
+`ls -l projet_casse`{{execute}}
 
-Créons un nouveau fichier dans le dossier.
-
-`touch projet_bravo/test.js`{{execute}}
-
-Maintenant, vérifions son propriétaire et son groupe.
-
-`ls -l projet_bravo/test.js`{{execute}}
-
-Regardez bien : le propriétaire est `learner` (celui qui a créé le fichier), mais le groupe est `webteam` ! L'héritage a fonctionné. Vous venez de mettre en place un dossier de collaboration professionnel.
+Parfait ! Les fichiers orphelins ont disparu et le projet vous appartient maintenant, partagé avec votre équipe `webteam`. Vous avez résolu un problème d'administration système courant.

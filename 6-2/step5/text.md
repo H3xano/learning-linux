@@ -1,24 +1,29 @@
-Vous venez de recevoir une archive `projet_casse.tar.gz`. Après l'avoir extraite, vous constatez un problème.
+Changer les fichiers un par un, c'est long. L'option `-R` (récursive) applique une commande à un dossier et **à tout ce qu'il contient**. C'est extrêmement puissant, mais aussi dangereux !
 
-`tar -xzf projet_casse.tar.gz`{{execute}}
+Un dossier `projet_alpha` a été créé pour vous. Regardons son contenu et ses propriétaires actuels.
 
-Maintenant, listons le contenu de votre répertoire `home` pour voir le nouveau dossier.
+`ls -lR projet_alpha`{{execute}}
 
-`ls -l`{{execute}}
-
-Regardez la ligne pour `projet_casse`. Les colonnes propriétaire et groupe sont des numéros (`1234`, `5678`) ! Ce sont des **fichiers orphelins**. L'utilisateur et le groupe qui les possédaient n'existent pas sur ce système.
-
-Votre mission est de vous réapproprier ce projet.
+Tout appartient à `learner:learner`.
 
 ---
-### Réparer la propriété
+### Transférer tout un dossier
 
-Utilisez `chown -R` pour vous assigner (vous êtes `learner`) l'entièreté du dossier `projet_casse` ainsi que le groupe `webteam` que nous avons créé.
+Maintenant, transférons la propriété de tout le dossier `projet_alpha` et de son contenu à `testuser:equipe`.
 
-`sudo chown -R learner:webteam projet_casse`{{execute}}
+**Attention : n'utilisez jamais `-R` sur des dossiers système comme `/etc` ou `/` !**
 
-Vérifions une dernière fois.
+`sudo chown -R testuser:equipe projet_alpha`{{execute}}
 
-`ls -l projet_casse`{{execute}}
+Vérifions le résultat.
 
-Parfait ! Les fichiers orphelins ont disparu et le projet vous appartient maintenant, partagé avec votre équipe `webteam`. Vous avez résolu un problème d'administration système courant.
+`ls -lR projet_alpha`{{execute}}
+
+En une seule commande, vous avez changé la propriété du dossier, du sous-dossier, et de tous les fichiers à l'intérieur !
+
+---
+### Pour aller plus loin
+
+L'option `-R` est simple mais aveugle. Pour un contrôle plus fin (par exemple, ne changer que les fichiers), les administrateurs utilisent la commande `find`. Essayez de lister uniquement les fichiers du projet :
+
+`find projet_alpha -type f`{{execute}}

@@ -1,29 +1,28 @@
-Changer les fichiers un par un, c'est long. L'option `-R` (récursive) applique une commande à un dossier et **à tout ce qu'il contient**. C'est extrêmement puissant, mais aussi dangereux !
+Parfois, vous voulez seulement changer le groupe d'un fichier sans toucher au propriétaire. C'est le rôle de `chgrp` (**ch**ange **gr**ou**p**).
 
-Un dossier `projet_alpha` a été créé pour vous. Regardons son contenu et ses propriétaires actuels.
+Regardons le fichier `site_config.conf`.
 
-`ls -lR projet_alpha`{{execute}}
+`ls -l site_config.conf`{{execute}}
 
-Tout appartient à `learner:learner`.
+Il appartient à `learner:learner`. Changeons son groupe pour `webteam`, l'équipe que nous avons créée à l'étape précédente.
 
----
-### Transférer tout un dossier
+`sudo chgrp webteam site_config.conf`{{execute}}
 
-Maintenant, transférons la propriété de tout le dossier `projet_alpha` et de son contenu à `testuser:equipe`.
+Vérifions le résultat : le propriétaire est resté `learner`, mais le groupe est maintenant `webteam`.
 
-**Attention : n'utilisez jamais `-R` sur des dossiers système comme `/etc` ou `/` !**
-
-`sudo chown -R testuser:equipe projet_alpha`{{execute}}
-
-Vérifions le résultat.
-
-`ls -lR projet_alpha`{{execute}}
-
-En une seule commande, vous avez changé la propriété du dossier, du sous-dossier, et de tous les fichiers à l'intérieur !
+`ls -l site_config.conf`{{execute}}
 
 ---
-### Pour aller plus loin
+### La Règle d'Or : L'Appartenance au Groupe
 
-L'option `-R` est simple mais aveugle. Pour un contrôle plus fin (par exemple, ne changer que les fichiers), les administrateurs utilisent la commande `find`. Essayez de lister uniquement les fichiers du projet :
+`chgrp` a une règle importante. En tant qu'utilisateur normal (sans `sudo`), vous ne pouvez changer le groupe d'un fichier que si vous appartenez vous-même au nouveau groupe.
 
-`find projet_alpha -type f`{{execute}}
+Vérifions vos groupes.
+
+`groups`{{execute}}
+
+Vous faites partie de `learner`, `sudo` et `webteam`, mais **pas** de `equipe`. Essayons de changer le groupe du fichier pour `equipe`.
+
+`chgrp equipe site_config.conf`{{execute}}
+
+`Operation not permitted` ! L'opération échoue car vous ne faites pas partie du groupe `equipe`. C'est une mesure de sécurité qui empêche de donner l'accès à des équipes dont on ne fait pas partie.

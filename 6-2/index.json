@@ -28,19 +28,24 @@
         "verify": "step3/verify.sh"
       },
       {
-        "title": "L'Effet Domino : L'Option `-R` pour Tout Changer",
+        "title": "Partage en Équipe : La Précision de `chgrp`",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Sauvetage Foncier : Réclamer un Projet Orphelin",
+        "title": "L'Effet Domino : L'Option `-R` pour Tout Changer",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       },
       {
-        "title": "Scénario Pro : Collaboration d'Équipe avec le SGID",
+        "title": "Sauvetage Foncier : Réclamer un Projet Orphelin",
         "text": "step6/text.md",
         "verify": "step6/verify.sh"
+      },
+      {
+        "title": "Scénario Pro : Mettre en Place la Collaboration d'Équipe",
+        "text": "step7/text.md",
+        "verify": "step7/verify.sh"
       }
     ],
     "finish": {

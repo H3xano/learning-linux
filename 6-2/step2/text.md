@@ -1,12 +1,16 @@
-Changer le propriétaire d'un fichier est une opération si puissante que seul `root` (l'administrateur) peut le faire. Nous devrons donc utiliser `sudo`.
+Changer le propriétaire d'un fichier est une opération si puissante que seul `root` (l'administrateur) peut le faire. La commande est `chown` (**ch**ange **own**er).
 
-La commande est `chown` (**ch**ange **own**er).
+### Tentative sans super-pouvoirs
 
-Regardons le propriétaire actuel de `rapport.txt`.
+Regardons le propriétaire actuel de `rapport.txt`. Il appartient à `learner`. Essayons de le transférer à `root` en tant que simple utilisateur.
 
-`ls -l rapport.txt`{{execute}}
+`chown root rapport.txt`{{execute}}
 
-Il appartient à `learner`. Transférons-le à l'utilisateur `root`.
+Comme prévu, vous obtenez une erreur `Operation not permitted`. C'est une sécurité fondamentale de Linux !
+
+### La bonne méthode : `sudo`
+
+Nous devons donc utiliser `sudo` pour demander au système d'exécuter la commande en tant que `root`.
 
 `sudo chown root rapport.txt`{{execute}}
 

@@ -6,14 +6,15 @@ Félicitations, notaire ! 🎉 Vous avez scellé votre maîtrise de la gestion d
 
 Vous avez acquis des compétences essentielles :
 1. **Identifier** le propriétaire et le groupe de n'importe quel fichier avec `ls -l`.
-2. **Changer** le propriétaire avec `sudo chown`.
-3. **Gérer** le cycle de vie des groupes (`groupadd`, `groupdel`) et ajouter des membres en toute sécurité (`usermod -aG`).
-4. **Appliquer** des changements en masse et en toute sécurité avec l'option `-R`.
-5. **Résoudre** des problèmes réels de fichiers orphelins.
-6. **Configurer** un dossier de collaboration intelligent avec le bit **SGID**.
+2. **Transférer** la propriété avec `sudo chown` après avoir compris pourquoi `sudo` est indispensable.
+3. **Changer** le groupe d'un fichier avec `chgrp` et comprendre ses restrictions.
+4. **Gérer** le cycle de vie des groupes (`groupadd`, `groupdel`) et ajouter des membres en toute sécurité (`usermod -aG`).
+5. **Appliquer** des changements en masse et en toute sécurité avec l'option `-R`.
+6. **Résoudre** des problèmes réels de fichiers orphelins.
+7. **Configurer** un dossier de collaboration et comprendre le défi de l'héritage de groupe.
 
 Cette compétence est la base de toute administration système sécurisée. Que ce soit pour configurer un serveur web, gérer un projet d'équipe ou réparer des permissions, vous avez maintenant les bons outils en main.
 
-La prochaine étape ? Apprendre à modifier les permissions elles-mêmes avec `chmod` !
+La prochaine étape ? Apprendre à modifier les permissions elles-mêmes avec `chmod` et découvrir la magie du SGID pour résoudre le problème de l'héritage !
 
 Excellent travail ! Continuez votre progression ! 🐧✨

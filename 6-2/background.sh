@@ -28,12 +28,12 @@ mkdir -p /home/learner/projet_alpha/src
 touch /home/learner/projet_alpha/main.py
 touch /home/learner/projet_alpha/src/utils.py
 
-# Setup for Step 6
+# Setup for Step 7
 mkdir -p /home/learner/projet_bravo
 touch /home/learner/projet_bravo/README.md
 touch /home/learner/projet_bravo/main.js
 
-# Setup for Step 5 (Orphan files)
+# Setup for Step 6 (Orphan files)
 mkdir -p /home/learner/projet_casse_source
 touch /home/learner/projet_casse_source/fichier1.txt
 touch /home/learner/projet_casse_source/fichier2.txt
