@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
-set +x # Pour s'assurer que les commandes ne s'affichent pas
 
 # Supprime le script lui-même pour la propreté.
 # (Optionnel, mais élégant)
