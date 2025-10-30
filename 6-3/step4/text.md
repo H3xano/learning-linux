@@ -10,7 +10,7 @@ Un dossier `shared_folder` a été préparé pour vous. Il appartient au groupe 
 
 Activons le SGID avec la notation symbolique `g+s`.
 
-`chmod g+s shared_folder`{{execute}}
+`sudo chmod g+s shared_folder`{{execute}}
 `ls -ld shared_folder`{{execute}}
 
 Remarquez le `s` à la place du `x` du groupe (`rws`). C'est la marque du SGID.
