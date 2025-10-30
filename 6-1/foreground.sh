@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+set +x
 
 # Wait for the signal file from the background script.
 # This loop will check for the file every second for up to 30 seconds.
