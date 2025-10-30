@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
+set -euo pipefail
+set +x # <-- CETTE LIGNE EST LA SOLUTION. Elle désactive l'affichage des commandes.
 
 # Supprime le script lui-même pour la propreté.
 # (Optionnel, mais élégant)
-rm $0
+if [ -f "$0" ]; then rm "$0"; fi
 
 # Nettoie l'écran pour une présentation propre.
 clear
@@ -26,6 +28,8 @@ echo " done."
 echo # Ligne vide pour l'espacement
 
 # Lance la session utilisateur comme prévu.
+# Note: la commande 'echo' ci-dessous est intentionnelle et correcte.
+# Elle ajoute la commande 'runuser' au .bashrc pour les futures sessions.
 echo 'runuser -l learner' >> ~/.bashrc
 runuser -l learner
 cd ~
