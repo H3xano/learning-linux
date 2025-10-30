@@ -26,6 +26,3 @@ clear
 
 # --- Début de la session pour l'utilisateur ---
 echo 'runuser -l learner' >> ~/.bashrc
-runuser -l learner
-cd ~
-bash /tmp/banner.sh
