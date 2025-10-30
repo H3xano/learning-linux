@@ -1,3 +1,3 @@
 #!/bin/bash
 
-FILE=/ks/init.sh; while ! test -f ${FILE}; do clear; sleep 0.1; done; bash ${FILE} > /ks/init.log
+FILE=/tmp/init.sh; while ! test -f ${FILE}; do clear; sleep 0.1; done; bash ${FILE} > /tmp/init.log
