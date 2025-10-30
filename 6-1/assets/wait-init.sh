@@ -8,21 +8,15 @@ rm $0
 clear
 
 # Affiche une animation de chargement avec un timeout de sécurité.
-echo -n "Initialising Scenario..."
+echo -n "Initialisation du Scénario..."
 counter=0
 while [ ! -f /ks/.initfinished ]; do
     echo -n '.'
     sleep 1;
-    counter=$((counter + 1))
-    if [ "$counter" -gt 60 ]; then # Timeout de 60 secondes pour plus de marge
-      echo # Retour à la ligne pour l'erreur
-      echo "Error: Timed out waiting for background script." >&2
-      exit 1
-    fi
 done;
 echo " done"
 sleep 3
 clear
 
-# --- Début de la session pour l'utilisateur ---
+# --- Fallback en cas de deconnexion de la session utilisateur ---
 echo 'runuser -l learner' >> ~/.bashrc
