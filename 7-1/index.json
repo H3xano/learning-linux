@@ -13,29 +13,34 @@
     },
     "steps": [
       {
-        "title": "La Première Pierre : Du Plan (`nano`) à l'Exécution (`./`)",
+        "title": "Du Plan (`nano`) à l'Exécution (`./`)",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Donner une Mémoire au Script : Les Variables",
+        "title": "Donner une Mémoire au Script (Variables)",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Le Panneau de Contrôle : Rendre les Scripts Flexibles",
+        "title": "Rendre les Scripts Flexibles (Paramètres)",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Le Cerveau du Robot : Prendre des Décisions avec `if`",
+        "title": "Le Cerveau du Robot (Conditions `if` et `&&`)",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "La Chaîne de Montage : Répéter les Tâches avec les Boucles `for`",
+        "title": "La Chaîne de Montage (Boucles `for` et `continue`)",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Projet Final - L'Automate de Nettoyage",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
       }
     ],
     "finish": {

@@ -1,22 +1,30 @@
-Un script intelligent doit pouvoir prendre des décisions. La structure `if [ condition ]; then ... fi` est faite pour ça.
+Un script intelligent prend des décisions avec `if [ condition ]; then ... fi`.
 
-Créons un script qui vérifie si un fichier existe.
+Créons un script qui vérifie si un fichier existe **ET** s'il est lisible.
 
 `nano script_condition.sh`{{execute}}
 
-Écrivez ce code :
+Écrivez ce code. L'opérateur `&&` signifie "ET".
 ```bash
 #!/bin/bash
 
+# Vérifie si exactement 1 paramètre a été donné
+if [ "$#" -ne 1 ]; then
+    echo "Erreur : vous devez fournir exactement un nom de fichier."
+    exit 1
+fi
+
 FICHIER=$1
 
-echo "Vérification de l'existence de : $FICHIER"
+echo "Vérification de : $FICHIER"
 
 # Le test '-f' vérifie si c'est un fichier
-if [ -f "$FICHIER" ]; then
-    echo "✅  Le fichier existe."
+# Le test '-r' vérifie si le fichier est lisible (read)
+if [ -f "$FICHIER" ] && [ -r "$FICHIER" ]; then
+    echo "✅  Le fichier existe et est lisible."
+    echo "Nombre de lignes : $(wc -l < "$FICHIER")"
 else
-    echo "❌  Le fichier n'existe PAS."
+    echo "❌  Le fichier n'existe PAS ou est illisible."
 fi
 ```
 Sauvegardez et quittez. Rendez-le exécutable.
@@ -26,7 +34,7 @@ Sauvegardez et quittez. Rendez-le exécutable.
 ---
 ### Tester le script
 
-D'abord, testons avec un fichier qui existe, comme `/etc/hostname`.
+Testons avec un fichier qui existe et est lisible, comme `/etc/hostname`.
 
 `./script_condition.sh /etc/hostname`{{execute}}
 
@@ -34,24 +42,8 @@ Maintenant, avec un fichier qui n'existe pas.
 
 `./script_condition.sh /un/fichier/inexistant`{{execute}}
 
-Le script a bien pris deux décisions différentes selon la situation.
+Et enfin, sans argument pour tester notre première condition.
 
-### Test numérique
+`./script_condition.sh`{{execute}}
 
-On peut aussi tester des nombres.
--   `-eq` : égal
--   `-gt` : plus grand que (**g**reater **t**han)
--   `-lt` : plus petit que (**l**ess **t**han)
-
-Ajoutons un test sur le nombre d'arguments à notre script.
-`nano script_condition.sh`{{execute}}
-
-Ajoutez ces lignes au tout début, juste après le `#!/bin/bash` :
-```bash
-# Vérifie si exactement 1 paramètre a été donné
-if [ "$#" -ne 1 ]; then
-    echo "Erreur : vous devez fournir exactement un nom de fichier en paramètre."
-    exit 1
-fi
-```
-Sauvegardez et quittez. `exit 1` arrête le script en cas d'erreur.
+Le script gère maintenant plusieurs cas de figure. C'est ça, l'intelligence !

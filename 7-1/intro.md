@@ -10,6 +10,7 @@ Dans ce lab, vous allez construire votre premier véritable arsenal de scripts :
 3.  **Les Scripts Polyvalents** : Accepter des **paramètres** pour rendre vos outils flexibles.
 4.  **L'Intelligence du Script** : Prendre des **décisions** avec les conditions `if`.
 5.  **La Puissance de la Répétition** : Exécuter des tâches en masse avec les **boucles** `for`.
+6.  **Votre Premier Automate** : **Assembler toutes les compétences** dans un projet final.
 
 À la fin de ce lab, vous ne serez plus un simple utilisateur de commandes, mais un créateur d'outils.
 
