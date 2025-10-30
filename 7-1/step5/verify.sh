@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-[ -f script_rename.sh ] || exit 1
 grep -q 'continue' script_rename.sh || exit 1
 grep -q 'if \[\[ "\$fichier" == \*.log \]\]' script_rename.sh || exit 1
 
