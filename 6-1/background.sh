@@ -56,3 +56,6 @@ chown learner:learner /home/learner/rapport.txt /home/learner/projet /home/learn
 # CORRECTION: Add execute permission for others on the home directory
 # This allows specific_user to traverse into /home/learner to read fichier_acl.txt
 chmod o+x /home/learner
+
+# Create the signal file to indicate setup is 100% complete
+touch /tmp/background_finished
