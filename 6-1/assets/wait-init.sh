@@ -21,7 +21,8 @@ while [ ! -f /ks/.initfinished ]; do
     fi
 done;
 echo " done"
-echo
+sleep 3
+clear
 
 # --- Début de la session pour l'utilisateur ---
 echo 'runuser -l learner' >> ~/.bashrc
