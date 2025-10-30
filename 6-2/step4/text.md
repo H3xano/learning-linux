@@ -20,3 +20,10 @@ Vérifions le résultat.
 `ls -lR projet_alpha`{{execute}}
 
 En une seule commande, vous avez changé la propriété du dossier, du sous-dossier, et de tous les fichiers à l'intérieur !
+
+---
+### Pour aller plus loin
+
+L'option `-R` est simple mais aveugle. Pour un contrôle plus fin (par exemple, ne changer que les fichiers), les administrateurs utilisent la commande `find`. Essayez de lister uniquement les fichiers du projet :
+
+`find projet_alpha -type f`{{execute}}

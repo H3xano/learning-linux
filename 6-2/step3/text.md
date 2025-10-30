@@ -1,28 +1,35 @@
-Le plus souvent, vous ne voulez pas céder la propriété, mais juste partager un fichier avec une équipe. Pour cela, on change le groupe du fichier.
+Pour collaborer, il faut des équipes. Sous Linux, une équipe est un **groupe**. Apprenons à les gérer.
 
-### Créer une équipe (un groupe)
+### Créer et supprimer un groupe
 
-Créons un nouveau groupe pour notre équipe de développement web.
+La commande `groupadd` crée un groupe. Créons un groupe temporaire `marketing`.
+
+`sudo groupadd marketing`{{execute}}
+
+Vérifions son existence avec `getent group`.
+
+`getent group marketing`{{execute}}
+
+Pour le supprimer, on utilise `groupdel`.
+
+`sudo groupdel marketing`{{execute}}
+
+---
+### Ajouter un membre à un groupe
+
+Maintenant, créons le groupe `webteam` pour notre projet.
 
 `sudo groupadd webteam`{{execute}}
 
-Ajoutons l'utilisateur `learner` à cette nouvelle équipe avec `usermod -aG`.
+Pour ajouter notre utilisateur `learner` à ce groupe, on utilise `usermod -aG`.
 
 `sudo usermod -aG webteam learner`{{execute}}
 
----
-### Assigner un fichier au groupe
+<br>
+> ⚠️ **ATTENTION : Le Piège à Éviter !**
+> L'option `-a` (append/ajouter) est **CRUCIALE**.
+>
+> - `usermod -aG webteam learner` **AJOUTE** `webteam` aux groupes existants. C'est ce que vous voulez 99% du temps.
+> - `usermod -G webteam learner` (sans `-a`) **ÉCRASE** tous les anciens groupes et ne laisse que `webteam`. C'est une erreur fréquente et dangereuse !
 
-La commande `chgrp` (**ch**ange **gr**ou**p**) permet de changer uniquement le groupe d'un fichier.
-
-Assignons notre fichier `site_config.conf` au groupe `webteam`.
-
-`sudo chgrp webteam site_config.conf`{{execute}}
-
-**Note :** Nous utilisons `sudo` ici. Pourquoi ? Même si vous êtes propriétaire du fichier, la règle de `chgrp` est que vous devez aussi appartenir au groupe cible. Le changement de groupe avec `usermod` n'est actif que dans une **nouvelle session**. `sudo` permet de forcer le changement immédiatement.
-
-Vérifions avec `ls -l`.
-
-`ls -l site_config.conf`{{execute}}
-
-Le propriétaire est toujours `learner`, mais le fichier est maintenant partagé avec le groupe `webteam`.
+Pour que votre nouvelle appartenance au groupe soit active, vous devriez normalement vous déconnecter et vous reconnecter.
