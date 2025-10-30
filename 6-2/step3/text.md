@@ -25,7 +25,6 @@ Pour ajouter notre utilisateur `learner` à ce groupe, on utilise `usermod -aG`.
 
 `sudo usermod -aG webteam learner`{{execute}}
 
-<br>
 > ⚠️ **ATTENTION : Le Piège à Éviter !**
 > L'option `-a` (append/ajouter) est **CRUCIALE**.
 >
