@@ -2,14 +2,18 @@ Votre première mission est de déployer une application web simple de A à Z.
 
 ### 1. Transférer l'Application
 
-L'archive `mon_app.tar.gz` se trouve sur votre "machine locale", simulée dans le dossier `/home/learner/local_machine_simulation`. La première étape d'un déploiement est de transférer les fichiers sur le serveur. Utilisez `scp` (Secure Copy) pour copier l'archive vers le répertoire temporaire `/tmp` du serveur.
+L'archive `mon_app.tar.gz` se trouve sur votre "machine locale", simulée dans le dossier `/home/learner/local_machine_simulation`.
 
-`scp /home/learner/local_machine_simulation/mon_app.tar.gz learner@localhost:/tmp/`{{execute}}
-*(Note : `learner@localhost` simule une connexion à distance sur la machine actuelle.)*
+Dans un vrai scénario, pour transférer ce fichier sur votre serveur distant, vous utiliseriez la commande `scp` (Secure Copy) comme ceci :
+`scp /chemin/local/mon_app.tar.gz utilisateur@ip_du_serveur:/tmp/`
+
+Pour ce lab, nous allons **simuler ce transfert** en copiant le fichier de notre dossier de simulation vers le répertoire `/tmp` du serveur. C'est la première étape avant de décompresser.
+
+`cp /home/learner/local_machine_simulation/mon_app.tar.gz /tmp/`{{execute}}
 
 ### 2. Extraire et Positionner
 
-Maintenant que l'archive est sur le serveur, décompressez-la dans `/tmp`, puis déplacez son contenu dans le répertoire racine du site web, `/var/www/html`.
+Maintenant que l'archive est dans `/tmp`, décompressez-la, puis déplacez son contenu dans le répertoire racine du site web, `/var/www/html`.
 
 `cd /tmp`{{execute}}
 `tar -xzf mon_app.tar.gz`{{execute}}
@@ -22,7 +26,7 @@ L'application a besoin d'un fichier `.env`. Copiez le modèle `env.example` et "
 
 `sudo cp /var/www/html/env.example /var/www/html/.env`{{execute}}
 `sudo nano /var/www/html/.env`{{execute}}
-*(Dans nano, changez `__DB_PASSWORD__` par `supersecret123`, puis `Ctrl+O`, Entrée, `Ctrl+X`)*
+*(Dans nano, changez `__DB_PASSWORD__` par `supersecret12d3`, puis `Ctrl+O`, Entrée, `Ctrl+X`)*
 
 Appliquez les permissions standards :
 -   Propriétaire : `www-data`.

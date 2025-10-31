@@ -18,33 +18,10 @@ EOF
 chmod +x /tmp/banner.sh
 
 # --- ENVIRONMENT SETUP ---
-echo "Préparation de l'environnement (Nginx/PHP/SSH)..."
-apt-get update >/dev/null && apt-get install -y nginx php-fpm openssh-server util-linux >/dev/null
-
-# --- CONFIGURATION SSH INFALLIBLE ---
-# 1. S'assurer que les options vitales sont dans la config du serveur SSH
-sed -i 's/^#?PubkeyAuthentication.*/PubkeyAuthentication yes/' /etc/ssh/sshd_config
-sed -i 's/^#?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
-echo "ChallengeResponseAuthentication no" >> /etc/ssh/sshd_config
-
-# 2. Redémarrer le service SSH pour appliquer la nouvelle configuration
-systemctl restart ssh
-
-# 3. Créer une clé SSH pour l'utilisateur learner, sans mot de passe
-su - learner -c "ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ''"
-
-# 4. Autoriser cette clé pour se connecter en tant que learner
-su - learner -c "cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys"
-
-# 5. Définir les bonnes permissions (crucial pour la sécurité SSH)
-su - learner -c "chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys"
-
-# 6. Pré-accepter la clé de l'hôte localhost pour éviter la question (yes/no)
-su - learner -c "ssh-keyscan -t ed25519 localhost >> ~/.ssh/known_hosts 2>/dev/null"
+echo "Préparation de l'environnement (Nginx/PHP)..."
+apt-get update >/dev/null && apt-get install -y nginx php-fpm util-linux >/dev/null
 
 # --- CRITICAL LAB FILE SETUP ---
-# ... (le reste du fichier est identique)
-
 # 1. Prepare the app source files
 mkdir -p /home/learner/mon_app
 echo "DB_PASSWORD=__DB_PASSWORD__" > /home/learner/mon_app/env.example
