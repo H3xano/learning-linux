@@ -8,7 +8,7 @@ RC
 chown learner:learner /home/learner/.bashrc
 cat << 'EOF' > /tmp/banner.sh
 #!/usr/bin/env bash
-if command -v tput >/dev/null 2>&1; then COLS="$(tput cols||echo 80)";BOLD="$(tput bold)";RESET="$(tput sgr0)";CYAN="$(tput setaf 6)";YELLOW="$(tput setaf 3)";GREEN="$(tput setaf 2)"; else COLS=80;BOLD="";RESET="";CYAN="";YELLOW="";GREEN=""; fi
+if command -v tput >/dev/null 21; then COLS="$(tput cols||echo 80)";BOLD="$(tput bold)";RESET="$(tput sgr0)";CYAN="$(tput setaf 6)";YELLOW="$(tput setaf 3)";GREEN="$(tput setaf 2)"; else COLS=80;BOLD="";RESET="";CYAN="";YELLOW="";GREEN=""; fi
 pad() { text="$1";len=${#1};w=$COLS;left=$(((w-len)/2));printf "%*s%s\n" "$left" "" "$text"; }
 line() { ch="${1:-═}";printf '%*s\n' "$COLS" ''|tr ' ' "$ch"; }
 clear; TITLE="Formip - La voie Express vers la Certification"; SUB="Bienvenue sur votre environnement Linux d'apprentissage"
@@ -16,6 +16,22 @@ echo; echo -e "${CYAN}$(line)${RESET}"; pad "${BOLD}${TITLE}${RESET}"; pad "${SU
 pad "${GREEN}Vous êtes prêt pour le Lab 7.3 : Le Couteau Suisse de l'Admin Sys !${RESET}"; echo
 EOF
 chmod +x /tmp/banner.sh
+
+# --- ENVIRONMENT SETUP ---
+echo "Préparation de l'environnement (Nginx/PHP/SSH)..."
+apt-get update >/dev/null && apt-get install -y nginx php-fpm openssh-server util-linux >/dev/null
+
+# --- Configuration SSH pour scp localhost SANS mot de passe ---
+# 1. Démarrer le service SSH
+service ssh start
+# 2. Créer une clé SSH pour l'utilisateur learner, sans mot de passe
+su - learner -c "ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ''"
+# 3. Autoriser cette clé pour se connecter en tant que learner
+su - learner -c "cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys"
+# 4. Définir les bonnes permissions (crucial pour la sécurité SSH)
+su - learner -c "chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys"
+# 5. Pré-accepter la clé de l'hôte localhost pour éviter la question (yes/no)
+su - learner -c "ssh-keyscan -t ed25519 localhost >> ~/.ssh/known_hosts"
 
 # --- CRITICAL LAB FILE SETUP ---
 # 1. Prepare the app source files
@@ -48,19 +64,11 @@ rm -rf /home/learner/mon_app
 
 # 3. Simulate a large log file for the disk space exercise
 echo "Création d'un gros fichier de log pour la simulation..."
-apt-get update >/dev/null && apt-get install -y util-linux >/dev/null
 fallocate -l 1G /var/log/nginx/access.log.old
 chown www-data:adm /var/log/nginx/access.log.old
 
-# --- ENVIRONMENT SETUP ---
-echo "Préparation de l'environnement web (Nginx/PHP/SSH)..."
+# --- WEB SERVER CONFIGURATION ---
 (
-    apt-get update >/dev/null && apt-get install -y nginx php-fpm openssh-server >/dev/null
-    
-    # Ensure SSH is running for scp localhost
-    service ssh start
-
-    # Configure Nginx
     cat << 'NGINX_CONF' > /etc/nginx/sites-available/default
 server {
     listen 80 default_server;
@@ -75,7 +83,6 @@ server {
     }
 }
 NGINX_CONF
-
     systemctl restart nginx
     PHP_FPM_SERVICE=$(systemctl list-units --type=service | grep -o 'php[0-9]\.[0-9]-fpm\.service' | head -n 1)
     if [ -n "$PHP_FPM_SERVICE" ]; then
@@ -83,5 +90,3 @@ NGINX_CONF
         systemctl restart "$PHP_FPM_SERVICE"
     fi
 ) || echo "Avertissement : La configuration de l'environnement web a rencontré des problèmes."
-
-chown -R learner:learner /home/learner
