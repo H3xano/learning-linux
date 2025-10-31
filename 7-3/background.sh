@@ -18,6 +18,7 @@ EOF
 chmod +x /tmp/banner.sh
 
 # --- CRITICAL LAB FILE SETUP ---
+# 1. Prepare the app source files
 mkdir -p /home/learner/mon_app
 echo "DB_PASSWORD=__DB_PASSWORD__" > /home/learner/mon_app/env.example
 cat << 'PHP_EOF' > /home/learner/mon_app/index.php
@@ -39,33 +40,37 @@ if (!is_readable($env_path)) {
     exit("Configuration error.");
 }
 PHP_CONFIG_EOF
-tar -czf /home/learner/mon_app.tar.gz -C /home/learner mon_app
+
+# 2. Simulate a "local machine" with the archive ready for transfer
+mkdir -p /home/learner/local_machine_simulation
+tar -czf /home/learner/local_machine_simulation/mon_app.tar.gz -C /home/learner mon_app
 rm -rf /home/learner/mon_app
 
-# --- ENVIRONMENT SETUP (Best effort) ---
-echo "Préparation de l'environnement web (Nginx/PHP)..."
-(
-    apt-get update >/dev/null && apt-get install -y nginx php-fpm >/dev/null
+# 3. Simulate a large log file for the disk space exercise
+echo "Création d'un gros fichier de log pour la simulation..."
+apt-get update >/dev/null && apt-get install -y util-linux >/dev/null
+fallocate -l 1G /var/log/nginx/access.log.old
+chown www-data:adm /var/log/nginx/access.log.old
 
-    # --- CORRECTION FINALE ET INFALLIBLE POUR NGINX ---
-    # On écrase la configuration par défaut avec une version connue et valide.
+# --- ENVIRONMENT SETUP ---
+echo "Préparation de l'environnement web (Nginx/PHP/SSH)..."
+(
+    apt-get update >/dev/null && apt-get install -y nginx php-fpm openssh-server >/dev/null
+    
+    # Ensure SSH is running for scp localhost
+    service ssh start
+
+    # Configure Nginx
     cat << 'NGINX_CONF' > /etc/nginx/sites-available/default
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
-
     root /var/www/html;
     index index.php index.html index.htm;
-
     server_name _;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
+    location / { try_files $uri $uri/ =404; }
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
-        # Assurez-vous que le socket correspond à votre version de PHP-FPM
         fastcgi_pass unix:/run/php/php-fpm.sock;
     }
 }
@@ -74,7 +79,6 @@ NGINX_CONF
     systemctl restart nginx
     PHP_FPM_SERVICE=$(systemctl list-units --type=service | grep -o 'php[0-9]\.[0-9]-fpm\.service' | head -n 1)
     if [ -n "$PHP_FPM_SERVICE" ]; then
-        # Assurer que le socket PHP existe
         sed -i 's|listen = /run/php/php.*-fpm.sock|listen = /run/php/php-fpm.sock|' /etc/php/*/fpm/pool.d/www.conf
         systemctl restart "$PHP_FPM_SERVICE"
     fi

@@ -13,27 +13,27 @@
     },
     "steps": [
       {
-        "title": "La Mise en Production : Déployer et Sécuriser l'Application",
+        "title": "Déploiement Complet - Du Transfert à la Sécurisation",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Piloter le Moteur : Maîtriser Nginx avec `systemctl`",
+        "title": "Piloter le Moteur - Maîtriser Nginx avec `systemctl`",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Écouter le Pouls du Serveur : L'Art de l'Analyse des Logs",
+        "title": "Écouter le Pouls du Serveur - L'Art de l'Analyse des Logs",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Le Filet de Sécurité : Créer un Script de Sauvegarde Robuste",
+        "title": "Maintenance Préventive - Sauvegarde et Espace Disque",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "Le Baptême du Feu : Diagnostiquer et Réparer la Panne",
+        "title": "Le Baptême du Feu - Diagnostiquer et Réparer la Panne",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
       }

@@ -1,26 +1,34 @@
-Votre première mission est de déployer une application web simple. Une archive `mon_app.tar.gz` a été placée dans votre répertoire `home`.
+Votre première mission est de déployer une application web simple de A à Z.
 
-### 1. Extraire et Positionner
+### 1. Transférer l'Application
 
-D'abord, extrayez l'archive. Cela créera un dossier `mon_app`. Ensuite, déplacez son contenu dans le répertoire racine du serveur web, `/var/www/html`.
+L'archive `mon_app.tar.gz` se trouve sur votre "machine locale", simulée dans le dossier `/home/learner/local_machine_simulation`. La première étape d'un déploiement est de transférer les fichiers sur le serveur. Utilisez `scp` (Secure Copy) pour copier l'archive vers le répertoire temporaire `/tmp` du serveur.
 
+`scp /home/learner/local_machine_simulation/mon_app.tar.gz learner@localhost:/tmp/`{{execute}}
+*(Note : `learner@localhost` simule une connexion à distance sur la machine actuelle.)*
+
+### 2. Extraire et Positionner
+
+Maintenant que l'archive est sur le serveur, décompressez-la dans `/tmp`, puis déplacez son contenu dans le répertoire racine du site web, `/var/www/html`.
+
+`cd /tmp`{{execute}}
 `tar -xzf mon_app.tar.gz`{{execute}}
 `sudo mv mon_app/* /var/www/html/`{{execute}}
 
 ---
-### 2. Configurer et Sécuriser
+### 3. Configurer et Sécuriser
 
-L'application a besoin d'un fichier de configuration `.env`. Un modèle `env.example` est fourni. Copiez-le et "remplissez" les secrets.
+L'application a besoin d'un fichier `.env`. Copiez le modèle `env.example` et "remplissez" le secret.
 
 `sudo cp /var/www/html/env.example /var/www/html/.env`{{execute}}
 `sudo nano /var/www/html/.env`{{execute}}
 *(Dans nano, changez `__DB_PASSWORD__` par `supersecret123`, puis `Ctrl+O`, Entrée, `Ctrl+X`)*
 
-Maintenant, appliquons les permissions standards pour un site web :
--   Le propriétaire doit être `www-data` (l'utilisateur du serveur web).
--   Les dossiers doivent être en `755`.
--   Les fichiers en `644`.
--   Le fichier `.env` doit être ultra-protégé en `600`.
+Appliquez les permissions standards :
+-   Propriétaire : `www-data`.
+-   Dossiers : `755`.
+-   Fichiers : `644`.
+-   Fichier `.env` (sensible) : `600`.
 
 `sudo chown -R www-data:www-data /var/www/html/`{{execute}}
 `sudo find /var/www/html/ -type d -exec chmod 755 {} \;`{{execute}}
@@ -29,5 +37,3 @@ Maintenant, appliquons les permissions standards pour un site web :
 
 Votre application est déployée ! Vérifions qu'elle fonctionne.
 `curl http://localhost`{{execute}}
-
-Qu'en pensez vous ?

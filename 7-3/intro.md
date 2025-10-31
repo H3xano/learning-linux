@@ -7,10 +7,10 @@ Vous avez appris les commandes, les concepts, les techniques. Il est temps de to
 Dans ce lab final, vous allez gérer une application web de A à Z.
 
 Votre mission :
-1.  **Le Déploiement** : Mettre en ligne une application web à partir d'une archive.
+1.  **Le Déploiement Complet** : Transférer, mettre en ligne et sécuriser une application web.
 2.  **La Gestion du Service** : Piloter le serveur web Nginx avec `systemctl`.
 3.  **L'Analyse des Logs** : Jouer au détective dans les journaux d'accès et d'erreurs.
-4.  **L'Automatisation de la Sauvegarde** : Créer un script de backup professionnel.
+4.  **La Maintenance Préventive** : Gérer l'espace disque et automatiser les sauvegardes.
 5.  **Le Baptême du Feu** : Diagnostiquer et réparer une panne en conditions réelles.
 
 À la fin de ce lab, vous aurez l'expérience pratique des tâches quotidiennes d'un admin sys.
