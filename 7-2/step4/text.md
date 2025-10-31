@@ -16,6 +16,16 @@ Un disque peut être "plein" même s'il reste de l'espace, si tous les **inodes*
 
 Regardez la colonne `IUse%`. Si elle est à 100%, vous ne pouvez plus créer de nouveaux fichiers !
 
+#### Le Mystère des Inodes en Pratique
+
+Prouvons ce concept. Créons 2000 fichiers vides et voyons l'impact.
+
+`mkdir -p /tmp/test-inodes && touch /tmp/test-inodes/file{1..2000}`{{execute}}
+
+Maintenant, relancez `df -i`. Observez la colonne `IUsed` pour la partition `/`. Elle a augmenté de 2001 (2000 fichiers + 1 répertoire) ! C'est la preuve qu'un grand nombre de petits fichiers consomme des inodes, même sans prendre de place.
+
+N'oubliez pas de nettoyer : `rm -rf /tmp/test-inodes`{{execute}}
+
 ---
 ### `du` : Trouver qui consomme l'espace
 

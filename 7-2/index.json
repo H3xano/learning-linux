@@ -1,6 +1,6 @@
 {
   "title": "Lab 7.2: 📈 Le Poste de Contrôle (Surveillance Système)",
-  "description": "Apprenez à utiliser les outils de surveillance temps réel, d'analyse de logs et de gestion de disque.",
+  "description": "Apprenez à utiliser les outils de surveillance temps réel, d'analyse de logs, de gestion de disque et de diagnostic réseau.",
   "backend": {
     "imageid": "ubuntu",
     "user": "learner"
@@ -23,19 +23,24 @@
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Enquête sur le Crash : Décrypter la Boîte Noire (`journalctl`)",
+        "title": "Enquête sur le Crash : Décrypter la Boîte Noire des Logs",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       },
       {
-        "title": "Les Jauges de Carburant et de Soute : `df` et `du`",
+        "title": "Les Jauges de Carburant : `df`, `du` et le Mystère des Inodes",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
       },
       {
-        "title": "La Check-list du Pilote : Créer son Dashboard Personnalisé",
+        "title": "Le Sonar et le GPS : Diagnostics Réseau Basiques",
         "text": "step5/text.md",
         "verify": "step5/verify.sh"
+      },
+      {
+        "title": "La Check-list du Pilote : Créer son Dashboard Personnalisé",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
       }
     ],
     "finish": {

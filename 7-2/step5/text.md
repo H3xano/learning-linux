@@ -1,54 +1,30 @@
-Maintenant, assemblons toutes ces commandes dans un script pour créer notre propre tableau de bord.
+Votre serveur rame mais CPU, RAM et disque sont OK ? Le coupable est souvent le réseau ! Voici les 3 vérifications de base.
 
-`nano mon_dashboard.sh`{{execute}}
+### 1. `ping` - Le test de vitalité
 
-Copiez et collez le code suivant dans l'éditeur `nano`. C'est un script simple qui collecte les informations les plus importantes.
+La commande `ping` envoie un petit paquet (ICMP) à une destination pour voir si elle répond et en combien de temps (latence). C'est LA première commande à lancer.
 
-```bash
-#!/bin/bash
+Testons la connectivité à un serveur DNS de Google, qui est une cible très fiable.
+- `-c 4` signifie : envoie 4 paquets puis arrête-toi.
 
-echo "=========================================="
-echo "    DASHBOARD SYSTÈME - $(hostname)"
-echo "    $(date)"
-echo "=========================================="
-echo ""
+`ping -c 4 8.8.8.8`{{execute}}
 
-echo "--- ⚙️ CPU & Charge ---"
-LOAD=$(uptime | awk -F'load average:' '{print $2}')
-echo "Load Average : $LOAD"
-echo ""
+Regardez la ligne `time=... ms`. C'est votre latence. En dessous de 50ms, c'est généralement bon. Si vous avez `0% packet loss` (0% de perte de paquets), c'est parfait.
 
-echo "--- 🧠 Mémoire ---"
-free -h | grep "Mem"
-echo ""
+### 2. `dig` - Le traducteur de noms
 
-echo "--- 💾 Espace Disque (partitions principales) ---"
-df -h | grep -E "^/dev/|Filesystem"
-echo ""
+Parfois, `ping 8.8.8.8` fonctionne mais `ping google.com` échoue. Le problème ? Le DNS, le service qui traduit les noms de domaine en adresses IP. La commande `dig` permet de le tester.
 
-echo "--- 🔧 3 Services Critiques ---"
-for service in ssh cron rsyslog; do
-    if systemctl is-active --quiet $service 2>/dev/null; then
-        echo "✅ $service : actif"
-    else
-        echo "❌ $service : arrêté"
-    fi
-done
-echo ""
+`dig google.com +short`{{execute}}
 
-echo "--- 📝 5 Dernières Erreurs Système ---"
-sudo journalctl -p err -n 5 --no-pager
-echo ""
-echo "=========================================="
-```
-Sauvegardez avec `Ctrl+O` (puis Entrée) et quittez avec `Ctrl+X`.
+Cette commande doit vous retourner une adresse IP. Si elle ne retourne rien, votre DNS est défaillant !
 
----
-### Exécuter le dashboard
+### 3. `ss` - Le radar des ports
 
-Rendez le script exécutable et lancez-le.
+Votre service web est-il bien en train d'écouter les connexions entrantes ? `ss` (Socket Statistics), le remplaçant moderne de `netstat`, vous le dira.
 
-`chmod +x mon_dashboard.sh`{{execute}}
-`./mon_dashboard.sh`{{execute}}
+- `-t` pour TCP, `-u` pour UDP, `-l` pour "listening" (en écoute), `-n` pour afficher les numéros de port.
 
-En une seule commande, vous avez un rapport complet sur la santé de votre système ! C'est le début de l'automatisation de la surveillance.
+`ss -tuln`{{execute}}
+
+Cette commande liste tous les ports sur lesquels votre machine attend des connexions. Vous devriez voir le port `22` (pour SSH). Si vous aviez un serveur web, vous chercheriez les ports `80` (HTTP) ou `443` (HTTPS).
