@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
-grep -q 'continue' script_rename.sh || exit 1
-grep -q 'if \[\[ "\$fichier" == \*.log \]\]' script_rename.sh || exit 1
+grep -q 'continue' /home/learner/script_rename.sh || exit 1
+grep -q 'if \[\[ "\$fichier" == \*.log \]\]' /home/learner/script_rename.sh || exit 1
 
 # On vérifie le résultat final en utilisant des chemins absolus
 if [ ! -f /home/learner/fichier1.log.old ] || \
