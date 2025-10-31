@@ -90,3 +90,5 @@ NGINX_CONF
         systemctl restart "$PHP_FPM_SERVICE"
     fi
 ) || echo "Avertissement : La configuration de l'environnement web a rencontré des problèmes."
+
+chown -R learner:learner /home/learner
