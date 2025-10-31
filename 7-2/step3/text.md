@@ -9,7 +9,7 @@ Que s'est-il passé sur le serveur cette nuit ? Les logs sont la "boîte noire" 
 
 Cherchons les erreurs de **tous les services** qui se sont produites dans la **dernière heure**.
 
-`journalctl --since "1 hour ago" -p err`{{execute}}
+`sudo journalctl --since "1 hour ago" -p err`{{execute}}
 
 Si cette commande retourne des lignes, c'est qu'il y a eu des erreurs récemment.
 
@@ -19,10 +19,10 @@ Avant `journalctl`, tous les logs étaient des fichiers texte dans le dossier `/
 
 **1. Voir les dernières activités du système :** `tail` affiche la fin d'un fichier. C'est parfait pour voir ce qui vient de se passer.
 
-`tail /var/log/syslog`{{execute}}
+`sudo tail /var/log/syslog`{{execute}}
 
 **2. Chercher une aiguille dans une botte de foin :** `grep` permet de rechercher des motifs spécifiques. Cherchons les tentatives de connexion échouées.
 
-`grep -i "authentication failure" /var/log/auth.log`{{execute}}
+`sudo grep -i "authentication failure" /var/log/auth.log`{{execute}}
 
 La combinaison `tail`, `grep`, et `less` est le trio gagnant de tout enquêteur système.
